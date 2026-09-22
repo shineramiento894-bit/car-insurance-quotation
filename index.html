@@ -32,22 +32,22 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(7, 9, 13, 0.95);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-    backdrop-filter: blur(12px);
+    background: rgba(7, 9, 13, 0.92);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+    backdrop-filter: blur(16px);
 }
 
 .navbar {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
-    padding: 20px 25px;
+    padding: 18px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 800;
     letter-spacing: 1px;
 }
@@ -57,9 +57,9 @@ header {
 }
 
 .nav-label {
-    font-size: 13px;
+    font-size: 12px;
     color: #aaa;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
 }
 
@@ -68,15 +68,41 @@ header {
 ========================= */
 
 .hero {
-    min-height: 680px;
+    min-height: 720px;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
+
     background:
-        linear-gradient(90deg, #07090d 15%, rgba(7,9,13,0.86) 45%, rgba(7,9,13,0.25) 100%),
-        radial-gradient(circle at 75% 45%, rgba(212,175,55,0.14), transparent 35%),
+        linear-gradient(
+            90deg,
+            #07090d 5%,
+            rgba(7,9,13,0.97) 28%,
+            rgba(7,9,13,0.80) 52%,
+            rgba(7,9,13,0.38) 78%,
+            rgba(7,9,13,0.15) 100%
+        ),
+        radial-gradient(
+            circle at 78% 50%,
+            rgba(212,175,55,0.15),
+            transparent 32%
+        ),
         #07090d;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    right: -180px;
+    top: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,55,0.08);
+    box-shadow:
+        0 0 0 80px rgba(212,175,55,0.025),
+        0 0 0 160px rgba(212,175,55,0.018);
 }
 
 .hero::after {
@@ -86,13 +112,13 @@ header {
     height: 500px;
     border-radius: 50%;
     right: -180px;
-    top: 80px;
-    background: rgba(212,175,55,0.08);
-    filter: blur(60px);
+    top: 100px;
+    background: rgba(212,175,55,0.10);
+    filter: blur(90px);
 }
 
 .hero-content {
-    width: 1200px;
+    width: 1250px;
     max-width: 92%;
     margin: auto;
     position: relative;
@@ -101,18 +127,18 @@ header {
 
 .hero-small {
     color: #d4af37;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 18px;
+    letter-spacing: 3.5px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 7vw, 82px);
-    line-height: 0.98;
-    max-width: 760px;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.96;
+    max-width: 800px;
     text-transform: uppercase;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
 }
 
 .hero h1 span {
@@ -120,16 +146,16 @@ header {
 }
 
 .hero p {
-    max-width: 620px;
-    margin-top: 25px;
-    color: #b7b7b7;
+    max-width: 610px;
+    margin-top: 28px;
+    color: #b8bbc1;
     font-size: 17px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
-    margin-top: 35px;
+    gap: 14px;
+    margin-top: 38px;
     flex-wrap: wrap;
 }
 
@@ -138,32 +164,55 @@ header {
     cursor: pointer;
     padding: 16px 28px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: 0.25s;
+    transition: all 0.25s ease;
 }
 
 .btn-primary {
     background: #d4af37;
     color: #08090b;
+    box-shadow: 0 10px 30px rgba(212,175,55,0.14);
 }
 
 .btn-primary:hover {
     background: #f0cd55;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px rgba(212,175,55,0.22);
 }
 
 .btn-outline {
-    background: transparent;
+    background: rgba(255,255,255,0.015);
     color: white;
-    border: 1px solid #555;
+    border: 1px solid #555d68;
 }
 
 .btn-outline:hover {
     border-color: #d4af37;
     color: #d4af37;
+    transform: translateY(-3px);
+}
+
+/* Decorative hero text */
+
+.hero-badge {
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #777d87;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.hero-badge::before {
+    content: "";
+    width: 38px;
+    height: 1px;
+    background: #d4af37;
 }
 
 /* =========================
@@ -177,15 +226,20 @@ header {
 }
 
 .feature-container {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
 .feature {
-    padding: 35px 30px;
+    padding: 38px 32px;
     border-right: 1px solid #20242c;
+    transition: background 0.25s ease;
+}
+
+.feature:hover {
+    background: rgba(212,175,55,0.025);
 }
 
 .feature:last-child {
@@ -194,13 +248,13 @@ header {
 
 .feature-number {
     color: #d4af37;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
 .feature h3 {
-    margin-top: 8px;
+    margin-top: 9px;
     font-size: 18px;
 }
 
@@ -215,26 +269,32 @@ header {
 ========================= */
 
 .quote-section {
-    padding: 90px 20px;
-    background: #080a0f;
+    padding: 100px 20px;
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(212,175,55,0.035),
+            transparent 30%
+        ),
+        #080a0f;
 }
 
 .section-header {
     max-width: 800px;
     margin: auto;
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 48px;
 }
 
 .section-label {
     color: #d4af37;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 3px;
     font-weight: bold;
 }
 
 .section-header h2 {
-    font-size: 42px;
+    font-size: 43px;
     margin-top: 10px;
 }
 
@@ -243,32 +303,38 @@ header {
     margin-top: 12px;
 }
 
+/* =========================
+   FORM CARD
+========================= */
+
 .form-card {
-    max-width: 950px;
+    max-width: 980px;
     margin: auto;
-    background: linear-gradient(145deg, #11151c, #0b0e13);
-    border: 1px solid #272c35;
-    border-radius: 12px;
-    padding: 45px;
-    box-shadow: 0 25px 80px rgba(0,0,0,0.45);
+    background: linear-gradient(145deg, #12161d, #0b0e13);
+    border: 1px solid #292f39;
+    border-radius: 14px;
+    padding: 48px;
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.48),
+        0 0 0 1px rgba(255,255,255,0.015);
 }
 
 .form-title {
     color: #d4af37;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 2px;
-    margin-bottom: 22px;
+    margin-bottom: 23px;
 }
 
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 21px;
 }
 
 .form-group {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .form-group.full {
@@ -289,22 +355,35 @@ select {
     padding: 15px;
     background: #080b10;
     border: 1px solid #303640;
-    border-radius: 5px;
+    border-radius: 6px;
     color: white;
     font-size: 15px;
     outline: none;
-    transition: 0.2s;
+    transition: all 0.2s ease;
+}
+
+input::placeholder {
+    color: #626873;
+}
+
+input:hover,
+select:hover {
+    border-color: #4b515c;
 }
 
 input:focus,
 select:focus {
     border-color: #d4af37;
-    box-shadow: 0 0 0 2px rgba(212,175,55,0.08);
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.08);
 }
 
 select option {
     background: #0d1016;
 }
+
+/* =========================
+   COVERAGE
+========================= */
 
 .coverage-options {
     display: grid;
@@ -323,11 +402,16 @@ select option {
 
 .coverage-card label {
     border: 1px solid #303640;
-    padding: 20px;
-    border-radius: 6px;
+    padding: 21px;
+    border-radius: 7px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.25s ease;
     height: 100%;
+    background: rgba(0,0,0,0.10);
+}
+
+.coverage-card label:hover {
+    border-color: #777;
 }
 
 .coverage-card label strong {
@@ -344,13 +428,15 @@ select option {
 
 .coverage-card input:checked + label {
     border-color: #d4af37;
-    background: rgba(212,175,55,0.07);
+    background: rgba(212,175,55,0.075);
+    box-shadow: inset 0 0 25px rgba(212,175,55,0.025);
 }
 
 .form-submit {
     margin-top: 30px;
     width: 100%;
     padding: 18px;
+    font-size: 14px;
 }
 
 /* =========================
@@ -360,41 +446,51 @@ select option {
 #quotationPage {
     display: none;
     min-height: 100vh;
-    padding: 80px 20px;
+    padding: 85px 20px;
     background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 35%),
+        radial-gradient(
+            circle at top right,
+            rgba(212,175,55,0.10),
+            transparent 35%
+        ),
         #080a0f;
 }
 
 .result-card {
-    max-width: 850px;
+    max-width: 900px;
     margin: auto;
     background: #11151c;
     border: 1px solid #303640;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 30px 90px rgba(0,0,0,0.5);
 }
 
 .result-top {
-    padding: 35px;
+    padding: 38px;
     border-bottom: 1px solid #292e37;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,175,55,0.06),
+            transparent 50%
+        );
 }
 
 .result-label {
     color: #d4af37;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 3px;
     font-weight: bold;
 }
 
 .result-top h2 {
-    font-size: 34px;
+    font-size: 36px;
     margin-top: 8px;
 }
 
 .result-body {
-    padding: 35px;
+    padding: 38px;
 }
 
 .vehicle-summary {
@@ -408,13 +504,13 @@ select option {
     background: #090c11;
     border: 1px solid #242932;
     padding: 18px;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .summary-item small {
     color: #777d87;
     display: block;
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -425,12 +521,19 @@ select option {
     font-size: 15px;
 }
 
+/* Premium */
+
 .premium-box {
     text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.025));
+    padding: 43px 20px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,175,55,0.13),
+            rgba(212,175,55,0.025)
+        );
     border: 1px solid rgba(212,175,55,0.3);
-    border-radius: 8px;
+    border-radius: 9px;
 }
 
 .premium-box small {
@@ -441,19 +544,27 @@ select option {
 
 .premium {
     color: #d4af37;
-    font-size: clamp(40px, 8vw, 64px);
+    font-size: clamp(40px, 8vw, 66px);
     font-weight: 800;
     margin-top: 8px;
 }
 
+/* Estimate note */
+
 .estimate-note {
     margin-top: 25px;
-    padding: 18px;
+    padding: 19px;
     background: #0a0d12;
     border-left: 3px solid #d4af37;
     color: #8d929b;
     font-size: 13px;
 }
+
+.estimate-note strong {
+    color: #d4af37;
+}
+
+/* Result actions */
 
 .result-actions {
     display: flex;
@@ -473,7 +584,7 @@ select option {
 footer {
     background: #05070a;
     border-top: 1px solid #1b1f27;
-    padding: 35px 20px;
+    padding: 40px 20px;
     text-align: center;
     color: #6e737d;
     font-size: 13px;
@@ -481,7 +592,7 @@ footer {
 
 .footer-logo {
     color: white;
-    font-size: 20px;
+    font-size: 21px;
     font-weight: bold;
     margin-bottom: 7px;
 }
@@ -500,20 +611,38 @@ footer {
         padding: 16px 18px;
     }
 
+    .logo {
+        font-size: 24px;
+    }
+
     .nav-label {
         display: none;
     }
 
     .hero {
-        min-height: 600px;
+        min-height: 650px;
+    }
+
+    .hero-content {
+        max-width: 88%;
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 49px;
+        letter-spacing: -2px;
     }
 
     .hero p {
         font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
     }
 
     .feature-container {
@@ -530,7 +659,7 @@ footer {
     }
 
     .quote-section {
-        padding: 65px 15px;
+        padding: 70px 15px;
     }
 
     .section-header h2 {
@@ -538,7 +667,7 @@ footer {
     }
 
     .form-card {
-        padding: 25px 18px;
+        padding: 27px 18px;
     }
 
     .form-grid {
@@ -559,11 +688,11 @@ footer {
 
     .result-body,
     .result-top {
-        padding: 25px 20px;
+        padding: 26px 20px;
     }
 
     .result-top h2 {
-        font-size: 28px;
+        font-size: 29px;
     }
 
     .result-actions {
@@ -614,7 +743,10 @@ footer {
 
 <body>
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
     <div class="navbar">
         <div class="logo">Drive<span>Safe</span></div>
@@ -623,7 +755,10 @@ footer {
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="home">
 
     <div class="hero-content">
@@ -644,13 +779,25 @@ footer {
         </p>
 
         <div class="hero-buttons">
-            <button class="btn btn-primary" onclick="scrollToQuote()">
+
+            <button
+                class="btn btn-primary"
+                onclick="scrollToQuote()"
+            >
                 Get Your Quotation
             </button>
 
-            <button class="btn btn-outline" onclick="scrollToQuote()">
+            <button
+                class="btn btn-outline"
+                onclick="scrollToQuote()"
+            >
                 View Coverage
             </button>
+
+        </div>
+
+        <div class="hero-badge">
+            Built for Philippine vehicle owners
         </div>
 
     </div>
@@ -658,30 +805,41 @@ footer {
 </section>
 
 
-<!-- FEATURES -->
+<!-- =========================
+     FEATURES
+========================= -->
+
 <section class="features">
 
     <div class="feature-container">
 
         <div class="feature">
             <div class="feature-number">01</div>
+
             <h3>Premium Vehicles</h3>
+
             <p>
                 Designed for imported, luxury, and high-value cars.
             </p>
         </div>
 
+
         <div class="feature">
             <div class="feature-number">02</div>
+
             <h3>Simple Quotation</h3>
+
             <p>
                 Get an estimated premium using your vehicle details.
             </p>
         </div>
 
+
         <div class="feature">
             <div class="feature-number">03</div>
+
             <h3>Drive With Confidence</h3>
+
             <p>
                 A clear and convenient starting point for your insurance inquiry.
             </p>
@@ -692,7 +850,10 @@ footer {
 </section>
 
 
-<!-- QUOTE FORM -->
+<!-- =========================
+     QUOTE FORM
+========================= -->
+
 <section class="quote-section" id="quoteSection">
 
     <div class="section-header">
@@ -717,30 +878,74 @@ footer {
             01 — VEHICLE INFORMATION
         </div>
 
+
         <form id="quoteForm">
 
             <div class="form-grid">
 
+
+                <!-- VEHICLE TYPE -->
+
                 <div class="form-group">
-                    <label for="vehicleType">Vehicle Type</label>
+
+                    <label for="vehicleType">
+                        Vehicle Type
+                    </label>
 
                     <select id="vehicleType" required>
-                        <option value="">Select vehicle type</option>
-                        <option value="Sedan">Sedan</option>
-                        <option value="SUV">SUV</option>
-                        <option value="Hatchback">Hatchback</option>
-                        <option value="Pickup">Pickup</option>
-                        <option value="MPV">MPV</option>
-                        <option value="Van">Van</option>
-                        <option value="Coupe">Coupe</option>
-                        <option value="Convertible">Convertible</option>
-                        <option value="Wagon">Wagon</option>
+
+                        <option value="">
+                            Select vehicle type
+                        </option>
+
+                        <option value="Sedan">
+                            Sedan
+                        </option>
+
+                        <option value="SUV">
+                            SUV
+                        </option>
+
+                        <option value="Hatchback">
+                            Hatchback
+                        </option>
+
+                        <option value="Pickup">
+                            Pickup
+                        </option>
+
+                        <option value="MPV">
+                            MPV
+                        </option>
+
+                        <option value="Van">
+                            Van
+                        </option>
+
+                        <option value="Coupe">
+                            Coupe
+                        </option>
+
+                        <option value="Convertible">
+                            Convertible
+                        </option>
+
+                        <option value="Wagon">
+                            Wagon
+                        </option>
+
                     </select>
+
                 </div>
 
 
+                <!-- MAKE -->
+
                 <div class="form-group">
-                    <label for="make">Vehicle Make</label>
+
+                    <label for="make">
+                        Vehicle Make
+                    </label>
 
                     <input
                         type="text"
@@ -748,11 +953,17 @@ footer {
                         placeholder="e.g. Toyota, BMW, Mercedes-Benz"
                         required
                     >
+
                 </div>
 
 
+                <!-- MODEL -->
+
                 <div class="form-group">
-                    <label for="model">Vehicle Model</label>
+
+                    <label for="model">
+                        Vehicle Model
+                    </label>
 
                     <input
                         type="text"
@@ -760,11 +971,17 @@ footer {
                         placeholder="e.g. Vios, X5, G-Class"
                         required
                     >
+
                 </div>
 
 
+                <!-- YEAR -->
+
                 <div class="form-group">
-                    <label for="modelYear">Model Year</label>
+
+                    <label for="modelYear">
+                        Model Year
+                    </label>
 
                     <input
                         type="number"
@@ -774,10 +991,14 @@ footer {
                         placeholder="e.g. 2022"
                         required
                     >
+
                 </div>
 
 
+                <!-- VALUE -->
+
                 <div class="form-group full">
+
                     <label for="declaredValue">
                         Declared Vehicle Value (₱)
                     </label>
@@ -789,8 +1010,11 @@ footer {
                         placeholder="e.g. 2500000"
                         required
                     >
+
                 </div>
 
+
+                <!-- CUSTOMER -->
 
                 <div class="form-group full">
 
@@ -802,7 +1026,10 @@ footer {
 
 
                 <div class="form-group">
-                    <label for="fullName">Full Name</label>
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
 
                     <input
                         type="text"
@@ -810,11 +1037,15 @@ footer {
                         placeholder="Enter your full name"
                         required
                     >
+
                 </div>
 
 
                 <div class="form-group">
-                    <label for="mobile">Mobile Number</label>
+
+                    <label for="mobile">
+                        Mobile Number
+                    </label>
 
                     <input
                         type="tel"
@@ -822,11 +1053,15 @@ footer {
                         placeholder="09XXXXXXXXX"
                         required
                     >
+
                 </div>
 
 
                 <div class="form-group full">
-                    <label for="email">Email Address</label>
+
+                    <label for="email">
+                        Email Address
+                    </label>
 
                     <input
                         type="email"
@@ -834,8 +1069,11 @@ footer {
                         placeholder="you@example.com"
                         required
                     >
+
                 </div>
 
+
+                <!-- COVERAGE -->
 
                 <div class="form-group full">
 
@@ -843,7 +1081,9 @@ footer {
                         03 — CHOOSE YOUR COVERAGE
                     </div>
 
+
                     <div class="coverage-options">
+
 
                         <div class="coverage-card">
 
@@ -857,7 +1097,9 @@ footer {
 
                             <label for="basic">
 
-                                <strong>Basic Protection</strong>
+                                <strong>
+                                    Basic Protection
+                                </strong>
 
                                 <span>
                                     Essential protection for your vehicle.
@@ -880,7 +1122,9 @@ footer {
 
                             <label for="comprehensive">
 
-                                <strong>Comprehensive</strong>
+                                <strong>
+                                    Comprehensive
+                                </strong>
 
                                 <span>
                                     Broader protection for your vehicle.
@@ -889,6 +1133,7 @@ footer {
                             </label>
 
                         </div>
+
 
                     </div>
 
@@ -912,10 +1157,14 @@ footer {
 </section>
 
 
-<!-- QUOTATION PAGE -->
+<!-- =========================
+     QUOTATION PAGE
+========================= -->
+
 <section id="quotationPage">
 
     <div class="result-card">
+
 
         <div class="result-top">
 
@@ -923,38 +1172,71 @@ footer {
                 DRIVESAFE ESTIMATED QUOTATION
             </div>
 
-            <h2>Your Vehicle Quote</h2>
+            <h2>
+                Your Vehicle Quote
+            </h2>
 
         </div>
 
 
         <div class="result-body">
 
+
             <div class="vehicle-summary">
 
+
                 <div class="summary-item">
-                    <small>Vehicle</small>
+
+                    <small>
+                        Vehicle
+                    </small>
+
                     <strong id="resultVehicle"></strong>
+
                 </div>
 
+
                 <div class="summary-item">
-                    <small>Model Year</small>
+
+                    <small>
+                        Model Year
+                    </small>
+
                     <strong id="resultYear"></strong>
+
                 </div>
 
+
                 <div class="summary-item">
-                    <small>Vehicle Type</small>
+
+                    <small>
+                        Vehicle Type
+                    </small>
+
                     <strong id="resultType"></strong>
+
                 </div>
 
+
                 <div class="summary-item">
-                    <small>Coverage</small>
+
+                    <small>
+                        Coverage
+                    </small>
+
                     <strong id="resultCoverage"></strong>
+
                 </div>
 
+
                 <div class="summary-item">
-                    <small>Declared Value</small>
+
+                    <small>
+                        Declared Value
+                    </small>
+
                     <strong id="resultValue"></strong>
+
                 </div>
 
             </div>
@@ -962,9 +1244,14 @@ footer {
 
             <div class="premium-box">
 
-                <small>Estimated Annual Premium</small>
+                <small>
+                    Estimated Annual Premium
+                </small>
 
-                <div class="premium" id="premiumAmount">
+                <div
+                    class="premium"
+                    id="premiumAmount"
+                >
                     ₱0.00
                 </div>
 
@@ -973,7 +1260,9 @@ footer {
 
             <div class="estimate-note">
 
-                <strong>Important:</strong>
+                <strong>
+                    Important:
+                </strong>
 
                 This quotation is an estimate based on the vehicle
                 information provided. Final premium, coverage,
@@ -988,10 +1277,11 @@ footer {
 
                 <button
                     class="btn btn-primary"
-                    onclick="submitInquiry()"
+                    onclick="submitInquiry(this)"
                 >
                     Submit Inquiry
                 </button>
+
 
                 <button
                     class="btn btn-outline"
@@ -999,6 +1289,7 @@ footer {
                 >
                     Print Quotation
                 </button>
+
 
                 <button
                     class="btn btn-outline"
@@ -1016,7 +1307,10 @@ footer {
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
     <div class="footer-logo">
@@ -1089,7 +1383,9 @@ function scrollToQuote() {
 
 function getQuote() {
 
-    const form = document.getElementById("quoteForm");
+    const form =
+        document.getElementById("quoteForm");
+
 
     if (!form.checkValidity()) {
 
@@ -1103,26 +1399,38 @@ function getQuote() {
     const vehicleType =
         document.getElementById("vehicleType").value;
 
+
     const make =
         document.getElementById("make").value.trim();
+
 
     const model =
         document.getElementById("model").value.trim();
 
+
     const modelYear =
-        parseInt(document.getElementById("modelYear").value);
+        parseInt(
+            document.getElementById("modelYear").value
+        );
+
 
     const declaredValue =
-        parseFloat(document.getElementById("declaredValue").value);
+        parseFloat(
+            document.getElementById("declaredValue").value
+        );
+
 
     const fullName =
         document.getElementById("fullName").value.trim();
 
+
     const mobile =
         document.getElementById("mobile").value.trim();
 
+
     const email =
         document.getElementById("email").value.trim();
+
 
     const coverage =
         document.querySelector(
@@ -1142,16 +1450,21 @@ function getQuote() {
         !coverage
     ) {
 
-        alert("Please complete all required fields.");
+        alert(
+            "Please complete all required fields."
+        );
 
         return;
 
     }
 
 
-    /* INSURANCE RATE */
+    /* =========================
+       INSURANCE RATE
+    ========================= */
 
     let rate;
+
 
     if (coverage === "Comprehensive") {
 
@@ -1164,18 +1477,25 @@ function getQuote() {
     }
 
 
-    /* VEHICLE ADJUSTMENT */
+    /* =========================
+       VEHICLE ADJUSTMENT
+    ========================= */
 
     let adjustment =
         vehicleAdjustments[vehicleType] || 1;
 
 
-    /* VEHICLE AGE ADJUSTMENT */
+    /* =========================
+       VEHICLE AGE ADJUSTMENT
+    ========================= */
 
-    const currentYear = new Date().getFullYear();
+    const currentYear =
+        new Date().getFullYear();
+
 
     const vehicleAge =
         currentYear - modelYear;
+
 
     if (vehicleAge > 5) {
 
@@ -1184,34 +1504,57 @@ function getQuote() {
     }
 
 
-    /* FINAL PREMIUM */
+    /* =========================
+       FINAL PREMIUM
+    ========================= */
 
     const premium =
         declaredValue * rate * adjustment;
 
 
-    /* DISPLAY RESULTS */
+    /* =========================
+       DISPLAY RESULTS
+    ========================= */
 
-    document.getElementById("resultVehicle").textContent =
+    document.getElementById(
+        "resultVehicle"
+    ).textContent =
         make + " " + model;
 
-    document.getElementById("resultYear").textContent =
+
+    document.getElementById(
+        "resultYear"
+    ).textContent =
         modelYear;
 
-    document.getElementById("resultType").textContent =
+
+    document.getElementById(
+        "resultType"
+    ).textContent =
         vehicleType;
 
-    document.getElementById("resultCoverage").textContent =
+
+    document.getElementById(
+        "resultCoverage"
+    ).textContent =
         coverage;
 
-    document.getElementById("resultValue").textContent =
+
+    document.getElementById(
+        "resultValue"
+    ).textContent =
         formatCurrency(declaredValue);
 
-    document.getElementById("premiumAmount").textContent =
+
+    document.getElementById(
+        "premiumAmount"
+    ).textContent =
         formatCurrency(premium);
 
 
-    /* SAVE DATA */
+    /* =========================
+       SAVE DATA
+    ========================= */
 
     window.quoteData = {
 
@@ -1236,27 +1579,40 @@ function getQuote() {
     };
 
 
-    /* HIDE FORM */
+    /* =========================
+       HIDE FORM
+    ========================= */
 
-    document.querySelector(".quote-section").style.display =
-        "none";
-
-    document.querySelector(".features").style.display =
-        "none";
-
-    document.querySelector(".hero").style.display =
-        "none";
+    document.querySelector(
+        ".quote-section"
+    ).style.display = "none";
 
 
-    /* SHOW QUOTATION */
+    document.querySelector(
+        ".features"
+    ).style.display = "none";
 
-    document.getElementById("quotationPage").style.display =
-        "block";
+
+    document.querySelector(
+        ".hero"
+    ).style.display = "none";
+
+
+    /* =========================
+       SHOW QUOTATION
+    ========================= */
+
+    document.getElementById(
+        "quotationPage"
+    ).style.display = "block";
 
 
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
 }
@@ -1268,13 +1624,13 @@ function getQuote() {
 
 function formatCurrency(amount) {
 
-    return "₱" + amount.toLocaleString("en-PH", {
-
-        minimumFractionDigits: 2,
-
-        maximumFractionDigits: 2
-
-    });
+    return "₱" + amount.toLocaleString(
+        "en-PH",
+        {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }
+    );
 
 }
 
@@ -1283,19 +1639,18 @@ function formatCurrency(amount) {
    SUBMIT TO GOOGLE SHEETS
 ========================= */
 
-function submitInquiry() {
+function submitInquiry(button) {
 
     if (!window.quoteData) {
 
-        alert("Please generate a quotation first.");
+        alert(
+            "Please generate a quotation first."
+        );
 
         return;
 
     }
 
-
-    const button =
-        event.currentTarget;
 
     button.disabled = true;
 
@@ -1321,6 +1676,7 @@ function submitInquiry() {
         )
 
     })
+
     .then(() => {
 
         alert(
@@ -1333,6 +1689,7 @@ function submitInquiry() {
             "Submitted";
 
     })
+
     .catch(error => {
 
         console.error(error);
@@ -1357,21 +1714,32 @@ function submitInquiry() {
 
 function backToForm() {
 
-    document.getElementById("quotationPage").style.display =
-        "none";
+    document.getElementById(
+        "quotationPage"
+    ).style.display = "none";
 
-    document.querySelector(".quote-section").style.display =
-        "block";
 
-    document.querySelector(".features").style.display =
-        "block";
+    document.querySelector(
+        ".quote-section"
+    ).style.display = "block";
 
-    document.querySelector(".hero").style.display =
-        "flex";
+
+    document.querySelector(
+        ".features"
+    ).style.display = "block";
+
+
+    document.querySelector(
+        ".hero"
+    ).style.display = "flex";
+
 
     window.scrollTo({
 
-        top: document.getElementById("quoteSection").offsetTop,
+        top:
+            document.getElementById(
+                "quoteSection"
+            ).offsetTop,
 
         behavior: "smooth"
 
