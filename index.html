@@ -63,6 +63,7 @@ header {
     text-transform: uppercase;
 }
 
+
 /* =========================
    HERO
 ========================= */
@@ -77,52 +78,67 @@ header {
     background:
         linear-gradient(
             90deg,
-            #07090d 5%,
-            rgba(7,9,13,0.97) 28%,
-            rgba(7,9,13,0.80) 52%,
-            rgba(7,9,13,0.38) 78%,
-            rgba(7,9,13,0.15) 100%
+            rgba(7, 9, 13, 1) 0%,
+            rgba(7, 9, 13, 0.98) 20%,
+            rgba(7, 9, 13, 0.88) 38%,
+            rgba(7, 9, 13, 0.55) 58%,
+            rgba(7, 9, 13, 0.18) 78%,
+            rgba(7, 9, 13, 0.08) 100%
         ),
-        radial-gradient(
-            circle at 78% 50%,
-            rgba(212,175,55,0.15),
-            transparent 32%
-        ),
-        #07090d;
+        url("images/luxury-car-hero.png");
+
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
 }
+
+/* Subtle dark overlay */
 
 .hero::before {
     content: "";
     position: absolute;
-    width: 650px;
-    height: 650px;
-    right: -180px;
-    top: 30px;
-    border-radius: 50%;
-    border: 1px solid rgba(212,175,55,0.08);
-    box-shadow:
-        0 0 0 80px rgba(212,175,55,0.025),
-        0 0 0 160px rgba(212,175,55,0.018);
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 9, 13, 0.10),
+            rgba(7, 9, 13, 0.15)
+        );
+
+    pointer-events: none;
 }
+
+/* Gold atmospheric glow */
 
 .hero::after {
     content: "";
     position: absolute;
+
     width: 500px;
     height: 500px;
-    border-radius: 50%;
+
     right: -180px;
-    top: 100px;
-    background: rgba(212,175,55,0.10);
-    filter: blur(90px);
+    top: 120px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.08);
+
+    filter: blur(100px);
+
+    pointer-events: none;
 }
 
 .hero-content {
     width: 1250px;
     max-width: 92%;
     margin: auto;
+
     position: relative;
     z-index: 2;
+
+    padding: 70px 0;
 }
 
 .hero-small {
@@ -195,6 +211,7 @@ header {
     transform: translateY(-3px);
 }
 
+
 /* Decorative hero text */
 
 .hero-badge {
@@ -214,6 +231,7 @@ header {
     height: 1px;
     background: #d4af37;
 }
+
 
 /* =========================
    FEATURES
@@ -264,6 +282,7 @@ header {
     font-size: 14px;
 }
 
+
 /* =========================
    QUOTE SECTION
 ========================= */
@@ -302,6 +321,7 @@ header {
     color: #8d929b;
     margin-top: 12px;
 }
+
 
 /* =========================
    FORM CARD
@@ -381,6 +401,7 @@ select option {
     background: #0d1016;
 }
 
+
 /* =========================
    COVERAGE
 ========================= */
@@ -438,6 +459,7 @@ select option {
     padding: 18px;
     font-size: 14px;
 }
+
 
 /* =========================
    QUOTATION RESULT
@@ -521,7 +543,10 @@ select option {
     font-size: 15px;
 }
 
-/* Premium */
+
+/* =========================
+   PREMIUM
+========================= */
 
 .premium-box {
     text-align: center;
@@ -549,7 +574,10 @@ select option {
     margin-top: 8px;
 }
 
-/* Estimate note */
+
+/* =========================
+   ESTIMATE NOTE
+========================= */
 
 .estimate-note {
     margin-top: 25px;
@@ -564,7 +592,10 @@ select option {
     color: #d4af37;
 }
 
-/* Result actions */
+
+/* =========================
+   RESULT ACTIONS
+========================= */
 
 .result-actions {
     display: flex;
@@ -576,6 +607,7 @@ select option {
 .result-actions .btn {
     flex: 1;
 }
+
 
 /* =========================
    FOOTER
@@ -601,6 +633,7 @@ footer {
     color: #d4af37;
 }
 
+
 /* =========================
    MOBILE
 ========================= */
@@ -620,11 +653,25 @@ footer {
     }
 
     .hero {
-        min-height: 650px;
+        min-height: 700px;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(7, 9, 13, 0.96) 0%,
+                rgba(7, 9, 13, 0.86) 35%,
+                rgba(7, 9, 13, 0.55) 65%,
+                rgba(7, 9, 13, 0.35) 100%
+            ),
+            url("images/luxury-car-hero.png");
+
+        background-size: cover;
+        background-position: 62% center;
     }
 
     .hero-content {
         max-width: 88%;
+        padding: 60px 0;
     }
 
     .hero h1 {
@@ -704,6 +751,7 @@ footer {
     }
 }
 
+
 /* =========================
    PRINT
 ========================= */
@@ -743,15 +791,25 @@ footer {
 
 <body>
 
+
 <!-- =========================
      HEADER
 ========================= -->
 
 <header>
+
     <div class="navbar">
-        <div class="logo">Drive<span>Safe</span></div>
-        <div class="nav-label">Premium Car Insurance</div>
+
+        <div class="logo">
+            Drive<span>Safe</span>
+        </div>
+
+        <div class="nav-label">
+            Premium Car Insurance
+        </div>
+
     </div>
+
 </header>
 
 
@@ -814,35 +872,53 @@ footer {
     <div class="feature-container">
 
         <div class="feature">
-            <div class="feature-number">01</div>
 
-            <h3>Premium Vehicles</h3>
+            <div class="feature-number">
+                01
+            </div>
+
+            <h3>
+                Premium Vehicles
+            </h3>
 
             <p>
                 Designed for imported, luxury, and high-value cars.
             </p>
+
         </div>
 
 
         <div class="feature">
-            <div class="feature-number">02</div>
 
-            <h3>Simple Quotation</h3>
+            <div class="feature-number">
+                02
+            </div>
+
+            <h3>
+                Simple Quotation
+            </h3>
 
             <p>
                 Get an estimated premium using your vehicle details.
             </p>
+
         </div>
 
 
         <div class="feature">
-            <div class="feature-number">03</div>
 
-            <h3>Drive With Confidence</h3>
+            <div class="feature-number">
+                03
+            </div>
+
+            <h3>
+                Drive With Confidence
+            </h3>
 
             <p>
                 A clear and convenient starting point for your insurance inquiry.
             </p>
+
         </div>
 
     </div>
@@ -862,7 +938,9 @@ footer {
             GET STARTED
         </div>
 
-        <h2>Request Your Quotation</h2>
+        <h2>
+            Request Your Quotation
+        </h2>
 
         <p>
             Provide your vehicle and contact information below
@@ -1253,513 +1331,4 @@ footer {
                     id="premiumAmount"
                 >
                     ₱0.00
-                </div>
-
-            </div>
-
-
-            <div class="estimate-note">
-
-                <strong>
-                    Important:
-                </strong>
-
-                This quotation is an estimate based on the vehicle
-                information provided. Final premium, coverage,
-                eligibility, and policy terms are subject to final
-                assessment and the applicable insurance policy terms
-                and conditions.
-
-            </div>
-
-
-            <div class="result-actions">
-
-                <button
-                    class="btn btn-primary"
-                    onclick="submitInquiry(this)"
-                >
-                    Submit Inquiry
-                </button>
-
-
-                <button
-                    class="btn btn-outline"
-                    onclick="window.print()"
-                >
-                    Print Quotation
-                </button>
-
-
-                <button
-                    class="btn btn-outline"
-                    onclick="backToForm()"
-                >
-                    Back to Form
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <div class="footer-logo">
-        Drive<span>Safe</span>
-    </div>
-
-    <p>
-        Premium Car Insurance Quotation
-    </p>
-
-    <p style="margin-top:8px;">
-        Contact: 09357991457
-        &nbsp; | &nbsp;
-        shineramiento894@gmail.com
-    </p>
-
-    <p style="margin-top:15px;">
-        © 2026 DriveSafe. All rights reserved.
-    </p>
-
-</footer>
-
-
-<script>
-
-/* =========================
-   GOOGLE APPS SCRIPT
-========================= */
-
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbx74ZnXI2JkLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
-
-
-/* =========================
-   VEHICLE ADJUSTMENTS
-========================= */
-
-const vehicleAdjustments = {
-
-    Sedan: 1.00,
-    SUV: 1.10,
-    Hatchback: 1.00,
-    Pickup: 1.12,
-    MPV: 1.08,
-    Van: 1.10,
-    Coupe: 1.15,
-    Convertible: 1.20,
-    Wagon: 1.05
-
-};
-
-
-/* =========================
-   SCROLL TO QUOTE
-========================= */
-
-function scrollToQuote() {
-
-    document.getElementById("quoteSection")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-
-}
-
-
-/* =========================
-   GET QUOTATION
-========================= */
-
-function getQuote() {
-
-    const form =
-        document.getElementById("quoteForm");
-
-
-    if (!form.checkValidity()) {
-
-        form.reportValidity();
-
-        return;
-
-    }
-
-
-    const vehicleType =
-        document.getElementById("vehicleType").value;
-
-
-    const make =
-        document.getElementById("make").value.trim();
-
-
-    const model =
-        document.getElementById("model").value.trim();
-
-
-    const modelYear =
-        parseInt(
-            document.getElementById("modelYear").value
-        );
-
-
-    const declaredValue =
-        parseFloat(
-            document.getElementById("declaredValue").value
-        );
-
-
-    const fullName =
-        document.getElementById("fullName").value.trim();
-
-
-    const mobile =
-        document.getElementById("mobile").value.trim();
-
-
-    const email =
-        document.getElementById("email").value.trim();
-
-
-    const coverage =
-        document.querySelector(
-            'input[name="coverage"]:checked'
-        ).value;
-
-
-    if (
-        !vehicleType ||
-        !make ||
-        !model ||
-        !modelYear ||
-        !declaredValue ||
-        !fullName ||
-        !mobile ||
-        !email ||
-        !coverage
-    ) {
-
-        alert(
-            "Please complete all required fields."
-        );
-
-        return;
-
-    }
-
-
-    /* =========================
-       INSURANCE RATE
-    ========================= */
-
-    let rate;
-
-
-    if (coverage === "Comprehensive") {
-
-        rate = 0.025;
-
-    } else {
-
-        rate = 0.015;
-
-    }
-
-
-    /* =========================
-       VEHICLE ADJUSTMENT
-    ========================= */
-
-    let adjustment =
-        vehicleAdjustments[vehicleType] || 1;
-
-
-    /* =========================
-       VEHICLE AGE ADJUSTMENT
-    ========================= */
-
-    const currentYear =
-        new Date().getFullYear();
-
-
-    const vehicleAge =
-        currentYear - modelYear;
-
-
-    if (vehicleAge > 5) {
-
-        adjustment *= 1.05;
-
-    }
-
-
-    /* =========================
-       FINAL PREMIUM
-    ========================= */
-
-    const premium =
-        declaredValue * rate * adjustment;
-
-
-    /* =========================
-       DISPLAY RESULTS
-    ========================= */
-
-    document.getElementById(
-        "resultVehicle"
-    ).textContent =
-        make + " " + model;
-
-
-    document.getElementById(
-        "resultYear"
-    ).textContent =
-        modelYear;
-
-
-    document.getElementById(
-        "resultType"
-    ).textContent =
-        vehicleType;
-
-
-    document.getElementById(
-        "resultCoverage"
-    ).textContent =
-        coverage;
-
-
-    document.getElementById(
-        "resultValue"
-    ).textContent =
-        formatCurrency(declaredValue);
-
-
-    document.getElementById(
-        "premiumAmount"
-    ).textContent =
-        formatCurrency(premium);
-
-
-    /* =========================
-       SAVE DATA
-    ========================= */
-
-    window.quoteData = {
-
-        name: fullName,
-
-        mobile: mobile,
-
-        email: email,
-
-        vehicle: make + " " + model,
-
-        modelYear: modelYear,
-
-        bodyType: vehicleType,
-
-        coverage: coverage,
-
-        declaredValue: declaredValue,
-
-        estimatedPremium: premium
-
-    };
-
-
-    /* =========================
-       HIDE FORM
-    ========================= */
-
-    document.querySelector(
-        ".quote-section"
-    ).style.display = "none";
-
-
-    document.querySelector(
-        ".features"
-    ).style.display = "none";
-
-
-    document.querySelector(
-        ".hero"
-    ).style.display = "none";
-
-
-    /* =========================
-       SHOW QUOTATION
-    ========================= */
-
-    document.getElementById(
-        "quotationPage"
-    ).style.display = "block";
-
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-}
-
-
-/* =========================
-   FORMAT CURRENCY
-========================= */
-
-function formatCurrency(amount) {
-
-    return "₱" + amount.toLocaleString(
-        "en-PH",
-        {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        }
-    );
-
-}
-
-
-/* =========================
-   SUBMIT TO GOOGLE SHEETS
-========================= */
-
-function submitInquiry(button) {
-
-    if (!window.quoteData) {
-
-        alert(
-            "Please generate a quotation first."
-        );
-
-        return;
-
-    }
-
-
-    button.disabled = true;
-
-    button.textContent =
-        "Submitting...";
-
-
-    fetch(SCRIPT_URL, {
-
-        method: "POST",
-
-        mode: "no-cors",
-
-        headers: {
-
-            "Content-Type":
-                "application/json"
-
-        },
-
-        body: JSON.stringify(
-            window.quoteData
-        )
-
-    })
-
-    .then(() => {
-
-        alert(
-            "Thank you! Your quotation inquiry has been submitted successfully."
-        );
-
-        button.disabled = false;
-
-        button.textContent =
-            "Submitted";
-
-    })
-
-    .catch(error => {
-
-        console.error(error);
-
-        alert(
-            "Your inquiry could not be submitted. Please try again."
-        );
-
-        button.disabled = false;
-
-        button.textContent =
-            "Submit Inquiry";
-
-    });
-
-}
-
-
-/* =========================
-   BACK TO FORM
-========================= */
-
-function backToForm() {
-
-    document.getElementById(
-        "quotationPage"
-    ).style.display = "none";
-
-
-    document.querySelector(
-        ".quote-section"
-    ).style.display = "block";
-
-
-    document.querySelector(
-        ".features"
-    ).style.display = "block";
-
-
-    document.querySelector(
-        ".hero"
-    ).style.display = "flex";
-
-
-    window.scrollTo({
-
-        top:
-            document.getElementById(
-                "quoteSection"
-            ).offsetTop,
-
-        behavior: "smooth"
-
-    });
-
-}
-
-
-/* =========================
-   INQUIRY EMAIL
-========================= */
-
-function emailInquiry() {
-
-    window.location.href =
-        "mailto:shineramiento894@gmail.com";
-
-}
-
-</script>
-
-</body>
-</html>
+                </
