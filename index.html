@@ -4,19 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DriveSafe | Imported & Premium Car Insurance</title>
+<title>DriveSafe | Premium Car Insurance</title>
 
 <style>
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background: #eef3f8;
-    color: #172b4d;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07090d;
+    color: #f5f5f5;
     line-height: 1.6;
 }
 
@@ -25,20 +29,38 @@ body {
 ========================= */
 
 header {
-    background: linear-gradient(135deg, #063970, #0b5cad);
-    color: white;
-    padding: 35px 20px;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(7, 9, 13, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    backdrop-filter: blur(12px);
 }
 
-header h1 {
-    font-size: 36px;
-    margin-bottom: 8px;
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header p {
-    font-size: 17px;
-    opacity: 0.95;
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+.nav-label {
+    font-size: 13px;
+    color: #aaa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* =========================
@@ -46,150 +68,243 @@ header p {
 ========================= */
 
 .hero {
-    max-width: 1000px;
-    margin: 25px auto;
-    padding: 55px 30px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #0b5cad, #062e5f);
-    color: white;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, #07090d 15%, rgba(7,9,13,0.86) 45%, rgba(7,9,13,0.25) 100%),
+        radial-gradient(circle at 75% 45%, rgba(212,175,55,0.14), transparent 35%),
+        #07090d;
 }
 
-.hero-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.15);
-    padding: 8px 18px;
-    border-radius: 30px;
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    right: -180px;
+    top: 80px;
+    background: rgba(212,175,55,0.08);
+    filter: blur(60px);
+}
+
+.hero-content {
+    width: 1200px;
+    max-width: 92%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-small {
+    color: #d4af37;
     font-size: 13px;
-    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
 }
 
-.hero h2 {
-    font-size: 40px;
-    margin-bottom: 12px;
+.hero h1 {
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 0.98;
+    max-width: 760px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
 }
 
-.hero h2 span {
-    color: #8ed0ff;
+.hero h1 span {
+    color: #d4af37;
 }
 
 .hero p {
-    max-width: 700px;
-    margin: auto;
-    font-size: 17px;
-    opacity: 0.95;
-}
-
-.hero button {
+    max-width: 620px;
     margin-top: 25px;
-    background: white;
-    color: #0757a6;
-    border: none;
-    padding: 15px 32px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
+    color: #b7b7b7;
+    font-size: 17px;
 }
 
-.hero button:hover {
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    padding: 16px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.25s;
+}
+
+.btn-primary {
+    background: #d4af37;
+    color: #08090b;
+}
+
+.btn-primary:hover {
+    background: #f0cd55;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+}
+
+.btn-outline:hover {
+    border-color: #d4af37;
+    color: #d4af37;
 }
 
 /* =========================
-   BENEFITS
+   FEATURES
 ========================= */
 
-.benefits {
-    max-width: 1000px;
-    margin: 25px auto;
+.features {
+    background: #0d1016;
+    border-top: 1px solid #191d25;
+    border-bottom: 1px solid #191d25;
+}
+
+.feature-container {
+    max-width: 1200px;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 0 15px;
 }
 
-.benefit {
-    background: white;
-    padding: 25px 15px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+.feature {
+    padding: 35px 30px;
+    border-right: 1px solid #20242c;
 }
 
-.benefit .icon {
-    font-size: 32px;
-    margin-bottom: 8px;
+.feature:last-child {
+    border-right: none;
 }
 
-.benefit h3 {
-    margin-bottom: 5px;
-    color: #063970;
+.feature-number {
+    color: #d4af37;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.benefit p {
+.feature h3 {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+.feature p {
+    margin-top: 7px;
+    color: #858a93;
     font-size: 14px;
-    color: #667085;
 }
 
 /* =========================
-   FORM CONTAINER
+   QUOTE SECTION
 ========================= */
 
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-    background: white;
-    padding: 35px;
-    border-radius: 18px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+.quote-section {
+    padding: 90px 20px;
+    background: #080a0f;
 }
 
-.section-title {
-    font-size: 24px;
-    color: #063970;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e8eef5;
-    padding-bottom: 10px;
+.section-header {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 45px;
 }
 
-.form-section {
-    margin-bottom: 35px;
+.section-label {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.section-header h2 {
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+.section-header p {
+    color: #8d929b;
+    margin-top: 12px;
+}
+
+.form-card {
+    max-width: 950px;
+    margin: auto;
+    background: linear-gradient(145deg, #11151c, #0b0e13);
+    border: 1px solid #272c35;
+    border-radius: 12px;
+    padding: 45px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.45);
+}
+
+.form-title {
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 5px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
 }
 
 label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 7px;
-    color: #344054;
+    color: #d9d9d9;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
 input,
 select {
     width: 100%;
-    padding: 13px;
-    border: 1px solid #ccd5df;
-    border-radius: 8px;
+    padding: 15px;
+    background: #080b10;
+    border: 1px solid #303640;
+    border-radius: 5px;
+    color: white;
     font-size: 15px;
     outline: none;
+    transition: 0.2s;
 }
 
 input:focus,
 select:focus {
-    border-color: #0b5cad;
-    box-shadow: 0 0 0 3px rgba(11,92,173,0.1);
+    border-color: #d4af37;
+    box-shadow: 0 0 0 2px rgba(212,175,55,0.08);
 }
 
-/* =========================
-   COVERAGE
-========================= */
+select option {
+    background: #0d1016;
+}
 
 .coverage-options {
     display: grid;
@@ -198,223 +313,157 @@ select:focus {
 }
 
 .coverage-card {
-    border: 2px solid #d8e0e8;
-    border-radius: 12px;
-    padding: 18px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.coverage-card:hover {
-    border-color: #0b5cad;
+    position: relative;
 }
 
 .coverage-card input {
-    width: auto;
-    margin-right: 8px;
+    position: absolute;
+    opacity: 0;
 }
 
-.coverage-card strong {
-    color: #063970;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.button-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    border: none;
-    padding: 14px 22px;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: bold;
+.coverage-card label {
+    border: 1px solid #303640;
+    padding: 20px;
+    border-radius: 6px;
     cursor: pointer;
     transition: 0.2s;
+    height: 100%;
 }
 
-.btn:hover {
-    transform: translateY(-1px);
+.coverage-card label strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
-.btn-primary {
-    background: #0b5cad;
-    color: white;
-    flex: 1;
+.coverage-card label span {
+    color: #858a93;
+    font-size: 13px;
+    font-weight: normal;
 }
 
-.btn-primary:hover {
-    background: #084984;
+.coverage-card input:checked + label {
+    border-color: #d4af37;
+    background: rgba(212,175,55,0.07);
 }
 
-.btn-secondary {
-    background: #e9eef4;
-    color: #344054;
-}
-
-.btn-success {
-    background: #198754;
-    color: white;
+.form-submit {
+    margin-top: 30px;
+    width: 100%;
+    padding: 18px;
 }
 
 /* =========================
-   QUOTATION PAGE
+   QUOTATION RESULT
 ========================= */
 
 #quotationPage {
     display: none;
-    max-width: 900px;
-    margin: 35px auto;
-    background: white;
-    border-radius: 18px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.12);
-    overflow: hidden;
+    min-height: 100vh;
+    padding: 80px 20px;
+    background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 35%),
+        #080a0f;
 }
 
-.quotation-header {
-    background: linear-gradient(135deg, #063970, #0b5cad);
-    color: white;
-    text-align: center;
-    padding: 35px 20px;
-}
-
-.quotation-header h2 {
-    font-size: 30px;
-    margin-bottom: 5px;
-}
-
-.quotation-header p {
-    opacity: 0.9;
-}
-
-.quotation-body {
-    padding: 35px;
-}
-
-.quote-number {
-    text-align: right;
-    color: #667085;
-    font-size: 13px;
-    margin-bottom: 25px;
-}
-
-.quote-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.info-box {
-    background: #f6f8fa;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.info-box span {
-    display: block;
-    color: #667085;
-    font-size: 13px;
-    margin-bottom: 3px;
-}
-
-.info-box strong {
-    font-size: 16px;
-    color: #172b4d;
-}
-
-/* =========================
-   PREMIUM
-========================= */
-
-.premium-box {
-    margin: 25px 0;
-    padding: 28px;
+.result-card {
+    max-width: 850px;
+    margin: auto;
+    background: #11151c;
+    border: 1px solid #303640;
     border-radius: 12px;
-    background: #edf6ff;
-    text-align: center;
-    border: 2px solid #b9dcfa;
+    overflow: hidden;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.5);
 }
 
-.premium-box p {
-    color: #526581;
-    margin-bottom: 5px;
+.result-top {
+    padding: 35px;
+    border-bottom: 1px solid #292e37;
+}
+
+.result-label {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 3px;
     font-weight: bold;
 }
 
-.premium-box h3 {
-    font-size: 40px;
-    color: #063970;
+.result-top h2 {
+    font-size: 34px;
+    margin-top: 8px;
 }
 
-.premium-note {
-    font-size: 13px;
-    color: #667085;
-    margin-top: 5px;
+.result-body {
+    padding: 35px;
 }
 
-/* =========================
-   NOTICE
-========================= */
+.vehicle-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
 
-.quotation-notice {
-    background: #fff8e6;
-    border-left: 5px solid #e0a800;
-    padding: 15px;
-    margin: 20px 0;
-    font-size: 13px;
-    color: #624b00;
+.summary-item {
+    background: #090c11;
+    border: 1px solid #242932;
+    padding: 18px;
     border-radius: 5px;
 }
 
-/* =========================
-   QUOTATION FOOTER
-========================= */
-
-.quotation-footer {
-    border-top: 1px solid #e5e7eb;
-    padding-top: 25px;
-    margin-top: 25px;
+.summary-item small {
+    color: #777d87;
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.quotation-footer p {
-    font-size: 13px;
-    color: #667085;
-    margin-bottom: 15px;
+.summary-item strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 15px;
 }
 
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-    max-width: 900px;
-    margin: 25px auto 50px;
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
+.premium-box {
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.025));
+    border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 8px;
 }
 
-.contact h2 {
-    color: #063970;
-    margin-bottom: 10px;
+.premium-box small {
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.contact p {
-    color: #667085;
-    margin-bottom: 15px;
+.premium {
+    color: #d4af37;
+    font-size: clamp(40px, 8vw, 64px);
+    font-weight: 800;
+    margin-top: 8px;
 }
 
-.contact-info {
-    margin: 15px 0;
-    line-height: 1.9;
+.estimate-note {
+    margin-top: 25px;
+    padding: 18px;
+    background: #0a0d12;
+    border-left: 3px solid #d4af37;
+    color: #8d929b;
+    font-size: 13px;
+}
+
+.result-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.result-actions .btn {
+    flex: 1;
 }
 
 /* =========================
@@ -422,60 +471,106 @@ select:focus {
 ========================= */
 
 footer {
+    background: #05070a;
+    border-top: 1px solid #1b1f27;
+    padding: 35px 20px;
     text-align: center;
-    padding: 25px;
-    background: #063970;
-    color: white;
+    color: #6e737d;
     font-size: 13px;
+}
+
+.footer-logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.footer-logo span {
+    color: #d4af37;
 }
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
-    header h1 {
-        font-size: 28px;
+    .navbar {
+        padding: 16px 18px;
+    }
+
+    .nav-label {
+        display: none;
     }
 
     .hero {
-        margin: 15px;
-        padding: 40px 20px;
+        min-height: 600px;
     }
 
-    .hero h2 {
-        font-size: 29px;
+    .hero h1 {
+        font-size: 48px;
     }
 
-    .benefits {
+    .hero p {
+        font-size: 15px;
+    }
+
+    .feature-container {
         grid-template-columns: 1fr;
+    }
+
+    .feature {
+        border-right: none;
+        border-bottom: 1px solid #20242c;
+    }
+
+    .feature:last-child {
+        border-bottom: none;
+    }
+
+    .quote-section {
+        padding: 65px 15px;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .form-card {
+        padding: 25px 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
     }
 
     .coverage-options {
         grid-template-columns: 1fr;
     }
 
-    .container,
-    .quotation-body {
-        padding: 22px;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
-    .quote-info {
+    .vehicle-summary {
         grid-template-columns: 1fr;
     }
 
-    .premium-box h3 {
-        font-size: 30px;
+    .result-body,
+    .result-top {
+        padding: 25px 20px;
     }
 
-    .button-row {
+    .result-top h2 {
+        font-size: 28px;
+    }
+
+    .result-actions {
         flex-direction: column;
     }
 
-    .btn {
+    .result-actions .btn {
         width: 100%;
     }
 }
@@ -488,625 +583,429 @@ footer {
 
     body {
         background: white;
+        color: black;
     }
 
     header,
+    .features,
     .hero,
-    .benefits,
-    .container,
-    .contact,
-    footer {
+    footer,
+    .result-actions {
         display: none !important;
     }
 
     #quotationPage {
         display: block !important;
+        background: white;
+        padding: 0;
+    }
+
+    .result-card {
         box-shadow: none;
-        margin: 0;
-        width: 100%;
+        border: 1px solid #ccc;
     }
 
-    .quotation-footer .button-row {
-        display: none !important;
+    .premium {
+        color: black;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
+<!-- HEADER -->
 <header>
-
-    <h1>🚗 DriveSafe</h1>
-
-    <p>
-        Imported & Premium Car Insurance Quotations
-    </p>
-
+    <div class="navbar">
+        <div class="logo">Drive<span>Safe</span></div>
+        <div class="nav-label">Premium Car Insurance</div>
+    </div>
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
+<section class="hero" id="home">
 
-<section class="hero">
+    <div class="hero-content">
 
-    <div class="hero-badge">
-        PHILIPPINE CAR INSURANCE QUOTATION
-    </div>
-
-    <h2>
-        Protect Your <span>Imported Car</span>
-    </h2>
-
-    <p>
-        Get an estimated car insurance quotation based on
-        your vehicle details. Designed for imported, premium,
-        and high-value vehicles.
-    </p>
-
-    <button onclick="scrollToQuote()">
-        GET QUOTE →
-    </button>
-
-</section>
-
-
-<!-- =========================
-     BENEFITS
-========================= -->
-
-<section class="benefits">
-
-    <div class="benefit">
-
-        <div class="icon">
-            🚘
+        <div class="hero-small">
+            PHILIPPINE CAR INSURANCE QUOTATION
         </div>
 
-        <h3>
-            Premium Vehicles
-        </h3>
+        <h1>
+            Protect Your
+            <span>Premium Car.</span>
+        </h1>
 
         <p>
-            Designed for imported, premium, and high-value vehicles.
+            Get an estimated car insurance quotation for imported,
+            premium, and high-value vehicles in the Philippines.
+            Drive with confidence. Protect what matters.
         </p>
 
-    </div>
+        <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="scrollToQuote()">
+                Get Your Quotation
+            </button>
 
-
-    <div class="benefit">
-
-        <div class="icon">
-            ⚡
+            <button class="btn btn-outline" onclick="scrollToQuote()">
+                View Coverage
+            </button>
         </div>
-
-        <h3>
-            Simple Process
-        </h3>
-
-        <p>
-            Enter your vehicle details and request an estimated quotation.
-        </p>
-
-    </div>
-
-
-    <div class="benefit">
-
-        <div class="icon">
-            🛡️
-        </div>
-
-        <h3>
-            Flexible Coverage
-        </h3>
-
-        <p>
-            Choose the available coverage option that suits your vehicle.
-        </p>
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     QUOTE FORM
-========================= -->
+<!-- FEATURES -->
+<section class="features">
 
-<section class="container" id="inquiry">
+    <div class="feature-container">
 
-    <!-- VEHICLE INFORMATION -->
-
-    <div class="form-section">
-
-        <h2 class="section-title">
-            Vehicle Information
-        </h2>
-
-
-        <div class="form-group">
-
-            <label for="vehicleType">
-                Vehicle Type
-            </label>
-
-            <select id="vehicleType" required>
-
-                <option value="">
-                    Select vehicle type
-                </option>
-
-                <option value="Sedan">
-                    Sedan
-                </option>
-
-                <option value="SUV">
-                    SUV
-                </option>
-
-                <option value="Hatchback">
-                    Hatchback
-                </option>
-
-                <option value="Pickup">
-                    Pickup
-                </option>
-
-                <option value="MPV">
-                    MPV
-                </option>
-
-                <option value="Van">
-                    Van
-                </option>
-
-                <option value="Coupe">
-                    Coupe
-                </option>
-
-                <option value="Convertible">
-                    Convertible
-                </option>
-
-                <option value="Wagon">
-                    Wagon
-                </option>
-
-            </select>
-
+        <div class="feature">
+            <div class="feature-number">01</div>
+            <h3>Premium Vehicles</h3>
+            <p>
+                Designed for imported, luxury, and high-value cars.
+            </p>
         </div>
 
-
-        <div class="form-group">
-
-            <label for="make">
-                Vehicle Make
-            </label>
-
-            <input
-                type="text"
-                id="make"
-                placeholder="Example: BMW, Mercedes-Benz, Lexus"
-                required
-            >
-
+        <div class="feature">
+            <div class="feature-number">02</div>
+            <h3>Simple Quotation</h3>
+            <p>
+                Get an estimated premium using your vehicle details.
+            </p>
         </div>
 
-
-        <div class="form-group">
-
-            <label for="model">
-                Vehicle Model
-            </label>
-
-            <input
-                type="text"
-                id="model"
-                placeholder="Example: X5, G-Class, LX 600"
-                required
-            >
-
+        <div class="feature">
+            <div class="feature-number">03</div>
+            <h3>Drive With Confidence</h3>
+            <p>
+                A clear and convenient starting point for your insurance inquiry.
+            </p>
         </div>
-
-
-        <div class="form-group">
-
-            <label for="modelYear">
-                Model Year
-            </label>
-
-            <input
-                type="number"
-                id="modelYear"
-                min="1900"
-                max="2026"
-                placeholder="Example: 2024"
-                required
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="declaredValue">
-                Estimated Vehicle Value (₱)
-            </label>
-
-            <input
-                type="number"
-                id="declaredValue"
-                min="1"
-                placeholder="Example: 2500000"
-                required
-            >
-
-        </div>
-
-    </div>
-
-
-    <!-- CUSTOMER INFORMATION -->
-
-    <div class="form-section">
-
-        <h2 class="section-title">
-            Customer Information
-        </h2>
-
-
-        <div class="form-group">
-
-            <label for="fullName">
-                Full Name
-            </label>
-
-            <input
-                type="text"
-                id="fullName"
-                placeholder="Enter your full name"
-                required
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="mobile">
-                Mobile Number
-            </label>
-
-            <input
-                type="tel"
-                id="mobile"
-                placeholder="Example: 09XXXXXXXXX"
-                required
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="email">
-                Email Address
-            </label>
-
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                required
-            >
-
-        </div>
-
-    </div>
-
-
-    <!-- COVERAGE -->
-
-    <div class="form-section">
-
-        <h2 class="section-title">
-            Choose Your Coverage
-        </h2>
-
-
-        <div class="coverage-options">
-
-
-            <label class="coverage-card">
-
-                <input
-                    type="radio"
-                    name="coverage"
-                    value="Basic Protection"
-                    required
-                >
-
-                <strong>
-                    Basic Protection
-                </strong>
-
-                <br>
-
-                <small>
-                    Basic vehicle protection option.
-                </small>
-
-            </label>
-
-
-            <label class="coverage-card">
-
-                <input
-                    type="radio"
-                    name="coverage"
-                    value="Comprehensive"
-                >
-
-                <strong>
-                    Comprehensive
-                </strong>
-
-                <br>
-
-                <small>
-                    Broader protection for your vehicle.
-                </small>
-
-            </label>
-
-
-        </div>
-
-    </div>
-
-
-    <!-- BUTTONS -->
-
-    <div class="button-row">
-
-        <button
-            class="btn btn-primary"
-            onclick="getQuote()"
-        >
-            GET QUOTE
-        </button>
-
-
-        <button
-            class="btn btn-secondary"
-            onclick="resetForm()"
-        >
-            RESET
-        </button>
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     QUOTATION PAGE
-========================= -->
+<!-- QUOTE FORM -->
+<section class="quote-section" id="quoteSection">
 
+    <div class="section-header">
+
+        <div class="section-label">
+            GET STARTED
+        </div>
+
+        <h2>Request Your Quotation</h2>
+
+        <p>
+            Provide your vehicle and contact information below
+            to receive an estimated insurance quotation.
+        </p>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <div class="form-title">
+            01 — VEHICLE INFORMATION
+        </div>
+
+        <form id="quoteForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="vehicleType">Vehicle Type</label>
+
+                    <select id="vehicleType" required>
+                        <option value="">Select vehicle type</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Hatchback">Hatchback</option>
+                        <option value="Pickup">Pickup</option>
+                        <option value="MPV">MPV</option>
+                        <option value="Van">Van</option>
+                        <option value="Coupe">Coupe</option>
+                        <option value="Convertible">Convertible</option>
+                        <option value="Wagon">Wagon</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="make">Vehicle Make</label>
+
+                    <input
+                        type="text"
+                        id="make"
+                        placeholder="e.g. Toyota, BMW, Mercedes-Benz"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="model">Vehicle Model</label>
+
+                    <input
+                        type="text"
+                        id="model"
+                        placeholder="e.g. Vios, X5, G-Class"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="modelYear">Model Year</label>
+
+                    <input
+                        type="number"
+                        id="modelYear"
+                        min="1980"
+                        max="2026"
+                        placeholder="e.g. 2022"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group full">
+                    <label for="declaredValue">
+                        Declared Vehicle Value (₱)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="declaredValue"
+                        min="1"
+                        placeholder="e.g. 2500000"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group full">
+
+                    <div class="form-title">
+                        02 — YOUR INFORMATION
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="09XXXXXXXXX"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group full">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group full">
+
+                    <div class="form-title">
+                        03 — CHOOSE YOUR COVERAGE
+                    </div>
+
+                    <div class="coverage-options">
+
+                        <div class="coverage-card">
+
+                            <input
+                                type="radio"
+                                id="basic"
+                                name="coverage"
+                                value="Basic"
+                                required
+                            >
+
+                            <label for="basic">
+
+                                <strong>Basic Protection</strong>
+
+                                <span>
+                                    Essential protection for your vehicle.
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="coverage-card">
+
+                            <input
+                                type="radio"
+                                id="comprehensive"
+                                name="coverage"
+                                value="Comprehensive"
+                                checked
+                            >
+
+                            <label for="comprehensive">
+
+                                <strong>Comprehensive</strong>
+
+                                <span>
+                                    Broader protection for your vehicle.
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="btn btn-primary form-submit"
+                onclick="getQuote()"
+            >
+                Get My Quotation
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTATION PAGE -->
 <section id="quotationPage">
 
-    <div class="quotation-header">
+    <div class="result-card">
 
-        <h2>
-            YOUR CAR INSURANCE QUOTATION
-        </h2>
+        <div class="result-top">
 
-        <p>
-            DriveSafe Estimated Premium
-        </p>
+            <div class="result-label">
+                DRIVESAFE ESTIMATED QUOTATION
+            </div>
 
-    </div>
-
-
-    <div class="quotation-body">
-
-
-        <div class="quote-number">
-
-            Quotation No.:
-            <strong id="quoteNumber"></strong>
+            <h2>Your Vehicle Quote</h2>
 
         </div>
 
 
-        <!-- CUSTOMER / VEHICLE DETAILS -->
+        <div class="result-body">
 
-        <div class="quote-info">
+            <div class="vehicle-summary">
 
+                <div class="summary-item">
+                    <small>Vehicle</small>
+                    <strong id="resultVehicle"></strong>
+                </div>
 
-            <div class="info-box">
+                <div class="summary-item">
+                    <small>Model Year</small>
+                    <strong id="resultYear"></strong>
+                </div>
 
-                <span>
-                    Customer Name
-                </span>
+                <div class="summary-item">
+                    <small>Vehicle Type</small>
+                    <strong id="resultType"></strong>
+                </div>
 
-                <strong id="quoteName">
-                </strong>
+                <div class="summary-item">
+                    <small>Coverage</small>
+                    <strong id="resultCoverage"></strong>
+                </div>
 
-            </div>
-
-
-            <div class="info-box">
-
-                <span>
-                    Mobile Number
-                </span>
-
-                <strong id="quoteMobile">
-                </strong>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <span>
-                    Email Address
-                </span>
-
-                <strong id="quoteEmail">
-                </strong>
+                <div class="summary-item">
+                    <small>Declared Value</small>
+                    <strong id="resultValue"></strong>
+                </div>
 
             </div>
 
 
-            <div class="info-box">
+            <div class="premium-box">
 
-                <span>
-                    Vehicle
-                </span>
+                <small>Estimated Annual Premium</small>
 
-                <strong id="quoteVehicle">
-                </strong>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <span>
-                    Vehicle Type
-                </span>
-
-                <strong id="quoteBodyType">
-                </strong>
+                <div class="premium" id="premiumAmount">
+                    ₱0.00
+                </div>
 
             </div>
 
 
-            <div class="info-box">
+            <div class="estimate-note">
 
-                <span>
-                    Model Year
-                </span>
+                <strong>Important:</strong>
 
-                <strong id="quoteYear">
-                </strong>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <span>
-                    Vehicle Value
-                </span>
-
-                <strong id="quoteValue">
-                </strong>
+                This quotation is an estimate based on the vehicle
+                information provided. Final premium, coverage,
+                eligibility, and policy terms are subject to final
+                assessment and the applicable insurance policy terms
+                and conditions.
 
             </div>
 
 
-            <div class="info-box">
-
-                <span>
-                    Coverage
-                </span>
-
-                <strong id="quoteCoverage">
-                </strong>
-
-            </div>
-
-
-        </div>
-
-
-        <!-- PREMIUM -->
-
-        <div class="premium-box">
-
-            <p>
-                ESTIMATED ANNUAL PREMIUM
-            </p>
-
-            <h3 id="quotePremium">
-                ₱0.00
-            </h3>
-
-            <div class="premium-note">
-
-                Estimated quotation based on the information provided.
-
-            </div>
-
-        </div>
-
-
-        <!-- NOTICE -->
-
-        <div class="quotation-notice">
-
-            <strong>Important:</strong>
-
-            This quotation is an estimate based on the vehicle
-            information provided. Final premium, coverage,
-            eligibility, and policy terms are subject to final
-            assessment and the applicable insurance policy terms
-            and conditions.
-
-        </div>
-
-
-        <!-- QUOTATION FOOTER -->
-
-        <div class="quotation-footer">
-
-            <p>
-
-                Thank you for choosing DriveSafe.
-                For the final insurance proposal and policy
-                details, please contact our team.
-
-            </p>
-
-
-            <div class="button-row">
-
-
-                <button
-                    class="btn btn-success"
-                    onclick="inquireNow()"
-                >
-                    INQUIRE NOW
-                </button>
-
+            <div class="result-actions">
 
                 <button
                     class="btn btn-primary"
-                    onclick="printQuotation()"
+                    onclick="submitInquiry()"
                 >
-                    PRINT QUOTATION
+                    Submit Inquiry
                 </button>
-
 
                 <button
-                    class="btn btn-secondary"
-                    onclick="backToForm()"
+                    class="btn btn-outline"
+                    onclick="window.print()"
                 >
-                    BACK TO FORM
+                    Print Quotation
                 </button>
 
+                <button
+                    class="btn btn-outline"
+                    onclick="backToForm()"
+                >
+                    Back to Form
+                </button>
 
             </div>
 
@@ -1117,79 +1016,66 @@ footer {
 </section>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="contact">
-
-    <h2>
-        Need Assistance?
-    </h2>
-
-    <p>
-        Contact DriveSafe for more information
-        about your car insurance quotation.
-    </p>
-
-
-    <div class="contact-info">
-
-        📞 <strong>0935 799 1457</strong>
-        <br>
-
-        📞 <strong>0967 630 3329</strong>
-        <br>
-
-        ✉️ <strong>shineramiento894@gmail.com</strong>
-        <br>
-
-        ✉️ <strong>sunshine.ramiento@lspu.edu.ph</strong>
-
-    </div>
-
-
-    <button
-        class="btn btn-primary"
-        onclick="contactUs()"
-    >
-        CONTACT US
-    </button>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
+<!-- FOOTER -->
 <footer>
 
-    © 2026 DriveSafe Car Insurance.
-    All rights reserved.
+    <div class="footer-logo">
+        Drive<span>Safe</span>
+    </div>
+
+    <p>
+        Premium Car Insurance Quotation
+    </p>
+
+    <p style="margin-top:8px;">
+        Contact: 09357991457
+        &nbsp; | &nbsp;
+        shineramiento894@gmail.com
+    </p>
+
+    <p style="margin-top:15px;">
+        © 2026 DriveSafe. All rights reserved.
+    </p>
 
 </footer>
 
 
 <script>
 
-/* ==========================================
-   GOOGLE APPS SCRIPT URL
-   SAME WORKING CONNECTION
-========================================== */
+/* =========================
+   GOOGLE APPS SCRIPT
+========================= */
 
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbx74ZnXI2JkLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
 
 
-/* ==========================================
-   SCROLL TO QUOTE FORM
-========================================== */
+/* =========================
+   VEHICLE ADJUSTMENTS
+========================= */
+
+const vehicleAdjustments = {
+
+    Sedan: 1.00,
+    SUV: 1.10,
+    Hatchback: 1.00,
+    Pickup: 1.12,
+    MPV: 1.08,
+    Van: 1.10,
+    Coupe: 1.15,
+    Convertible: 1.20,
+    Wagon: 1.05
+
+};
+
+
+/* =========================
+   SCROLL TO QUOTE
+========================= */
 
 function scrollToQuote() {
 
-    document
-        .getElementById("inquiry")
+    document.getElementById("quoteSection")
         .scrollIntoView({
             behavior: "smooth"
         });
@@ -1197,78 +1083,52 @@ function scrollToQuote() {
 }
 
 
-/* ==========================================
-   GET QUOTE
-========================================== */
+/* =========================
+   GET QUOTATION
+========================= */
 
 function getQuote() {
 
-    /* GET FORM VALUES */
+    const form = document.getElementById("quoteForm");
+
+    if (!form.checkValidity()) {
+
+        form.reportValidity();
+
+        return;
+
+    }
+
 
     const vehicleType =
-        document
-        .getElementById("vehicleType")
-        .value;
-
+        document.getElementById("vehicleType").value;
 
     const make =
-        document
-        .getElementById("make")
-        .value
-        .trim();
-
+        document.getElementById("make").value.trim();
 
     const model =
-        document
-        .getElementById("model")
-        .value
-        .trim();
-
+        document.getElementById("model").value.trim();
 
     const modelYear =
-        document
-        .getElementById("modelYear")
-        .value;
-
+        parseInt(document.getElementById("modelYear").value);
 
     const declaredValue =
-        parseFloat(
-            document
-            .getElementById("declaredValue")
-            .value
-        );
-
+        parseFloat(document.getElementById("declaredValue").value);
 
     const fullName =
-        document
-        .getElementById("fullName")
-        .value
-        .trim();
-
+        document.getElementById("fullName").value.trim();
 
     const mobile =
-        document
-        .getElementById("mobile")
-        .value
-        .trim();
-
+        document.getElementById("mobile").value.trim();
 
     const email =
-        document
-        .getElementById("email")
-        .value
-        .trim();
+        document.getElementById("email").value.trim();
 
-
-    const coverageElement =
+    const coverage =
         document.querySelector(
             'input[name="coverage"]:checked'
-        );
+        ).value;
 
-
-    /* ==========================================
-       VALIDATION
-    ========================================== */
 
     if (
         !vehicleType ||
@@ -1279,28 +1139,17 @@ function getQuote() {
         !fullName ||
         !mobile ||
         !email ||
-        !coverageElement
+        !coverage
     ) {
 
-        alert(
-            "Please complete all required fields before getting your quotation."
-        );
+        alert("Please complete all required fields.");
 
         return;
+
     }
 
 
-    /* ==========================================
-       COVERAGE
-    ========================================== */
-
-    const coverage =
-        coverageElement.value;
-
-
-    /* ==========================================
-       BASE RATE
-    ========================================== */
+    /* INSURANCE RATE */
 
     let rate;
 
@@ -1315,152 +1164,56 @@ function getQuote() {
     }
 
 
-    /* ==========================================
-       VEHICLE TYPE ADJUSTMENT
-    ========================================== */
-
-    const adjustments = {
-
-        "Sedan": 1.00,
-
-        "SUV": 1.10,
-
-        "Hatchback": 1.00,
-
-        "Pickup": 1.12,
-
-        "MPV": 1.08,
-
-        "Van": 1.10,
-
-        "Coupe": 1.15,
-
-        "Convertible": 1.20,
-
-        "Wagon": 1.05
-
-    };
-
+    /* VEHICLE ADJUSTMENT */
 
     let adjustment =
-        adjustments[vehicleType] || 1;
+        vehicleAdjustments[vehicleType] || 1;
 
 
-    /* ==========================================
-       VEHICLE AGE ADJUSTMENT
-    ========================================== */
+    /* VEHICLE AGE ADJUSTMENT */
 
-    const currentYear =
-        new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
 
+    const vehicleAge =
+        currentYear - modelYear;
 
-    if (
-        currentYear -
-        parseInt(modelYear)
-        >
-        5
-    ) {
+    if (vehicleAge > 5) {
 
         adjustment *= 1.05;
 
     }
 
 
-    /* ==========================================
-       CALCULATE ESTIMATED PREMIUM
-       NO DRIVER AGE ADJUSTMENT
-    ========================================== */
+    /* FINAL PREMIUM */
 
     const premium =
-        declaredValue *
-        rate *
-        adjustment;
+        declaredValue * rate * adjustment;
 
 
-    /* ==========================================
-       GENERATE QUOTATION NUMBER
-    ========================================== */
+    /* DISPLAY RESULTS */
 
-    const quoteNumber =
-        "DS-" +
-        Date.now()
-        .toString()
-        .slice(-8);
-
-
-    /* ==========================================
-       PUT DATA INTO QUOTATION
-    ========================================== */
-
-    document
-        .getElementById("quoteNumber")
-        .textContent =
-        quoteNumber;
-
-
-    document
-        .getElementById("quoteName")
-        .textContent =
-        fullName;
-
-
-    document
-        .getElementById("quoteMobile")
-        .textContent =
-        mobile;
-
-
-    document
-        .getElementById("quoteEmail")
-        .textContent =
-        email;
-
-
-    document
-        .getElementById("quoteVehicle")
-        .textContent =
+    document.getElementById("resultVehicle").textContent =
         make + " " + model;
 
-
-    document
-        .getElementById("quoteBodyType")
-        .textContent =
-        vehicleType;
-
-
-    document
-        .getElementById("quoteYear")
-        .textContent =
+    document.getElementById("resultYear").textContent =
         modelYear;
 
+    document.getElementById("resultType").textContent =
+        vehicleType;
 
-    document
-        .getElementById("quoteValue")
-        .textContent =
-        formatCurrency(
-            declaredValue
-        );
-
-
-    document
-        .getElementById("quoteCoverage")
-        .textContent =
+    document.getElementById("resultCoverage").textContent =
         coverage;
 
+    document.getElementById("resultValue").textContent =
+        formatCurrency(declaredValue);
 
-    document
-        .getElementById("quotePremium")
-        .textContent =
-        formatCurrency(
-            premium
-        );
+    document.getElementById("premiumAmount").textContent =
+        formatCurrency(premium);
 
 
-    /* ==========================================
-       SAVE DATA TO GOOGLE SHEETS
-    ========================================== */
+    /* SAVE DATA */
 
-    sendToGoogleSheets({
+    window.quoteData = {
 
         name: fullName,
 
@@ -1468,8 +1221,7 @@ function getQuote() {
 
         email: email,
 
-        vehicle:
-            make + " " + model,
+        vehicle: make + " " + model,
 
         modelYear: modelYear,
 
@@ -1477,285 +1229,165 @@ function getQuote() {
 
         coverage: coverage,
 
-        declaredValue:
-            declaredValue,
+        declaredValue: declaredValue,
 
-        estimatedPremium:
-            premium
+        estimatedPremium: premium
 
-    });
+    };
 
 
-    /* ==========================================
-       HIDE FORM
-    ========================================== */
+    /* HIDE FORM */
 
-    document
-        .querySelector(".container")
-        .style.display =
+    document.querySelector(".quote-section").style.display =
+        "none";
+
+    document.querySelector(".features").style.display =
+        "none";
+
+    document.querySelector(".hero").style.display =
         "none";
 
 
-    /* ==========================================
-       SHOW QUOTATION
-    ========================================== */
+    /* SHOW QUOTATION */
 
-    document
-        .getElementById("quotationPage")
-        .style.display =
+    document.getElementById("quotationPage").style.display =
         "block";
 
 
-    /* ==========================================
-       SCROLL TO QUOTATION
-    ========================================== */
-
-    document
-        .getElementById("quotationPage")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
 
-/* ==========================================
-   FORMAT PHILIPPINE PESO
-========================================== */
+/* =========================
+   FORMAT CURRENCY
+========================= */
 
 function formatCurrency(amount) {
 
-    return new Intl.NumberFormat(
-        "en-PH",
-        {
-            style: "currency",
-            currency: "PHP"
-        }
-    ).format(amount);
+    return "₱" + amount.toLocaleString("en-PH", {
+
+        minimumFractionDigits: 2,
+
+        maximumFractionDigits: 2
+
+    });
 
 }
 
 
-/* ==========================================
-   SEND TO GOOGLE SHEETS
-========================================== */
+/* =========================
+   SUBMIT TO GOOGLE SHEETS
+========================= */
 
-function sendToGoogleSheets(data) {
+function submitInquiry() {
 
-    const formData =
-        new URLSearchParams();
+    if (!window.quoteData) {
 
+        alert("Please generate a quotation first.");
 
-    Object.keys(data).forEach(
-        function(key) {
+        return;
 
-            formData.append(
-                key,
-                data[key]
-            );
-
-        }
-    );
+    }
 
 
-    fetch(
-        SCRIPT_URL,
-        {
-            method: "POST",
-            body: formData
-        }
-    )
+    const button =
+        event.currentTarget;
 
-    .then(
-        response =>
-        response.text()
-    )
+    button.disabled = true;
 
-    .then(
-        result => {
-
-            console.log(
-                "Data sent successfully:",
-                result
-            );
-
-        }
-    )
-
-    .catch(
-        error => {
-
-            console.error(
-                "Google Sheets submission error:",
-                error
-            );
-
-        }
-    );
-
-}
+    button.textContent =
+        "Submitting...";
 
 
-/* ==========================================
-   INQUIRE NOW
-========================================== */
+    fetch(SCRIPT_URL, {
 
-function inquireNow() {
+        method: "POST",
 
-    const name =
-        document
-        .getElementById("quoteName")
-        .textContent;
+        mode: "no-cors",
 
+        headers: {
 
-    const vehicle =
-        document
-        .getElementById("quoteVehicle")
-        .textContent;
+            "Content-Type":
+                "application/json"
 
+        },
 
-    const premium =
-        document
-        .getElementById("quotePremium")
-        .textContent;
+        body: JSON.stringify(
+            window.quoteData
+        )
 
+    })
+    .then(() => {
 
-    const coverage =
-        document
-        .getElementById("quoteCoverage")
-        .textContent;
-
-
-    const subject =
-        encodeURIComponent(
-            "DriveSafe Insurance Inquiry - " +
-            name
+        alert(
+            "Thank you! Your quotation inquiry has been submitted successfully."
         );
 
+        button.disabled = false;
 
-    const body =
-        encodeURIComponent(
+        button.textContent =
+            "Submitted";
 
-            "Hello DriveSafe,\n\n" +
+    })
+    .catch(error => {
 
-            "I would like to inquire about my car insurance quotation.\n\n" +
+        console.error(error);
 
-            "Customer Name: " +
-            name +
-            "\n" +
-
-            "Vehicle: " +
-            vehicle +
-            "\n" +
-
-            "Coverage: " +
-            coverage +
-            "\n" +
-
-            "Estimated Premium: " +
-            premium +
-            "\n\n" +
-
-            "Thank you."
-
+        alert(
+            "Your inquiry could not be submitted. Please try again."
         );
 
+        button.disabled = false;
 
-    window.location.href =
-        "mailto:shineramiento894@gmail.com" +
-        "?subject=" +
-        subject +
-        "&body=" +
-        body;
+        button.textContent =
+            "Submit Inquiry";
 
-}
-
-
-/* ==========================================
-   CONTACT US
-========================================== */
-
-function contactUs() {
-
-    window.location.href =
-        "tel:09357991457";
+    });
 
 }
 
 
-/* ==========================================
-   PRINT QUOTATION
-========================================== */
-
-function printQuotation() {
-
-    window.print();
-
-}
-
-
-/* ==========================================
+/* =========================
    BACK TO FORM
-========================================== */
+========================= */
 
 function backToForm() {
 
-    document
-        .getElementById("quotationPage")
-        .style.display =
+    document.getElementById("quotationPage").style.display =
         "none";
 
-
-    document
-        .querySelector(".container")
-        .style.display =
+    document.querySelector(".quote-section").style.display =
         "block";
 
+    document.querySelector(".features").style.display =
+        "block";
 
-    document
-        .getElementById("inquiry")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+    document.querySelector(".hero").style.display =
+        "flex";
+
+    window.scrollTo({
+
+        top: document.getElementById("quoteSection").offsetTop,
+
+        behavior: "smooth"
+
+    });
 
 }
 
 
-/* ==========================================
-   RESET FORM
-========================================== */
+/* =========================
+   INQUIRY EMAIL
+========================= */
 
-function resetForm() {
+function emailInquiry() {
 
-    document
-        .querySelector(".container")
-        .querySelectorAll("input")
-        .forEach(
-            function(input) {
-
-                if (
-                    input.type ===
-                    "radio"
-                ) {
-
-                    input.checked =
-                        false;
-
-                } else {
-
-                    input.value =
-                        "";
-
-                }
-
-            }
-        );
-
-
-    document
-        .getElementById("vehicleType")
-        .value =
-        "";
+    window.location.href =
+        "mailto:shineramiento894@gmail.com";
 
 }
 
