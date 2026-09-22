@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DriveSafe Car Insurance</title>
+<title>DriveSafe | Imported & Premium Car Insurance</title>
 
 <style>
 * {
@@ -48,7 +48,7 @@ header p {
 .hero {
     max-width: 1000px;
     margin: 25px auto;
-    padding: 50px 30px;
+    padding: 55px 30px;
     border-radius: 20px;
     background: linear-gradient(135deg, #0b5cad, #062e5f);
     color: white;
@@ -66,12 +66,16 @@ header p {
 }
 
 .hero h2 {
-    font-size: 38px;
+    font-size: 40px;
     margin-bottom: 12px;
 }
 
+.hero h2 span {
+    color: #8ed0ff;
+}
+
 .hero p {
-    max-width: 650px;
+    max-width: 700px;
     margin: auto;
     font-size: 17px;
     opacity: 0.95;
@@ -123,6 +127,7 @@ header p {
 
 .benefit h3 {
     margin-bottom: 5px;
+    color: #063970;
 }
 
 .benefit p {
@@ -354,6 +359,20 @@ select:focus {
 }
 
 /* =========================
+   NOTICE
+========================= */
+
+.quotation-notice {
+    background: #fff8e6;
+    border-left: 5px solid #e0a800;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: #624b00;
+    border-radius: 5px;
+}
+
+/* =========================
    QUOTATION FOOTER
 ========================= */
 
@@ -490,6 +509,7 @@ footer {
     .quotation-footer .button-row {
         display: none !important;
     }
+
 }
 
 </style>
@@ -506,7 +526,7 @@ footer {
     <h1>🚗 DriveSafe</h1>
 
     <p>
-        Car Insurance Protection Made Simple
+        Imported & Premium Car Insurance Quotations
     </p>
 
 </header>
@@ -519,16 +539,17 @@ footer {
 <section class="hero">
 
     <div class="hero-badge">
-        ONLINE CAR INSURANCE QUOTATION
+        PHILIPPINE CAR INSURANCE QUOTATION
     </div>
 
     <h2>
-        Protect Your Car. Drive With Confidence.
+        Protect Your <span>Imported Car</span>
     </h2>
 
     <p>
-        Get an estimated car insurance premium in just a few minutes.
-        Enter your vehicle details and receive your quotation instantly.
+        Get an estimated car insurance quotation based on
+        your vehicle details. Designed for imported, premium,
+        and high-value vehicles.
     </p>
 
     <button onclick="scrollToQuote()">
@@ -547,15 +568,32 @@ footer {
     <div class="benefit">
 
         <div class="icon">
+            🚘
+        </div>
+
+        <h3>
+            Premium Vehicles
+        </h3>
+
+        <p>
+            Designed for imported, premium, and high-value vehicles.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="icon">
             ⚡
         </div>
 
         <h3>
-            Fast
+            Simple Process
         </h3>
 
         <p>
-            Get your estimated quotation in seconds.
+            Enter your vehicle details and request an estimated quotation.
         </p>
 
     </div>
@@ -568,28 +606,11 @@ footer {
         </div>
 
         <h3>
-            Protected
+            Flexible Coverage
         </h3>
 
         <p>
-            Choose the coverage that fits your vehicle.
-        </p>
-
-    </div>
-
-
-    <div class="benefit">
-
-        <div class="icon">
-            📋
-        </div>
-
-        <h3>
-            Simple
-        </h3>
-
-        <p>
-            Easy-to-understand insurance quotation.
+            Choose the available coverage option that suits your vehicle.
         </p>
 
     </div>
@@ -674,7 +695,7 @@ footer {
             <input
                 type="text"
                 id="make"
-                placeholder="Example: Toyota"
+                placeholder="Example: BMW, Mercedes-Benz, Lexus"
                 required
             >
 
@@ -690,7 +711,7 @@ footer {
             <input
                 type="text"
                 id="model"
-                placeholder="Example: Vios"
+                placeholder="Example: X5, G-Class, LX 600"
                 required
             >
 
@@ -708,7 +729,7 @@ footer {
                 id="modelYear"
                 min="1900"
                 max="2026"
-                placeholder="Example: 2022"
+                placeholder="Example: 2024"
                 required
             >
 
@@ -724,25 +745,8 @@ footer {
             <input
                 type="number"
                 id="declaredValue"
-                min="0"
-                placeholder="Example: 700000"
-                required
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="driverAge">
-                Driver Age
-            </label>
-
-            <input
-                type="number"
-                id="driverAge"
-                min="18"
-                placeholder="Example: 25"
+                min="1"
+                placeholder="Example: 2500000"
                 required
             >
 
@@ -838,7 +842,7 @@ footer {
                 <br>
 
                 <small>
-                    Affordable basic vehicle protection.
+                    Basic vehicle protection option.
                 </small>
 
             </label>
@@ -1042,10 +1046,24 @@ footer {
 
             <div class="premium-note">
 
-                This is an estimated quotation and may be
-                subject to final assessment.
+                Estimated quotation based on the information provided.
 
             </div>
+
+        </div>
+
+
+        <!-- NOTICE -->
+
+        <div class="quotation-notice">
+
+            <strong>Important:</strong>
+
+            This quotation is an estimate based on the vehicle
+            information provided. Final premium, coverage,
+            eligibility, and policy terms are subject to final
+            assessment and the applicable insurance policy terms
+            and conditions.
 
         </div>
 
@@ -1157,6 +1175,7 @@ footer {
 
 /* ==========================================
    GOOGLE APPS SCRIPT URL
+   SAME WORKING CONNECTION
 ========================================== */
 
 const SCRIPT_URL =
@@ -1183,7 +1202,6 @@ function scrollToQuote() {
 ========================================== */
 
 function getQuote() {
-
 
     /* GET FORM VALUES */
 
@@ -1217,14 +1235,6 @@ function getQuote() {
         parseFloat(
             document
             .getElementById("declaredValue")
-            .value
-        );
-
-
-    const driverAge =
-        parseInt(
-            document
-            .getElementById("driverAge")
             .value
         );
 
@@ -1266,7 +1276,6 @@ function getQuote() {
         !model ||
         !modelYear ||
         !declaredValue ||
-        !driverAge ||
         !fullName ||
         !mobile ||
         !email ||
@@ -1294,7 +1303,6 @@ function getQuote() {
     ========================================== */
 
     let rate;
-
 
     if (coverage === "Comprehensive") {
 
@@ -1339,17 +1347,6 @@ function getQuote() {
 
 
     /* ==========================================
-       DRIVER AGE ADJUSTMENT
-    ========================================== */
-
-    if (driverAge < 25) {
-
-        adjustment *= 1.10;
-
-    }
-
-
-    /* ==========================================
        VEHICLE AGE ADJUSTMENT
     ========================================== */
 
@@ -1359,7 +1356,8 @@ function getQuote() {
 
     if (
         currentYear -
-        parseInt(modelYear) >
+        parseInt(modelYear)
+        >
         5
     ) {
 
@@ -1369,7 +1367,8 @@ function getQuote() {
 
 
     /* ==========================================
-       CALCULATE PREMIUM
+       CALCULATE ESTIMATED PREMIUM
+       NO DRIVER AGE ADJUSTMENT
     ========================================== */
 
     const premium =
@@ -1543,7 +1542,6 @@ function formatCurrency(amount) {
 
 function sendToGoogleSheets(data) {
 
-
     const formData =
         new URLSearchParams();
 
@@ -1603,7 +1601,6 @@ function sendToGoogleSheets(data) {
 ========================================== */
 
 function inquireNow() {
-
 
     const name =
         document
@@ -1703,7 +1700,6 @@ function printQuotation() {
 
 function backToForm() {
 
-
     document
         .getElementById("quotationPage")
         .style.display =
@@ -1730,7 +1726,6 @@ function backToForm() {
 ========================================== */
 
 function resetForm() {
-
 
     document
         .querySelector(".container")
