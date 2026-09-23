@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Anna Ong Insurance | Car Insurance Comparison</title>
+<title>Anna Ong Insurance | Car Insurance Quote</title>
 
 <style>
 *{
@@ -14,164 +13,122 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f5f7fb;
     color:#172033;
     line-height:1.5;
 }
 
 header{
-    background:#ffffff;
-    border-bottom:1px solid #e7eaf0;
+    background:#071a3d;
+    color:white;
+    padding:18px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
     position:sticky;
     top:0;
     z-index:100;
 }
 
-.nav{
-    max-width:1180px;
-    margin:auto;
-    padding:18px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
 .logo{
-    font-size:24px;
+    font-size:22px;
     font-weight:800;
-    color:#071a3a;
 }
 
 .logo span{
-    color:#f6b900;
+    color:#ffc928;
 }
 
-.nav-btn{
-    background:#f6b900;
-    border:none;
+.header-btn{
+    background:#ffc928;
+    color:#071a3d;
+    border:0;
     padding:12px 22px;
-    border-radius:7px;
-    font-weight:700;
+    border-radius:8px;
+    font-weight:bold;
     cursor:pointer;
 }
 
 .hero{
-    background:linear-gradient(135deg,#071a3a,#123c75);
+    background:#071a3d;
     color:white;
-    padding:65px 20px 80px;
+    padding:65px 6% 85px;
 }
 
 .hero-content{
-    max-width:1180px;
+    max-width:850px;
     margin:auto;
+    text-align:center;
 }
 
 .badge{
     display:inline-block;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.2);
-    padding:7px 13px;
+    background:#193568;
+    padding:8px 14px;
     border-radius:30px;
+    color:#ffc928;
     font-size:13px;
+    font-weight:bold;
     margin-bottom:18px;
 }
 
 .hero h1{
-    font-size:48px;
-    line-height:1.1;
-    max-width:750px;
+    font-size:46px;
+    line-height:1.15;
     margin-bottom:18px;
 }
 
 .hero p{
-    max-width:650px;
     font-size:18px;
-    color:#dce8f8;
-    margin-bottom:28px;
-}
-
-.hero-btn{
-    background:#f6b900;
-    border:none;
-    padding:15px 27px;
-    border-radius:7px;
-    font-size:16px;
-    font-weight:800;
-    cursor:pointer;
+    color:#dbe4f5;
+    max-width:700px;
+    margin:auto;
 }
 
 .container{
-    max-width:1080px;
-    margin:-40px auto 60px;
-    padding:0 20px;
+    width:90%;
+    max-width:1100px;
+    margin:-45px auto 60px;
     position:relative;
 }
 
 .card{
     background:white;
-    border-radius:12px;
-    box-shadow:0 10px 35px rgba(15,32,65,.10);
+    border-radius:18px;
     padding:30px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    margin-bottom:25px;
 }
 
 .steps{
     display:flex;
-    justify-content:space-between;
-    margin-bottom:30px;
-    position:relative;
-}
-
-.steps:before{
-    content:"";
-    position:absolute;
-    top:17px;
-    left:30px;
-    right:30px;
-    height:2px;
-    background:#e4e8ef;
-    z-index:0;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:25px;
+    flex-wrap:wrap;
 }
 
 .step{
-    position:relative;
-    z-index:1;
-    text-align:center;
-    background:white;
-    padding:0 10px;
+    padding:10px 18px;
+    background:#edf1f7;
+    border-radius:25px;
     font-size:13px;
-    color:#7a8495;
-}
-
-.step-number{
-    width:36px;
-    height:36px;
-    margin:auto auto 7px;
-    border-radius:50%;
-    background:#e9edf3;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     font-weight:bold;
 }
 
 .step.active{
-    color:#071a3a;
-    font-weight:bold;
-}
-
-.step.active .step-number{
-    background:#f6b900;
-    color:#071a3a;
+    background:#ffc928;
+    color:#071a3d;
 }
 
 .section-title{
-    font-size:26px;
-    margin-bottom:7px;
+    font-size:24px;
+    margin-bottom:8px;
 }
 
 .section-subtitle{
-    color:#697386;
+    color:#6c7483;
     margin-bottom:25px;
 }
 
@@ -181,159 +138,159 @@ header{
     gap:18px;
 }
 
-.field{
+.form-group{
     display:flex;
     flex-direction:column;
 }
 
-.field label{
-    font-weight:700;
-    margin-bottom:7px;
-    font-size:14px;
-}
-
-.field input,
-.field select{
-    padding:13px 14px;
-    border:1px solid #d8dee8;
-    border-radius:7px;
-    font-size:15px;
-    background:white;
-}
-
-.field input:focus,
-.field select:focus{
-    outline:2px solid #f6b900;
-    border-color:#f6b900;
-}
-
-.full{
+.form-group.full{
     grid-column:1/-1;
 }
 
-.budget-box{
-    margin-top:25px;
-    padding:22px;
-    background:#fff9e6;
-    border:1px solid #f5df91;
-    border-radius:9px;
-}
-
-.budget-box h3{
-    margin-bottom:5px;
-}
-
-.budget-box p{
-    color:#6f6340;
-    font-size:14px;
-    margin-bottom:15px;
-}
-
-.budget-input{
-    display:flex;
-    align-items:center;
-    background:white;
-    border:1px solid #d8dee8;
-    border-radius:7px;
-    overflow:hidden;
-}
-
-.budget-input span{
-    padding:13px;
+label{
     font-weight:bold;
-    background:#f4f5f7;
+    font-size:14px;
+    margin-bottom:7px;
 }
 
-.budget-input input{
-    border:0;
-    outline:0;
-    padding:13px;
+input,select,textarea{
     width:100%;
-    font-size:16px;
+    border:1px solid #d7dce5;
+    border-radius:9px;
+    padding:13px;
+    font-size:15px;
+    outline:none;
+    background:white;
 }
 
-.coverage{
-    margin-top:25px;
+input:focus,select:focus,textarea:focus{
+    border-color:#ffc928;
+    box-shadow:0 0 0 3px rgba(255,201,40,.15);
 }
 
 .coverage-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:12px;
+    margin-top:10px;
 }
 
 .coverage-option{
-    border:1px solid #dce1e9;
-    border-radius:8px;
-    padding:14px;
+    border:2px solid #e1e5ec;
+    border-radius:12px;
+    padding:17px;
     cursor:pointer;
     transition:.2s;
+    background:white;
 }
 
 .coverage-option:hover{
-    border-color:#f6b900;
+    border-color:#ffc928;
+}
+
+.coverage-option.selected{
+    border-color:#ffc928;
+    background:#fff9df;
 }
 
 .coverage-option input{
-    margin-right:7px;
+    width:auto;
+    margin-right:8px;
 }
 
-.calculate{
-    width:100%;
-    margin-top:28px;
-    padding:16px;
-    border:none;
-    border-radius:8px;
-    background:#071a3a;
-    color:white;
-    font-size:17px;
+.coverage-option strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+.coverage-option small{
+    color:#737b89;
+}
+
+.budget-box{
+    background:#fff9df;
+    border:1px solid #ffe28a;
+    border-radius:13px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.budget-title{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.budget-box p{
+    color:#6d6d6d;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.actions{
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+}
+
+.btn{
+    border:0;
+    border-radius:9px;
+    padding:14px 22px;
     font-weight:bold;
     cursor:pointer;
+    font-size:15px;
 }
 
-.calculate:hover{
-    background:#102b58;
+.btn-primary{
+    background:#ffc928;
+    color:#071a3d;
+}
+
+.btn-primary:hover{
+    background:#f0b900;
+}
+
+.btn-secondary{
+    background:#edf1f7;
+    color:#172033;
 }
 
 .results{
     display:none;
-    margin-top:30px;
 }
 
-.results-header{
+.result-header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:18px;
+    margin-bottom:20px;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
-.budget-summary{
-    background:#eef8ef;
-    border:1px solid #bde0c1;
-    padding:15px;
-    border-radius:8px;
-    margin-bottom:20px;
+.result-count{
+    color:#6c7483;
 }
 
 .quote-card{
-    background:white;
-    border:1px solid #dfe4eb;
-    border-radius:10px;
+    border:1px solid #e0e4eb;
+    border-radius:15px;
     padding:22px;
     margin-bottom:15px;
     position:relative;
 }
 
 .quote-card.lowest{
-    border:2px solid #f6b900;
+    border:2px solid #ffc928;
 }
 
 .lowest-badge{
     position:absolute;
     top:-12px;
-    left:18px;
-    background:#f6b900;
-    color:#071a3a;
+    right:18px;
+    background:#ffc928;
+    color:#071a3d;
     padding:5px 12px;
     border-radius:20px;
     font-size:11px;
@@ -345,137 +302,83 @@ header{
     justify-content:space-between;
     align-items:center;
     gap:15px;
+    flex-wrap:wrap;
 }
 
 .provider{
-    font-size:19px;
-    font-weight:800;
+    font-size:20px;
+    font-weight:bold;
 }
 
-.price{
+.quote-price{
     text-align:right;
 }
 
-.price small{
+.quote-price small{
     display:block;
-    color:#777;
+    color:#737b89;
 }
 
-.price strong{
-    font-size:26px;
-    color:#071a3a;
+.price{
+    font-size:27px;
+    font-weight:800;
+    color:#071a3d;
 }
 
-.quote-details{
+.budget-status{
+    display:inline-block;
+    margin-top:5px;
+    padding:4px 9px;
+    border-radius:15px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.within{
+    background:#dff6e7;
+    color:#16753b;
+}
+
+.above{
+    background:#ffe1e1;
+    color:#a52222;
+}
+
+.quote-info{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:10px;
     margin:18px 0;
 }
 
-.detail{
-    background:#f7f8fa;
-    padding:10px;
-    border-radius:6px;
-    font-size:13px;
+.info-box{
+    background:#f7f8fb;
+    padding:12px;
+    border-radius:9px;
 }
 
-.detail strong{
+.info-box small{
+    color:#737b89;
     display:block;
-    color:#172033;
 }
 
-.budget-status{
-    display:inline-block;
-    padding:5px 9px;
-    border-radius:15px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-.within{
-    background:#e5f7e8;
-    color:#227438;
-}
-
-.over{
-    background:#ffe9e9;
-    color:#a52a2a;
-}
-
-.actions{
+.quote-actions{
     display:flex;
     gap:10px;
-}
-
-.btn{
-    padding:11px 17px;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:bold;
-    border:1px solid #d6dce5;
-    background:white;
-}
-
-.btn-primary{
-    background:#f6b900;
-    border-color:#f6b900;
-    color:#071a3a;
+    flex-wrap:wrap;
 }
 
 .compare-box{
-    margin-top:25px;
-    background:#f1f5fa;
+    background:#071a3d;
+    color:white;
     padding:20px;
-    border-radius:8px;
+    border-radius:13px;
+    margin-top:20px;
+    display:none;
 }
 
-.features{
-    padding:55px 20px;
-    background:white;
-}
-
-.features-container{
-    max-width:1080px;
-    margin:auto;
-}
-
-.features h2{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.feature-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.feature{
-    padding:25px;
-    border:1px solid #e3e7ee;
-    border-radius:10px;
-}
-
-.feature-icon{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.feature h3{
-    margin-bottom:8px;
-}
-
-.feature p{
-    color:#687386;
-    font-size:14px;
-}
-
-footer{
-    background:#071a3a;
-    color:#ccd7e7;
-    padding:35px 20px;
-    text-align:center;
+.compare-box button{
+    margin-top:12px;
 }
 
 .modal{
@@ -483,104 +386,131 @@ footer{
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.6);
-    z-index:999;
-    align-items:center;
-    justify-content:center;
+    z-index:500;
     padding:20px;
+    overflow:auto;
 }
 
 .modal-content{
     background:white;
     width:100%;
-    max-width:500px;
-    border-radius:12px;
-    padding:28px;
-    max-height:90vh;
-    overflow:auto;
-}
-
-.modal-header{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:20px;
+    max-width:600px;
+    margin:40px auto;
+    border-radius:17px;
+    padding:30px;
+    position:relative;
 }
 
 .close{
-    font-size:25px;
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:28px;
     cursor:pointer;
+    color:#777;
 }
 
-.modal-content input,
-.modal-content textarea{
-    width:100%;
-    padding:12px;
-    margin:7px 0 15px;
-    border:1px solid #d8dee8;
-    border-radius:6px;
+.modal h2{
+    margin-bottom:8px;
 }
 
-.modal-content textarea{
-    min-height:90px;
-    resize:vertical;
-}
-
-.submit{
-    width:100%;
-    padding:14px;
-    border:0;
-    border-radius:7px;
-    background:#071a3a;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
+.selected-quote{
+    background:#f5f7fb;
+    border-radius:10px;
+    padding:15px;
+    margin:20px 0;
 }
 
 .success{
     display:none;
-    padding:15px;
-    margin-top:15px;
-    background:#e8f7eb;
-    color:#256c35;
-    border-radius:7px;
+    background:#e7f8ed;
+    border:1px solid #a9dfbb;
+    border-radius:15px;
+    padding:22px;
+    margin-top:25px;
 }
 
-@media(max-width:800px){
+.success h3{
+    color:#16753b;
+    margin-bottom:12px;
+}
 
+.reference{
+    font-size:22px;
+    font-weight:bold;
+    color:#071a3d;
+    margin:8px 0 15px;
+}
+
+.record-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.record-item{
+    background:white;
+    border-radius:8px;
+    padding:10px;
+}
+
+.record-item small{
+    display:block;
+    color:#737b89;
+}
+
+footer{
+    background:#071a3d;
+    color:#cbd4e5;
+    padding:35px 6%;
+    text-align:center;
+    font-size:13px;
+}
+
+.notice{
+    background:#fff7d6;
+    border:1px solid #f1d56c;
+    padding:12px 15px;
+    border-radius:9px;
+    font-size:13px;
+    color:#665516;
+    margin-top:20px;
+}
+
+@media(max-width:750px){
     .hero h1{
-        font-size:36px;
+        font-size:34px;
     }
 
-    .form-grid{
+    .form-grid,
+    .coverage-grid,
+    .quote-info,
+    .record-grid{
         grid-template-columns:1fr;
     }
 
-    .coverage-grid{
-        grid-template-columns:1fr 1fr;
+    .form-group.full{
+        grid-column:auto;
     }
 
-    .feature-grid{
-        grid-template-columns:1fr;
-    }
-
-    .quote-top{
+    .actions{
         flex-direction:column;
-        align-items:flex-start;
     }
 
-    .price{
-        text-align:left;
+    .btn{
+        width:100%;
     }
 
-    .quote-details{
-        grid-template-columns:1fr;
+    header{
+        padding:15px 4%;
     }
 
-    .steps{
-        gap:5px;
+    .container{
+        width:94%;
     }
 
-    .step{
-        font-size:11px;
+    .card{
+        padding:20px;
     }
 }
 </style>
@@ -589,1036 +519,1780 @@ footer{
 <body>
 
 <header>
-<div class="nav">
-
-<div class="logo">
-Anna Ong <span>Insurance</span>
-</div>
-
-<button class="nav-btn" onclick="scrollToQuote()">
-Get a Quote
-</button>
-
-</div>
+    <div class="logo">Anna Ong <span>Insurance</span></div>
+    <button class="header-btn" onclick="scrollToQuote()">Get Quote</button>
 </header>
 
-
 <section class="hero">
+    <div class="hero-content">
+        <div class="badge">CAR INSURANCE COMPARISON</div>
 
-<div class="hero-content">
+        <h1>Find Car Insurance That Fits Your Budget</h1>
 
-<div class="badge">
-PHILIPPINE CAR INSURANCE COMPARISON
-</div>
-
-<h1>
-Find Car Insurance That Fits Your Budget
-</h1>
-
-<p>
-Compare available car insurance options based on your vehicle,
-coverage needs, and preferred annual budget.
-</p>
-
-<button class="hero-btn" onclick="scrollToQuote()">
-Start My Quote →
-</button>
-
-</div>
-
+        <p>
+            Enter your vehicle details, choose your coverage,
+            set your budget, and compare available insurance options.
+        </p>
+    </div>
 </section>
 
-
-<main class="container" id="quote">
-
-<div class="card">
-
-<div class="steps">
-
-<div class="step active">
-<div class="step-number">1</div>
-Car Details
-</div>
-
-<div class="step active">
-<div class="step-number">2</div>
-Set Budget
-</div>
-
-<div class="step">
-<div class="step-number">3</div>
-Compare
-</div>
-
-</div>
-
-
-<h2 class="section-title">
-Tell Us About Your Car
-</h2>
-
-<p class="section-subtitle">
-Enter your vehicle information to get an estimated comparison.
-</p>
-
-
-<div class="form-grid">
-
-<div class="field">
-<label>Vehicle Category</label>
-
-<select id="category">
-
-<option value="Private">Private</option>
-<option value="Commercial">Commercial</option>
-<option value="TNVS">TNVS / For Hire</option>
-
-</select>
-</div>
-
-
-<div class="field">
-<label>Vehicle Make</label>
-
-<select id="make" onchange="loadModels()">
-
-<option value="">Select Make</option>
-<option>Toyota</option>
-<option>Honda</option>
-<option>Mitsubishi</option>
-<option>Nissan</option>
-<option>Ford</option>
-<option>Hyundai</option>
-<option>Kia</option>
-<option>Suzuki</option>
-
-</select>
-</div>
-
-
-<div class="field">
-<label>Model & Variant</label>
-
-<select id="model">
-
-<option value="">Select Model</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-<label>Model Year</label>
-
-<select id="year">
-
-<option>2026</option>
-<option>2025</option>
-<option>2024</option>
-<option>2023</option>
-<option>2022</option>
-<option>2021</option>
-<option>2020</option>
-<option>2019</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-<label>Estimated Vehicle Value</label>
-
-<input
-type="number"
-id="vehicleValue"
-placeholder="e.g. 900000"
-value="900000"
->
-
-</div>
-
-
-<div class="field">
-<label>Driver Age</label>
-
-<input
-type="number"
-id="driverAge"
-placeholder="e.g. 30"
-value="30"
->
-
-</div>
-
-</div>
-
-
-<div class="budget-box">
-
-<h3>💰 Set Your Annual Budget</h3>
-
-<p>
-Tell us how much you are comfortable spending for your car insurance per year.
-</p>
-
-<div class="budget-input">
-
-<span>₱</span>
-
-<input
-type="number"
-id="budget"
-placeholder="Example: 25000"
-value="25000"
->
-
-</div>
-
-</div>
-
-
-<div class="coverage">
-
-<h3 style="margin-bottom:12px;">
-Coverage Options
-</h3>
-
-<div class="coverage-grid">
-
-<label class="coverage-option">
-<input type="checkbox" id="aon" checked>
-Acts of Nature
-</label>
-
-<label class="coverage-option">
-<input type="checkbox" id="ctpl" checked>
-CTPL
-</label>
-
-<label class="coverage-option">
-<input type="checkbox" id="ebi">
-Excess Bodily Injury
-</label>
-
-<label class="coverage-option">
-<input type="checkbox" id="vpd">
-Voluntary Property Damage
-</label>
-
-</div>
-
-</div>
-
-
-<button class="calculate" onclick="calculateQuotes()">
-CALCULATE AVAILABLE RATES
-</button>
-
-
-<div class="results" id="results">
-
-<div class="results-header">
-
-<div>
-<h2>Available Insurance Options</h2>
-<p style="color:#697386;">
-Based on the information you provided.
-</p>
-</div>
-
-</div>
-
-
-<div class="budget-summary">
-
-<strong>Your Annual Budget:</strong>
-
-<span id="budgetDisplay"></span>
-
-<br>
-
-<small>
-Options are arranged based on estimated premium.
-</small>
-
-</div>
-
-
-<div id="quoteResults"></div>
-
-
-<div class="compare-box">
-
-<h3>Want to compare more details?</h3>
-
-<p style="color:#697386;margin:7px 0 15px;">
-Review the coverage and estimated premium before requesting a quote.
-</p>
-
-<button class="btn btn-primary"
-onclick="openModal('General Inquiry')">
-
-Request Assistance
-
-</button>
-
-</div>
-
-</div>
-
-</div>
+<main class="container">
+
+    <div class="card" id="quoteForm">
+
+        <div class="steps">
+            <div class="step active">1. Car Details</div>
+            <div class="step">2. Coverage</div>
+            <div class="step">3. Compare Quotes</div>
+        </div>
+
+        <h2 class="section-title">Tell Us About Your Car</h2>
+
+        <p class="section-subtitle">
+            Provide your vehicle information to calculate an estimated quote.
+        </p>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Vehicle Category</label>
+
+                <select id="vehicleCategory">
+                    <option value="">Select Category</option>
+                    <option>Private</option>
+                    <option>Commercial</option>
+                    <option>TNVS / For Hire</option>
+                    <option>EV / Hybrid</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Vehicle Make</label>
+
+                <select id="vehicleMake" onchange="loadModels()">
+                    <option value="">Select Make</option>
+                    <option>Toyota</option>
+                    <option>Honda</option>
+                    <option>Mitsubishi</option>
+                    <option>Nissan</option>
+                    <option>Ford</option>
+                    <option>Hyundai</option>
+                    <option>Kia</option>
+                    <option>Suzuki</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Model & Variant</label>
+
+                <select id="vehicleModel">
+                    <option value="">Select a Model</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Model Year</label>
+
+                <select id="modelYear">
+                    <option value="">Select Year</option>
+                    <option>2026</option>
+                    <option>2025</option>
+                    <option>2024</option>
+                    <option>2023</option>
+                    <option>2022</option>
+                    <option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Estimated Vehicle Value (₱)</label>
+
+                <input
+                    type="number"
+                    id="vehicleValue"
+                    placeholder="Example: 850000"
+                    min="50000"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Driver Age</label>
+
+                <input
+                    type="number"
+                    id="driverAge"
+                    placeholder="Example: 30"
+                    min="18"
+                    max="80"
+                >
+            </div>
+
+        </div>
+
+        <div class="budget-box">
+
+            <div class="budget-title">
+                💰 What's Your Annual Insurance Budget?
+            </div>
+
+            <p>
+                Set your maximum budget so the system can identify
+                available options within your target amount.
+            </p>
+
+            <input
+                type="number"
+                id="budget"
+                placeholder="Example: 25000"
+                min="1000"
+            >
+
+        </div>
+
+        <br>
+
+        <h2 class="section-title">Choose Your Coverage</h2>
+
+        <p class="section-subtitle">
+            Select the coverage options you want to include in your estimate.
+        </p>
+
+        <div class="coverage-grid">
+
+            <label class="coverage-option selected">
+                <input
+                    type="checkbox"
+                    value="Comprehensive"
+                    checked
+                    onchange="updateCoverageStyle(this)"
+                >
+                <strong>Comprehensive</strong>
+                <small>Own Damage + Theft</small>
+            </label>
+
+            <label class="coverage-option">
+                <input
+                    type="checkbox"
+                    value="CTPL"
+                    onchange="updateCoverageStyle(this)"
+                >
+                <strong>CTPL</strong>
+                <small>Mandatory third-party coverage</small>
+            </label>
+
+            <label class="coverage-option">
+                <input
+                    type="checkbox"
+                    value="Acts of Nature"
+                    onchange="updateCoverageStyle(this)"
+                >
+                <strong>Acts of Nature</strong>
+                <small>Flood, typhoon and earthquake</small>
+            </label>
+
+            <label class="coverage-option">
+                <input
+                    type="checkbox"
+                    value="Excess Bodily Injury"
+                    onchange="updateCoverageStyle(this)"
+                >
+                <strong>Excess Bodily Injury</strong>
+                <small>Additional bodily injury protection</small>
+            </label>
+
+            <label class="coverage-option">
+                <input
+                    type="checkbox"
+                    value="Voluntary Property Damage"
+                    onchange="updateCoverageStyle(this)"
+                >
+                <strong>Voluntary Property Damage</strong>
+                <small>Additional property damage protection</small>
+            </label>
+
+            <label class="coverage-option">
+                <input
+                    type="checkbox"
+                    value="Roadside Assistance"
+                    onchange="updateCoverageStyle(this)"
+                >
+                <strong>Roadside Assistance</strong>
+                <small>Towing and roadside support</small>
+            </label>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                class="btn btn-primary"
+                type="button"
+                onclick="calculateQuotes()"
+            >
+                Calculate Available Rates
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                type="button"
+                onclick="resetForm()"
+            >
+                Reset
+            </button>
+
+        </div>
+
+        <div class="notice">
+            <strong>Important:</strong>
+            The prices shown in this prototype are sample/demo estimates
+            for testing the website flow. Actual insurance premiums depend
+            on the insurer's approved rates, vehicle details, coverage,
+            underwriting and applicable taxes/fees.
+        </div>
+
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div class="card results" id="quoteResults">
+
+        <div class="result-header">
+
+            <div>
+                <h2 class="section-title">Available Insurance Options</h2>
+
+                <div class="result-count" id="resultSummary">
+                    Your available estimates are shown below.
+                </div>
+            </div>
+
+            <button
+                class="btn btn-secondary"
+                onclick="scrollToQuote()"
+            >
+                Edit Details
+            </button>
+
+        </div>
+
+        <div id="resultsList"></div>
+
+        <div class="compare-box" id="compareBox">
+
+            <strong id="compareText">
+                0 quotes selected
+            </strong>
+
+            <br>
+
+            <button
+                class="btn btn-primary"
+                onclick="compareQuotes()"
+            >
+                Compare Selected Quotes
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- INQUIRY RECORD -->
+
+    <div class="success" id="inquiryRecord">
+
+        <h3>✓ Inquiry Submitted</h3>
+
+        <p>
+            Your inquiry has been recorded on this website.
+            Please keep your reference number for follow-up.
+        </p>
+
+        <div class="reference" id="referenceNumber"></div>
+
+        <div class="record-grid" id="recordGrid"></div>
+
+    </div>
 
 </main>
 
 
-<section class="features">
-
-<div class="features-container">
-
-<h2>
-Why Use Anna Ong Insurance?
-</h2>
-
-<div class="feature-grid">
-
-<div class="feature">
-
-<div class="feature-icon">💰</div>
-
-<h3>Budget-Based</h3>
-
-<p>
-Set your preferred annual budget and easily see which available options fall within it.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">🇵🇭</div>
-
-<h3>Made for Filipino Drivers</h3>
-
-<p>
-The quote flow is designed around common Philippine vehicle and insurance information.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">📋</div>
-
-<h3>Easy Comparison</h3>
-
-<p>
-See estimated premiums, coverage options, and budget status in one place.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
 <footer>
 
-<strong>Anna Ong Insurance</strong>
+    <strong>Anna Ong Insurance</strong>
 
-<p style="margin-top:7px;">
-Car Insurance Comparison & Inquiry Platform
-</p>
+    <br>
 
-<p style="margin-top:12px;font-size:13px;">
-Insurance rates shown in this prototype are for demonstration only.
-Actual premiums are subject to insurer approval, vehicle details,
-coverage, and applicable Philippine insurance rules.
-</p>
+    Car Insurance Comparison & Inquiry Prototype
+
+    <br><br>
+
+    © 2026 Anna Ong Insurance. All rights reserved.
 
 </footer>
 
 
-<!-- MODAL -->
+<!-- INQUIRY MODAL -->
 
-<div class="modal" id="modal">
+<div class="modal" id="inquiryModal">
 
-<div class="modal-content">
+    <div class="modal-content">
 
-<div class="modal-header">
+        <span class="close" onclick="closeModal()">&times;</span>
 
-<h2>Request a Quote</h2>
+        <h2>Request This Quote</h2>
 
-<span class="close" onclick="closeModal()">×</span>
+        <p class="section-subtitle">
+            Enter your contact information so an insurance advisor
+            can follow up with your inquiry.
+        </p>
 
-</div>
+        <div class="selected-quote" id="selectedQuote"></div>
 
+        <div class="form-grid">
 
-<p style="color:#697386;margin-bottom:15px;">
-Tell us how we can contact you regarding your selected option.
-</p>
+            <div class="form-group full">
+                <label>Full Name</label>
 
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your full name"
+                >
+            </div>
 
-<label>Selected Option</label>
+            <div class="form-group">
+                <label>Mobile Number</label>
 
-<input
-type="text"
-id="selectedQuote"
-readonly
->
+                <input
+                    type="tel"
+                    id="customerMobile"
+                    placeholder="09XXXXXXXXX"
+                >
+            </div>
 
+            <div class="form-group">
+                <label>Email Address</label>
 
-<label>Full Name</label>
+                <input
+                    type="email"
+                    id="customerEmail"
+                    placeholder="you@email.com"
+                >
+            </div>
 
-<input
-type="text"
-id="customerName"
-placeholder="Your full name"
->
+            <div class="form-group full">
+                <label>Message</label>
 
+                <textarea
+                    id="customerMessage"
+                    rows="4"
+                    placeholder="Additional questions or requests..."
+                ></textarea>
+            </div>
 
-<label>Mobile Number</label>
+        </div>
 
-<input
-type="tel"
-id="customerMobile"
-placeholder="09XXXXXXXXX"
->
+        <div class="actions">
 
+            <button
+                class="btn btn-primary"
+                type="button"
+                onclick="submitInquiry()"
+            >
+                Submit Inquiry
+            </button>
 
-<label>Email Address</label>
+            <button
+                class="btn btn-secondary"
+                type="button"
+                onclick="closeModal()"
+            >
+                Cancel
+            </button>
 
-<input
-type="email"
-id="customerEmail"
-placeholder="you@email.com"
->
+        </div>
 
-
-<label>Message</label>
-
-<textarea
-id="customerMessage"
-placeholder="Additional questions or requests..."
-></textarea>
-
-
-<button class="submit" onclick="submitInquiry()">
-SUBMIT INQUIRY
-</button>
-
-
-<div class="success" id="successMessage">
-
-Thank you! Your inquiry has been recorded.
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
 
 <script>
 
-const models = {
+/* ==========================================
+   GOOGLE APPS SCRIPT
+========================================== */
 
-Toyota:[
-"Vios 1.3 XLE",
-"Vios 1.5 G",
-"Yaris Cross",
-"Corolla Altis",
-"Fortuner",
-"Innova",
-"Raize",
-"Rush",
-"Hiace"
-],
+const scriptURL =
+"https://script.google.com/macros/s/AKfycbx74ZnXI2JkLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
 
-Honda:[
-"City",
-"City Hatchback",
-"Civic",
-"BR-V",
-"HR-V",
-"CR-V"
-],
 
-Mitsubishi:[
-"Mirage",
-"Mirage G4",
-"Xpander",
-"Triton",
-"Montero Sport"
-],
+/* ==========================================
+   VEHICLE MODELS
+========================================== */
 
-Nissan:[
-"Almera",
-"Navara",
-"Kicks",
-"Terra",
-"Urvan"
-],
+const vehicleModels = {
 
-Ford:[
-"Ranger",
-"Everest",
-"Territory"
-],
+    Toyota: [
+        "Vios 1.3 XLE",
+        "Vios 1.5 G",
+        "Wigo 1.0 G",
+        "Raize 1.0 Turbo",
+        "Yaris Cross",
+        "Corolla Altis",
+        "Camry",
+        "Innova",
+        "Fortuner",
+        "Hilux",
+        "RAV4"
+    ],
 
-Hyundai:[
-"Accent",
-"Creta",
-"Tucson",
-"Santa Fe",
-"Stargazer"
-],
+    Honda: [
+        "City 1.5 V",
+        "City Hatchback",
+        "Civic",
+        "BR-V",
+        "HR-V",
+        "CR-V",
+        "Brio"
+    ],
 
-Kia:[
-"Soluto",
-"Sonet",
-"Seltos",
-"Sportage",
-"Carnival"
-],
+    Mitsubishi: [
+        "Mirage",
+        "Mirage G4",
+        "Xpander",
+        "Montero Sport",
+        "Triton",
+        "Outlander"
+    ],
 
-Suzuki:[
-"Swift",
-"Dzire",
-"Ertiga",
-"Jimny",
-"XL7"
-]
+    Nissan: [
+        "Almera",
+        "Kicks",
+        "Terra",
+        "Navara",
+        "X-Trail",
+        "Livina"
+    ],
+
+    Ford: [
+        "Territory",
+        "Everest",
+        "Ranger",
+        "EcoSport",
+        "Explorer",
+        "Mustang"
+    ],
+
+    Hyundai: [
+        "Accent",
+        "Creta",
+        "Tucson",
+        "Santa Fe",
+        "Stargazer",
+        "Kona"
+    ],
+
+    Kia: [
+        "Picanto",
+        "Soluto",
+        "Seltos",
+        "Sportage",
+        "Sorento",
+        "Carnival"
+    ],
+
+    Suzuki: [
+        "Celerio",
+        "Dzire",
+        "Ertiga",
+        "XL7",
+        "Jimny",
+        "Vitara"
+    ]
 
 };
 
 
-function loadModels(){
+/* ==========================================
+   PROVIDERS
+========================================== */
 
-const make=document.getElementById("make").value;
+const providers = [
 
-const model=document.getElementById("model");
+    {
+        name:"FGen Insurance",
+        rate:0.0175,
+        aon:0.0025
+    },
 
-model.innerHTML='<option value="">Select Model</option>';
+    {
+        name:"FPG Mercantile Insurance",
+        rate:0.0185,
+        aon:0.0025
+    },
 
-if(models[make]){
+    {
+        name:"AlliedBankers Insurance",
+        rate:0.0190,
+        aon:0.0025
+    },
 
-models[make].forEach(item=>{
-
-const option=document.createElement("option");
-
-option.textContent=item;
-
-option.value=item;
-
-model.appendChild(option);
-
-});
-
-}
-
-}
-
-
-const providers=[
-
-{
-name:"FGen Insurance",
-rate:0.0175,
-aon:0.0025,
-repair:"Accredited Repair Shops"
-},
-
-{
-name:"FPG Mercantile Insurance",
-rate:0.0185,
-aon:0.0025,
-repair:"Accredited Repair Shops"
-},
-
-{
-name:"AlliedBankers Insurance",
-rate:0.0190,
-aon:0.0025,
-repair:"Accredited Repair Shops"
-},
-
-{
-name:"PhilBritish Insurance",
-rate:0.0200,
-aon:0.0025,
-repair:"Accredited Repair Shops"
-}
+    {
+        name:"PhilBritish Insurance",
+        rate:0.0200,
+        aon:0.0025
+    }
 
 ];
 
 
+let currentQuotes = [];
+let selectedQuote = null;
+let compareSelection = [];
+
+
+/* ==========================================
+   LOAD MODELS
+========================================== */
+
+function loadModels(){
+
+    const make =
+        document.getElementById("vehicleMake").value;
+
+    const model =
+        document.getElementById("vehicleModel");
+
+    model.innerHTML =
+        '<option value="">Select a Model</option>';
+
+    if(!make || !vehicleModels[make]){
+        return;
+    }
+
+    vehicleModels[make].forEach(function(item){
+
+        const option =
+            document.createElement("option");
+
+        option.value = item;
+        option.textContent = item;
+
+        model.appendChild(option);
+
+    });
+
+}
+
+
+/* ==========================================
+   COVERAGE STYLE
+========================================== */
+
+function updateCoverageStyle(input){
+
+    const card =
+        input.closest(".coverage-option");
+
+    if(input.checked){
+
+        card.classList.add("selected");
+
+    }else{
+
+        card.classList.remove("selected");
+
+    }
+
+}
+
+
+/* ==========================================
+   GET COVERAGE
+========================================== */
+
+function getSelectedCoverage(){
+
+    const checkboxes =
+        document.querySelectorAll(
+            ".coverage-option input:checked"
+        );
+
+    return Array.from(checkboxes)
+        .map(item => item.value);
+
+}
+
+
+/* ==========================================
+   CALCULATE QUOTES
+========================================== */
+
 function calculateQuotes(){
 
-const value=parseFloat(
-document.getElementById("vehicleValue").value
-)||0;
+    const category =
+        document.getElementById("vehicleCategory").value;
 
-const budget=parseFloat(
-document.getElementById("budget").value
-)||0;
+    const make =
+        document.getElementById("vehicleMake").value;
 
-const age=parseInt(
-document.getElementById("driverAge").value
-)||30;
+    const model =
+        document.getElementById("vehicleModel").value;
 
-const category=document.getElementById("category").value;
+    const year =
+        document.getElementById("modelYear").value;
 
-const aon=document.getElementById("aon").checked;
+    const value =
+        Number(
+            document.getElementById("vehicleValue").value
+        );
 
-if(value<=0 || budget<=0){
+    const age =
+        Number(
+            document.getElementById("driverAge").value
+        );
 
-alert("Please enter your vehicle value and annual budget.");
+    const budget =
+        Number(
+            document.getElementById("budget").value
+        );
 
-return;
+    const coverage =
+        getSelectedCoverage();
+
+
+    if(!category){
+
+        alert("Please select the vehicle category.");
+
+        return;
+    }
+
+
+    if(!make){
+
+        alert("Please select the vehicle make.");
+
+        return;
+    }
+
+
+    if(!model){
+
+        alert("Please select a model.");
+
+        return;
+    }
+
+
+    if(!year){
+
+        alert("Please select the model year.");
+
+        return;
+    }
+
+
+    if(!value || value <= 0){
+
+        alert("Please enter the estimated vehicle value.");
+
+        return;
+    }
+
+
+    if(!age || age < 18){
+
+        alert("Please enter a valid driver age.");
+
+        return;
+    }
+
+
+    if(!budget || budget <= 0){
+
+        alert("Please enter your annual insurance budget.");
+
+        return;
+    }
+
+
+    if(coverage.length === 0){
+
+        alert("Please select at least one coverage option.");
+
+        return;
+    }
+
+
+    currentQuotes = providers.map(function(provider){
+
+        let rate =
+            provider.rate;
+
+
+        /* AGE ADJUSTMENT */
+
+        if(age < 25){
+
+            rate *= 1.08;
+
+        }else if(age >= 55){
+
+            rate *= 1.05;
+
+        }
+
+
+        /* VEHICLE CATEGORY */
+
+        if(category === "Commercial"){
+
+            rate *= 1.12;
+
+        }
+
+        if(category === "TNVS / For Hire"){
+
+            rate *= 1.18;
+
+        }
+
+        if(category === "EV / Hybrid"){
+
+            rate *= 1.02;
+
+        }
+
+
+        /* OLD VEHICLE */
+
+        const currentYear = 2026;
+
+        const vehicleAge =
+            currentYear - Number(year);
+
+        if(vehicleAge > 5){
+
+            rate *= 1.05;
+
+        }
+
+
+        let ownDamage =
+            value * rate;
+
+
+        /* COVERAGES */
+
+        let coverageCost = 0;
+
+
+        if(coverage.includes("Acts of Nature")){
+
+            coverageCost +=
+                value * provider.aon;
+
+        }
+
+
+        if(coverage.includes("Excess Bodily Injury")){
+
+            coverageCost += 750;
+
+        }
+
+
+        if(coverage.includes("Voluntary Property Damage")){
+
+            coverageCost += 600;
+
+        }
+
+
+        if(coverage.includes("Roadside Assistance")){
+
+            coverageCost += 500;
+
+        }
+
+
+        let ctpl = 0;
+
+
+        if(coverage.includes("CTPL")){
+
+            ctpl = 1500;
+
+        }
+
+
+        const subtotal =
+            ownDamage +
+            coverageCost +
+            ctpl;
+
+
+        const dst =
+            subtotal * 0.125;
+
+
+        const lgt =
+            subtotal * 0.002;
+
+
+        const vat =
+            (subtotal + dst + lgt) * 0.12;
+
+
+        const total =
+            subtotal +
+            dst +
+            lgt +
+            vat;
+
+
+        return {
+
+            provider:provider.name,
+
+            premium:Math.round(total),
+
+            ownDamage:Math.round(ownDamage),
+
+            coverageCost:Math.round(coverageCost),
+
+            ctpl:Math.round(ctpl),
+
+            dst:Math.round(dst),
+
+            lgt:Math.round(lgt),
+
+            vat:Math.round(vat),
+
+            budget:budget,
+
+            withinBudget:
+                total <= budget,
+
+            coverage:coverage,
+
+            category:category,
+
+            make:make,
+
+            model:model,
+
+            year:year,
+
+            value:value,
+
+            age:age
+
+        };
+
+    });
+
+
+    currentQuotes.sort(
+        (a,b) => a.premium - b.premium
+    );
+
+
+    displayResults();
 
 }
 
 
-let ageAdjustment=1;
+/* ==========================================
+   DISPLAY RESULTS
+========================================== */
 
-if(age<25){
+function displayResults(){
 
-ageAdjustment=1.08;
+    const results =
+        document.getElementById("quoteResults");
 
-}
+    const list =
+        document.getElementById("resultsList");
 
-else if(age>=55){
+    const summary =
+        document.getElementById("resultSummary");
 
-ageAdjustment=1.05;
 
-}
+    results.style.display = "block";
 
 
-let categoryAdjustment=1;
+    summary.innerHTML =
+        "Showing " +
+        currentQuotes.length +
+        " available estimated quotes. Lowest estimate is shown first.";
 
-if(category==="Commercial"){
 
-categoryAdjustment=1.10;
+    list.innerHTML = "";
 
-}
 
-if(category==="TNVS"){
+    currentQuotes.forEach(function(quote,index){
 
-categoryAdjustment=1.15;
+        const card =
+            document.createElement("div");
 
-}
+        card.className =
+            "quote-card" +
+            (index === 0 ? " lowest" : "");
 
 
-let ctpl=1500;
+        const budgetClass =
+            quote.withinBudget
+                ? "within"
+                : "above";
 
-let results=[];
 
+        const budgetText =
+            quote.withinBudget
+                ? "✓ WITHIN YOUR BUDGET"
+                : "ABOVE YOUR BUDGET";
 
-providers.forEach(provider=>{
 
-let premium=value*provider.rate;
+        card.innerHTML = `
 
-if(aon){
+            ${
+                index === 0
+                ?
+                '<div class="lowest-badge">LOWEST AVAILABLE ESTIMATE</div>'
+                :
+                ''
+            }
 
-premium+=value*provider.aon;
+            <div class="quote-top">
 
-}
+                <div>
 
-premium*=ageAdjustment;
+                    <div class="provider">
+                        ${quote.provider}
+                    </div>
 
-premium*=categoryAdjustment;
+                    <small>
+                        ${quote.category} • ${quote.year} ${quote.make} ${quote.model}
+                    </small>
 
-if(document.getElementById("ebi").checked){
+                </div>
 
-premium+=1000;
+                <div class="quote-price">
 
-}
+                    <small>Estimated Annual Premium</small>
 
-if(document.getElementById("vpd").checked){
+                    <div class="price">
+                        ₱${formatMoney(quote.premium)}
+                    </div>
 
-premium+=1200;
+                    <span class="budget-status ${budgetClass}">
+                        ${budgetText}
+                    </span>
 
-}
+                </div>
 
-if(!document.getElementById("ctpl").checked){
+            </div>
 
-ctpl=0;
 
-}
+            <div class="quote-info">
 
-let subtotal=premium+ctpl;
+                <div class="info-box">
 
-let dst=subtotal*0.125;
+                    <small>Your Budget</small>
 
-let lgt=subtotal*0.002;
+                    <strong>
+                        ₱${formatMoney(quote.budget)}
+                    </strong>
 
-let vat=(subtotal+dst+lgt)*0.12;
+                </div>
 
-let total=subtotal+dst+lgt+vat;
 
+                <div class="info-box">
 
-results.push({
+                    <small>Vehicle Value</small>
 
-provider:provider,
+                    <strong>
+                        ₱${formatMoney(quote.value)}
+                    </strong>
 
-premium:total
+                </div>
 
-});
 
-});
+                <div class="info-box">
 
+                    <small>Coverage</small>
 
-results.sort((a,b)=>a.premium-b.premium);
+                    <strong>
+                        ${quote.coverage.length} selected
+                    </strong>
 
+                </div>
 
-displayResults(results,budget);
+            </div>
 
-}
 
+            <div class="quote-actions">
 
-function displayResults(results,budget){
+                <button
+                    class="btn btn-secondary"
+                    onclick="viewDetails(${index})"
+                >
+                    View Details
+                </button>
 
-const container=document.getElementById("quoteResults");
 
-container.innerHTML="";
+                <button
+                    class="btn btn-primary"
+                    onclick="requestQuote(${index})"
+                >
+                    Request This Quote
+                </button>
 
 
-document.getElementById("budgetDisplay").textContent=
-" ₱"+formatMoney(budget);
+                <button
+                    class="btn btn-secondary"
+                    onclick="toggleCompare(${index})"
+                >
+                    Compare
+                </button>
 
+            </div>
 
-results.forEach((item,index)=>{
+        `;
 
-const within=item.premium<=budget;
 
-const card=document.createElement("div");
+        list.appendChild(card);
 
-card.className=
-"quote-card "+(index===0?"lowest":"");
+    });
 
 
-card.innerHTML=`
-
-${index===0?
-'<div class="lowest-badge">LOWEST AVAILABLE ESTIMATE</div>'
-:""}
-
-<div class="quote-top">
-
-<div>
-
-<div class="provider">
-${item.provider.name}
-</div>
-
-<span class="budget-status ${within?"within":"over"}">
-
-${within?
-"✓ WITHIN YOUR BUDGET":
-"ABOVE YOUR BUDGET"}
-
-</span>
-
-</div>
-
-
-<div class="price">
-
-<small>Estimated annual premium</small>
-
-<strong>
-₱${formatMoney(item.premium)}
-</strong>
-
-</div>
-
-</div>
-
-
-<div class="quote-details">
-
-<div class="detail">
-
-<strong>Coverage</strong>
-
-Comprehensive
-
-</div>
-
-<div class="detail">
-
-<strong>AON</strong>
-
-${document.getElementById("aon").checked?"Included":"Not Included"}
-
-</div>
-
-<div class="detail">
-
-<strong>Repair</strong>
-
-${item.provider.repair}
-
-</div>
-
-</div>
-
-
-<div class="actions">
-
-<button class="btn"
-onclick="viewDetails('${item.provider.name}',${item.premium})">
-
-View Details
-
-</button>
-
-<button class="btn btn-primary"
-onclick="openModal('${item.provider.name} - ₱${formatMoney(item.premium)}')">
-
-Request This Quote
-
-</button>
-
-</div>
-
-`;
-
-container.appendChild(card);
-
-});
-
-
-document.getElementById("results").style.display="block";
-
-document.getElementById("results")
-.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
+    results.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
 
 }
 
 
-function viewDetails(provider,premium){
+/* ==========================================
+   VIEW DETAILS
+========================================== */
 
-const budget=
-parseFloat(document.getElementById("budget").value)||0;
+function viewDetails(index){
 
-let status=
-premium<=budget?
-"WITHIN YOUR BUDGET":
-"ABOVE YOUR BUDGET";
+    const quote =
+        currentQuotes[index];
 
 
-alert(
+    selectedQuote =
+        quote;
 
-provider+
-"\n\n"+
-"Estimated Annual Premium: ₱"+
-formatMoney(premium)+
-"\n"+
-"Your Budget: ₱"+
-formatMoney(budget)+
-"\n\n"+
-"Status: "+status+
-"\n\n"+
-"Final premium is subject to actual vehicle information, insurer underwriting, applicable taxes/fees, and approved rates."
 
-);
+    const message = `
+
+        <strong>${quote.provider}</strong>
+
+        <br><br>
+
+        Estimated Premium:
+        <strong>₱${formatMoney(quote.premium)}</strong>
+
+        <br><br>
+
+        <strong>Premium Breakdown</strong>
+
+        <br>
+
+        Own Damage / Theft:
+        ₱${formatMoney(quote.ownDamage)}
+
+        <br>
+
+        Additional Coverage:
+        ₱${formatMoney(quote.coverageCost)}
+
+        <br>
+
+        CTPL:
+        ₱${formatMoney(quote.ctpl)}
+
+        <br>
+
+        Documentary Stamp Tax:
+        ₱${formatMoney(quote.dst)}
+
+        <br>
+
+        Local Government Tax:
+        ₱${formatMoney(quote.lgt)}
+
+        <br>
+
+        VAT:
+        ₱${formatMoney(quote.vat)}
+
+        <br><br>
+
+        <strong>Selected Coverage</strong>
+
+        <br>
+
+        ${quote.coverage.join(", ")}
+
+    `;
+
+
+    document.getElementById("selectedQuote").innerHTML =
+        message;
+
+
+    document.getElementById("inquiryModal").style.display =
+        "block";
 
 }
 
 
-function openModal(quote){
+/* ==========================================
+   REQUEST QUOTE
+========================================== */
 
-document.getElementById("modal").style.display="flex";
+function requestQuote(index){
 
-document.getElementById("selectedQuote").value=quote;
+    selectedQuote =
+        currentQuotes[index];
+
+
+    const quote =
+        selectedQuote;
+
+
+    document.getElementById("selectedQuote").innerHTML = `
+
+        <strong>${quote.provider}</strong>
+
+        <br>
+
+        ${quote.year} ${quote.make} ${quote.model}
+
+        <br><br>
+
+        Estimated Premium:
+
+        <strong>
+            ₱${formatMoney(quote.premium)}
+        </strong>
+
+        <br>
+
+        Budget:
+
+        ₱${formatMoney(quote.budget)}
+
+    `;
+
+
+    document.getElementById("inquiryModal").style.display =
+        "block";
+
+}
+
+
+/* ==========================================
+   MODAL
+========================================== */
+
+function openModal(){
+
+    document.getElementById("inquiryModal").style.display =
+        "block";
 
 }
 
 
 function closeModal(){
 
-document.getElementById("modal").style.display="none";
+    document.getElementById("inquiryModal").style.display =
+        "none";
 
 }
 
+
+window.onclick = function(event){
+
+    const modal =
+        document.getElementById("inquiryModal");
+
+    if(event.target === modal){
+
+        closeModal();
+
+    }
+
+};
+
+
+/* ==========================================
+   COMPARE
+========================================== */
+
+function toggleCompare(index){
+
+    const position =
+        compareSelection.indexOf(index);
+
+
+    if(position === -1){
+
+        if(compareSelection.length >= 3){
+
+            alert("You can compare up to 3 quotes.");
+
+            return;
+        }
+
+        compareSelection.push(index);
+
+    }else{
+
+        compareSelection.splice(position,1);
+
+    }
+
+
+    updateCompareBox();
+
+}
+
+
+function updateCompareBox(){
+
+    const box =
+        document.getElementById("compareBox");
+
+    const text =
+        document.getElementById("compareText");
+
+
+    if(compareSelection.length === 0){
+
+        box.style.display = "none";
+
+        return;
+    }
+
+
+    box.style.display = "block";
+
+
+    text.innerHTML =
+        compareSelection.length +
+        " quote(s) selected for comparison.";
+
+}
+
+
+function compareQuotes(){
+
+    if(compareSelection.length < 2){
+
+        alert("Please select at least 2 quotes to compare.");
+
+        return;
+    }
+
+
+    let comparison = "";
+
+    compareSelection.forEach(function(index){
+
+        const quote =
+            currentQuotes[index];
+
+        comparison += `
+
+            <div style="
+                background:white;
+                color:#172033;
+                padding:15px;
+                border-radius:10px;
+                margin-top:10px;
+            ">
+
+                <strong>${quote.provider}</strong>
+
+                <br>
+
+                Estimated Premium:
+
+                <strong>
+                    ₱${formatMoney(quote.premium)}
+                </strong>
+
+                <br>
+
+                Budget Status:
+
+                ${
+                    quote.withinBudget
+                    ? "Within Budget"
+                    : "Above Budget"
+                }
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("compareBox").innerHTML = `
+
+        <strong>Quote Comparison</strong>
+
+        ${comparison}
+
+        <br>
+
+        <button
+            class="btn btn-primary"
+            onclick="document.getElementById('compareBox').style.display='none'"
+        >
+            Close Comparison
+        </button>
+
+    `;
+
+}
+
+
+/* ==========================================
+   SUBMIT INQUIRY
+========================================== */
 
 function submitInquiry(){
 
-const name=
-document.getElementById("customerName").value.trim();
+    if(!selectedQuote){
 
-const mobile=
-document.getElementById("customerMobile").value.trim();
+        alert("Please select a quote first.");
 
-const email=
-document.getElementById("customerEmail").value.trim();
-
-const quote=
-document.getElementById("selectedQuote").value;
-
-const message=
-document.getElementById("customerMessage").value.trim();
+        return;
+    }
 
 
-if(!name || !mobile || !email){
+    const name =
+        document.getElementById("customerName").value.trim();
 
-alert("Please complete your name, mobile number, and email.");
+    const mobile =
+        document.getElementById("customerMobile").value.trim();
 
-return;
+    const email =
+        document.getElementById("customerEmail").value.trim();
+
+    const message =
+        document.getElementById("customerMessage").value.trim();
+
+
+    if(!name){
+
+        alert("Please enter your full name.");
+
+        return;
+    }
+
+
+    if(!mobile){
+
+        alert("Please enter your mobile number.");
+
+        return;
+    }
+
+
+    if(!email){
+
+        alert("Please enter your email address.");
+
+        return;
+    }
+
+
+    const reference =
+        "AOI-" +
+        Math.floor(
+            10000000 +
+            Math.random() * 90000000
+        );
+
+
+    const quote =
+        selectedQuote;
+
+
+    const formData =
+        new FormData();
+
+
+    /*
+       These original field names are preserved
+       for the existing Google Apps Script.
+    */
+
+    formData.append(
+        "name",
+        name
+    );
+
+    formData.append(
+        "mobile",
+        mobile
+    );
+
+    formData.append(
+        "email",
+        email
+    );
+
+    formData.append(
+        "vehicle",
+        quote.make + " " + quote.model
+    );
+
+    formData.append(
+        "modelYear",
+        quote.year
+    );
+
+    formData.append(
+        "bodyType",
+        quote.category
+    );
+
+    formData.append(
+        "coverage",
+        quote.coverage.join(", ")
+    );
+
+    formData.append(
+        "declaredValue",
+        quote.value
+    );
+
+    formData.append(
+        "estimatedPremium",
+        quote.premium
+    );
+
+
+    /*
+       Additional information
+       for an updated Google Sheet script.
+    */
+
+    formData.append(
+        "provider",
+        quote.provider
+    );
+
+    formData.append(
+        "budget",
+        quote.budget
+    );
+
+    formData.append(
+        "referenceNumber",
+        reference
+    );
+
+    formData.append(
+        "message",
+        message
+    );
+
+
+    /*
+       Send to Google Apps Script.
+       no-cors allows the browser to send the request
+       even when the endpoint does not provide CORS headers.
+    */
+
+    fetch(scriptURL,{
+
+        method:"POST",
+
+        body:formData,
+
+        mode:"no-cors"
+
+    })
+    .then(function(){
+
+        showInquiryRecord(
+            reference,
+            name,
+            mobile,
+            email,
+            quote
+        );
+
+        closeModal();
+
+        document.getElementById("customerName").value = "";
+        document.getElementById("customerMobile").value = "";
+        document.getElementById("customerEmail").value = "";
+        document.getElementById("customerMessage").value = "";
+
+    })
+    .catch(function(error){
+
+        console.error(error);
+
+        /*
+           Still show the local inquiry record.
+           Server-side confirmation is not available
+           because the request uses no-cors.
+        */
+
+        showInquiryRecord(
+            reference,
+            name,
+            mobile,
+            email,
+            quote
+        );
+
+        closeModal();
+
+    });
 
 }
 
 
-/*
-==========================================================
-GOOGLE APPS SCRIPT CONNECTION
-==========================================================
+/* ==========================================
+   SHOW INQUIRY RECORD
+========================================== */
 
-Replace the URL below with your active Apps Script Web App URL.
+function showInquiryRecord(
+    reference,
+    name,
+    mobile,
+    email,
+    quote
+){
 
-Example:
-
-const scriptURL =
-"https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
-
-==========================================================
-*/
-
-
-const scriptURL=
-"https://script.google.com/macros/s/AKfycbx74ZnXI2JkLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
+    const record =
+        document.getElementById("inquiryRecord");
 
 
-const formData=new FormData();
-
-formData.append("name",name);
-
-formData.append("mobile",mobile);
-
-formData.append("email",email);
-
-formData.append(
-"vehicle",
-document.getElementById("make").value+
-" "+
-document.getElementById("model").value
-);
-
-formData.append(
-"modelYear",
-document.getElementById("year").value
-);
-
-formData.append(
-"bodyType",
-document.getElementById("category").value
-);
-
-formData.append(
-"coverage",
-"Comprehensive"
-);
-
-formData.append(
-"declaredValue",
-document.getElementById("vehicleValue").value
-);
-
-formData.append(
-"estimatedPremium",
-quote
-);
-
-formData.append(
-"provider",
-quote
-);
-
-formData.append(
-"message",
-message
-);
+    document.getElementById("referenceNumber").innerText =
+        "Reference: " + reference;
 
 
-fetch(scriptURL,{
+    document.getElementById("recordGrid").innerHTML = `
 
-method:"POST",
+        <div class="record-item">
 
-body:formData,
+            <small>Customer</small>
 
-mode:"no-cors"
+            <strong>${escapeHTML(name)}</strong>
 
-})
-.then(()=>{
+        </div>
 
-document.getElementById("successMessage").style.display="block";
 
-document.getElementById("customerName").value="";
+        <div class="record-item">
 
-document.getElementById("customerMobile").value="";
+            <small>Mobile</small>
 
-document.getElementById("customerEmail").value="";
+            <strong>${escapeHTML(mobile)}</strong>
 
-document.getElementById("customerMessage").value="";
+        </div>
 
-})
-.catch(()=>{
 
-alert(
-"Your inquiry could not be sent. Please try again or contact the insurance agent directly."
-);
+        <div class="record-item">
 
-});
+            <small>Email</small>
+
+            <strong>${escapeHTML(email)}</strong>
+
+        </div>
+
+
+        <div class="record-item">
+
+            <small>Provider</small>
+
+            <strong>${escapeHTML(quote.provider)}</strong>
+
+        </div>
+
+
+        <div class="record-item">
+
+            <small>Vehicle</small>
+
+            <strong>
+                ${escapeHTML(
+                    quote.year +
+                    " " +
+                    quote.make +
+                    " " +
+                    quote.model
+                )}
+            </strong>
+
+        </div>
+
+
+        <div class="record-item">
+
+            <small>Estimated Premium</small>
+
+            <strong>
+                ₱${formatMoney(quote.premium)}
+            </strong>
+
+        </div>
+
+
+        <div class="record-item">
+
+            <small>Budget</small>
+
+            <strong>
+                ₱${formatMoney(quote.budget)}
+            </strong>
+
+        </div>
+
+
+        <div class="record-item">
+
+            <small>Budget Status</small>
+
+            <strong>
+                ${
+                    quote.withinBudget
+                    ? "Within Budget"
+                    : "Above Budget"
+                }
+            </strong>
+
+        </div>
+
+    `;
+
+
+    record.style.display = "block";
+
+
+    record.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
 
 }
 
 
-function formatMoney(number){
+/* ==========================================
+   RESET
+========================================== */
 
-return Number(number).toLocaleString(
-"en-PH",
-{
-minimumFractionDigits:2,
-maximumFractionDigits:2
+function resetForm(){
+
+    document.getElementById("vehicleCategory").value = "";
+
+    document.getElementById("vehicleMake").value = "";
+
+    document.getElementById("vehicleModel").innerHTML =
+        '<option value="">Select a Model</option>';
+
+    document.getElementById("modelYear").value = "";
+
+    document.getElementById("vehicleValue").value = "";
+
+    document.getElementById("driverAge").value = "";
+
+    document.getElementById("budget").value = "";
+
+
+    document.querySelectorAll(
+        ".coverage-option input"
+    ).forEach(function(input,index){
+
+        input.checked =
+            index === 0;
+
+        updateCoverageStyle(input);
+
+    });
+
+
+    document.getElementById("quoteResults").style.display =
+        "none";
+
+
+    document.getElementById("inquiryRecord").style.display =
+        "none";
+
+
+    currentQuotes = [];
+
+    compareSelection = [];
+
 }
-);
 
 
-}
-
+/* ==========================================
+   SCROLL TO QUOTE
+========================================== */
 
 function scrollToQuote(){
 
-document.getElementById("quote")
-.scrollIntoView({
-behavior:"smooth"
-});
+    document.getElementById("quoteForm")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
 
-window.onclick=function(event){
+/* ==========================================
+   FORMAT MONEY
+========================================== */
 
-const modal=document.getElementById("modal");
+function formatMoney(number){
 
-if(event.target===modal){
-
-closeModal();
+    return Number(number).toLocaleString(
+        "en-PH",
+        {
+            maximumFractionDigits:0
+        }
+    );
 
 }
 
-};
+
+/* ==========================================
+   ESCAPE HTML
+========================================== */
+
+function escapeHTML(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
 
 </script>
 
