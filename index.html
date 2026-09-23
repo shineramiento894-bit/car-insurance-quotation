@@ -1,14 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DriveSafe | Car Insurance Quote Comparison</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet"
-    >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna Ong Insurance Solutions | Car Insurance Quote</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+<header class="bg-blue-950 text-white py-4 shadow-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 flex justify-between items-center gap-4">
+    <div class="flex items-center gap-3">
+      <i class="fa-solid fa-shield-halved text-yellow-400 text-2xl"></i>
+      <div>
+        <h1 class="text-xl font-bold leading-tight">Anna Ong Insurance</h1>
+        <p class="text-xs text-blue-200">Your Trusted Insurance Agent</p>
+      </div>
+    </div>
+    <a href="#quote-form" class="bg-yellow-500 hover:bg-yellow-600 text-blue-950 font-bold px-4 py-2 rounded-lg text-sm">Get Quote</a>
+  </div>
+</header>
+
+<section class="bg-blue-900 text-white py-10 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <p class="text-yellow-400 text-sm font-bold uppercase tracking-wide mb-2">Car Insurance Comparison</p>
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Compare Your Car Insurance Quote</h2>
+    <p class="text-blue-200 max-w-2xl mx-auto text-sm md:text-base">Select your vehicle and coverage to see estimated premiums from participating insurance providers.</p>
+  </div>
+</section>
+
+<section id="quote-form" class="max-w-6xl mx-auto px-4 -mt-6 relative z-10">
+  <div class="bg-white rounded-2xl p-6 shadow-xl">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1">VEHICLE CATEGORY</label>
+        <select id="vehicleCategory" class="w-full border border-gray-300 rounded-lg p-3 text-sm">
+          <option value="Private Car">Private Car</option>
+          <option value="EV / Hybrid">EV / Hybrid</option>
+          <option value="TNVS / For Hire">TNVS / For Hire</option>
+          <option value="Commercial Vehicle">Commercial Vehicle</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1">VEHICLE MAKE</label>
+        <select id="carMake" onchange="updateModels()" class="w-full border border-gray-300 rounded-lg p-3 text-sm"></select>
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1">MODEL & VARIANT</label>
+        <select id="carModel" onchange="calculateQuotes()" class="w-full border border-gray-300 rounded-lg p-3 text-sm"></select>
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1">MODEL YEAR</label>
+        <select id="carYear" onchange="calculateQuotes()" class="w-full border border-gray-300 rounded-lg p-3 text-sm"></select>
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1">FAIR MARKET VALUE (FMV)</label>
+        <input id="fmv" type="number" min="1" step="1000" class="w-full border border-gray-300 rounded-lg p-3 text-sm" placeholder="e.g. 700000">
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1">ACTS OF NATURE (AON)</label>
+        <select id="includeAON" onchange="calculateQuotes()" class="w-full border border-gray-300 rounded-lg p-3 text-sm">
+          <option value="true">Included</option>
+          <option value="false">Excluded</option>
+        </select>
+      </div>
+    </div>
+    <button onclick="calculateQuotes()" class="w-full mt-5 bg-yellow-500 hover:bg-yellow-600 text-blue-950 font-bold py-3 rounded-lg shadow flex justify-center items-center gap-2">
+      <i class="fa-solid fa-calculator"></i> Calculate Rates
+    </button>
+    <p class="text-xs text-gray-500 mt-3 text-center">Displayed premiums are estimates and should be confirmed by the insurance provider/broker before issuance.</p>
+  </div>
+</section>
+
+<main class="max-w-6xl mx-auto px-4 py-10">
+  <div class="flex justify-between items-center mb-6 gap-3">
+    <div>
+      <h3 class="text-2xl font-bold">Available Insurance Quotes</h3>
+      <p id="quoteSummary" class="text-sm text-gray-500 mt-1">Choose your vehicle details to calculate.</p>
+    </div>
+    <span id="resultCount" class="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold">4 Plans</span>
+  </div>
+  <div id="quotesContainer" class="space-y-6"></div>
+</main>
+
+<div id="applyModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4 z-50">
+  <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+    <h3 class="text-xl font-bold text-gray-900 mb-1">Request a Quote</h3>
+    <p class="text-xs text-gray-500 mb-4">Provider: <strong id="modalProviderName">Provider</strong></p>
+
+    <form id="leadForm" class="space-y-3">
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1">FULL NAME</label>
+        <input id="fullName" type="text" required class="w-full border border-gray-300 rounded-lg p-3 text-sm" placeholder="Juan Cruz">
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1">MOBILE NUMBER</label>
+        <input id="mobile" type="tel" required class="w-full border border-gray-300 rounded-lg p-3 text-sm" placeholder="0917XXXXXXX">
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1">EMAIL ADDRESS</label>
+        <input id="email" type="email" required class="w-full border border-gray-300 rounded-lg p-3 text-sm" placeholder="juan@example.com">
+      </div>
+      <button id="submitBtn" type="submit" class="w-full bg-blue-950 hover:bg-blue-900 text-white font-bold py-3 rounded-lg">Submit Inquiry</button>
+    </form>
+    <p id="submitStatus" class="text-xs text-center mt-3 hidden"></p>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   GOOGLE SHEETS CONNECTION
+   This is the same Apps Script endpoint from the old site.
+   ========================================================= */
+const scriptURL = "https://script.google.com/macros/s/AKfycbx74ZnXI2JkLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
+
+/* =========================================================
+   VEHICLE DATABASE
+   Add more makes/models here later.
+   ========================================================= */
+const vehicleValues = {
+  Toyota: {
+    "Vios 1.3 E A/T": 650000,
+    "Fortuner 2.4 G 4x2 A/T": 1400000,
+    "Innova 2.8 V": 1500000,
+    "Raize 1.0 Turbo": 900000,
+    "Corolla Cross 1.8 V": 1450000,
+    "Yaris Cross 1.5 V": 1400000,
+    "RAV4 Hybrid": 2200000
+  },
+  Honda: {
+    "Civic 1.5 RS Turbo": 1200000,
+    "City 1.5 S CVT": 720000,
+    "BR-V 1.5 VX": 1250000,
+    "HR-V 1.5 V Turbo": 1450000,
+    "CR-V Hybrid": 2200000
+  },
+  Mitsubishi: {
+    "Xpander 1.5 GLX": 780000,
+    "Montero Sport GLS": 1500000,
+    "Triton Athlete": 1800000,
+    "Outlander PHEV": 2500000
+  }
+};
+
+/* =========================================================
+   PROVIDERS FROM YOUR SUPPLIED AD/CODE
+   These rates are the values contained in the code you sent.
+   Replace them later with your official brokerage rate sheet.
+   ========================================================= */
+const partners = [
+  {
+    name: "PhilBritish Insurance",
+    tagline: "TNVS / For Hire Units",
+    categories: ["TNVS / For Hire"],
+    baseRate: 0.022,
+    aonRate: 0.003,
+    towing: "For confirmation",
+    casaEligibility: "Subject to policy",
+    repairShops: "Subject to policy",
+    color: "border-red-500"
+  },
+  {
+    name: "FPG Mercantile",
+    tagline: "EVs / Hybrids",
+    categories: ["EV / Hybrid"],
+    baseRate: 0.019,
+    aonRate: 0.003,
+    towing: "For confirmation",
+    casaEligibility: "Subject to policy",
+    repairShops: "Subject to policy",
+    color: "border-yellow-500"
+  },
+  {
+    name: "Alliedbankers Insurance",
+    tagline: "EVs / Hybrids",
+    categories: ["EV / Hybrid"],
+    baseRate: 0.020,
+    aonRate: 0.003,
+    towing: "For confirmation",
+    casaEligibility: "Subject to policy",
+    repairShops: "Subject to policy",
+    color: "border-blue-500"
+  },
+  {
+    name: "FGen Insurance",
+    tagline: "Private Cars / Commercial Vehicles",
+    categories: ["Private Car", "Commercial Vehicle"],
+    baseRate: 0.018,
+    aonRate: 0.003,
+    towing: "For confirmation",
+    casaEligibility: "Subject to policy",
+    repairShops: "Subject to policy",
+    color: "border-green-500"
+  }
+];
+
+/* Tax / fee values from your supplied code. */
+const TAX = {
+  docStamp: 0.125,
+  lgt: 0.002,
+  vat: 0.12,
+  bodilyInjury: 420,
+  propertyDamage: 1245
+};
+
+let selectedProvider = "";
+
+function peso(amount) {
+  return Number(amount || 0).toLocaleString("en-PH", {
+    style: "currency",
+    currency: "PHP",
+    maximumFractionDigits: 0
+  });
+}
+
+function populateMakes() {
+  const makeSelect = document.getElementById("carMake");
+  makeSelect.innerHTML = Object.keys(vehicleValues).map(make =>
+    `<option value="${make}">${make}</option>`
+  ).join("");
+}
+
+function populateYears() {
+  const yearSelect = document.getElementById("carYear");
+  const currentYear = new Date().getFullYear();
+  yearSelect.innerHTML = "";
+  for (let year = currentYear; year >= 2015; year--) {
+    yearSelect.innerHTML += `<option value="${year}">${year}</option>`;
+  }
+}
+
+function updateModels() {
+  const make = document.getElementById("carMake").value;
+  const modelSelect = document.getElementById("carModel");
+  const models = vehicleValues[make] || {};
+
+  modelSelect.innerHTML = Object.entries(models).map(([model, value]) =>
+    `<option value="${model}" data-fmv="${value}">${model}</option>`
+  ).join("");
+
+  const firstModel = modelSelect.options[0];
+  if (firstModel) {
+    document.getElementById("fmv").value = firstModel.dataset.fmv;
+  }
+  calculateQuotes();
+}
+
+document.getElementById("carModel").addEventListener("change", function() {
+  const selected = this.options[this.selectedIndex];
+  if (selected && selected.dataset.fmv) {
+    document.getElementById("fmv").value = selected.dataset.fmv;
+  }
+  calculateQuotes();
+});
+
+document.getElementById("fmv").addEventListener("input", calculateQuotes);
+document.getElementById("vehicleCategory").addEventListener("change", calculateQuotes);
+
+function getVisiblePartners(category) {
+  return partners.filter(p => p.categories.includes(category));
+}
+
+function calculateQuotes() {
+  const category = document.getElementById("vehicleCategory").value;
+  const make = document.getElementById("carMake").value;
+  const model = document.getElementById("carModel").value;
+  const year = Number(document.getElementById("carYear").value);
+  const includeAON = document.getElementById("includeAON").value === "true";
+  const fmv = Number(document.getElementById("fmv").value);
+  const container = document.getElementById("quotesContainer");
+  const visiblePartners = getVisiblePartners(category);
+
+  document.getElementById("resultCount").textContent = `${visiblePartners.length} Plan${visiblePartners.length === 1 ? "" : "s"}`;
+  document.getElementById("quoteSummary").textContent = `${category} • ${make} ${model} • ${year} • FMV ${peso(fmv)}`;
+
+  if (!fmv || fmv <= 0) {
+    container.innerHTML = `<div class="bg-white rounded-xl shadow p-8 text-center text-gray-500">Please enter a valid Fair Market Value.</div>`;
+    return;
+  }
+
+  if (!visiblePartners.length) {
+    container.innerHTML = `<div class="bg-white rounded-xl shadow p-8 text-center text-gray-500">No provider is currently assigned to this vehicle category in the supplied setup.</div>`;
+    return;
+  }
+
+  container.innerHTML = visiblePartners.map(partner => {
+    const ownDamage = fmv * partner.baseRate;
+    const aon = includeAON ? fmv * partner.aonRate : 0;
+    const netPremium = ownDamage + aon + TAX.bodilyInjury + TAX.propertyDamage;
+    const docStamps = netPremium * TAX.docStamp;
+    const lgt = netPremium * TAX.lgt;
+    const vat = netPremium * TAX.vat;
+    const grossPremium = netPremium + docStamps + lgt + vat;
+
+    return `
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden border-l-4 ${partner.color} p-6">
+        <div class="flex flex-col md:flex-row justify-between gap-5 border-b border-gray-100 pb-5">
+          <div>
+            <span class="text-xs uppercase tracking-wide text-blue-600 font-bold">${partner.tagline}</span>
+            <h4 class="text-2xl font-extrabold text-gray-900 mt-1">${partner.name}</h4>
+            <p class="text-sm text-gray-500 mt-1">Estimated premium based on the current setup.</p>
+          </div>
+          <div class="text-left md:text-right">
+            <span class="text-xs text-gray-500 block">Estimated Annual Premium</span>
+            <span class="text-3xl font-extrabold text-blue-950">${peso(grossPremium)}</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-5 text-xs text-gray-600">
+          <div><span class="font-bold block text-gray-800">Own Damage Rate</span>${(partner.baseRate * 100).toFixed(2)}%</div>
+          <div><span class="font-bold block text-gray-800">AON Rate</span>${(partner.aonRate * 100).toFixed(2)}%</div>
+          <div><span class="font-bold block text-gray-800">AON</span>${includeAON ? "Included" : "Excluded"}</div>
+          <div><span class="font-bold block text-gray-800">Vehicle</span>${year} ${make}</div>
+        </div>
+
+        <details class="text-xs text-gray-600 bg-gray-50 p-4 rounded-xl mb-5">
+          <summary class="cursor-pointer font-bold text-blue-700">View Premium Breakdown</summary>
+          <div class="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-gray-200">
+            <div>Own Damage / Theft: ${peso(ownDamage)}</div>
+            <div>Acts of Nature: ${peso(aon)}</div>
+            <div>Bodily Injury: ${peso(TAX.bodilyInjury)}</div>
+            <div>Property Damage: ${peso(TAX.propertyDamage)}</div>
+            <div>Doc Stamps (${TAX.docStamp * 100}%): ${peso(docStamps)}</div>
+            <div>LGT (${TAX.lgt * 100}%): ${peso(lgt)}</div>
+            <div>VAT (${TAX.vat * 100}%): ${peso(vat)}</div>
+            <div class="col-span-2 font-bold text-gray-900 pt-2 border-t">Gross Premium: ${peso(grossPremium)}</div>
+          </div>
+        </details>
+
+        <div class="flex justify-end">
+          <button onclick="openModal('${partner.name.replace(/'/g, "\\'")}')" class="bg-blue-950 hover:bg-blue-900 text-white font-bold px-6 py-3 rounded-lg text-sm">Request This Quote</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function openModal(provider) {
+  selectedProvider = provider;
+  document.getElementById("modalProviderName").textContent = provider;
+  document.getElementById("applyModal").classList.remove("hidden");
+  document.getElementById("applyModal").classList.add("flex");
+}
+
+function closeModal() {
+  document.getElementById("applyModal").classList.add("hidden");
+  document.getElementById("applyModal").classList.remove("flex");
+  document.getElementById("submitStatus").classList.add("hidden");
+}
+
+document.getElementById("leadForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const submitBtn = document.getElementById("submitBtn");
+  const status = document.getElementById("submitStatus");
+  const category = document.getElementById("vehicleCategory").value;
+  const make = document.getElementById("carMake").value;
+  const model = document.getElementById("carModel").value;
+  const modelYear = Number(document.getElementById("carYear").value);
+  const declaredValue = Number(document.getElementById("fmv").value);
+  const includeAON = document.getElementById("includeAON").value === "true";
+  const fullName = document.getElementById("fullName").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const email = document.getElementById("email").value.trim();
+
+  const partner = partners.find(p => p.name === selectedProvider);
+  if (!partner) return;
+
+  const ownDamage = declaredValue * partner.baseRate;
+  const aon = includeAON ? declaredValue * partner.aonRate : 0;
+  const netPremium = ownDamage + aon + TAX.bodilyInjury + TAX.propertyDamage;
+  const premium = netPremium + (netPremium * TAX.docStamp) + (netPremium * TAX.lgt) + (netPremium * TAX.vat);
+
+  const quotationNumber = "DS-" + Date.now().toString().slice(-8);
+  const coverage = includeAON ? "Comprehensive + AON" : "Comprehensive";
+
+  const formData = new URLSearchParams();
+  /* These original field names are intentionally preserved for the existing Google Sheet Apps Script. */
+  formData.append("name", fullName);
+  formData.append("mobile", mobile);
+  formData.append("email", email);
+  formData.append("vehicle", `${make} ${model}`);
+  formData.append("modelYear", modelYear);
+  formData.append("bodyType", category);
+  formData.append("coverage", coverage);
+  formData.append("declaredValue", declaredValue);
+  formData.append("estimatedPremium", premium);
+  /* Extra fields for a future Apps Script update. */
+  formData.append("provider", selectedProvider);
+  formData.append("quotationNumber", quotationNumber);
+  formData.append("aon", includeAON ? "Included" : "Excluded");
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
+  status.classList.remove("hidden");
+  status.className = "text-xs text-center mt-3 text-blue-700";
+  status.textContent = "Saving your inquiry...";
+
+  try {
+    await fetch(scriptURL, { method: "POST", body: formData });
+    status.className = "text-xs text-center mt-3 text-green-700";
+    status.textContent = "Thank you! Your inquiry has been submitted.";
+    setTimeout(() => {
+      closeModal();
+      document.getElementById("leadForm").reset();
+    }, 1200);
+  } catch (error) {
+    console.error(error);
+    status.className = "text-xs text-center mt-3 text-red-600";
+    status.textContent = "The inquiry could not be sent. Please try again or contact Anna Ong directly.";
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit Inquiry";
+  }
+});
+
+populateMakes();
+populateYears();
+updateModels();
+</script>
+
+</body>
+</html>
