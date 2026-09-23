@@ -1,0 +1,88 @@
+from pathlib import Path
+
+old = Path("/mnt/data/Pasted text.txt")
+new = Path("/mnt/data/DriveSafe_Complete_GitHub_Code.html")
+
+html = old.read_text(encoding="utf-8")
+
+# Keep the original HTML, CSS, JavaScript, Apps Script URL,
+# Google Sheets submission fields, and quotation logic together in ONE file.
+# Apply only the front-end visual refresh.
+html = html.replace(
+    "<title>DriveSafe | Imported & Premium Car Insurance</title>",
+    "<title>DriveSafe | Online Car Insurance Quotation</title>"
+)
+
+visual_css = """
+/* ===== DriveSafe unified visual update ===== */
+:root{
+    --ds-blue:#0d63c7;
+    --ds-dark:#082b57;
+    --ds-border:#d9e4f0;
+}
+body{background:#f6f8fb;color:#172033;}
+header{
+    background:#fff;color:#172033;padding:16px 7%;
+    box-shadow:0 2px 12px rgba(8,43,87,.08);
+}
+.logo{color:var(--ds-dark);}
+.logo span{color:var(--ds-blue);}
+nav a{color:var(--ds-dark);}
+nav a:hover{color:var(--ds-blue);}
+.hero{
+    min-height:520px;
+    background:
+      linear-gradient(90deg,rgba(4,27,58,.92),rgba(4,27,58,.55)),
+      url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=80")
+      center/cover;
+    justify-content:flex-start;
+    text-align:left;
+}
+.hero-content{max-width:760px;margin-left:4%;}
+.hero h1{font-size:clamp(38px,5vw,58px);}
+.hero p{max-width:650px;font-size:19px;}
+.btn{
+    background:var(--ds-blue);
+    border-radius:6px;
+    box-shadow:0 4px 12px rgba(13,99,199,.18);
+}
+.btn:hover{background:#0955ad;}
+.form-section{background:#f6f8fb;}
+.form-container,.quotation-container{
+    border:1px solid var(--ds-border);
+    box-shadow:0 10px 35px rgba(8,43,87,.08);
+}
+.form-container{max-width:980px;}
+.section-title h2{color:var(--ds-dark);}
+.feature{
+    border:1px solid #e4ebf3;
+    box-shadow:0 5px 18px rgba(8,43,87,.05);
+}
+.form-group input,.form-group select{
+    border:1px solid #cbd8e6;
+    background:#fff;
+}
+.coverage-card{
+    background:#fff;
+    border-color:#d8e3ef;
+}
+.coverage-card:hover{
+    border-color:var(--ds-blue);
+    box-shadow:0 4px 12px rgba(13,99,199,.08);
+}
+.premium-box{
+    background:linear-gradient(135deg,#082b57,#0d63c7);
+}
+.contact{background:#082b57;}
+@media(max-width:768px){
+    header{padding:14px 5%;}
+    .hero{justify-content:center;text-align:center;}
+    .hero-content{margin-left:0;}
+}
+/* ===== End visual update ===== */
+"""
+
+html = html.replace("</style>", visual_css + "\n</style>", 1)
+new.write_text(html, encoding="utf-8")
+
+print(new)
