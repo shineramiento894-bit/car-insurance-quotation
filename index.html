@@ -8,17 +8,24 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
 :root{
   --red:#e10600;
-  --red-dark:#b80000;
+  --red-dark:#bd0000;
   --black:#080808;
   --white:#ffffff;
   --gray:#f5f5f5;
   --line:#e4e4e4;
-  --muted:#6d6d6d;
+  --text:#111111;
+  --muted:#686868;
 }
 
 *{
@@ -27,10 +34,14 @@
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
-  font-family:"Plus Jakarta Sans",sans-serif;
+  font-family:"Plus Jakarta Sans",Arial,sans-serif;
   background:#fff;
-  color:var(--black);
+  color:var(--text);
   line-height:1.5;
 }
 
@@ -49,30 +60,37 @@ a{
   color:inherit;
 }
 
-/* ================= HEADER ================= */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid #ededed;
   position:sticky;
   top:0;
   z-index:1000;
-  background:#fff;
-  border-bottom:1px solid var(--line);
 }
 
 .navbar{
   max-width:1250px;
   margin:auto;
-  min-height:76px;
+  height:78px;
+  padding:0 22px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 22px;
 }
 
 .logo{
-  font-size:21px;
+  font-size:28px;
   font-weight:800;
-  letter-spacing:-.8px;
+  letter-spacing:-1.7px;
+  color:#080808;
+  white-space:nowrap;
 }
 
 .logo span{
@@ -82,12 +100,14 @@ header{
 .nav-links{
   display:flex;
   align-items:center;
-  gap:26px;
-  font-size:13px;
-  font-weight:700;
+  gap:35px;
+  margin-left:auto;
+  margin-right:55px;
 }
 
 .nav-links a{
+  font-size:14px;
+  font-weight:700;
   transition:.2s;
 }
 
@@ -98,99 +118,114 @@ header{
 .nav-buttons{
   display:flex;
   align-items:center;
-  gap:9px;
+  gap:20px;
 }
 
-.nav-login{
+.login-btn{
   border:none;
   background:transparent;
-  font-weight:700;
-  padding:10px 13px;
-}
-
-.nav-signup{
-  background:var(--black);
-  color:#fff;
-  border:none;
-  border-radius:9px;
-  padding:11px 16px;
+  color:#111;
+  font-size:14px;
   font-weight:800;
 }
 
-.nav-login:hover{
+.login-btn:hover{
   color:var(--red);
 }
 
-.nav-signup:hover{
+.signup-btn{
+  border:none;
+  background:var(--black);
+  color:#fff;
+  padding:15px 22px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:800;
+}
+
+.signup-btn:hover{
   background:var(--red);
 }
 
-/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
   position:relative;
+  min-height:570px;
   overflow:hidden;
+
   background:
     linear-gradient(
       90deg,
-      rgba(255,255,255,.98) 0%,
-      rgba(255,255,255,.94) 48%,
-      rgba(255,255,255,.55) 100%
+      rgba(255,255,255,1) 0%,
+      rgba(255,255,255,.98) 37%,
+      rgba(255,255,255,.80) 56%,
+      rgba(255,255,255,.35) 78%,
+      rgba(255,255,255,.12) 100%
     );
-  min-height:410px;
-  display:flex;
-  align-items:center;
 }
 
-.hero-car-bg{
+.hero-car{
   position:absolute;
-  right:-20px;
-  bottom:-20px;
-  width:58%;
-  max-width:800px;
+  right:0;
+  top:0;
+  width:62%;
   height:100%;
-  opacity:.12;
-  pointer-events:none;
-  background-image:url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80");
+
+  background-image:
+    linear-gradient(
+      90deg,
+      #fff 0%,
+      rgba(255,255,255,.82) 8%,
+      rgba(255,255,255,.25) 35%,
+      rgba(255,255,255,.05) 100%
+    ),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85");
+
   background-size:cover;
   background-position:center;
+  opacity:.52;
   filter:grayscale(100%);
-}
-
-.hero-car-bg:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,#fff 0%,transparent 55%);
 }
 
 .hero-content{
   position:relative;
   z-index:2;
+
   max-width:1250px;
-  width:100%;
   margin:auto;
-  padding:65px 22px;
+
+  padding:90px 22px 80px;
 }
 
 .hero-tag{
   display:inline-block;
+
+  padding:10px 17px;
+
   background:#fff0f0;
   color:var(--red);
-  padding:7px 13px;
+
   border-radius:30px;
-  font-size:11px;
+
+  font-size:12px;
   font-weight:800;
-  margin-bottom:18px;
+
+  margin-bottom:28px;
 }
 
 .hero h1{
-  max-width:700px;
-  font-size:48px;
-  line-height:1.08;
-  letter-spacing:-2px;
+  max-width:850px;
+
+  font-size:66px;
+  line-height:1.04;
+  letter-spacing:-3.7px;
   font-weight:800;
-  margin-bottom:17px;
+
+  margin-bottom:23px;
 }
 
 .hero h1 span{
@@ -198,77 +233,105 @@ header{
 }
 
 .hero p{
-  max-width:650px;
-  color:#555;
-  font-size:16px;
+  max-width:700px;
+
+  color:#444;
+
+  font-size:17px;
   font-weight:500;
-  margin-bottom:28px;
+
+  margin-bottom:35px;
 }
 
-.hero-button{
+.start-btn{
   border:none;
   background:var(--red);
   color:#fff;
-  padding:14px 23px;
-  border-radius:9px;
-  font-size:14px;
+
+  padding:17px 30px;
+
+  border-radius:10px;
+
+  font-size:15px;
   font-weight:800;
-  box-shadow:0 8px 20px rgba(225,6,0,.18);
+
+  box-shadow:0 12px 25px rgba(225,6,0,.20);
+
+  transition:.2s;
 }
 
-.hero-button:hover{
+.start-btn:hover{
   background:var(--red-dark);
+  transform:translateY(-2px);
 }
 
-/* ================= MAIN ================= */
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:50px 20px;
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main{
+  max-width:1250px;
+  margin:-75px auto 0;
+  position:relative;
+  z-index:5;
+  padding:0 22px 60px;
 }
 
-.section-title{
-  text-align:center;
-  font-size:28px;
+
+/* =========================================================
+   VEHICLE + COVERAGE WRAPPER
+========================================================= */
+
+.quote-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.main-card{
+  background:#fff;
+
+  border:1px solid #e5e5e5;
+
+  border-radius:18px;
+
+  padding:28px;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.08);
+}
+
+.card-title{
+  font-size:25px;
   font-weight:800;
   letter-spacing:-1px;
-  margin-bottom:10px;
+
+  margin-bottom:4px;
 }
 
-.section-subtitle{
-  text-align:center;
+.card-subtitle{
   color:#666;
-  font-size:14px;
-  margin-bottom:32px;
+  font-size:12px;
+  font-weight:500;
+
+  margin-bottom:24px;
 }
 
-/* ================= QUOTE CARD ================= */
 
-.quote-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:30px;
-  box-shadow:0 12px 35px rgba(0,0,0,.06);
-}
-
-.quote-title{
-  font-size:22px;
-  font-weight:800;
-  margin-bottom:7px;
-}
-
-.quote-subtitle{
-  color:#666;
-  font-size:13px;
-  margin-bottom:25px;
-}
+/* =========================================================
+   FORM
+========================================================= */
 
 .form-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
 }
 
 .form-group{
@@ -281,281 +344,568 @@ header{
 }
 
 .form-group label{
-  font-size:12px;
+  font-size:11px;
   font-weight:800;
   margin-bottom:7px;
 }
 
-.form-group input,
-.form-group select{
+.form-group select,
+.form-group input{
   width:100%;
-  padding:13px 14px;
-  border:1px solid #dcdcdc;
-  border-radius:9px;
+
+  height:43px;
+
+  border:1px solid #d9d9d9;
+  border-radius:8px;
+
+  padding:0 12px;
+
   background:#fff;
-  font-size:13px;
+
+  color:#333;
+
+  font-size:12px;
+  font-weight:600;
+
   outline:none;
 }
 
-.form-group input:focus,
-.form-group select:focus{
+.form-group select:focus,
+.form-group input:focus{
   border-color:var(--red);
-  box-shadow:0 0 0 3px rgba(225,6,0,.08);
+
+  box-shadow:
+    0 0 0 3px rgba(225,6,0,.08);
 }
 
-/* ================= PRIMARY USE ================= */
+
+/* =========================================================
+   PRIMARY USE
+========================================================= */
 
 .use-options{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
 }
 
 .use-option{
-  border:1px solid #ddd;
+  border:1px solid #d9d9d9;
   background:#fff;
+
+  height:38px;
+
   border-radius:8px;
-  padding:10px 16px;
-  font-size:12px;
-  font-weight:700;
-  cursor:pointer;
+
+  font-size:11px;
+  font-weight:800;
+
+  transition:.2s;
+}
+
+.use-option:hover{
+  border-color:var(--red);
 }
 
 .use-option.active{
-  background:var(--black);
-  color:#fff;
-  border-color:var(--black);
-}
-
-/* ================= CHECKBOX ================= */
-
-.check-row{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:12px;
-  font-weight:600;
-  margin-top:18px;
-}
-
-.check-row input{
-  accent-color:var(--red);
-}
-
-/* ================= NEXT ================= */
-
-.next-button{
-  margin-top:25px;
-  width:100%;
-  padding:14px;
-  border:none;
   background:var(--red);
   color:#fff;
-  border-radius:9px;
-  font-weight:800;
-  font-size:13px;
+  border-color:var(--red);
 }
 
-.next-button:hover{
+
+/* =========================================================
+   CHECKBOX AGREEMENT
+========================================================= */
+
+.checkbox-row{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+
+  margin-top:16px;
+
+  font-size:10px;
+  line-height:1.5;
+
+  color:#555;
+}
+
+.checkbox-row input{
+  width:17px;
+  height:17px;
+
+  accent-color:var(--red);
+
+  flex-shrink:0;
+  margin-top:1px;
+}
+
+.checkbox-row a{
+  color:var(--red);
+  font-weight:800;
+  text-decoration:underline;
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
+
+.next-btn{
+  width:100%;
+  height:43px;
+
+  margin-top:17px;
+
+  border:none;
+  border-radius:8px;
+
+  background:var(--red);
+  color:#fff;
+
+  font-size:12px;
+  font-weight:800;
+
+  transition:.2s;
+}
+
+.next-btn:hover{
   background:var(--red-dark);
 }
 
-/* ================= COVERAGE ================= */
 
-.coverage-section{
-  display:none;
-}
+/* =========================================================
+   COVERAGE
+========================================================= */
 
 .coverage-card{
   background:#fff;
-  border:1px solid var(--line);
+
+  border:1px solid #e5e5e5;
+
   border-radius:18px;
+
   padding:28px;
-  box-shadow:0 12px 35px rgba(0,0,0,.05);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.08);
 }
 
-.coverage-item{
-  border-bottom:1px solid #eee;
-  padding:20px 0;
+.coverage-title{
+  font-size:25px;
+  font-weight:800;
+  letter-spacing:-1px;
+
+  margin-bottom:4px;
 }
 
-.coverage-item:last-child{
-  border-bottom:none;
+.coverage-subtitle{
+  color:#666;
+  font-size:12px;
+
+  margin-bottom:23px;
 }
 
-.coverage-header{
+
+/* =========================================================
+   COVERAGE SLIDER
+========================================================= */
+
+.slider-item{
+  margin-bottom:22px;
+}
+
+.slider-title{
+  font-size:14px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.slider-wrap{
+  position:relative;
+}
+
+.slider{
+  width:100%;
+  height:7px;
+
+  appearance:none;
+  -webkit-appearance:none;
+
+  background:#dedede;
+
+  border-radius:20px;
+
+  outline:none;
+}
+
+
+/* Chrome */
+
+.slider::-webkit-slider-runnable-track{
+  height:7px;
+  background:#dedede;
+  border-radius:20px;
+}
+
+.slider::-webkit-slider-thumb{
+  appearance:none;
+  -webkit-appearance:none;
+
+  width:23px;
+  height:23px;
+
+  margin-top:-8px;
+
+  background:var(--red);
+
+  border:none;
+  border-radius:50%;
+
+  cursor:pointer;
+}
+
+
+/* Firefox */
+
+.slider::-moz-range-track{
+  height:7px;
+  background:#dedede;
+  border-radius:20px;
+}
+
+.slider::-moz-range-progress{
+  height:7px;
+  background:var(--red);
+  border-radius:20px;
+}
+
+.slider::-moz-range-thumb{
+  width:23px;
+  height:23px;
+
+  background:var(--red);
+
+  border:none;
+  border-radius:50%;
+}
+
+
+/* VALUE */
+
+.slider-value{
+  display:block;
+
+  text-align:center;
+
+  margin-top:7px;
+
+  font-size:12px;
+  font-weight:800;
+  color:#111;
+}
+
+
+/* =========================================================
+   ACTS OF NATURE
+========================================================= */
+
+.aon-row{
   display:flex;
-  justify-content:space-between;
-  gap:20px;
-  margin-bottom:12px;
+  align-items:center;
+
+  gap:10px;
+
+  padding:4px 0 18px;
+
+  border-bottom:1px solid #ededed;
 }
 
-.coverage-header h3{
+.aon-checkbox{
+  appearance:none;
+  -webkit-appearance:none;
+
+  width:21px;
+  height:21px;
+
+  border:2px solid var(--red);
+
+  border-radius:4px;
+
+  background:#fff;
+
+  position:relative;
+
+  cursor:pointer;
+
+  flex-shrink:0;
+}
+
+.aon-checkbox:checked{
+  background:var(--red);
+}
+
+.aon-checkbox:checked::after{
+  content:"✓";
+
+  position:absolute;
+
+  left:2px;
+  top:-4px;
+
+  color:#fff;
+
+  font-size:19px;
+  font-weight:800;
+}
+
+.aon-label{
   font-size:14px;
   font-weight:800;
 }
 
-.coverage-value{
-  color:var(--red);
+
+/* =========================================================
+   COVERAGE OPTIONS
+========================================================= */
+
+.coverage-row{
+  padding:17px 0;
+
+  border-bottom:1px solid #ededed;
+}
+
+.coverage-row:last-of-type{
+  border-bottom:none;
+}
+
+.coverage-row-title{
+  font-size:12px;
   font-weight:800;
+
+  margin-bottom:9px;
 }
 
-input[type="range"]{
-  width:100%;
-  accent-color:var(--red);
-}
-
-.coverage-options{
+.option-buttons{
   display:flex;
-  gap:9px;
   flex-wrap:wrap;
+  gap:7px;
 }
 
-.coverage-option{
-  border:1px solid #ddd;
-  padding:9px 13px;
-  border-radius:8px;
+.option-btn{
+  border:1px solid #d8d8d8;
+
   background:#fff;
-  font-size:11px;
-  font-weight:700;
+
+  padding:8px 13px;
+
+  border-radius:8px;
+
+  font-size:10px;
+  font-weight:800;
+
+  transition:.2s;
 }
 
-.coverage-option.active{
-  background:var(--black);
+.option-btn:hover{
+  border-color:var(--red);
+}
+
+.option-btn.active{
+  background:var(--red);
   color:#fff;
-  border-color:var(--black);
+  border-color:var(--red);
 }
 
-/* ================= PROVIDERS ================= */
 
-.provider-section{
-  margin-top:50px;
+/* =========================================================
+   PROVIDERS
+========================================================= */
+
+.providers-section{
+  margin-top:45px;
+}
+
+.section-heading{
+  text-align:center;
+
+  font-size:28px;
+  font-weight:800;
+
+  letter-spacing:-1px;
+
+  margin-bottom:7px;
+}
+
+.section-description{
+  text-align:center;
+
+  color:#666;
+
+  font-size:12px;
+
+  margin-bottom:23px;
 }
 
 .provider-strip{
   display:grid;
   grid-template-columns:repeat(7,1fr);
-  gap:12px;
-  background:#e8f8fb;
-  padding:12px;
+  gap:10px;
+
+  padding:11px;
+
+  background:#e9f8fb;
+
   border-radius:15px;
-  overflow:hidden;
 }
 
-.provider-logo{
-  min-height:105px;
+.provider-box{
+  height:105px;
+
   background:#fff;
-  border-radius:15px;
+
+  border-radius:13px;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:15px;
-  transition:.2s;
+
+  text-align:center;
+
+  padding:12px;
+
   border:2px solid transparent;
+
+  cursor:pointer;
+
+  transition:.2s;
 }
 
-.provider-logo:hover{
+.provider-box:hover{
   border-color:var(--red);
   transform:translateY(-2px);
 }
 
-.provider-logo img{
-  max-width:100%;
-  max-height:65px;
-  width:auto;
-  height:auto;
-  object-fit:contain;
+.provider-name{
+  font-size:14px;
+  font-weight:800;
+  line-height:1.2;
 }
 
-/* ================= RESULTS ================= */
+.provider-name span{
+  display:block;
+
+  color:#777;
+
+  font-size:8px;
+
+  margin-top:3px;
+
+  letter-spacing:1px;
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
 
 .results-section{
   display:none;
+
   margin-top:50px;
 }
 
 .results-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:15px;
 }
 
-.provider-card{
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:22px;
+.result-card{
+  border:1px solid #e3e3e3;
+
+  border-radius:15px;
+
+  padding:21px;
+
   background:#fff;
+
   transition:.2s;
 }
 
-.provider-card:hover{
+.result-card:hover{
   transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(0,0,0,.07);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.07);
 }
 
-.provider-card-logo{
-  height:55px;
-  margin-bottom:15px;
-  display:flex;
-  align-items:center;
-}
-
-.provider-card-logo img{
-  max-height:50px;
-  max-width:150px;
-  object-fit:contain;
-}
-
-.provider-card h3{
-  font-size:16px;
+.result-provider{
+  font-size:15px;
   font-weight:800;
-  margin-bottom:7px;
+
+  margin-bottom:8px;
 }
 
-.premium{
+.result-price{
   color:var(--red);
+
   font-size:22px;
   font-weight:800;
-  margin:8px 0;
+
+  margin-bottom:10px;
 }
 
-.coverage-summary{
-  font-size:11px;
+.result-details{
   color:#666;
+
+  font-size:10px;
+
   line-height:1.7;
-  margin-bottom:16px;
+
+  margin-bottom:15px;
 }
 
-.card-buttons{
+.result-buttons{
   display:flex;
-  gap:8px;
+  gap:7px;
 }
 
-.card-buttons button{
+.result-buttons button{
   flex:1;
-  padding:10px;
-  border-radius:8px;
-  font-size:11px;
+
+  height:35px;
+
+  border-radius:7px;
+
+  font-size:10px;
   font-weight:800;
 }
 
-.details-btn{
-  border:1px solid #ddd;
+.view-btn{
   background:#fff;
+  border:1px solid #ddd;
 }
 
 .request-btn{
-  border:none;
   background:var(--red);
+  border:1px solid var(--red);
   color:#fff;
 }
 
-/* ================= WHY NEO ================= */
+
+/* =========================================================
+   WHY NEO
+========================================================= */
 
 .why-section{
-  background:#fafafa;
-  margin-top:60px;
-  padding:60px 20px;
+  background:#f8f8f8;
+
+  padding:65px 22px;
 }
 
 .why-inner{
@@ -566,60 +916,79 @@ input[type="range"]{
 .why-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:17px;
+  gap:15px;
 }
 
 .why-card{
   background:#fff;
-  border:1px solid #e6e6e6;
-  border-radius:16px;
-  padding:25px 20px;
+
+  border:1px solid #e5e5e5;
+
+  border-radius:15px;
+
+  padding:23px;
+
   cursor:pointer;
+
   transition:.2s;
 }
 
 .why-card:hover{
   transform:translateY(-4px);
+
   border-color:var(--red);
-  box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.06);
 }
 
 .why-icon{
-  font-size:30px;
-  margin-bottom:14px;
+  font-size:29px;
+  margin-bottom:13px;
 }
 
 .why-card h3{
-  font-size:14px;
+  font-size:13px;
   font-weight:800;
-  margin-bottom:7px;
+
+  margin-bottom:6px;
 }
 
 .why-card p{
   color:#666;
-  font-size:12px;
+
+  font-size:11px;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
-  background:var(--black);
+  background:#080808;
+
   color:#fff;
-  padding:45px 20px;
+
+  padding:45px 22px;
 }
 
 .footer-inner{
   max-width:1100px;
+
   margin:auto;
+
   display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:30px;
+
+  grid-template-columns:
+    2fr 1fr 1fr 1fr;
+
+  gap:35px;
 }
 
 .footer-logo{
-  font-size:20px;
+  font-size:21px;
   font-weight:800;
-  margin-bottom:10px;
 }
 
 .footer-logo span{
@@ -627,20 +996,27 @@ footer{
 }
 
 .footer-text{
-  color:#aaa;
-  font-size:12px;
-  max-width:350px;
+  color:#999;
+
+  font-size:10px;
+
+  max-width:360px;
+
+  margin-top:9px;
 }
 
 .footer-col h4{
   font-size:12px;
-  margin-bottom:13px;
+  margin-bottom:12px;
 }
 
 .footer-col a{
   display:block;
-  color:#aaa;
-  font-size:11px;
+
+  color:#999;
+
+  font-size:10px;
+
   margin-bottom:8px;
 }
 
@@ -648,16 +1024,25 @@ footer{
   color:#fff;
 }
 
-/* ================= MODAL ================= */
+
+/* =========================================================
+   MODALS
+========================================================= */
 
 .modal{
   display:none;
+
   position:fixed;
+
   inset:0;
+
   z-index:5000;
+
   background:rgba(0,0,0,.65);
+
   align-items:center;
   justify-content:center;
+
   padding:20px;
 }
 
@@ -667,195 +1052,260 @@ footer{
 
 .modal-box{
   width:100%;
-  max-width:550px;
+  max-width:560px;
+
   max-height:90vh;
+
   overflow-y:auto;
+
   background:#fff;
-  border-radius:18px;
+
+  border-radius:17px;
+
   padding:28px;
+
   position:relative;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.2);
 }
 
 .close{
   position:absolute;
-  right:17px;
-  top:13px;
+
+  right:16px;
+  top:10px;
+
   border:none;
+
   background:none;
-  font-size:25px;
+
+  font-size:26px;
+
   cursor:pointer;
 }
 
 .modal-title{
-  font-size:21px;
+  font-size:22px;
   font-weight:800;
-  margin-bottom:7px;
+
+  margin-bottom:5px;
 }
 
 .modal-subtitle{
-  font-size:12px;
   color:#666;
+
+  font-size:11px;
+
   margin-bottom:20px;
 }
 
-/* ================= LOGIN ================= */
 
-.auth-buttons{
-  display:grid;
-  gap:10px;
-}
+/* =========================================================
+   LOGIN
+========================================================= */
 
-.google-btn,
-.email-btn{
+.auth-btn{
   width:100%;
-  padding:13px;
-  border-radius:9px;
+
+  height:44px;
+
+  border-radius:8px;
+
+  font-size:12px;
   font-weight:800;
-  font-size:13px;
-  cursor:pointer;
+
+  margin-bottom:9px;
 }
 
 .google-btn{
   background:#fff;
-  color:#111;
+
   border:1px solid #d7d7d7;
+
+  color:#111;
 }
 
 .google-btn:hover{
   background:#f7f7f7;
 }
 
-.google-icon{
-  font-weight:800;
-  margin-right:8px;
-}
-
 .email-btn{
-  background:var(--black);
+  background:#080808;
+
+  border:1px solid #080808;
+
   color:#fff;
-  border:none;
 }
 
 .email-btn:hover{
   background:var(--red);
+
+  border-color:var(--red);
+}
+
+.google-icon{
+  font-size:15px;
+
+  margin-right:7px;
+
+  font-weight:800;
+}
+
+.email-login-area{
+  display:none;
+
+  margin-top:10px;
 }
 
 .divider{
   display:flex;
   align-items:center;
   gap:10px;
-  margin:18px 0;
-  color:#888;
-  font-size:11px;
+
+  color:#999;
+
+  font-size:10px;
+
+  margin:13px 0;
 }
 
 .divider:before,
 .divider:after{
   content:"";
-  flex:1;
+
   height:1px;
+
   background:#ddd;
+
+  flex:1;
 }
 
-/* ================= TERMS ================= */
 
-.terms{
-  font-size:10px;
-  color:#777;
-  line-height:1.6;
-  margin-top:16px;
-}
-
-.terms a{
-  color:var(--red);
-  font-weight:700;
-}
-
-/* ================= ARTICLE / NAV MODALS ================= */
+/* =========================================================
+   CONTENT MODAL
+========================================================= */
 
 .content-list{
   display:grid;
-  gap:12px;
+
+  gap:10px;
 }
 
 .content-item{
-  border:1px solid #eee;
-  border-radius:11px;
-  padding:15px;
+  border:1px solid #e8e8e8;
+
+  border-radius:10px;
+
+  padding:14px;
 }
 
 .content-item h3{
-  font-size:13px;
+  font-size:12px;
+
   font-weight:800;
+
   margin-bottom:5px;
 }
 
 .content-item p{
-  font-size:11px;
   color:#666;
+
+  font-size:10px;
 }
 
-/* ================= RESPONSIVE ================= */
 
-@media(max-width:900px){
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+  .nav-links{
+    gap:18px;
+    margin-right:20px;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+
+  .quote-layout{
+    grid-template-columns:1fr;
+  }
+
+  .provider-strip{
+    grid-template-columns:
+      repeat(4,1fr);
+  }
+
+  .why-grid{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  .navbar{
+    height:70px;
+    padding:0 15px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
 
   .nav-links{
     display:none;
   }
 
-  .hero h1{
-    font-size:38px;
+  .signup-btn{
+    padding:11px 13px;
+    font-size:11px;
   }
 
-  .provider-strip{
-    grid-template-columns:repeat(4,1fr);
+  .hero{
+    min-height:510px;
   }
 
-  .results-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .why-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .footer-inner{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media(max-width:600px){
-
-  .navbar{
-    padding:0 14px;
-  }
-
-  .logo{
-    font-size:17px;
-  }
-
-  .nav-login{
-    display:none;
+  .hero-car{
+    width:100%;
+    opacity:.25;
   }
 
   .hero-content{
-    padding:55px 20px;
+    padding:65px 20px;
   }
 
   .hero h1{
-    font-size:31px;
+    font-size:38px;
+    letter-spacing:-2px;
   }
 
   .hero p{
     font-size:14px;
   }
 
+  .main{
+    margin:-40px auto 0;
+    padding:0 13px 40px;
+  }
+
   .form-grid{
     grid-template-columns:1fr;
   }
 
+  .use-options{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
   .provider-strip{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .results-grid{
@@ -869,47 +1319,123 @@ footer{
   .footer-inner{
     grid-template-columns:1fr;
   }
+
+  .login-btn{
+    display:none;
+  }
+
 }
+
+
+/* =========================================================
+   MOBILE COVERAGE
+========================================================= */
+
+@media(max-width:500px){
+
+  .main-card,
+  .coverage-card{
+    padding:20px;
+  }
+
+  .card-title,
+  .coverage-title{
+    font-size:21px;
+  }
+
+  .slider-title{
+    font-size:13px;
+  }
+
+  .option-buttons{
+    gap:6px;
+  }
+
+  .option-btn{
+    padding:7px 10px;
+  }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header>
+
   <nav class="navbar">
 
-    <div class="logo">
+    <a href="#" class="logo">
       NEO <span>CARWORKS</span>
-    </div>
+    </a>
+
 
     <div class="nav-links">
-      <a href="#quote">Car Insurance</a>
-      <a href="#" onclick="openModal('loansModal');return false;">Loans</a>
-      <a href="#" onclick="openModal('articlesModal');return false;">Articles</a>
-      <a href="#" onclick="openModal('cardsModal');return false;">Credit Cards</a>
+
+      <a href="#quote">
+        Car Insurance
+      </a>
+
+      <a href="#"
+         onclick="openModal('loansModal');return false;">
+        Loans
+      </a>
+
+      <a href="#"
+         onclick="openModal('articlesModal');return false;">
+        Articles
+      </a>
+
+      <a href="#"
+         onclick="openModal('cardsModal');return false;">
+        Credit Cards
+      </a>
+
     </div>
 
+
     <div class="nav-buttons">
-      <button class="nav-login" onclick="openModal('loginModal')">
+
+      <button
+        class="login-btn"
+        onclick="openModal('loginModal')">
+
         Log In
+
       </button>
 
-      <button class="nav-signup" onclick="openModal('signupModal')">
+
+      <button
+        class="signup-btn"
+        onclick="openModal('signupModal')">
+
         Create Account
+
       </button>
+
     </div>
 
   </nav>
+
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero">
 
-  <div class="hero-car-bg"></div>
+  <div class="hero-car"></div>
+
 
   <div class="hero-content">
 
@@ -917,18 +1443,25 @@ footer{
       NEO CARWORKS INSURANCE
     </div>
 
+
     <h1>
       Find Car Insurance That
       <span>Fits Your Needs.</span>
     </h1>
+
 
     <p>
       Enter your vehicle details, choose your preferred coverage,
       and request an insurance quote from NEO CARWORKS.
     </p>
 
-    <button class="hero-button" onclick="scrollToQuote()">
+
+    <button
+      class="start-btn"
+      onclick="scrollToQuote()">
+
       Start Your Quote
+
     </button>
 
   </div>
@@ -936,294 +1469,397 @@ footer{
 </section>
 
 
-<!-- ================= QUOTE ================= -->
 
-<main id="quote" class="container">
+<!-- =========================================================
+     MAIN
+========================================================= -->
 
-  <h2 class="section-title">
-    Get Your Car Insurance Quote
-  </h2>
+<main
+  id="quote"
+  class="main">
 
-  <p class="section-subtitle">
-    Tell us about your vehicle to explore available coverage options.
-  </p>
 
-  <div class="quote-card">
+  <div class="quote-layout">
 
-    <div class="quote-title">
-      Vehicle Details
-    </div>
 
-    <div class="quote-subtitle">
-      Enter your vehicle information below.
-    </div>
+    <!-- =====================================================
+         VEHICLE DETAILS
+    ===================================================== -->
 
-    <div class="form-grid">
+    <section class="main-card">
 
-      <!-- MAKE -->
+      <div class="card-title">
+        Vehicle Details
+      </div>
 
-      <div class="form-group">
-        <label>Vehicle Make</label>
-
-        <select id="make" onchange="loadModels()">
-          <option value="">Select Make</option>
-          <option>Toyota</option>
-          <option>Honda</option>
-          <option>Mitsubishi</option>
-          <option>Nissan</option>
-          <option>Ford</option>
-          <option>Hyundai</option>
-          <option>Kia</option>
-          <option>Suzuki</option>
-        </select>
-
+      <div class="card-subtitle">
+        Enter your vehicle information below.
       </div>
 
 
-      <!-- MODEL -->
-
-      <div class="form-group">
-
-        <label>Vehicle Model</label>
-
-        <select id="model" onchange="loadVariants()">
-          <option value="">Select Model</option>
-        </select>
-
-      </div>
+      <div class="form-grid">
 
 
-      <!-- VARIANT -->
+        <!-- MAKE -->
 
-      <div class="form-group">
+        <div class="form-group">
 
-        <label>Select Variant</label>
+          <label>
+            Vehicle Make
+          </label>
 
-        <select id="variant">
-          <option value="">Select Variant</option>
-        </select>
+          <select
+            id="make"
+            onchange="loadModels()">
 
-      </div>
+            <option value="">
+              Select Make
+            </option>
 
+            <option>Toyota</option>
+            <option>Honda</option>
+            <option>Mitsubishi</option>
+            <option>Nissan</option>
+            <option>Ford</option>
+            <option>Hyundai</option>
+            <option>Kia</option>
+            <option>Suzuki</option>
 
-      <!-- YEAR -->
+          </select>
 
-      <div class="form-group">
-
-        <label>Year of Manufacture</label>
-
-        <select id="year">
-
-          <option value="">Select Year</option>
-          <option>2026</option>
-          <option>2025</option>
-          <option>2024</option>
-          <option>2023</option>
-          <option>2022</option>
-          <option>2021</option>
-          <option>2020</option>
-          <option>2019</option>
-          <option>2018</option>
-          <option>2017</option>
-          <option>2016</option>
-          <option>2015</option>
-
-        </select>
-
-      </div>
+        </div>
 
 
-      <!-- PRIMARY USE -->
+        <!-- MODEL -->
 
-      <div class="form-group full">
+        <div class="form-group">
 
-        <label>Primary Use</label>
+          <label>
+            Vehicle Model
+          </label>
 
-        <div class="use-options">
+          <select
+            id="model"
+            onchange="loadVariants()">
 
-          <button class="use-option active"
-                  onclick="selectUse(this,'Private')">
-            Private
-          </button>
+            <option value="">
+              Select Model
+            </option>
 
-          <button class="use-option"
-                  onclick="selectUse(this,'Grab')">
-            Grab
-          </button>
+          </select>
 
-          <button class="use-option"
-                  onclick="selectUse(this,'TNVS')">
-            TNVS
-          </button>
+        </div>
 
-          <button class="use-option"
-                  onclick="selectUse(this,'Other')">
-            Other
-          </button>
+
+        <!-- VARIANT -->
+
+        <div class="form-group">
+
+          <label>
+            Select Variant
+          </label>
+
+          <select id="variant">
+
+            <option value="">
+              Select Variant
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- YEAR -->
+
+        <div class="form-group">
+
+          <label>
+            Year of Manufacture
+          </label>
+
+          <select id="year">
+
+            <option value="">
+              Select Year
+            </option>
+
+            <option>2026</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+            <option>2022</option>
+            <option>2021</option>
+            <option>2020</option>
+            <option>2019</option>
+            <option>2018</option>
+            <option>2017</option>
+            <option>2016</option>
+            <option>2015</option>
+
+          </select>
+
+        </div>
+
+
+        <!-- PRIMARY USE -->
+
+        <div class="form-group full">
+
+          <label>
+            Primary Use
+          </label>
+
+
+          <div class="use-options">
+
+            <button
+              class="use-option active"
+              onclick="selectUse(this,'Private')">
+
+              Private
+
+            </button>
+
+
+            <button
+              class="use-option"
+              onclick="selectUse(this,'Grab')">
+
+              Grab
+
+            </button>
+
+
+            <button
+              class="use-option"
+              onclick="selectUse(this,'TNVS')">
+
+              TNVS
+
+            </button>
+
+
+            <button
+              class="use-option"
+              onclick="selectUse(this,'Other')">
+
+              Other
+
+            </button>
+
+          </div>
 
         </div>
 
       </div>
 
-    </div>
 
+      <!-- CTPL -->
 
-    <label class="check-row">
-
-      <input type="checkbox" id="ctpl" checked>
-
-      Include CTPL coverage
-
-    </label>
-
-
-    <button class="next-button" onclick="showCoverage()">
-      Next
-    </button>
-
-
-    <div class="terms">
-
-      By continuing, you agree to the
-      <a href="#" onclick="openModal('termsModal');return false;">
-        NEO CARWORKS INSURANCE Terms and Conditions
-      </a>
-      and
-      <a href="#" onclick="openModal('privacyModal');return false;">
-        Privacy Policy
-      </a>.
-
-    </div>
-
-  </div>
-
-
-  <!-- ================= COVERAGE ================= -->
-
-  <section id="coverageSection" class="coverage-section">
-
-    <h2 class="section-title" style="margin-top:55px;">
-      Customize Your Coverage
-    </h2>
-
-    <p class="section-subtitle">
-      Adjust your preferred protection before requesting a quote.
-    </p>
-
-    <div class="coverage-card">
-
-
-      <!-- BI PD -->
-
-      <div class="coverage-item">
-
-        <div class="coverage-header">
-
-          <h3>
-            Bodily Injury & Property Damage
-          </h3>
-
-          <span class="coverage-value"
-                id="biValue">
-            ₱500,000
-          </span>
-
-        </div>
+      <label class="checkbox-row">
 
         <input
-          type="range"
-          id="biSlider"
-          min="100000"
-          max="2000000"
-          step="100000"
-          value="500000"
-          oninput="updateBi()">
+          type="checkbox"
+          id="ctpl"
+          checked>
 
-      </div>
+        <span>
+          Include CTPL coverage
+        </span>
+
+      </label>
 
 
-      <!-- PA -->
+      <!-- AGREEMENT -->
 
-      <div class="coverage-item">
-
-        <div class="coverage-header">
-
-          <h3>
-            Personal Accident
-          </h3>
-
-          <span class="coverage-value"
-                id="paValue">
-            ₱100,000
-          </span>
-
-        </div>
+      <label class="checkbox-row">
 
         <input
-          type="range"
-          id="paSlider"
-          min="50000"
-          max="1000000"
-          step="50000"
-          value="100000"
-          oninput="updatePa()">
+          type="checkbox"
+          id="agreement">
+
+        <span>
+
+          By continuing, you agree to the
+
+          <a
+            href="#"
+            onclick="openModal('termsModal');return false;">
+
+            NEO CARWORKS INSURANCE Terms and Conditions
+
+          </a>
+
+          and
+
+          <a
+            href="#"
+            onclick="openModal('privacyModal');return false;">
+
+            Privacy Policy
+
+          </a>.
+
+        </span>
+
+      </label>
+
+
+      <button
+        class="next-btn"
+        onclick="showCoverage()">
+
+        Next
+        →
+        
+      </button>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CUSTOMIZE COVERAGE
+    ===================================================== -->
+
+    <section class="coverage-card">
+
+      <div class="coverage-title">
+        Customize Your Coverage
+      </div>
+
+      <div class="coverage-subtitle">
+        Adjust your preferred protection before requesting a quote.
+      </div>
+
+
+      <!-- BI / PD -->
+
+      <div class="slider-item">
+
+        <div class="slider-title">
+          Bodily injury & property damage coverage
+        </div>
+
+
+        <div class="slider-wrap">
+
+          <input
+            type="range"
+            id="biSlider"
+            class="slider"
+
+            min="100000"
+            max="2000000"
+            step="50000"
+            value="150000"
+
+            oninput="updateBi()">
+
+        </div>
+
+
+        <span
+          class="slider-value"
+          id="biValue">
+
+          ₱150,000
+
+        </span>
 
       </div>
 
 
-      <!-- AON -->
+      <!-- PERSONAL ACCIDENT -->
 
-      <div class="coverage-item">
+      <div class="slider-item">
 
-        <div class="coverage-header">
-          <h3>Acts of Nature</h3>
+        <div class="slider-title">
+          Personal Accident
         </div>
 
-        <div class="coverage-options">
 
-          <button
-            class="coverage-option active"
-            onclick="selectCoverage(this,'aon','Include')">
-            Include
-          </button>
+        <div class="slider-wrap">
 
-          <button
-            class="coverage-option"
-            onclick="selectCoverage(this,'aon','Exclude')">
-            Exclude
-          </button>
+          <input
+            type="range"
+            id="paSlider"
+            class="slider"
+
+            min="50000"
+            max="1000000"
+            step="50000"
+            value="450000"
+
+            oninput="updatePa()">
 
         </div>
+
+
+        <span
+          class="slider-value"
+          id="paValue">
+
+          ₱450,000
+
+        </span>
 
       </div>
+
+
+      <!-- ACTS OF NATURE -->
+
+      <label class="aon-row">
+
+        <input
+          type="checkbox"
+          id="aonCheckbox"
+          class="aon-checkbox"
+          checked>
+
+        <span class="aon-label">
+          Acts of Nature
+        </span>
+
+      </label>
 
 
       <!-- COMPREHENSIVE -->
 
-      <div class="coverage-item">
+      <div class="coverage-row">
 
-        <div class="coverage-header">
-          <h3>Comprehensive Coverage</h3>
+        <div class="coverage-row-title">
+          Comprehensive Coverage
         </div>
 
-        <div class="coverage-options">
+
+        <div class="option-buttons">
 
           <button
-            class="coverage-option active"
+            class="option-btn active"
             onclick="selectCoverage(this,'comprehensive','Own Damage + Theft')">
+
             Own Damage + Theft
+
           </button>
 
+
           <button
-            class="coverage-option"
+            class="option-btn"
             onclick="selectCoverage(this,'comprehensive','Theft Only')">
+
             Theft Only
+
           </button>
 
+
           <button
-            class="coverage-option"
+            class="option-btn"
             onclick="selectCoverage(this,'comprehensive','Third Party Only')">
+
             Third Party Only
+
           </button>
 
         </div>
@@ -1233,30 +1869,39 @@ footer{
 
       <!-- ROADSIDE -->
 
-      <div class="coverage-item">
+      <div class="coverage-row">
 
-        <div class="coverage-header">
-          <h3>Roadside Assistance</h3>
+        <div class="coverage-row-title">
+          Roadside Assistance
         </div>
 
-        <div class="coverage-options">
+
+        <div class="option-buttons">
 
           <button
-            class="coverage-option active"
+            class="option-btn active"
             onclick="selectCoverage(this,'roadside','Basic')">
+
             Basic
+
           </button>
 
+
           <button
-            class="coverage-option"
+            class="option-btn"
             onclick="selectCoverage(this,'roadside','Plus')">
+
             Plus
+
           </button>
 
+
           <button
-            class="coverage-option"
+            class="option-btn"
             onclick="selectCoverage(this,'roadside','Exclude')">
+
             Exclude
+
           </button>
 
         </div>
@@ -1266,24 +1911,30 @@ footer{
 
       <!-- CTPL -->
 
-      <div class="coverage-item">
+      <div class="coverage-row">
 
-        <div class="coverage-header">
-          <h3>CTPL</h3>
+        <div class="coverage-row-title">
+          CTPL
         </div>
 
-        <div class="coverage-options">
+
+        <div class="option-buttons">
 
           <button
-            class="coverage-option active"
+            class="option-btn active"
             onclick="selectCoverage(this,'ctplLevel','Basic')">
+
             Basic
+
           </button>
 
+
           <button
-            class="coverage-option"
+            class="option-btn"
             onclick="selectCoverage(this,'ctplLevel','Enhanced')">
+
             Enhanced
+
           </button>
 
         </div>
@@ -1291,102 +1942,153 @@ footer{
       </div>
 
 
-      <button class="next-button"
-              onclick="calculateQuotes()">
+      <button
+        class="next-btn"
+        onclick="calculateQuotes()">
+
         Calculate & View Quotes
+        →
+
       </button>
 
-    </div>
+    </section>
 
-  </section>
+  </div>
 
 
-  <!-- ================= PROVIDER LOGOS ================= -->
 
-  <section class="provider-section">
+  <!-- =====================================================
+       PROVIDERS
+  ===================================================== -->
 
-    <h2 class="section-title">
+  <section class="providers-section">
+
+    <h2 class="section-heading">
       Insurance Providers
     </h2>
 
-    <p class="section-subtitle">
+    <p class="section-description">
       Explore provider options available for your inquiry.
     </p>
 
 
     <div class="provider-strip">
 
-      <div class="provider-logo"
-           onclick="providerInfo('Cocogen')">
 
-        <img
-          src="https://www.cocogen.com/favicon.ico"
-          alt="Cocogen Insurance">
+      <div
+        class="provider-box"
+        onclick="providerInfo('Cocogen Insurance')">
 
-      </div>
+        <div class="provider-name">
 
+          COCOGEN
 
-      <div class="provider-logo"
-           onclick="providerInfo('Oona Insurance')">
-
-        <img
-          src="https://myoona.ph/favicon.ico"
-          alt="Oona Insurance">
-
-      </div>
-
-
-      <div class="provider-logo"
-           onclick="providerInfo('FPG Mercantile')">
-
-        <img
-          src="https://ecommerce.fpgmercantile.com/favicon.ico"
-          alt="FPG Mercantile">
-
-      </div>
-
-
-      <div class="provider-logo"
-           onclick="providerInfo('Prudential Guarantee')">
-
-        <img
-          src="https://www.pga.com.ph/favicon.ico"
-          alt="Prudential Guarantee">
-
-      </div>
-
-
-      <div class="provider-logo"
-           onclick="providerInfo('Malayan Insurance')">
-
-        <div style="font-weight:800;font-size:16px;text-align:center;">
-          MALAYAN<br>
-          <span style="font-size:10px;color:#777;">
+          <span>
             INSURANCE
           </span>
+
         </div>
 
       </div>
 
 
-      <div class="provider-logo"
-           onclick="providerInfo('Standard Insurance')">
+      <div
+        class="provider-box"
+        onclick="providerInfo('Oona Insurance')">
 
-        <div style="font-weight:800;font-size:16px;text-align:center;">
-          STANDARD<br>
-          <span style="font-size:10px;color:#777;">
+        <div class="provider-name">
+
+          oona
+
+          <span>
             INSURANCE
           </span>
+
         </div>
 
       </div>
 
 
-      <div class="provider-logo"
-           onclick="providerInfo('PhilFirst')">
+      <div
+        class="provider-box"
+        onclick="providerInfo('FPG Mercantile')">
 
-        <div style="font-weight:800;font-size:17px;color:#10239b;">
+        <div class="provider-name">
+
+          FPG
+
+          <span>
+            MERCANTILE
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="provider-box"
+        onclick="providerInfo('Prudential Guarantee')">
+
+        <div class="provider-name">
+
+          PRUDENTIAL
+
+          <span>
+            GUARANTEE
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="provider-box"
+        onclick="providerInfo('Malayan Insurance')">
+
+        <div class="provider-name">
+
+          MALAYAN
+
+          <span>
+            INSURANCE
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="provider-box"
+        onclick="providerInfo('Standard Insurance')">
+
+        <div class="provider-name">
+
+          STANDARD
+
+          <span>
+            INSURANCE
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="provider-box"
+        onclick="providerInfo('PhilFirst')">
+
+        <div class="provider-name">
+
           PhilFirst
+
+          <span>
+            NON-LIFE
+          </span>
+
         </div>
 
       </div>
@@ -1396,36 +2098,48 @@ footer{
   </section>
 
 
-  <!-- ================= RESULTS ================= -->
 
-  <section id="resultsSection" class="results-section">
+  <!-- =====================================================
+       RESULTS
+  ===================================================== -->
 
-    <h2 class="section-title">
+  <section
+    id="resultsSection"
+    class="results-section">
+
+    <h2 class="section-heading">
       Available Quote Options
     </h2>
 
-    <p class="section-subtitle">
-      These are indicative estimates for prototype/demo purposes.
+    <p class="section-description">
+      These are indicative estimates for prototype purposes.
     </p>
 
-    <div id="resultsGrid" class="results-grid"></div>
+
+    <div
+      id="resultsGrid"
+      class="results-grid">
+    </div>
 
   </section>
 
 </main>
 
 
-<!-- ================= WHY NEO ================= -->
+
+<!-- =========================================================
+     WHY NEO
+========================================================= -->
 
 <section class="why-section">
 
   <div class="why-inner">
 
-    <h2 class="section-title">
+    <h2 class="section-heading">
       Why use NEO CARWORKS?
     </h2>
 
-    <p class="section-subtitle">
+    <p class="section-description">
       A simple way to prepare your vehicle insurance inquiry.
     </p>
 
@@ -1433,8 +2147,9 @@ footer{
     <div class="why-grid">
 
 
-      <div class="why-card"
-           onclick="scrollToQuote()">
+      <div
+        class="why-card"
+        onclick="scrollToQuote()">
 
         <div class="why-icon">
           🚗
@@ -1451,8 +2166,9 @@ footer{
       </div>
 
 
-      <div class="why-card"
-           onclick="showCoverage()">
+      <div
+        class="why-card"
+        onclick="scrollToCoverage()">
 
         <div class="why-icon">
           🛡️
@@ -1469,8 +2185,9 @@ footer{
       </div>
 
 
-      <div class="why-card"
-           onclick="scrollToQuote()">
+      <div
+        class="why-card"
+        onclick="scrollToQuote()">
 
         <div class="why-icon">
           📋
@@ -1487,8 +2204,9 @@ footer{
       </div>
 
 
-      <div class="why-card"
-           onclick="openModal('advisorModal')">
+      <div
+        class="why-card"
+        onclick="openModal('advisorModal')">
 
         <div class="why-icon">
           ☎️
@@ -1504,7 +2222,6 @@ footer{
 
       </div>
 
-
     </div>
 
   </div>
@@ -1512,11 +2229,15 @@ footer{
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
   <div class="footer-inner">
+
 
     <div>
 
@@ -1535,14 +2256,20 @@ footer{
 
     <div class="footer-col">
 
-      <h4>Insurance</h4>
+      <h4>
+        Insurance
+      </h4>
 
       <a href="#quote">
         Car Insurance
       </a>
 
-      <a href="#" onclick="openModal('articlesModal');return false;">
+      <a
+        href="#"
+        onclick="openModal('articlesModal');return false;">
+
         Articles
+
       </a>
 
     </div>
@@ -1550,14 +2277,24 @@ footer{
 
     <div class="footer-col">
 
-      <h4>Information</h4>
+      <h4>
+        Information
+      </h4>
 
-      <a href="#" onclick="openModal('termsModal');return false;">
+      <a
+        href="#"
+        onclick="openModal('termsModal');return false;">
+
         Terms & Conditions
+
       </a>
 
-      <a href="#" onclick="openModal('privacyModal');return false;">
+      <a
+        href="#"
+        onclick="openModal('privacyModal');return false;">
+
         Privacy Policy
+
       </a>
 
     </div>
@@ -1565,14 +2302,24 @@ footer{
 
     <div class="footer-col">
 
-      <h4>Account</h4>
+      <h4>
+        Account
+      </h4>
 
-      <a href="#" onclick="openModal('loginModal');return false;">
+      <a
+        href="#"
+        onclick="openModal('loginModal');return false;">
+
         Log In
+
       </a>
 
-      <a href="#" onclick="openModal('signupModal');return false;">
+      <a
+        href="#"
+        onclick="openModal('signupModal');return false;">
+
         Create Account
+
       </a>
 
     </div>
@@ -1582,18 +2329,25 @@ footer{
 </footer>
 
 
-<!-- ================================================= -->
-<!-- LOGIN MODAL -->
-<!-- ================================================= -->
 
-<div class="modal" id="loginModal">
+<!-- =========================================================
+     LOGIN MODAL
+========================================================= -->
+
+<div
+  class="modal"
+  id="loginModal">
 
   <div class="modal-box">
 
-    <button class="close"
-            onclick="closeModal('loginModal')">
+    <button
+      class="close"
+      onclick="closeModal('loginModal')">
+
       ×
+
     </button>
+
 
     <div class="modal-title">
       Log In
@@ -1606,10 +2360,14 @@ footer{
 
     <!-- GOOGLE -->
 
-    <button class="google-btn"
-            onclick="continueWithGoogle()">
+    <button
+      class="auth-btn google-btn"
+      onclick="continueWithGoogle()">
 
-      <span class="google-icon">G</span>
+      <span class="google-icon">
+        G
+      </span>
+
       Continue with Google
 
     </button>
@@ -1617,44 +2375,53 @@ footer{
 
     <!-- EMAIL -->
 
-    <button class="email-btn"
-            onclick="showEmailLogin()">
+    <button
+      class="auth-btn email-btn"
+      onclick="showEmailLogin()">
 
       Continue with Email
 
     </button>
 
 
-    <div id="emailLoginArea"
-         style="display:none;margin-top:20px;">
+    <div
+      id="emailLoginArea"
+      class="email-login-area">
 
-      <div class="form-group"
-           style="margin-bottom:12px;">
 
-        <label>Email</label>
+      <div class="form-group">
+
+        <label>
+          Email
+        </label>
 
         <input
-          type="email"
           id="loginEmail"
+          type="email"
           placeholder="Enter your email">
 
       </div>
 
 
-      <div class="form-group">
+      <div
+        class="form-group"
+        style="margin-top:12px;">
 
-        <label>Password</label>
+        <label>
+          Password
+        </label>
 
         <input
-          type="password"
           id="loginPassword"
+          type="password"
           placeholder="Enter your password">
 
       </div>
 
 
-      <button class="next-button"
-              onclick="loginAccount()">
+      <button
+        class="next-btn"
+        onclick="loginAccount()">
 
         Log In
 
@@ -1662,7 +2429,14 @@ footer{
 
 
       <button
-        style="margin-top:10px;width:100%;border:none;background:none;color:#e10600;font-weight:800;font-size:12px;"
+        style="
+        width:100%;
+        margin-top:10px;
+        border:none;
+        background:none;
+        color:#e10600;
+        font-size:11px;
+        font-weight:800;"
         onclick="openModal('forgotModal');closeModal('loginModal')">
 
         Forgot Password?
@@ -1672,11 +2446,13 @@ footer{
     </div>
 
 
-    <div class="terms">
+    <div class="checkbox-row">
 
-      By continuing, you agree to the
-      NEO CARWORKS Insurance
-      Terms and Conditions and Privacy Policy.
+      <span>
+        By continuing, you agree to the
+        NEO CARWORKS INSURANCE
+        Terms and Conditions and Privacy Policy.
+      </span>
 
     </div>
 
@@ -1685,18 +2461,25 @@ footer{
 </div>
 
 
-<!-- ================================================= -->
-<!-- SIGN UP MODAL -->
-<!-- ================================================= -->
 
-<div class="modal" id="signupModal">
+<!-- =========================================================
+     CREATE ACCOUNT
+========================================================= -->
+
+<div
+  class="modal"
+  id="signupModal">
 
   <div class="modal-box">
 
-    <button class="close"
-            onclick="closeModal('signupModal')">
+    <button
+      class="close"
+      onclick="closeModal('signupModal')">
+
       ×
+
     </button>
+
 
     <div class="modal-title">
       Create Account
@@ -1709,96 +2492,148 @@ footer{
 
     <div class="form-grid">
 
+
       <div class="form-group">
 
-        <label>First Name</label>
+        <label>
+          First Name
+        </label>
 
-        <input id="firstName"
-               placeholder="First name">
+        <input
+          id="firstName"
+          placeholder="First name">
 
       </div>
 
 
       <div class="form-group">
 
-        <label>Last Name</label>
+        <label>
+          Last Name
+        </label>
 
-        <input id="lastName"
-               placeholder="Last name">
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>Email</label>
-
-        <input id="signupEmail"
-               type="email"
-               placeholder="Email">
+        <input
+          id="lastName"
+          placeholder="Last name">
 
       </div>
 
 
       <div class="form-group">
 
-        <label>Mobile</label>
+        <label>
+          Email
+        </label>
 
-        <input id="signupMobile"
-               placeholder="Mobile number">
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>Password</label>
-
-        <input id="signupPassword"
-               type="password"
-               placeholder="Password">
+        <input
+          id="signupEmail"
+          type="email"
+          placeholder="Email">
 
       </div>
 
 
       <div class="form-group">
 
-        <label>Confirm Password</label>
+        <label>
+          Mobile
+        </label>
 
-        <input id="confirmPassword"
-               type="password"
-               placeholder="Confirm password">
+        <input
+          id="signupMobile"
+          placeholder="Mobile number">
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          Password
+        </label>
+
+        <input
+          id="signupPassword"
+          type="password"
+          placeholder="Password">
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          Confirm Password
+        </label>
+
+        <input
+          id="confirmPassword"
+          type="password"
+          placeholder="Confirm password">
 
       </div>
 
     </div>
 
 
-    <label class="check-row">
+    <!-- AGREEMENT -->
 
-      <input type="checkbox"
-             id="signupAgreement">
+    <label class="checkbox-row">
 
-      I agree to the NEO CARWORKS
-      Terms and Conditions and Privacy Policy.
+      <input
+        type="checkbox"
+        id="signupAgreement">
+
+      <span>
+
+        I agree to the
+
+        <a
+          href="#"
+          onclick="openModal('termsModal');return false;">
+
+          NEO CARWORKS INSURANCE Terms and Conditions
+
+        </a>
+
+        and
+
+        <a
+          href="#"
+          onclick="openModal('privacyModal');return false;">
+
+          Privacy Policy
+
+        </a>.
+
+      </span>
 
     </label>
 
 
-    <button class="google-btn"
-            style="margin-top:18px;"
-            onclick="continueWithGoogle()">
+    <!-- GOOGLE -->
 
-      <span class="google-icon">G</span>
+    <button
+      class="auth-btn google-btn"
+      style="margin-top:15px;"
+      onclick="continueWithGoogle()">
+
+      <span class="google-icon">
+        G
+      </span>
+
       Continue with Google
 
     </button>
 
 
-    <button class="next-button"
-            onclick="createAccount()">
+    <!-- EMAIL -->
 
-      Create Account
+    <button
+      class="next-btn"
+      onclick="createAccount()">
+
+      Continue with Email
 
     </button>
 
@@ -1807,18 +2642,25 @@ footer{
 </div>
 
 
-<!-- ================================================= -->
-<!-- FORGOT PASSWORD -->
-<!-- ================================================= -->
 
-<div class="modal" id="forgotModal">
+<!-- =========================================================
+     FORGOT PASSWORD
+========================================================= -->
+
+<div
+  class="modal"
+  id="forgotModal">
 
   <div class="modal-box">
 
-    <button class="close"
-            onclick="closeModal('forgotModal')">
+    <button
+      class="close"
+      onclick="closeModal('forgotModal')">
+
       ×
+
     </button>
+
 
     <div class="modal-title">
       Forgot Password?
@@ -1831,7 +2673,9 @@ footer{
 
     <div class="form-group">
 
-      <label>Email</label>
+      <label>
+        Email
+      </label>
 
       <input
         id="forgotEmail"
@@ -1841,8 +2685,9 @@ footer{
     </div>
 
 
-    <button class="next-button"
-            onclick="requestPasswordReset()">
+    <button
+      class="next-btn"
+      onclick="requestPasswordReset()">
 
       Request Reset Link
 
@@ -1853,26 +2698,198 @@ footer{
 </div>
 
 
-<!-- ================================================= -->
-<!-- ADVISOR -->
-<!-- ================================================= -->
 
-<div class="modal" id="advisorModal">
+<!-- =========================================================
+     TERMS
+========================================================= -->
+
+<div
+  class="modal"
+  id="termsModal">
 
   <div class="modal-box">
 
-    <button class="close"
-            onclick="closeModal('advisorModal')">
+    <button
+      class="close"
+      onclick="closeModal('termsModal')">
+
       ×
+
     </button>
+
+
+    <div class="modal-title">
+      NEO CARWORKS INSURANCE Terms and Conditions
+    </div>
+
+    <div class="modal-subtitle">
+      Terms for the NEO CARWORKS quotation prototype.
+    </div>
+
+
+    <div class="content-list">
+
+
+      <div class="content-item">
+
+        <h3>
+          Quote Information
+        </h3>
+
+        <p>
+          Information displayed through this quotation system
+          is intended for inquiry and estimation purposes only.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          Insurance Coverage
+        </h3>
+
+        <p>
+          A quotation request does not automatically create
+          an insurance policy. Final coverage, premium,
+          eligibility and approval are subject to the applicable
+          insurance provider's underwriting and policy terms.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          User Information
+        </h3>
+
+        <p>
+          Users are expected to provide accurate information
+          when submitting an insurance inquiry.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     PRIVACY
+========================================================= -->
+
+<div
+  class="modal"
+  id="privacyModal">
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('privacyModal')">
+
+      ×
+
+    </button>
+
+
+    <div class="modal-title">
+      NEO CARWORKS Privacy Policy
+    </div>
+
+    <div class="modal-subtitle">
+      Privacy information for the quotation prototype.
+    </div>
+
+
+    <div class="content-list">
+
+
+      <div class="content-item">
+
+        <h3>
+          Information We Collect
+        </h3>
+
+        <p>
+          The system may collect name, email, mobile number,
+          vehicle information and quotation preferences.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          Use of Information
+        </h3>
+
+        <p>
+          Submitted information may be used to process an
+          insurance inquiry, prepare quotation information
+          and communicate regarding the request.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          Data Protection
+        </h3>
+
+        <p>
+          Reasonable safeguards should be used to protect
+          submitted information. This prototype should not
+          be treated as a production-grade secure platform.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     ADVISOR
+========================================================= -->
+
+<div
+  class="modal"
+  id="advisorModal">
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('advisorModal')">
+
+      ×
+
+    </button>
+
 
     <div class="modal-title">
       Advisor Assistance
     </div>
 
     <div class="modal-subtitle">
-      Your vehicle insurance inquiry can be reviewed by an advisor.
+      Your inquiry can be reviewed by an advisor.
     </div>
+
 
     <div class="content-item">
 
@@ -1881,9 +2898,9 @@ footer{
       </h3>
 
       <p>
-        Submit your vehicle and coverage details through the quote
-        process. Your inquiry can then be reviewed for follow-up
-        and quotation assistance.
+        Submit your vehicle and coverage information.
+        Your inquiry can then be reviewed for quotation
+        and follow-up assistance.
       </p>
 
     </div>
@@ -1893,486 +2910,39 @@ footer{
 </div>
 
 
-<!-- ================================================= -->
-<!-- LOANS -->
-<!-- ================================================= -->
 
-<div class="modal" id="loansModal">
+<!-- =========================================================
+     PROVIDER
+========================================================= -->
 
-  <div class="modal-box">
-
-    <button class="close"
-            onclick="closeModal('loansModal')">
-      ×
-    </button>
-
-    <div class="modal-title">
-      Car Financing & Insurance Guide
-    </div>
-
-    <div class="modal-subtitle">
-      Helpful information when financing a vehicle and preparing
-      for insurance requirements.
-    </div>
-
-
-    <div class="content-list">
-
-      <div class="content-item">
-
-        <h3>
-          Insurance for a Financed Vehicle
-        </h3>
-
-        <p>
-          Learn why vehicle owners may need to prepare insurance
-          documents when purchasing a vehicle through financing.
-        </p>
-
-      </div>
-
-
-      <div class="content-item">
-
-        <h3>
-          Budgeting for Insurance
-        </h3>
-
-        <p>
-          Consider insurance premiums as part of the overall
-          cost of owning a vehicle.
-        </p>
-
-      </div>
-
-
-      <div class="content-item">
-
-        <h3>
-          Documents Commonly Requested
-        </h3>
-
-        <p>
-          Vehicle and personal information may be requested when
-          processing insurance inquiries.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- ARTICLES -->
-<!-- ================================================= -->
-
-<div class="modal" id="articlesModal">
+<div
+  class="modal"
+  id="providerModal">
 
   <div class="modal-box">
 
-    <button class="close"
-            onclick="closeModal('articlesModal')">
+    <button
+      class="close"
+      onclick="closeModal('providerModal')">
+
       ×
-    </button>
-
-    <div class="modal-title">
-      NEO CARWORKS Articles
-    </div>
-
-    <div class="modal-subtitle">
-      Practical car insurance information for vehicle owners.
-    </div>
-
-
-    <div class="content-list">
-
-      <div class="content-item">
-
-        <h3>
-          How to Prepare Before Requesting a Car Insurance Quote
-        </h3>
-
-        <p>
-          Know the vehicle information and coverage details you
-          may need before starting your inquiry.
-        </p>
-
-      </div>
-
-
-      <div class="content-item">
-
-        <h3>
-          What to Check Before Choosing Coverage
-        </h3>
-
-        <p>
-          Compare the protection included in different coverage
-          options and consider what matches your vehicle needs.
-        </p>
-
-      </div>
-
-
-      <div class="content-item">
-
-        <h3>
-          CTPL vs. Comprehensive Coverage
-        </h3>
-
-        <p>
-          Understand the difference between basic compulsory
-          protection and broader vehicle coverage.
-        </p>
-
-      </div>
-
-
-      <div class="content-item">
-
-        <h3>
-          What to Do After a Car Accident
-        </h3>
-
-        <p>
-          Review the information and documents you may need when
-          reporting a vehicle incident.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- CREDIT CARDS -->
-<!-- ================================================= -->
-
-<div class="modal" id="cardsModal">
-
-  <div class="modal-box">
-
-    <button class="close"
-            onclick="closeModal('cardsModal')">
-      ×
-    </button>
-
-    <div class="modal-title">
-      Payment & Card Guide
-    </div>
-
-    <div class="modal-subtitle">
-      Helpful reminders when using cards for insurance-related payments.
-    </div>
-
-
-    <div class="content-list">
-
-      <div class="content-item">
-
-        <h3>
-          Managing Insurance Payments
-        </h3>
-
-        <p>
-          Keep track of your insurance payment dates and retain
-          your payment records.
-        </p>
-
-      </div>
-
-
-      <div class="content-item">
-
-        <h3>
-          Using a Credit Card Online
-        </h3>
-
-        <p>
-          Make sure you are using a secure payment page and never
-          share your card PIN or one-time password.
-        </p>
-
-      </div>
-
-
-      <div class="content-item">
-
-        <h3>
-          Payment Reminders
-        </h3>
-
-        <p>
-          Set reminders so you can monitor upcoming insurance
-          payments and renewal dates.
-        </p>
-
-      </div>
-
-
-      <div class="content-item">
-
-        <h3>
-          Card Safety
-        </h3>
-
-        <p>
-          Review transaction details and keep your account
-          credentials private when making online payments.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- TERMS -->
-<!-- ================================================= -->
-
-<div class="modal" id="termsModal">
-
-  <div class="modal-box">
-
-    <button class="close"
-            onclick="closeModal('termsModal')">
-      ×
-    </button>
-
-    <div class="modal-title">
-      NEO CARWORKS Insurance Terms & Conditions
-    </div>
-
-    <div class="modal-subtitle">
-      Sample terms for this quotation prototype.
-    </div>
-
-
-    <div class="content-item">
-
-      <h3>
-        Quote Information
-      </h3>
-
-      <p>
-        Information shown through the quotation prototype is
-        intended for inquiry and estimation purposes only.
-      </p>
-
-    </div>
-
-
-    <div class="content-item">
-
-      <h3>
-        Insurance Approval
-      </h3>
-
-      <p>
-        A quote request does not automatically create an insurance
-        policy. Final coverage, premium, eligibility and approval
-        are subject to the applicable insurance provider's
-        underwriting and policy terms.
-      </p>
-
-    </div>
-
-
-    <div class="content-item">
-
-      <h3>
-        User Information
-      </h3>
-
-      <p>
-        Users are expected to provide accurate vehicle and contact
-        information when submitting an inquiry.
-      </p>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- PRIVACY -->
-<!-- ================================================= -->
-
-<div class="modal" id="privacyModal">
-
-  <div class="modal-box">
-
-    <button class="close"
-            onclick="closeModal('privacyModal')">
-      ×
-    </button>
-
-    <div class="modal-title">
-      NEO CARWORKS Privacy Policy
-    </div>
-
-    <div class="modal-subtitle">
-      Sample privacy information for this prototype.
-    </div>
-
-
-    <div class="content-item">
-
-      <h3>
-        Information Collected
-      </h3>
-
-      <p>
-        The system may collect information such as name, email,
-        mobile number, vehicle details and quotation preferences.
-      </p>
-
-    </div>
-
-
-    <div class="content-item">
-
-      <h3>
-        Use of Information
-      </h3>
-
-      <p>
-        Information may be used to process an insurance inquiry,
-        prepare quotation information and communicate regarding
-        the submitted request.
-      </p>
-
-    </div>
-
-
-    <div class="content-item">
-
-      <h3>
-        Security
-      </h3>
-
-      <p>
-        Reasonable safeguards should be used to protect submitted
-        information. This prototype should not be treated as a
-        production-grade secure insurance platform.
-      </p>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- EDIT DETAILS -->
-<!-- ================================================= -->
-
-<div class="modal" id="editModal">
-
-  <div class="modal-box">
-
-    <button class="close"
-            onclick="closeModal('editModal')">
-      ×
-    </button>
-
-    <div class="modal-title">
-      Edit Quote Details
-    </div>
-
-    <div class="modal-subtitle">
-      Update your contact information.
-    </div>
-
-
-    <div class="form-grid">
-
-      <div class="form-group">
-
-        <label>First Name</label>
-
-        <input id="editFirstName">
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>Last Name</label>
-
-        <input id="editLastName">
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>Email</label>
-
-        <input id="editEmail">
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>Phone Number</label>
-
-        <input id="editPhone">
-
-      </div>
-
-    </div>
-
-
-    <button class="next-button"
-            onclick="closeModal('editModal')">
-
-      Update Quote
 
     </button>
 
-  </div>
 
-</div>
+    <div
+      class="modal-title"
+      id="providerModalTitle">
 
+      Insurance Provider
 
-<!-- ================================================= -->
-<!-- PROVIDER INFO -->
-<!-- ================================================= -->
-
-<div class="modal" id="providerModal">
-
-  <div class="modal-box">
-
-    <button class="close"
-            onclick="closeModal('providerModal')">
-      ×
-    </button>
-
-    <div class="modal-title"
-         id="providerModalTitle">
-      Provider
     </div>
+
 
     <div class="modal-subtitle">
       Provider information
     </div>
+
 
     <div class="content-item">
 
@@ -2387,19 +2957,293 @@ footer{
 </div>
 
 
+
+<!-- =========================================================
+     ARTICLES
+========================================================= -->
+
+<div
+  class="modal"
+  id="articlesModal">
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('articlesModal')">
+
+      ×
+
+    </button>
+
+
+    <div class="modal-title">
+      NEO CARWORKS Articles
+    </div>
+
+    <div class="modal-subtitle">
+      Practical information for vehicle owners.
+    </div>
+
+
+    <div class="content-list">
+
+
+      <div class="content-item">
+
+        <h3>
+          How to Prepare Before Requesting a Car Insurance Quote
+        </h3>
+
+        <p>
+          Learn what vehicle and personal information you may
+          need before submitting an insurance inquiry.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          What to Check Before Choosing Coverage
+        </h3>
+
+        <p>
+          Review the protection included in different coverage
+          options before requesting a quote.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          CTPL vs. Comprehensive Coverage
+        </h3>
+
+        <p>
+          Understand the difference between compulsory
+          protection and broader vehicle insurance coverage.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          What to Do After a Car Accident
+        </h3>
+
+        <p>
+          Review the information and documents that may be
+          useful when reporting a vehicle incident.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     LOANS
+========================================================= -->
+
+<div
+  class="modal"
+  id="loansModal">
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('loansModal')">
+
+      ×
+
+    </button>
+
+
+    <div class="modal-title">
+      Car Financing & Insurance Guide
+    </div>
+
+    <div class="modal-subtitle">
+      Helpful information for vehicle owners.
+    </div>
+
+
+    <div class="content-list">
+
+
+      <div class="content-item">
+
+        <h3>
+          Insurance for a Financed Vehicle
+        </h3>
+
+        <p>
+          Learn why insurance documents may be required when
+          purchasing a vehicle through financing.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          Budgeting for Insurance
+        </h3>
+
+        <p>
+          Consider insurance costs as part of your overall
+          vehicle ownership expenses.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          Documents Commonly Requested
+        </h3>
+
+        <p>
+          Vehicle and personal information may be requested
+          during an insurance inquiry.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     CREDIT CARDS
+========================================================= -->
+
+<div
+  class="modal"
+  id="cardsModal">
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('cardsModal')">
+
+      ×
+
+    </button>
+
+
+    <div class="modal-title">
+      Payment & Card Guide
+    </div>
+
+    <div class="modal-subtitle">
+      Helpful reminders when managing insurance payments.
+    </div>
+
+
+    <div class="content-list">
+
+
+      <div class="content-item">
+
+        <h3>
+          Managing Insurance Payments
+        </h3>
+
+        <p>
+          Keep track of payment dates and retain your
+          payment records.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          Using a Credit Card Online
+        </h3>
+
+        <p>
+          Make sure you use a secure payment page and never
+          share your card PIN or one-time password.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          Payment Reminders
+        </h3>
+
+        <p>
+          Set reminders for upcoming insurance payments
+          and renewal dates.
+        </p>
+
+      </div>
+
+
+      <div class="content-item">
+
+        <h3>
+          Card Safety
+        </h3>
+
+        <p>
+          Review transaction details and keep your account
+          credentials private.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script>
 
-/* =====================================================
-   APPS SCRIPT
-===================================================== */
+
+/* =========================================================
+   APPS SCRIPT URL
+========================================================= */
 
 const scriptURL =
 "https://script.google.com/macros/s/AKfycbx74ZnXI2J2kLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
 
 
-/* =====================================================
+/* =========================================================
    VEHICLE DATA
-===================================================== */
+========================================================= */
 
 const vehicleData = {
 
@@ -2616,23 +3460,26 @@ const vehicleData = {
 };
 
 
-/* =====================================================
+/* =========================================================
    STATE
-===================================================== */
+========================================================= */
 
 let selectedUse = "Private";
 
 let coverageState = {
-  aon:"Include",
+
   comprehensive:"Own Damage + Theft",
+
   roadside:"Basic",
+
   ctplLevel:"Basic"
+
 };
 
 
-/* =====================================================
+/* =========================================================
    LOAD MODELS
-===================================================== */
+========================================================= */
 
 function loadModels(){
 
@@ -2645,32 +3492,39 @@ function loadModels(){
   const variant =
     document.getElementById("variant");
 
+
   model.innerHTML =
     '<option value="">Select Model</option>';
 
   variant.innerHTML =
     '<option value="">Select Variant</option>';
 
-  if(!make) return;
 
-  Object.keys(vehicleData[make]).forEach(m=>{
+  if(!make){
+    return;
+  }
 
-    const option =
-      document.createElement("option");
 
-    option.value = m;
-    option.textContent = m;
+  Object.keys(vehicleData[make])
+    .forEach(item=>{
 
-    model.appendChild(option);
+      const option =
+        document.createElement("option");
 
-  });
+      option.value = item;
+
+      option.textContent = item;
+
+      model.appendChild(option);
+
+    });
 
 }
 
 
-/* =====================================================
+/* =========================================================
    LOAD VARIANTS
-===================================================== */
+========================================================= */
 
 function loadVariants(){
 
@@ -2683,70 +3537,99 @@ function loadVariants(){
   const variant =
     document.getElementById("variant");
 
+
   variant.innerHTML =
     '<option value="">Select Variant</option>';
 
-  if(!make || !model) return;
 
-  vehicleData[make][model].forEach(v=>{
+  if(!make || !model){
+    return;
+  }
 
-    const option =
-      document.createElement("option");
 
-    option.value = v;
-    option.textContent = v;
+  vehicleData[make][model]
+    .forEach(item=>{
 
-    variant.appendChild(option);
+      const option =
+        document.createElement("option");
 
-  });
+      option.value = item;
+
+      option.textContent = item;
+
+      variant.appendChild(option);
+
+    });
 
 }
 
 
-/* =====================================================
+/* =========================================================
    PRIMARY USE
-===================================================== */
+========================================================= */
 
 function selectUse(button,use){
 
   selectedUse = use;
 
+
   document
     .querySelectorAll(".use-option")
-    .forEach(btn=>btn.classList.remove("active"));
+    .forEach(item=>{
+
+      item.classList.remove("active");
+
+    });
+
 
   button.classList.add("active");
 
 }
 
 
-/* =====================================================
+/* =========================================================
    COVERAGE
-===================================================== */
+========================================================= */
 
-function selectCoverage(button,type,value){
+function selectCoverage(
+  button,
+  type,
+  value
+){
 
   coverageState[type] = value;
 
-  const parent =
-    button.parentElement;
 
-  parent
-    .querySelectorAll(".coverage-option")
-    .forEach(btn=>btn.classList.remove("active"));
+  button
+    .parentElement
+    .querySelectorAll(".option-btn")
+    .forEach(item=>{
+
+      item.classList.remove("active");
+
+    });
+
 
   button.classList.add("active");
 
 }
 
+
+/* =========================================================
+   SLIDERS
+========================================================= */
 
 function updateBi(){
 
   const value =
-    document.getElementById("biSlider").value;
+    Number(
+      document.getElementById("biSlider").value
+    );
 
-  document.getElementById("biValue").textContent =
-    "₱" + Number(value).toLocaleString();
+
+  document.getElementById("biValue")
+    .textContent =
+      "₱" + value.toLocaleString();
 
 }
 
@@ -2754,17 +3637,21 @@ function updateBi(){
 function updatePa(){
 
   const value =
-    document.getElementById("paSlider").value;
+    Number(
+      document.getElementById("paSlider").value
+    );
 
-  document.getElementById("paValue").textContent =
-    "₱" + Number(value).toLocaleString();
+
+  document.getElementById("paValue")
+    .textContent =
+      "₱" + value.toLocaleString();
 
 }
 
 
-/* =====================================================
-   SHOW COVERAGE
-===================================================== */
+/* =========================================================
+   NEXT
+========================================================= */
 
 function showCoverage(){
 
@@ -2780,7 +3667,14 @@ function showCoverage(){
   const year =
     document.getElementById("year").value;
 
-  if(!make || !model || !variant || !year){
+  const agreement =
+    document.getElementById("agreement").checked;
+
+
+  if(!make ||
+     !model ||
+     !variant ||
+     !year){
 
     alert(
       "Please complete your vehicle make, model, variant and year."
@@ -2789,22 +3683,41 @@ function showCoverage(){
     return;
   }
 
-  document
-    .getElementById("coverageSection")
-    .style.display="block";
+
+  if(!agreement){
+
+    alert(
+      "Please check the agreement box to continue."
+    );
+
+    return;
+  }
+
+
+  scrollToCoverage();
+
+}
+
+
+/* =========================================================
+   SCROLL TO COVERAGE
+========================================================= */
+
+function scrollToCoverage(){
 
   document
-    .getElementById("coverageSection")
+    .querySelector(".coverage-card")
     .scrollIntoView({
-      behavior:"smooth"
+      behavior:"smooth",
+      block:"center"
     });
 
 }
 
 
-/* =====================================================
-   CALCULATE
-===================================================== */
+/* =========================================================
+   CALCULATE QUOTES
+========================================================= */
 
 function calculateQuotes(){
 
@@ -2820,9 +3733,33 @@ function calculateQuotes(){
   const year =
     document.getElementById("year").value;
 
-  if(!make || !model || !variant || !year){
 
-    alert("Please complete your vehicle details.");
+  if(!make ||
+     !model ||
+     !variant ||
+     !year){
+
+    alert(
+      "Please complete your vehicle details first."
+    );
+
+    scrollToQuote();
+
+    return;
+  }
+
+
+  const agreement =
+    document.getElementById("agreement").checked;
+
+
+  if(!agreement){
+
+    alert(
+      "Please check the agreement box to continue."
+    );
+
+    scrollToQuote();
 
     return;
   }
@@ -2830,50 +3767,43 @@ function calculateQuotes(){
 
   const basePremium =
     18000 +
-    (2026 - Number(year))*500;
+    (2026 - Number(year)) * 500;
 
 
   const providers = [
 
     {
-      name:"Cocogen",
-      logo:"https://www.cocogen.com/favicon.ico",
+      name:"Cocogen Insurance",
       multiplier:1.00
     },
 
     {
       name:"Oona Insurance",
-      logo:"https://myoona.ph/favicon.ico",
       multiplier:1.08
     },
 
     {
       name:"FPG Mercantile",
-      logo:"https://ecommerce.fpgmercantile.com/favicon.ico",
       multiplier:1.12
     },
 
     {
       name:"Prudential Guarantee",
-      logo:"https://www.pga.com.ph/favicon.ico",
       multiplier:1.15
     },
 
     {
       name:"Malayan Insurance",
-      logo:"",
       multiplier:1.18
     },
 
     {
       name:"Standard Insurance",
-      logo:"",
       multiplier:1.20
     },
 
     {
       name:"PhilFirst",
-      logo:"",
       multiplier:1.22
     }
 
@@ -2883,89 +3813,106 @@ function calculateQuotes(){
   const grid =
     document.getElementById("resultsGrid");
 
+
   grid.innerHTML="";
 
 
-  providers.forEach((provider,index)=>{
+  providers
+    .forEach(provider=>{
 
-    const premium =
-      Math.round(basePremium * provider.multiplier);
+      const premium =
+        Math.round(
+          basePremium *
+          provider.multiplier
+        );
 
 
-    let logoHTML = provider.logo
+      const card =
+        document.createElement("div");
 
-      ? `<img src="${provider.logo}"
-              alt="${provider.name}">`
 
-      : `<div style="font-size:17px;font-weight:800;">
+      card.className =
+        "result-card";
+
+
+      card.innerHTML = `
+
+        <div class="result-provider">
           ${provider.name}
-         </div>`;
+        </div>
 
 
-    const card =
-      document.createElement("div");
-
-    card.className="provider-card";
-
-
-    card.innerHTML=`
-
-      <div class="provider-card-logo">
-        ${logoHTML}
-      </div>
-
-      <h3>
-        ${provider.name}
-      </h3>
-
-      <div class="premium">
-        ₱${premium.toLocaleString()}
-      </div>
-
-      <div class="coverage-summary">
-
-        ${make} ${model}<br>
-        Variant: ${variant}<br>
-        Year: ${year}<br>
-        Primary Use: ${selectedUse}<br>
-        BI/PD: ₱${Number(
-          document.getElementById("biSlider").value
-        ).toLocaleString()}<br>
-        Personal Accident: ₱${Number(
-          document.getElementById("paSlider").value
-        ).toLocaleString()}<br>
-        Acts of Nature: ${coverageState.aon}<br>
-        Comprehensive: ${coverageState.comprehensive}<br>
-        Roadside: ${coverageState.roadside}
-
-      </div>
-
-      <div class="card-buttons">
-
-        <button
-          class="details-btn"
-          onclick="viewDetails('${provider.name}',${premium})">
-
-          View Details
-
-        </button>
-
-        <button
-          class="request-btn"
-          onclick="requestQuote('${provider.name}',${premium})">
-
-          Request This Quote
-
-        </button>
-
-      </div>
-
-    `;
+        <div class="result-price">
+          ₱${premium.toLocaleString()}
+        </div>
 
 
-    grid.appendChild(card);
+        <div class="result-details">
 
-  });
+          ${make} ${model}<br>
+
+          Variant:
+          ${variant}<br>
+
+          Year:
+          ${year}<br>
+
+          Primary Use:
+          ${selectedUse}<br>
+
+          BI / PD:
+          ₱${Number(
+            document.getElementById("biSlider").value
+          ).toLocaleString()}<br>
+
+          Personal Accident:
+          ₱${Number(
+            document.getElementById("paSlider").value
+          ).toLocaleString()}<br>
+
+          Acts of Nature:
+          ${
+            document.getElementById("aonCheckbox").checked
+              ? "Include"
+              : "Exclude"
+          }
+
+        </div>
+
+
+        <div class="result-buttons">
+
+          <button
+            class="view-btn"
+            onclick="viewDetails(
+              '${provider.name}',
+              ${premium}
+            )">
+
+            View Details
+
+          </button>
+
+
+          <button
+            class="request-btn"
+            onclick="requestQuote(
+              '${provider.name}',
+              ${premium}
+            )">
+
+            Request This Quote
+
+          </button>
+
+        </div>
+
+      `;
+
+
+      grid.appendChild(card);
+
+    });
 
 
   document
@@ -2982,27 +3929,38 @@ function calculateQuotes(){
 }
 
 
-/* =====================================================
+/* =========================================================
    VIEW DETAILS
-===================================================== */
+========================================================= */
 
-function viewDetails(provider,premium){
+function viewDetails(
+  provider,
+  premium
+){
 
   alert(
+
     provider +
+
     "\n\nIndicative Premium: ₱" +
+
     premium.toLocaleString() +
-    "\n\nThis is a prototype quotation only. Final terms and pricing are subject to provider review."
+
+    "\n\nThis is a prototype quotation only. Final pricing and coverage are subject to provider review."
+
   );
 
 }
 
 
-/* =====================================================
+/* =========================================================
    REQUEST QUOTE
-===================================================== */
+========================================================= */
 
-function requestQuote(provider,premium){
+function requestQuote(
+  provider,
+  premium
+){
 
   const make =
     document.getElementById("make").value;
@@ -3020,30 +3978,40 @@ function requestQuote(provider,premium){
   const firstName =
     prompt("Enter your first name:");
 
-  if(!firstName) return;
+  if(!firstName){
+    return;
+  }
 
 
   const lastName =
     prompt("Enter your last name:");
 
-  if(!lastName) return;
+  if(!lastName){
+    return;
+  }
 
 
   const email =
     prompt("Enter your email:");
 
-  if(!email) return;
+  if(!email){
+    return;
+  }
 
 
   const mobile =
     prompt("Enter your mobile number:");
 
-  if(!mobile) return;
+  if(!mobile){
+    return;
+  }
 
 
   const referenceNumber =
     "NCW-" +
-    Date.now().toString().slice(-8);
+    Date.now()
+      .toString()
+      .slice(-8);
 
 
   const formData =
@@ -3052,7 +4020,7 @@ function requestQuote(provider,premium){
 
   formData.append(
     "name",
-    firstName+" "+lastName
+    firstName + " " + lastName
   );
 
   formData.append(
@@ -3077,7 +4045,7 @@ function requestQuote(provider,premium){
 
   formData.append(
     "vehicle",
-    make+" "+model
+    make + " " + model
   );
 
   formData.append(
@@ -3108,23 +4076,13 @@ function requestQuote(provider,premium){
   );
 
   formData.append(
-    "biPd",
-    document.getElementById("biSlider").value
+    "declaredValue",
+    ""
   );
 
   formData.append(
-    "personalAccident",
-    document.getElementById("paSlider").value
-  );
-
-  formData.append(
-    "aon",
-    coverageState.aon
-  );
-
-  formData.append(
-    "roadside",
-    coverageState.roadside
+    "estimatedPremium",
+    premium
   );
 
   formData.append(
@@ -3138,35 +4096,67 @@ function requestQuote(provider,premium){
   );
 
   formData.append(
-    "estimatedPremium",
-    premium
+    "biPd",
+    document.getElementById("biSlider").value
+  );
+
+  formData.append(
+    "personalAccident",
+    document.getElementById("paSlider").value
+  );
+
+  formData.append(
+    "aon",
+    document.getElementById("aonCheckbox").checked
+      ? "Include"
+      : "Exclude"
+  );
+
+  formData.append(
+    "roadside",
+    coverageState.roadside
   );
 
 
-  fetch(scriptURL,{
-    method:"POST",
-    body:formData,
-    mode:"no-cors"
-  });
+  fetch(
+    scriptURL,
+    {
+      method:"POST",
+      body:formData,
+      mode:"no-cors"
+    }
+  );
 
 
   alert(
-    "Inquiry submitted!\n\n"+
-    "Reference Number: "+referenceNumber+
-    "\nProvider: "+provider+
-    "\nVehicle: "+make+" "+model+
-    "\nVariant: "+variant+
-    "\nEstimated Premium: ₱"+
-    premium.toLocaleString()+
+
+    "Inquiry submitted!\n\n" +
+
+    "Reference Number: " +
+    referenceNumber +
+
+    "\nProvider: " +
+    provider +
+
+    "\nVehicle: " +
+    make + " " + model +
+
+    "\nVariant: " +
+    variant +
+
+    "\nEstimated Premium: ₱" +
+    premium.toLocaleString() +
+
     "\n\nYour inquiry has been prepared for NEO CARWORKS."
+
   );
 
 }
 
 
-/* =====================================================
-   PROVIDER
-===================================================== */
+/* =========================================================
+   PROVIDER INFO
+========================================================= */
 
 function providerInfo(provider){
 
@@ -3174,20 +4164,24 @@ function providerInfo(provider){
     "providerModalTitle"
   ).textContent = provider;
 
+
   document.getElementById(
     "providerModalText"
   ).textContent =
+
     provider +
+
     " is included as a provider option in this NEO CARWORKS quotation prototype. Final availability, coverage and pricing are subject to provider review.";
+
 
   openModal("providerModal");
 
 }
 
 
-/* =====================================================
-   MODAL
-===================================================== */
+/* =========================================================
+   MODALS
+========================================================= */
 
 function openModal(id){
 
@@ -3207,39 +4201,35 @@ function closeModal(id){
 }
 
 
-/* Close when clicking outside */
+/* =========================================================
+   CLOSE MODAL OUTSIDE
+========================================================= */
 
 document
   .querySelectorAll(".modal")
   .forEach(modal=>{
 
-    modal.addEventListener("click",function(e){
+    modal.addEventListener(
+      "click",
+      function(event){
 
-      if(e.target===modal){
+        if(event.target === modal){
 
-        modal.classList.remove("active");
+          modal.classList.remove("active");
+
+        }
 
       }
-
-    });
+    );
 
   });
 
 
-/* =====================================================
+/* =========================================================
    GOOGLE
-===================================================== */
+========================================================= */
 
 function continueWithGoogle(){
-
-  /*
-    Prototype behavior:
-    Opens Google's account chooser/sign-in page.
-
-    Real Google authentication requires:
-    Google Identity Services / OAuth Client ID
-    and authorized JavaScript origins.
-  */
 
   window.open(
     "https://accounts.google.com/AccountChooser",
@@ -3249,51 +4239,66 @@ function continueWithGoogle(){
 }
 
 
-/* =====================================================
+/* =========================================================
    EMAIL LOGIN
-===================================================== */
+========================================================= */
 
 function showEmailLogin(){
 
-  document.getElementById(
-    "emailLoginArea"
-  ).style.display="block";
+  document
+    .getElementById("emailLoginArea")
+    .style.display="block";
 
 }
 
 
-/* =====================================================
+/* =========================================================
    CREATE ACCOUNT
-===================================================== */
+========================================================= */
 
 function createAccount(){
 
   const first =
-    document.getElementById("firstName").value.trim();
+    document.getElementById("firstName")
+      .value.trim();
 
   const last =
-    document.getElementById("lastName").value.trim();
+    document.getElementById("lastName")
+      .value.trim();
 
   const email =
-    document.getElementById("signupEmail").value.trim();
+    document.getElementById("signupEmail")
+      .value.trim();
 
   const mobile =
-    document.getElementById("signupMobile").value.trim();
+    document.getElementById("signupMobile")
+      .value.trim();
 
   const password =
-    document.getElementById("signupPassword").value;
+    document.getElementById("signupPassword")
+      .value;
 
   const confirm =
-    document.getElementById("confirmPassword").value;
+    document.getElementById("confirmPassword")
+      .value;
 
   const agreement =
-    document.getElementById("signupAgreement").checked;
+    document.getElementById("signupAgreement")
+      .checked;
 
 
-  if(!first || !last || !email || !mobile ||
-     !password || !confirm){
+  if(
+    !first ||
+    !last ||
+    !email ||
+    !mobile ||
+    !password ||
+    !confirm
+  ){
 
-    alert("Please complete all fields.");
+    alert(
+      "Please complete all fields."
+    );
 
     return;
   }
@@ -3301,7 +4306,9 @@ function createAccount(){
 
   if(password !== confirm){
 
-    alert("Passwords do not match.");
+    alert(
+      "Passwords do not match."
+    );
 
     return;
   }
@@ -3319,19 +4326,22 @@ function createAccount(){
 
   localStorage.setItem(
     "neoAccount",
+
     JSON.stringify({
+
       first,
       last,
       email,
       mobile,
       password
+
     })
+
   );
 
 
   alert(
-    "Account created successfully!\n\n"+
-    "You can now continue with your email and password."
+    "Account created successfully!"
   );
 
 
@@ -3342,17 +4352,19 @@ function createAccount(){
 }
 
 
-/* =====================================================
+/* =========================================================
    LOGIN
-===================================================== */
+========================================================= */
 
 function loginAccount(){
 
   const email =
-    document.getElementById("loginEmail").value.trim();
+    document.getElementById("loginEmail")
+      .value.trim();
 
   const password =
-    document.getElementById("loginPassword").value;
+    document.getElementById("loginPassword")
+      .value;
 
 
   const saved =
@@ -3372,13 +4384,14 @@ function loginAccount(){
 
 
   if(
-    email===saved.email &&
-    password===saved.password
+    email === saved.email &&
+    password === saved.password
   ){
 
     alert(
-      "Welcome back, "+
-      saved.first+"!"
+      "Welcome back, " +
+      saved.first +
+      "!"
     );
 
     closeModal("loginModal");
@@ -3394,28 +4407,33 @@ function loginAccount(){
 }
 
 
-/* =====================================================
+/* =========================================================
    FORGOT PASSWORD
-===================================================== */
+========================================================= */
 
 function requestPasswordReset(){
 
   const email =
-    document.getElementById("forgotEmail").value.trim();
+    document.getElementById("forgotEmail")
+      .value.trim();
 
 
   if(!email){
 
-    alert("Please enter your email.");
+    alert(
+      "Please enter your email."
+    );
 
     return;
   }
 
 
   alert(
-    "Password reset request received for "+
-    email+
-    ".\n\nFor this prototype, no actual email is sent yet."
+
+    "Password reset request received for " +
+    email +
+    ".\n\nThis prototype does not send an actual email yet."
+
   );
 
 
@@ -3424,9 +4442,9 @@ function requestPasswordReset(){
 }
 
 
-/* =====================================================
+/* =========================================================
    SCROLL
-===================================================== */
+========================================================= */
 
 function scrollToQuote(){
 
