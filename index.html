@@ -4,1480 +4,1344 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Anna Ong Insurance Solutions</title>
+<title>Anna Ong Insurance | Car Insurance</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root{
+    --navy:#082f49;
+    --blue:#087ea4;
+    --blue2:#0b91bd;
+    --light-blue:#eaf8fc;
+    --yellow:#f6c344;
+    --dark:#17202a;
+    --gray:#667085;
+    --light:#f6f8fa;
+    --white:#ffffff;
+    --border:#dfe5e9;
+    --green:#16845b;
+    --red:#c24141;
+    --shadow:0 15px 40px rgba(8,47,73,.10);
+    --radius:18px;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7f9;
-    color: #172033;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:#f7fafb;
+    color:var(--dark);
+    line-height:1.5;
 }
 
 button,
-select,
-input {
-    font-family: inherit;
+input,
+select{
+    font-family:inherit;
 }
 
-button {
-    cursor: pointer;
+button{
+    cursor:pointer;
 }
 
-.hidden {
-    display: none !important;
+/* ================= HEADER ================= */
+
+header{
+    background:white;
+    border-bottom:1px solid #e8edf0;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header {
-    height: 74px;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6%;
-    border-bottom: 1px solid #e8ebef;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 24px;
 }
 
-.logo {
-    font-size: 23px;
-    font-weight: 800;
-    color: #071a36;
-    white-space: nowrap;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
 }
 
-.logo span {
-    color: #0781ad;
+.logo-mark{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--blue),var(--navy));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-family:'Manrope';
+    font-weight:800;
+    font-size:20px;
 }
 
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.logo-text strong{
+    display:block;
+    font-family:'Manrope';
+    font-size:18px;
+    color:var(--navy);
 }
 
-.nav button {
-    border: none;
-    background: transparent;
-    color: #172033;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 10px 5px;
+.logo-text span{
+    font-size:11px;
+    color:#7a8791;
 }
 
-.nav button:hover {
-    color: #0781ad;
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:7px;
 }
 
-.login-btn {
-    border: 1px solid #0781ad !important;
-    border-radius: 7px;
-    padding: 9px 17px !important;
-    color: #0781ad !important;
+.nav-links button{
+    border:none;
+    background:transparent;
+    color:#344054;
+    font-weight:600;
+    padding:12px 16px;
+    border-radius:10px;
+    transition:.2s;
 }
 
-.header-quote {
-    background: #0781ad !important;
-    color: white !important;
-    border-radius: 7px;
-    padding: 11px 18px !important;
+.nav-links button:hover{
+    background:var(--light-blue);
+    color:var(--blue);
 }
 
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
 
-/* =========================================================
-   HERO
-========================================================= */
+.login-btn{
+    background:white;
+    border:1px solid var(--border);
+    padding:11px 17px;
+    border-radius:10px;
+    font-weight:700;
+    color:var(--navy);
+}
 
-.hero {
+.account-btn{
+    background:var(--navy);
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:10px;
+    font-weight:700;
+}
+
+.account-btn:hover,
+.primary-btn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px rgba(8,47,73,.16);
+}
+
+.mobile-menu{
+    display:none;
+}
+
+/* ================= HERO ================= */
+
+.hero{
     background:
-        linear-gradient(
-            135deg,
-            #071a36,
-            #075b78
-        );
+        radial-gradient(circle at 80% 20%,rgba(11,145,189,.16),transparent 30%),
+        linear-gradient(135deg,#f9fcfd,#eaf8fc);
+    padding:70px 20px 95px;
+}
+
+.hero-inner{
+    max-width:1150px;
+    margin:auto;
+    text-align:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:white;
+    border:1px solid #dcecf2;
+    color:var(--blue);
+    border-radius:50px;
+    padding:8px 15px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:'Manrope',sans-serif;
+    font-size:clamp(35px,5vw,58px);
+    line-height:1.08;
+    color:var(--navy);
+    font-weight:800;
+    letter-spacing:-1.8px;
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero p{
+    max-width:700px;
+    margin:18px auto 28px;
+    color:#667085;
+    font-size:17px;
+}
 
-    color: white;
-    padding: 85px 7%;
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
-.hero-content {
-    max-width: 1100px;
-    margin: auto;
+.primary-btn{
+    border:none;
+    background:var(--blue);
+    color:white;
+    padding:14px 23px;
+    border-radius:12px;
+    font-weight:800;
+    transition:.2s;
 }
 
-.hero h1 {
-    font-size: 46px;
-    line-height: 1.15;
-    max-width: 720px;
-    margin-bottom: 18px;
+.secondary-btn{
+    border:1px solid #cfdce2;
+    background:white;
+    color:var(--navy);
+    padding:14px 23px;
+    border-radius:12px;
+    font-weight:800;
 }
+
+/* ================= QUOTE BOX ================= */
 
-.hero p {
-    font-size: 19px;
-    color: #dceaf0;
-    max-width: 650px;
-    margin-bottom: 28px;
+.quote-wrapper{
+    max-width:1080px;
+    margin:-45px auto 50px;
+    padding:0 18px;
+    position:relative;
+    z-index:10;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+.quote-box{
+    background:white;
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
 }
 
-.hero-primary {
-    background: #f6c400;
-    color: #071a36;
-    border: none;
-    border-radius: 7px;
-    padding: 14px 25px;
-    font-weight: 700;
-    font-size: 16px;
+.quote-top{
+    background:var(--navy);
+    color:white;
+    padding:27px 32px;
 }
 
-.hero-secondary {
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-    border-radius: 7px;
-    padding: 14px 25px;
-    font-weight: 700;
-    font-size: 16px;
+.quote-top h2{
+    font-family:'Manrope';
+    font-size:25px;
 }
 
+.quote-top p{
+    margin-top:5px;
+    color:#c9dce6;
+}
 
-/* =========================================================
-   HOME CARDS
-========================================================= */
+.steps{
+    display:flex;
+    gap:25px;
+    margin-top:18px;
+}
 
-.home-section {
-    max-width: 1100px;
-    margin: 45px auto;
-    padding: 0 20px;
+.step{
+    font-size:13px;
+    opacity:.65;
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 25px;
+.step.active{
+    opacity:1;
+    font-weight:800;
 }
 
-.section-title h2 {
-    color: #071a36;
-    margin-bottom: 8px;
+.form-content{
+    padding:32px;
 }
 
-.section-title p {
-    color: #667085;
+.section-title{
+    font-family:'Manrope';
+    font-size:21px;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:5px;
 }
 
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.section-description{
+    color:#737f89;
+    font-size:14px;
+    margin-bottom:25px;
 }
 
-.service-card {
-    background: white;
-    padding: 28px;
-    border-radius: 13px;
-    border: 1px solid #e5e9ee;
-    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:19px;
 }
 
-.service-icon {
-    font-size: 35px;
-    margin-bottom: 12px;
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
 }
 
-.service-card h3 {
-    color: #071a36;
-    margin-bottom: 8px;
+.field.full{
+    grid-column:1/-1;
 }
 
-.service-card p {
-    color: #667085;
-    font-size: 14px;
-    margin-bottom: 18px;
+.field label{
+    font-size:14px;
+    font-weight:700;
+    color:#344054;
 }
 
-.service-card button {
-    border: none;
-    background: #0781ad;
-    color: white;
-    padding: 11px 17px;
-    border-radius: 7px;
-    font-weight: bold;
+input,
+select{
+    width:100%;
+    border:1px solid #d5dde2;
+    background:white;
+    border-radius:12px;
+    padding:14px 15px;
+    font-size:15px;
+    color:#17202a;
+    outline:none;
+    transition:.2s;
 }
 
+input:focus,
+select:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 4px rgba(11,145,189,.09);
+}
 
-/* =========================================================
-   MODAL BACKDROP
-========================================================= */
+/* ================= USAGE ================= */
 
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.62);
-    z-index: 5000;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+.usage-title{
+    margin-top:28px;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:10px;
 }
 
-.modal.active {
-    display: flex;
+.choice-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
 }
 
+.choice{
+    position:relative;
+}
 
-/* =========================================================
-   QUOTE WIZARD
-========================================================= */
+.choice input{
+    position:absolute;
+    opacity:0;
+}
 
-.quote-modal {
-    width: 100%;
-    max-width: 660px;
-    max-height: 94vh;
-    overflow-y: auto;
-    background: white;
-    border-radius: 15px;
-    position: relative;
-    box-shadow: 0 20px 70px rgba(0,0,0,.35);
+.choice label{
+    display:block;
+    text-align:center;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:13px 10px;
+    cursor:pointer;
+    font-weight:700;
+    color:#475467;
+    background:#fff;
+    transition:.2s;
 }
 
-.quote-top {
-    padding: 22px 28px 8px;
+.choice input:checked + label{
+    border-color:var(--blue);
+    background:var(--light-blue);
+    color:var(--blue);
 }
 
-.quote-icons {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+/* ================= COVERAGE ================= */
+
+.coverage-section{
+    margin-top:34px;
 }
 
-.icon-circle {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #0781ad;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
+.coverage-card{
+    border:1px solid #e0e6e9;
+    border-radius:16px;
+    padding:19px;
+    margin-bottom:14px;
+    background:#fff;
 }
 
-.icon-circle.light {
-    background: #e6f5fa;
-    color: #0781ad;
+.coverage-header{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    align-items:center;
+    margin-bottom:14px;
 }
 
-.progress-line {
-    height: 2px;
-    background: #0781ad;
-    flex: 1;
+.coverage-header h3{
+    font-size:16px;
+    color:var(--navy);
+    font-family:'Manrope';
 }
 
-.quote-close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    border: none;
-    background: transparent;
-    font-size: 28px;
-    color: #667085;
+.coverage-header span{
+    font-size:12px;
+    color:#89939c;
 }
 
-.quote-heading {
-    text-align: center;
-    padding: 14px 35px 22px;
+.coverage-options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
 }
 
-.quote-heading h2 {
-    font-size: 31px;
-    color: #111827;
-    margin-bottom: 10px;
+.coverage-option{
+    position:relative;
 }
 
-.quote-heading p {
-    color: #475467;
-    font-size: 17px;
+.coverage-option input{
+    position:absolute;
+    opacity:0;
 }
 
-.wizard-body {
-    padding: 0 28px 25px;
+.coverage-option label{
+    display:block;
+    padding:10px 14px;
+    border:1px solid #d8e0e4;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:700;
+    color:#475467;
+    transition:.2s;
 }
 
-.step {
-    display: none;
+.coverage-option input:checked + label{
+    background:#e9f8fc;
+    color:var(--blue);
+    border-color:var(--blue);
 }
 
-.step.active {
-    display: block;
+/* ================= CALCULATE ================= */
+
+.calculate-area{
+    margin-top:30px;
+    display:flex;
+    justify-content:flex-end;
 }
 
-.field {
-    margin-bottom: 17px;
+.calculate-btn{
+    width:100%;
+    max-width:320px;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),#056481);
+    color:white;
+    padding:16px 20px;
+    border-radius:13px;
+    font-weight:800;
+    font-size:15px;
+    transition:.2s;
 }
 
-.field label {
-    display: block;
-    font-size: 15px;
-    color: #344054;
-    margin-bottom: 7px;
-    font-weight: 500;
+.calculate-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px rgba(8,126,164,.25);
 }
+
+/* ================= RESULTS ================= */
 
-.field select,
-.field input {
-    width: 100%;
-    height: 53px;
-    border: 1px solid #cfd5dc;
-    border-radius: 9px;
-    padding: 0 15px;
-    font-size: 16px;
-    background: white;
-    outline: none;
+.results-section{
+    max-width:1080px;
+    margin:0 auto 60px;
+    padding:0 18px;
+    display:none;
 }
 
-.field select:focus,
-.field input:focus {
-    border-color: #0781ad;
-    box-shadow: 0 0 0 3px rgba(7,129,173,.1);
+.results-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:20px;
 }
 
+.results-header h2{
+    font-family:'Manrope';
+    color:var(--navy);
+    font-size:27px;
+}
 
-/* =========================================================
-   SEGMENTED OPTIONS
-========================================================= */
+.results-header p{
+    color:#75808a;
+    font-size:14px;
+}
 
-.segment-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background: #eef0f3;
-    border-radius: 10px;
-    padding: 3px;
+.quote-summary{
+    background:linear-gradient(135deg,#082f49,#0a6682);
+    color:white;
+    border-radius:18px;
+    padding:21px;
+    margin-bottom:18px;
 }
 
-.segment-options input {
-    display: none;
+.quote-summary strong{
+    font-size:18px;
 }
 
-.segment-options label {
-    text-align: center;
-    padding: 13px 7px;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #667085;
-    font-weight: 600;
+.quote-summary span{
+    color:#d4e9f0;
+    font-size:13px;
 }
 
-.segment-options input:checked + label {
-    background: white;
-    color: #111827;
-    box-shadow: 0 1px 4px rgba(0,0,0,.12);
+.provider-grid{
+    display:grid;
+    gap:16px;
 }
 
+.provider-card{
+    background:white;
+    border:1px solid #e2e8eb;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 7px 20px rgba(8,47,73,.05);
+}
 
-/* =========================================================
-   COVERAGE OPTIONS
-========================================================= */
+.provider-card.lowest{
+    border:2px solid var(--green);
+}
 
-.coverage-item {
-    border: 1px solid #e1e5e9;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 13px;
+.provider-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:15px;
 }
 
-.coverage-item h4 {
-    color: #071a36;
-    margin-bottom: 10px;
+.provider-name{
+    font-family:'Manrope';
+    font-size:19px;
+    font-weight:800;
+    color:var(--navy);
 }
 
-.coverage-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+.provider-badge{
+    display:inline-block;
+    margin-top:6px;
+    background:#eaf8f1;
+    color:var(--green);
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:800;
 }
 
-.coverage-options input {
-    display: none;
+.premium{
+    text-align:right;
 }
 
-.coverage-options label {
-    border: 1px solid #ccd3da;
-    padding: 9px 12px;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 13px;
+.premium small{
+    color:#87919a;
+    display:block;
+    font-size:12px;
 }
 
-.coverage-options input:checked + label {
-    background: #0781ad;
-    color: white;
-    border-color: #0781ad;
+.premium strong{
+    font-family:'Manrope';
+    font-size:24px;
+    color:var(--navy);
 }
 
+.provider-info{
+    margin-top:17px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
 
-/* =========================================================
-   WIZARD BUTTONS
-========================================================= */
+.info-pill{
+    background:#f5f8fa;
+    padding:7px 10px;
+    border-radius:8px;
+    font-size:12px;
+    color:#59656e;
+}
 
-.wizard-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 22px;
+.provider-actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
 }
 
-.next-btn,
-.submit-btn {
-    flex: 1;
-    border: none;
-    background: #0781ad;
-    color: white;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
+.small-btn{
+    border:none;
+    padding:11px 15px;
+    border-radius:10px;
+    font-weight:800;
+    font-size:13px;
 }
 
-.back-btn {
-    width: 110px;
-    border: 1px solid #ccd3da;
-    background: white;
-    color: #344054;
-    border-radius: 8px;
-    font-weight: bold;
+.details-btn{
+    background:#edf7fa;
+    color:var(--blue);
 }
 
-.next-btn:hover,
-.submit-btn:hover {
-    background: #066f96;
+.request-btn{
+    background:var(--blue);
+    color:white;
 }
 
-.terms {
-    border-top: 1px solid #e6e8eb;
-    padding: 18px 28px;
-    text-align: center;
-    color: #667085;
-    font-size: 12px;
+.compare-btn{
+    background:#fff4cf;
+    color:#876400;
 }
+
+/* ================= INQUIRY ================= */
 
+.inquiry-record{
+    margin-top:22px;
+    background:white;
+    border:1px solid #d9e5e9;
+    border-radius:18px;
+    padding:22px;
+}
 
-/* =========================================================
-   RESULTS
-========================================================= */
+.inquiry-record h3{
+    font-family:'Manrope';
+    color:var(--navy);
+    margin-bottom:12px;
+}
 
-.results-section {
-    padding: 10px 28px 30px;
+.record-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+    font-size:14px;
 }
 
-.result-card {
-    border: 1px solid #dfe4e9;
-    border-radius: 12px;
-    padding: 18px;
-    margin-bottom: 14px;
-    background: white;
+.record-item{
+    padding:10px;
+    background:#f7fafb;
+    border-radius:9px;
 }
 
-.result-card.lowest {
-    border: 2px solid #f6c400;
+.record-item strong{
+    display:block;
+    color:#77828a;
+    font-size:11px;
 }
+
+/* ================= FOOTER ================= */
 
-.result-badge {
-    display: inline-block;
-    background: #f6c400;
-    color: #071a36;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 5px 9px;
-    border-radius: 20px;
-    margin-bottom: 8px;
+footer{
+    background:var(--navy);
+    color:white;
+    padding:45px 20px;
 }
 
-.result-provider {
-    font-size: 19px;
-    font-weight: bold;
-    color: #071a36;
+.footer-inner{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
 }
 
-.result-price {
-    font-size: 27px;
-    font-weight: bold;
-    color: #08733e;
-    margin: 7px 0;
+.footer-brand h3{
+    font-family:'Manrope';
+    font-size:21px;
 }
 
-.result-description {
-    font-size: 13px;
-    color: #667085;
-    margin-bottom: 14px;
+.footer-brand p{
+    color:#b9cbd3;
+    margin-top:9px;
+    max-width:400px;
+    font-size:14px;
 }
 
-.result-buttons {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+.footer-column h4{
+    margin-bottom:12px;
 }
 
-.small-btn {
-    border: none;
-    border-radius: 7px;
-    padding: 10px 13px;
-    font-weight: bold;
+.footer-column button{
+    display:block;
+    background:none;
+    border:none;
+    color:#c7d8df;
+    margin:8px 0;
+    padding:0;
 }
 
-.small-primary {
-    background: #0781ad;
-    color: white;
+.footer-bottom{
+    max-width:1100px;
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.15);
+    color:#a8bbc3;
+    font-size:12px;
 }
 
-.small-secondary {
-    background: #eef1f4;
-    color: #344054;
+/* ================= MODAL ================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(7,25,35,.68);
+    backdrop-filter:blur(5px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:3000;
+    padding:20px;
 }
 
+.modal-overlay.show{
+    display:flex;
+}
 
-/* =========================================================
-   GENERAL CONTENT MODALS
-========================================================= */
+.modal{
+    width:100%;
+    max-width:520px;
+    background:white;
+    border-radius:22px;
+    max-height:90vh;
+    overflow:auto;
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+    animation:modalIn .2s ease;
+}
 
-.content-modal {
-    width: 100%;
-    max-width: 570px;
-    max-height: 90vh;
-    overflow-y: auto;
-    background: white;
-    border-radius: 14px;
-    padding: 30px;
-    position: relative;
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.98);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
 }
 
-.content-modal h2 {
-    color: #071a36;
-    margin-bottom: 12px;
+.modal-header{
+    padding:23px 25px;
+    border-bottom:1px solid #e8edf0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.content-modal p {
-    color: #667085;
-    line-height: 1.7;
-    margin-bottom: 15px;
+.modal-header h2{
+    font-family:'Manrope';
+    color:var(--navy);
+    font-size:21px;
 }
 
-.close-content {
-    position: absolute;
-    top: 12px;
-    right: 18px;
-    border: none;
-    background: transparent;
-    font-size: 28px;
-    color: #667085;
+.close-btn{
+    border:none;
+    background:#f1f4f6;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    font-size:20px;
+    color:#53616a;
 }
 
+.modal-body{
+    padding:25px;
+}
 
-/* =========================================================
-   LOAN
-========================================================= */
+.modal-body .field{
+    margin-bottom:15px;
+}
 
-.loan-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 15px 0;
+.modal-submit{
+    width:100%;
+    border:none;
+    background:var(--blue);
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    font-weight:800;
 }
 
-.loan-options input {
-    display: none;
+/* LOGIN / ACCOUNT */
+
+.auth-icon{
+    width:54px;
+    height:54px;
+    border-radius:15px;
+    background:#eaf8fc;
+    color:var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    margin-bottom:14px;
 }
 
-.loan-options label {
-    border: 1px solid #ccd3da;
-    padding: 15px 8px;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
+.auth-description{
+    color:#77828a;
+    font-size:14px;
+    margin-bottom:20px;
 }
 
-.loan-options input:checked + label {
-    background: #0781ad;
-    color: white;
-    border-color: #0781ad;
+.auth-switch{
+    text-align:center;
+    font-size:13px;
+    margin-top:16px;
+    color:#7a858d;
 }
 
+.auth-switch button{
+    border:none;
+    background:none;
+    color:var(--blue);
+    font-weight:800;
+}
 
-/* =========================================================
-   LOGIN
-========================================================= */
+/* DETAILS */
 
-.login-form {
-    display: grid;
-    gap: 14px;
-    margin-top: 20px;
+.detail-box{
+    background:#f7fafb;
+    border-radius:14px;
+    padding:17px;
+    margin-bottom:16px;
 }
 
-.login-form input {
-    height: 50px;
-    border: 1px solid #ccd3da;
-    border-radius: 7px;
-    padding: 0 14px;
-    font-size: 15px;
+.detail-row{
+    display:flex;
+    justify-content:space-between;
+    padding:7px 0;
+    border-bottom:1px solid #e4e9ec;
+    font-size:14px;
 }
 
-.login-form button {
-    height: 50px;
-    border: none;
-    border-radius: 7px;
-    background: #0781ad;
-    color: white;
-    font-weight: bold;
+.detail-row:last-child{
+    border-bottom:none;
 }
 
-.forgot {
-    border: none;
-    background: transparent;
-    color: #0781ad;
-    text-align: right;
+.detail-total{
+    margin-top:12px;
+    display:flex;
+    justify-content:space-between;
+    font-family:'Manrope';
+    font-size:20px;
+    color:var(--navy);
 }
 
+/* LOAN */
 
-/* =========================================================
-   INQUIRY RECORD
-========================================================= */
+.loan-box{
+    text-align:center;
+    padding:10px 0;
+}
 
-.record {
-    background: #ecfdf3;
-    border: 1px solid #a7e8bf;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 15px;
+.loan-icon{
+    font-size:48px;
+    margin-bottom:10px;
 }
 
-.record strong {
-    color: #08733e;
+.loan-box h3{
+    font-family:'Manrope';
+    color:var(--navy);
+    font-size:25px;
 }
 
+.loan-box p{
+    color:#727e87;
+    margin:8px 0 20px;
+}
 
-/* =========================================================
-   FOOTER
-========================================================= */
+.loan-options{
+    display:grid;
+    gap:10px;
+}
 
-footer {
-    background: #071a36;
-    color: #dce3ed;
-    padding: 30px 20px;
-    text-align: center;
-    font-size: 13px;
-    margin-top: 50px;
+.loan-option{
+    border:1px solid var(--border);
+    padding:15px;
+    border-radius:12px;
+    text-align:left;
+    cursor:pointer;
+    transition:.2s;
 }
 
+.loan-option:hover{
+    border-color:var(--blue);
+    background:#f0fafc;
+}
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* RESPONSIVE */
 
-@media(max-width: 800px) {
+@media(max-width:850px){
 
-    header {
-        padding: 0 18px;
+    .nav-links{
+        display:none;
     }
 
-    .nav {
-        gap: 8px;
+    .mobile-menu{
+        display:block;
+        border:none;
+        background:none;
+        font-size:25px;
     }
 
-    .nav button {
-        font-size: 12px;
+    .navbar{
+        padding:0 15px;
     }
 
-    .logo {
-        font-size: 18px;
+    .login-btn{
+        display:none;
     }
 
-    .header-quote {
-        display: none;
+    .grid{
+        grid-template-columns:1fr;
     }
 
-    .hero {
-        padding: 60px 25px;
+    .field.full{
+        grid-column:auto;
     }
 
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quote-heading h2 {
-        font-size: 26px;
-    }
-
-    .quote-modal {
-        max-height: 96vh;
-    }
-
-    .segment-options {
-        grid-template-columns: 1fr;
-    }
-
-    .loan-options {
-        grid-template-columns: 1fr;
+    .footer-inner{
+        grid-template-columns:1fr;
     }
 
 }
 
+@media(max-width:600px){
+
+    .account-btn{
+        display:none;
+    }
+
+    .hero{
+        padding:50px 15px 80px;
+    }
+
+    .hero h1{
+        font-size:37px;
+    }
+
+    .form-content{
+        padding:22px 18px;
+    }
+
+    .quote-top{
+        padding:23px 20px;
+    }
+
+    .choice-row{
+        grid-template-columns:1fr;
+    }
+
+    .coverage-options{
+        display:grid;
+        grid-template-columns:1fr;
+    }
+
+    .provider-top{
+        flex-direction:column;
+    }
+
+    .premium{
+        text-align:left;
+    }
+
+    .provider-actions{
+        flex-direction:column;
+    }
+
+    .small-btn{
+        width:100%;
+    }
+
+    .record-grid{
+        grid-template-columns:1fr;
+    }
+}
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
-     HEADER
-========================================================= -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
-    <div class="logo">
-        Anna Ong <span>Insurance</span>
+<div class="navbar">
+
+    <div class="logo" onclick="goHome()">
+        <div class="logo-mark">AO</div>
+
+        <div class="logo-text">
+            <strong>Anna Ong Insurance</strong>
+            <span>Your Trusted Insurance Partner</span>
+        </div>
     </div>
 
+    <nav class="nav-links">
 
-    <nav class="nav">
-
-        <button
-            type="button"
-            onclick="openQuote()"
-        >
+        <button onclick="scrollToInsurance()">
             🚗 Car Insurance
         </button>
 
-
-        <button
-            type="button"
-            onclick="openLoan()"
-        >
+        <button onclick="openLoan()">
             💰 Loan
         </button>
 
-
-        <button
-            type="button"
-            onclick="openAbout()"
-        >
+        <button onclick="openAbout()">
             About Us
-        </button>
-
-
-        <button
-            type="button"
-            class="login-btn"
-            onclick="openLogin()"
-        >
-            Log In
-        </button>
-
-
-        <button
-            type="button"
-            class="header-quote"
-            onclick="openQuote()"
-        >
-            Get a Quote
         </button>
 
     </nav>
 
+    <div class="nav-actions">
+
+        <button class="login-btn" onclick="openLogin()">
+            Log in
+        </button>
+
+        <button class="account-btn" onclick="openCreateAccount()">
+            Create Account
+        </button>
+
+    </div>
+
+    <button class="mobile-menu" onclick="openMobileMenu()">☰</button>
+
+</div>
+
 </header>
 
 
-<!-- =====================================================
-     HERO
-========================================================= -->
+<!-- ================= HERO ================= -->
 
-<section class="hero">
+<section class="hero" id="home">
 
-    <div class="hero-content">
+<div class="hero-inner">
 
-        <h1>
-            Find Car Insurance That Fits Your Needs
-        </h1>
-
-        <p>
-            Get an estimated car insurance quote based on
-            your vehicle, driver information, and selected coverage.
-        </p>
-
-
-        <div class="hero-buttons">
-
-            <button
-                class="hero-primary"
-                type="button"
-                onclick="openQuote()"
-            >
-                GET MY CAR INSURANCE QUOTE
-            </button>
-
-
-            <button
-                class="hero-secondary"
-                type="button"
-                onclick="openLoan()"
-            >
-                EXPLORE LOAN
-            </button>
-
-        </div>
-
+    <div class="badge">
+        ✦ Simple • Transparent • Personalized
     </div>
 
-</section>
+    <h1>
+        Find the right
+        <span>car insurance</span>
+        for you.
+    </h1>
 
+    <p>
+        Tell us about your vehicle, choose the coverage you need,
+        and compare available insurance options in one place.
+    </p>
 
-<!-- =====================================================
-     SERVICES
-========================================================= -->
+    <div class="hero-buttons">
 
-<section class="home-section">
-
-    <div class="section-title">
-
-        <h2>
-            Our Services
-        </h2>
-
-        <p>
-            Insurance and financial solutions made easier.
-        </p>
-
-    </div>
-
-
-    <div class="service-grid">
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🚗
-            </div>
-
-            <h3>
-                Car Insurance
-            </h3>
-
-            <p>
-                Provide your vehicle details, choose your
-                coverage, and view available insurance estimates.
-            </p>
-
-            <button
-                type="button"
-                onclick="openQuote()"
-            >
-                Get a Quote
-            </button>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                💰
-            </div>
-
-            <h3>
-                Loan Inquiry
-            </h3>
-
-            <p>
-                Send an inquiry for available auto,
-                personal, or business loan options.
-            </p>
-
-            <button
-                type="button"
-                onclick="openLoan()"
-            >
-                Loan Inquiry
-            </button>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🤝
-            </div>
-
-            <h3>
-                Personal Assistance
-            </h3>
-
-            <p>
-                Have questions? Send an inquiry and
-                our representative can assist you.
-            </p>
-
-            <button
-                type="button"
-                onclick="openAbout()"
-            >
-                Learn More
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CAR INSURANCE QUOTE MODAL
-========================================================= -->
-
-<div
-    class="modal"
-    id="quoteModal"
->
-
-    <div class="quote-modal">
-
-        <button
-            class="quote-close"
-            type="button"
-            onclick="closeQuote()"
-        >
-            ×
+        <button class="primary-btn" onclick="scrollToInsurance()">
+            Get My Quote →
         </button>
 
+        <button class="secondary-btn" onclick="openLoan()">
+            Explore Loan Options
+        </button>
 
-        <div class="quote-top">
+    </div>
 
-            <div class="quote-icons">
+</div>
 
-                <div class="icon-circle">
-                    🚗
-                </div>
+</section>
 
-                <div class="progress-line"></div>
 
-                <div class="icon-circle light">
-                    ☎
-                </div>
+<!-- ================= QUOTE FORM ================= -->
+
+<section class="quote-wrapper" id="insurance">
+
+<div class="quote-box">
+
+    <div class="quote-top">
+
+        <h2>Get Your Car Insurance Quote</h2>
+
+        <p>
+            Provide your vehicle details to see available options.
+        </p>
+
+        <div class="steps">
+
+            <div class="step active">
+                01 Vehicle Details
+            </div>
+
+            <div class="step active">
+                02 Coverage
+            </div>
+
+            <div class="step">
+                03 Compare
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="form-content">
+
+        <div class="section-title">
+            Tell Us About Your Car
+        </div>
+
+        <div class="section-description">
+            Please provide accurate vehicle information for a more relevant quotation.
+        </div>
+
+
+        <div class="grid">
+
+            <!-- CATEGORY -->
+
+            <div class="field">
+
+                <label>Vehicle Category</label>
+
+                <select id="vehicleCategory">
+
+                    <option value="">Select category</option>
+                    <option>Sedan</option>
+                    <option>SUV</option>
+                    <option>Hatchback</option>
+                    <option>Pickup</option>
+                    <option>MPV</option>
+                    <option>Van</option>
+                    <option>Coupe</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- MAKE -->
+
+            <div class="field">
+
+                <label>Vehicle Make</label>
+
+                <select id="vehicleMake" onchange="loadModels()">
+
+                    <option value="">Select make</option>
+
+                    <option>Toyota</option>
+                    <option>Honda</option>
+                    <option>Mitsubishi</option>
+                    <option>Nissan</option>
+                    <option>Ford</option>
+                    <option>Hyundai</option>
+                    <option>Kia</option>
+                    <option>Suzuki</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- MODEL -->
+
+            <div class="field">
+
+                <label>Vehicle Model</label>
+
+                <select id="vehicleModel" onchange="loadVariants()">
+
+                    <option value="">Select model</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- VARIANT -->
+
+            <div class="field">
+
+                <label>Vehicle Variant</label>
+
+                <select id="vehicleVariant">
+
+                    <option value="">Select variant</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- YEAR -->
+
+            <div class="field">
+
+                <label>Year of Manufacture</label>
+
+                <select id="modelYear">
+
+                    <option value="">Select year</option>
+
+                    <option>2026</option>
+                    <option>2025</option>
+                    <option>2024</option>
+                    <option>2023</option>
+                    <option>2022</option>
+                    <option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- VALUE -->
+
+            <div class="field">
+
+                <label>Estimated Vehicle Value</label>
+
+                <input
+                    type="number"
+                    id="declaredValue"
+                    placeholder="e.g. 850000"
+                >
+
+            </div>
+
+
+            <!-- AGE -->
+
+            <div class="field">
+
+                <label>Driver Age</label>
+
+                <input
+                    type="number"
+                    id="driverAge"
+                    min="18"
+                    max="80"
+                    placeholder="e.g. 30"
+                >
 
             </div>
 
         </div>
 
 
-        <div class="quote-heading">
+        <!-- PRIMARY USE -->
 
-            <h2 id="stepTitle">
-                1. Vehicle details
-            </h2>
+        <div class="usage-title">
+            What is the primary use of your car?
+        </div>
 
-            <p id="stepDescription">
-                Please provide your vehicle details to
-                get an estimated insurance quote.
-            </p>
+        <div class="choice-row">
+
+            <div class="choice">
+                <input
+                    type="radio"
+                    name="carUse"
+                    id="privateUse"
+                    value="Private"
+                    checked
+                >
+                <label for="privateUse">
+                    Private
+                </label>
+            </div>
+
+            <div class="choice">
+                <input
+                    type="radio"
+                    name="carUse"
+                    id="grabUse"
+                    value="Grab / TNVS"
+                >
+                <label for="grabUse">
+                    Grab / TNVS
+                </label>
+            </div>
+
+            <div class="choice">
+                <input
+                    type="radio"
+                    name="carUse"
+                    id="otherUse"
+                    value="Other"
+                >
+                <label for="otherUse">
+                    Other
+                </label>
+            </div>
 
         </div>
 
 
-        <div class="wizard-body">
+        <!-- COVERAGE -->
 
+        <div class="coverage-section">
 
-            <!-- =================================================
-                 STEP 1
-            ================================================== -->
+            <div class="section-title">
+                Customize Your Coverage
+            </div>
 
-            <div
-                class="step active"
-                id="step1"
-            >
-
-
-                <div class="field">
-
-                    <label>
-                        Vehicle category
-                    </label>
-
-                    <select id="vehicleCategory">
-
-                        <option value="">
-                            Select vehicle category
-                        </option>
-
-                        <option value="Sedan">
-                            Sedan
-                        </option>
-
-                        <option value="SUV">
-                            SUV
-                        </option>
-
-                        <option value="Hatchback">
-                            Hatchback
-                        </option>
-
-                        <option value="Pickup">
-                            Pickup
-                        </option>
-
-                        <option value="MPV">
-                            MPV
-                        </option>
-
-                        <option value="Van">
-                            Van
-                        </option>
-
-                        <option value="Coupe">
-                            Coupe
-                        </option>
-
-                        <option value="Wagon">
-                            Wagon
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Vehicle make
-                    </label>
-
-                    <select
-                        id="vehicleMake"
-                        onchange="loadModels()"
-                    >
-
-                        <option value="">
-                            Select vehicle make
-                        </option>
-
-                        <option value="Toyota">
-                            Toyota
-                        </option>
-
-                        <option value="Honda">
-                            Honda
-                        </option>
-
-                        <option value="Mitsubishi">
-                            Mitsubishi
-                        </option>
-
-                        <option value="Nissan">
-                            Nissan
-                        </option>
-
-                        <option value="Ford">
-                            Ford
-                        </option>
-
-                        <option value="Hyundai">
-                            Hyundai
-                        </option>
-
-                        <option value="Kia">
-                            Kia
-                        </option>
-
-                        <option value="Suzuki">
-                            Suzuki
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Vehicle model
-                    </label>
-
-                    <select
-                        id="vehicleModel"
-                        onchange="loadVariants()"
-                        disabled
-                    >
-
-                        <option value="">
-                            Select vehicle model
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Model / Variant
-                    </label>
-
-                    <select
-                        id="vehicleVariant"
-                        disabled
-                    >
-
-                        <option value="">
-                            Select model / variant
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Year of manufacture
-                    </label>
-
-                    <select id="modelYear">
-
-                        <option value="">
-                            Select year
-                        </option>
-
-                        <option>2026</option>
-                        <option>2025</option>
-                        <option>2024</option>
-                        <option>2023</option>
-                        <option>2022</option>
-                        <option>2021</option>
-                        <option>2020</option>
-                        <option>2019</option>
-                        <option>2018</option>
-                        <option>2017</option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Estimated vehicle value
-                    </label>
-
-                    <input
-                        type="number"
-                        id="declaredValue"
-                        placeholder="Example: ₱850,000"
-                    >
-
-                </div>
-
-
-                <div class="wizard-buttons">
-
-                    <button
-                        class="next-btn"
-                        type="button"
-                        onclick="nextStep(1)"
-                    >
-                        Next →
-                    </button>
-
-                </div>
-
+            <div class="section-description">
+                Choose the protection that matches your needs.
             </div>
 
 
-            <!-- =================================================
-                 STEP 2
-            ================================================== -->
+            <!-- COMPREHENSIVE -->
 
-            <div
-                class="step"
-                id="step2"
-            >
+            <div class="coverage-card">
 
+                <div class="coverage-header">
 
-                <div class="field">
+                    <h3>Comprehensive Coverage</h3>
 
-                    <label>
-                        What is the primary use of your car?
-                    </label>
-
-
-                    <div class="segment-options">
-
-                        <input
-                            type="radio"
-                            id="usePrivate"
-                            name="carUse"
-                            value="Private"
-                            checked
-                        >
-
-                        <label for="usePrivate">
-                            Private
-                        </label>
-
-
-                        <input
-                            type="radio"
-                            id="useBusiness"
-                            name="carUse"
-                            value="Business"
-                        >
-
-                        <label for="useBusiness">
-                            Business
-                        </label>
-
-
-                        <input
-                            type="radio"
-                            id="useGrab"
-                            name="carUse"
-                            value="Grab / TNVS"
-                        >
-
-                        <label for="useGrab">
-                            Grab / TNVS
-                        </label>
-
-                    </div>
+                    <span>Choose one</span>
 
                 </div>
 
+                <div class="coverage-options">
 
-                <div class="field">
-
-                    <label>
-                        Driver age
-                    </label>
-
-                    <input
-                        type="number"
-                        id="driverAge"
-                        placeholder="Example: 30"
-                        min="18"
-                        max="100"
-                    >
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Driving experience
-                    </label>
-
-                    <select id="drivingExperience">
-
-                        <option value="">
-                            Select driving experience
-                        </option>
-
-                        <option value="Less than 1 year">
-                            Less than 1 year
-                        </option>
-
-                        <option value="1-3 years">
-                            1–3 years
-                        </option>
-
-                        <option value="4-6 years">
-                            4–6 years
-                        </option>
-
-                        <option value="7-10 years">
-                            7–10 years
-                        </option>
-
-                        <option value="More than 10 years">
-                            More than 10 years
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Previous car insurance
-                    </label>
-
-
-                    <div class="segment-options">
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="previousYes"
-                            name="previousInsurance"
-                            value="Yes"
-                        >
-
-                        <label for="previousYes">
-                            Yes
-                        </label>
-
-
-                        <input
-                            type="radio"
-                            id="previousNo"
-                            name="previousInsurance"
-                            value="No"
-                            checked
-                        >
-
-                        <label for="previousNo">
-                            No
-                        </label>
-
-
-                        <input
-                            type="radio"
-                            id="previousRenewal"
-                            name="previousInsurance"
-                            value="Renewal"
-                        >
-
-                        <label for="previousRenewal">
-                            Renewal
-                        </label>
-
-                    </div>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Location
-                    </label>
-
-                    <select id="location">
-
-                        <option value="">
-                            Select location
-                        </option>
-
-                        <option>
-                            Metro Manila
-                        </option>
-
-                        <option>
-                            Laguna
-                        </option>
-
-                        <option>
-                            Rizal
-                        </option>
-
-                        <option>
-                            Cavite
-                        </option>
-
-                        <option>
-                            Batangas
-                        </option>
-
-                        <option>
-                            Quezon
-                        </option>
-
-                        <option>
-                            Other
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="wizard-buttons">
-
-                    <button
-                        class="back-btn"
-                        type="button"
-                        onclick="previousStep(2)"
-                    >
-                        ← Back
-                    </button>
-
-                    <button
-                        class="next-btn"
-                        type="button"
-                        onclick="nextStep(2)"
-                    >
-                        Next →
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 STEP 3
-            ================================================== -->
-
-            <div
-                class="step"
-                id="step3"
-            >
-
-
-                <!-- Comprehensive -->
-
-                <div class="coverage-item">
-
-                    <h4>
-                        Comprehensive Coverage
-                    </h4>
-
-                    <div class="coverage-options">
-
-                        <input
-                            type="radio"
-                            id="comp1"
                             name="comprehensive"
+                            id="comp1"
                             value="Own Damage + Theft"
                             checked
                         >
@@ -1486,11 +1350,14 @@ footer {
                             Own Damage + Theft
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="comp2"
                             name="comprehensive"
+                            id="comp2"
                             value="Theft Only"
                         >
 
@@ -1498,11 +1365,14 @@ footer {
                             Theft Only
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="comp3"
                             name="comprehensive"
+                            id="comp3"
                             value="Third Party Only"
                         >
 
@@ -1514,38 +1384,49 @@ footer {
 
                 </div>
 
+            </div>
 
-                <!-- AON -->
 
-                <div class="coverage-item">
+            <!-- AON -->
 
-                    <h4>
-                        Acts of Nature
-                    </h4>
+            <div class="coverage-card">
 
-                    <div class="coverage-options">
+                <div class="coverage-header">
+
+                    <h3>Acts of Nature</h3>
+
+                    <span>Choose one</span>
+
+                </div>
+
+                <div class="coverage-options">
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="aon1"
                             name="aon"
+                            id="aonInclude"
                             value="Include"
                             checked
                         >
 
-                        <label for="aon1">
+                        <label for="aonInclude">
                             Include
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="aon2"
                             name="aon"
+                            id="aonExclude"
                             value="Exclude"
                         >
 
-                        <label for="aon2">
+                        <label for="aonExclude">
                             Exclude
                         </label>
 
@@ -1553,50 +1434,64 @@ footer {
 
                 </div>
 
+            </div>
 
-                <!-- Roadside -->
 
-                <div class="coverage-item">
+            <!-- ROADSIDE -->
 
-                    <h4>
-                        Roadside Assistance
-                    </h4>
+            <div class="coverage-card">
 
-                    <div class="coverage-options">
+                <div class="coverage-header">
+
+                    <h3>Roadside Assistance</h3>
+
+                    <span>Choose one</span>
+
+                </div>
+
+                <div class="coverage-options">
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="road1"
                             name="roadside"
+                            id="roadBasic"
                             value="Basic"
                             checked
                         >
 
-                        <label for="road1">
+                        <label for="roadBasic">
                             Basic
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="road2"
                             name="roadside"
+                            id="roadPlus"
                             value="Plus"
                         >
 
-                        <label for="road2">
+                        <label for="roadPlus">
                             Plus
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="road3"
                             name="roadside"
+                            id="roadExclude"
                             value="Exclude"
                         >
 
-                        <label for="road3">
+                        <label for="roadExclude">
                             Exclude
                         </label>
 
@@ -1604,62 +1499,79 @@ footer {
 
                 </div>
 
+            </div>
 
-                <!-- EBI -->
 
-                <div class="coverage-item">
+            <!-- EBI -->
 
-                    <h4>
-                        Excess Bodily Injury
-                    </h4>
+            <div class="coverage-card">
 
-                    <div class="coverage-options">
+                <div class="coverage-header">
+
+                    <h3>Excess Bodily Injury</h3>
+
+                    <span>Choose one</span>
+
+                </div>
+
+                <div class="coverage-options">
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="ebi1"
                             name="ebi"
+                            id="ebi500"
                             value="₱500,000"
                             checked
                         >
 
-                        <label for="ebi1">
-                            ₱500K
+                        <label for="ebi500">
+                            ₱500,000
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="ebi2"
                             name="ebi"
+                            id="ebi1m"
                             value="₱1,000,000"
                         >
 
-                        <label for="ebi2">
+                        <label for="ebi1m">
                             ₱1M
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="ebi3"
                             name="ebi"
+                            id="ebi2m"
                             value="₱2,000,000"
                         >
 
-                        <label for="ebi3">
+                        <label for="ebi2m">
                             ₱2M
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="ebi4"
                             name="ebi"
+                            id="ebiExclude"
                             value="Exclude"
                         >
 
-                        <label for="ebi4">
+                        <label for="ebiExclude">
                             Exclude
                         </label>
 
@@ -1667,62 +1579,79 @@ footer {
 
                 </div>
 
+            </div>
 
-                <!-- VPD -->
 
-                <div class="coverage-item">
+            <!-- VPD -->
 
-                    <h4>
-                        Voluntary Property Damage
-                    </h4>
+            <div class="coverage-card">
 
-                    <div class="coverage-options">
+                <div class="coverage-header">
+
+                    <h3>Voluntary Property Damage</h3>
+
+                    <span>Choose one</span>
+
+                </div>
+
+                <div class="coverage-options">
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="vpd1"
                             name="vpd"
+                            id="vpd500"
                             value="₱500,000"
                             checked
                         >
 
-                        <label for="vpd1">
-                            ₱500K
+                        <label for="vpd500">
+                            ₱500,000
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="vpd2"
                             name="vpd"
+                            id="vpd1m"
                             value="₱1,000,000"
                         >
 
-                        <label for="vpd2">
+                        <label for="vpd1m">
                             ₱1M
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="vpd3"
                             name="vpd"
+                            id="vpd2m"
                             value="₱2,000,000"
                         >
 
-                        <label for="vpd3">
+                        <label for="vpd2m">
                             ₱2M
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="vpd4"
                             name="vpd"
+                            id="vpdExclude"
                             value="Exclude"
                         >
 
-                        <label for="vpd4">
+                        <label for="vpdExclude">
                             Exclude
                         </label>
 
@@ -1730,38 +1659,49 @@ footer {
 
                 </div>
 
+            </div>
 
-                <!-- CTPL -->
 
-                <div class="coverage-item">
+            <!-- CTPL -->
 
-                    <h4>
-                        CTPL
-                    </h4>
+            <div class="coverage-card">
 
-                    <div class="coverage-options">
+                <div class="coverage-header">
+
+                    <h3>Compulsory Third Party Liability</h3>
+
+                    <span>Choose one</span>
+
+                </div>
+
+                <div class="coverage-options">
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="ctpl1"
                             name="ctpl"
+                            id="ctplBasic"
                             value="Basic CTPL"
                             checked
                         >
 
-                        <label for="ctpl1">
+                        <label for="ctplBasic">
                             Basic CTPL
                         </label>
 
+                    </div>
+
+                    <div class="coverage-option">
 
                         <input
                             type="radio"
-                            id="ctpl2"
                             name="ctpl"
+                            id="ctplEnhanced"
                             value="Enhanced CTPL"
                         >
 
-                        <label for="ctpl2">
+                        <label for="ctplEnhanced">
                             Enhanced CTPL
                         </label>
 
@@ -1769,303 +1709,18 @@ footer {
 
                 </div>
 
-
-                <div class="wizard-buttons">
-
-                    <button
-                        class="back-btn"
-                        type="button"
-                        onclick="previousStep(3)"
-                    >
-                        ← Back
-                    </button>
-
-                    <button
-                        class="next-btn"
-                        type="button"
-                        onclick="calculateQuotes()"
-                    >
-                        See Available Quotes →
-                    </button>
-
-                </div>
-
             </div>
 
-
-            <!-- =================================================
-                 STEP 4 RESULTS
-            ================================================== -->
-
-            <div
-                class="step"
-                id="step4"
-            >
-
-                <div class="results-section">
-
-                    <div
-                        id="resultsContainer"
-                    ></div>
-
-
-                    <div
-                        id="inquiryRecord"
-                        class="record hidden"
-                    ></div>
-
-                </div>
-
-            </div>
-
-
         </div>
 
 
-        <div class="terms">
-
-            By continuing, you acknowledge that the displayed
-            rates are estimates and may vary based on actual
-            insurer underwriting and approved rates.
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     ABOUT MODAL
-========================================================= -->
-
-<div
-    class="modal"
-    id="aboutModal"
->
-
-    <div class="content-modal">
-
-        <button
-            class="close-content"
-            type="button"
-            onclick="closeAbout()"
-        >
-            ×
-        </button>
-
-        <h2>
-            About Anna Ong Insurance
-        </h2>
-
-        <p>
-            Anna Ong Insurance Solutions provides a simple
-            online way for customers to explore car insurance
-            options and send inquiries.
-        </p>
-
-        <p>
-            Our quotation prototype allows customers to enter
-            their vehicle information, select coverage options,
-            view estimated insurance rates, and request a quote.
-        </p>
-
-        <p>
-            For actual insurance applications, final premiums,
-            coverage, eligibility, and policy terms are subject
-            to the participating insurer's underwriting and
-            approved rates.
-        </p>
-
-        <button
-            class="submit-btn"
-            type="button"
-            onclick="closeAbout(); openQuote();"
-        >
-            Get a Car Insurance Quote
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     LOAN MODAL
-========================================================= -->
-
-<div
-    class="modal"
-    id="loanModal"
->
-
-    <div class="content-modal">
-
-        <button
-            class="close-content"
-            type="button"
-            onclick="closeLoan()"
-        >
-            ×
-        </button>
-
-
-        <h2>
-            Loan Inquiry
-        </h2>
-
-        <p>
-            Tell us what type of financing you are interested in.
-        </p>
-
-
-        <div class="loan-options">
-
-            <input
-                type="radio"
-                id="loanAuto"
-                name="loanType"
-                value="Auto Loan"
-                checked
-            >
-
-            <label for="loanAuto">
-                🚗<br>
-                Auto Loan
-            </label>
-
-
-            <input
-                type="radio"
-                id="loanPersonal"
-                name="loanType"
-                value="Personal Loan"
-            >
-
-            <label for="loanPersonal">
-                💳<br>
-                Personal Loan
-            </label>
-
-
-            <input
-                type="radio"
-                id="loanBusiness"
-                name="loanType"
-                value="Business Loan"
-            >
-
-            <label for="loanBusiness">
-                🏢<br>
-                Business Loan
-            </label>
-
-        </div>
-
-
-        <div class="login-form">
-
-            <input
-                type="text"
-                id="loanName"
-                placeholder="Full Name"
-            >
-
-            <input
-                type="tel"
-                id="loanMobile"
-                placeholder="Mobile Number"
-            >
-
-            <input
-                type="email"
-                id="loanEmail"
-                placeholder="Email Address"
-            >
-
-            <input
-                type="number"
-                id="loanAmount"
-                placeholder="Desired Loan Amount"
-            >
+        <div class="calculate-area">
 
             <button
-                type="button"
-                onclick="submitLoanInquiry()"
+                class="calculate-btn"
+                onclick="calculateQuotes()"
             >
-                SUBMIT LOAN INQUIRY
-            </button>
-
-        </div>
-
-
-        <div
-            id="loanRecord"
-            class="record hidden"
-        ></div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     LOGIN MODAL
-========================================================= -->
-
-<div
-    class="modal"
-    id="loginModal"
->
-
-    <div class="content-modal">
-
-        <button
-            class="close-content"
-            type="button"
-            onclick="closeLogin()"
-        >
-            ×
-        </button>
-
-
-        <h2>
-            Log In
-        </h2>
-
-        <p>
-            Access your Anna Ong Insurance account.
-        </p>
-
-
-        <div class="login-form">
-
-            <input
-                type="text"
-                id="loginEmail"
-                placeholder="Email or Mobile Number"
-            >
-
-            <input
-                type="password"
-                id="loginPassword"
-                placeholder="Password"
-            >
-
-            <button
-                type="button"
-                onclick="demoLogin()"
-            >
-                LOG IN
-            </button>
-
-
-            <button
-                class="forgot"
-                type="button"
-                onclick="forgotPassword()"
-            >
-                Forgot Password?
+                🔎 Calculate Available Rates
             </button>
 
         </div>
@@ -2074,375 +1729,865 @@ footer {
 
 </div>
 
+</section>
 
-<!-- =====================================================
-     INQUIRY MODAL
-========================================================= -->
 
-<div
-    class="modal"
-    id="inquiryModal"
+<!-- ================= RESULTS ================= -->
+
+<section
+    class="results-section"
+    id="resultsSection"
 >
 
-    <div class="content-modal">
+    <div class="results-header">
 
-        <button
-            class="close-content"
-            type="button"
-            onclick="closeInquiry()"
-        >
-            ×
-        </button>
+        <div>
 
+            <h2>Available Insurance Options</h2>
 
-        <h2>
-            Request This Quote
-        </h2>
-
-
-        <div
-            id="selectedQuoteDetails"
-        ></div>
-
-
-        <div class="login-form">
-
-            <input
-                type="text"
-                id="customerName"
-                placeholder="Full Name"
-            >
-
-            <input
-                type="tel"
-                id="customerMobile"
-                placeholder="Mobile Number"
-            >
-
-            <input
-                type="email"
-                id="customerEmail"
-                placeholder="Email Address"
-            >
-
-            <input
-                type="text"
-                id="customerMessage"
-                placeholder="Message (optional)"
-            >
-
-            <button
-                type="button"
-                onclick="submitInsuranceInquiry()"
-            >
-                SUBMIT INQUIRY
-            </button>
+            <p>
+                Compare the available options based on your vehicle details.
+            </p>
 
         </div>
 
     </div>
 
-</div>
+
+    <div
+        class="quote-summary"
+        id="quoteSummary"
+    ></div>
 
 
-<!-- =====================================================
-     FOOTER
-========================================================= -->
+    <div
+        class="provider-grid"
+        id="providerGrid"
+    ></div>
+
+
+    <div
+        class="inquiry-record"
+        id="inquiryRecord"
+        style="display:none;"
+    ></div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <p>
-        © 2026 Anna Ong Insurance Solutions
-    </p>
+<div class="footer-inner">
 
-    <p style="margin-top:8px;">
-        Car Insurance • Loan Inquiry • Customer Assistance
-    </p>
+    <div class="footer-brand">
+
+        <h3>Anna Ong Insurance</h3>
+
+        <p>
+            Helping customers explore car insurance options
+            based on their vehicle and coverage needs.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>Services</h4>
+
+        <button onclick="scrollToInsurance()">
+            Car Insurance
+        </button>
+
+        <button onclick="openLoan()">
+            Loan
+        </button>
+
+        <button onclick="openCreateAccount()">
+            Create Account
+        </button>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>Company</h4>
+
+        <button onclick="openAbout()">
+            About Us
+        </button>
+
+        <button onclick="openLogin()">
+            Log In
+        </button>
+
+        <button onclick="openContact()">
+            Contact
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Anna Ong Insurance. Prototype quotation website.
+
+</div>
 
 </footer>
 
 
+<!-- ================= REQUEST MODAL ================= -->
+
+<div
+    class="modal-overlay"
+    id="requestModal"
+    onclick="outsideClose(event,'requestModal')"
+>
+
+<div class="modal">
+
+    <div class="modal-header">
+
+        <h2>Request This Quote</h2>
+
+        <button
+            class="close-btn"
+            onclick="closeModal('requestModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="modal-body">
+
+        <div class="field">
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your full name"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>Mobile Number</label>
+
+            <input
+                type="tel"
+                id="customerMobile"
+                placeholder="09XXXXXXXXX"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                id="customerEmail"
+                placeholder="you@email.com"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>Message</label>
+
+            <textarea
+                id="customerMessage"
+                rows="4"
+                style="width:100%;border:1px solid #d5dde2;border-radius:12px;padding:14px;font-family:inherit;resize:vertical;"
+                placeholder="Optional message"
+            ></textarea>
+
+        </div>
+
+
+        <button
+            class="modal-submit"
+            onclick="submitInquiry()"
+        >
+            📩 Submit Inquiry
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= DETAILS MODAL ================= -->
+
+<div
+    class="modal-overlay"
+    id="detailsModal"
+    onclick="outsideClose(event,'detailsModal')"
+>
+
+<div class="modal">
+
+    <div class="modal-header">
+
+        <h2>Quote Details</h2>
+
+        <button
+            class="close-btn"
+            onclick="closeModal('detailsModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div
+        class="modal-body"
+        id="detailsContent"
+    ></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div
+    class="modal-overlay"
+    id="loginModal"
+    onclick="outsideClose(event,'loginModal')"
+>
+
+<div class="modal">
+
+    <div class="modal-header">
+
+        <h2>Welcome Back</h2>
+
+        <button
+            class="close-btn"
+            onclick="closeModal('loginModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="modal-body">
+
+        <div class="auth-icon">🔐</div>
+
+        <div class="auth-description">
+            Log in to your Anna Ong Insurance account.
+        </div>
+
+
+        <div class="field">
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+            >
+
+        </div>
+
+
+        <button
+            class="modal-submit"
+            onclick="loginAccount()"
+        >
+            Log In
+        </button>
+
+
+        <div class="auth-switch">
+
+            Don't have an account?
+
+            <button onclick="switchToCreate()">
+                Create Account
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= CREATE ACCOUNT ================= -->
+
+<div
+    class="modal-overlay"
+    id="accountModal"
+    onclick="outsideClose(event,'accountModal')"
+>
+
+<div class="modal">
+
+    <div class="modal-header">
+
+        <h2>Create Account</h2>
+
+        <button
+            class="close-btn"
+            onclick="closeModal('accountModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="modal-body">
+
+        <div class="auth-icon">👤</div>
+
+        <div class="auth-description">
+            Create an account so you can easily keep your inquiry details.
+        </div>
+
+
+        <div class="field">
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                id="accountName"
+                placeholder="Your full name"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                id="accountEmail"
+                placeholder="you@email.com"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>Mobile Number</label>
+
+            <input
+                type="tel"
+                id="accountMobile"
+                placeholder="09XXXXXXXXX"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="accountPassword"
+                placeholder="Create a password"
+            >
+
+        </div>
+
+
+        <button
+            class="modal-submit"
+            onclick="createAccount()"
+        >
+            Create My Account
+        </button>
+
+
+        <div class="auth-switch">
+
+            Already have an account?
+
+            <button onclick="switchToLogin()">
+                Log In
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= LOAN ================= -->
+
+<div
+    class="modal-overlay"
+    id="loanModal"
+    onclick="outsideClose(event,'loanModal')"
+>
+
+<div class="modal">
+
+    <div class="modal-header">
+
+        <h2>Loan Options</h2>
+
+        <button
+            class="close-btn"
+            onclick="closeModal('loanModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="modal-body">
+
+        <div class="loan-box">
+
+            <div class="loan-icon">💰</div>
+
+            <h3>Vehicle Financing</h3>
+
+            <p>
+                Explore financing options for your next vehicle.
+            </p>
+
+            <div class="loan-options">
+
+                <div
+                    class="loan-option"
+                    onclick="loanMessage('Car Loan')"
+                >
+                    🚗 <strong>Car Loan</strong>
+                    <br>
+                    <small>Explore vehicle financing.</small>
+                </div>
+
+                <div
+                    class="loan-option"
+                    onclick="loanMessage('Auto Refinance')"
+                >
+                    🔄 <strong>Auto Refinance</strong>
+                    <br>
+                    <small>Learn about refinancing options.</small>
+                </div>
+
+                <div
+                    class="loan-option"
+                    onclick="loanMessage('Loan Inquiry')"
+                >
+                    📩 <strong>Loan Inquiry</strong>
+                    <br>
+                    <small>Send an inquiry to our team.</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= ABOUT ================= -->
+
+<div
+    class="modal-overlay"
+    id="aboutModal"
+    onclick="outsideClose(event,'aboutModal')"
+>
+
+<div class="modal">
+
+    <div class="modal-header">
+
+        <h2>About Anna Ong Insurance</h2>
+
+        <button
+            class="close-btn"
+            onclick="closeModal('aboutModal')"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div class="modal-body">
+
+        <div class="auth-icon">✦</div>
+
+        <p style="color:#667085;line-height:1.7;">
+
+            Anna Ong Insurance is a prototype insurance quotation
+            platform designed to make it easier for customers to
+            explore available car insurance options.
+
+            <br><br>
+
+            Customers can enter their vehicle details,
+            customize coverage, compare available quotation
+            options, and send an inquiry.
+
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+
 <script>
 
-/* =========================================================
-   GOOGLE APPS SCRIPT
-========================================================= */
-
-const scriptURL =
-"https://script.google.com/macros/s/AKfycbx74ZnXI2J2kLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
-
-
-/* =========================================================
+/* =====================================================
    VEHICLE DATA
-========================================================= */
+===================================================== */
 
 const vehicleData = {
 
-    Toyota: {
-
-        "Vios": [
-            "1.3 J MT",
-            "1.3 XE MT",
+    Toyota:{
+        "Vios":[
+            "1.3 Base MT",
             "1.3 XLE CVT",
             "1.5 G CVT"
         ],
 
-        "Wigo": [
+        "Wigo":[
             "1.0 J MT",
-            "1.0 E MT",
+            "1.0 E CVT",
             "1.0 G CVT"
         ],
 
-        "Raize": [
+        "Raize":[
             "1.2 E MT",
-            "1.2 E CVT",
-            "1.0 Turbo CVT"
+            "1.0 Turbo CVT",
+            "1.0 Turbo CVT GR-S"
         ],
 
-        "Yaris Cross": [
-            "1.5 S CVT",
-            "1.5 V Hybrid"
-        ],
-
-        "Corolla Altis": [
-            "1.6 V CVT",
-            "1.8 G CVT",
-            "1.8 Hybrid"
-        ],
-
-        "Innova": [
-            "2.0 J MT",
-            "2.0 E CVT",
-            "2.8 V Diesel"
-        ],
-
-        "Fortuner": [
-            "2.4 G Diesel",
-            "2.4 V Diesel",
-            "2.8 Q Diesel"
-        ],
-
-        "Hilux": [
-            "2.4 J Diesel",
-            "2.4 E Diesel",
-            "2.8 G Diesel"
-        ]
-
-    },
-
-
-    Honda: {
-
-        "City": [
-            "1.5 S CVT",
-            "1.5 V CVT",
-            "1.5 RS CVT"
-        ],
-
-        "City Hatchback": [
-            "1.5 S CVT",
-            "1.5 V CVT",
-            "1.5 RS CVT"
-        ],
-
-        "Civic": [
-            "1.5 V Turbo",
-            "1.5 RS Turbo"
-        ],
-
-        "BR-V": [
+        "Yaris Cross":[
             "1.5 S CVT",
             "1.5 V CVT"
         ],
 
-        "HR-V": [
+        "Corolla Altis":[
+            "1.6 J MT",
+            "1.6 V CVT",
+            "1.8 GR-S CVT"
+        ],
+
+        "Innova":[
+            "2.0 J MT",
+            "2.0 E AT",
+            "2.8 V Diesel AT"
+        ],
+
+        "Fortuner":[
+            "2.4 G Diesel",
+            "2.4 V Diesel",
+            "2.8 LTD"
+        ],
+
+        "Hilux":[
+            "2.4 J Diesel",
+            "2.4 E Diesel",
+            "2.8 Conquest"
+        ]
+    },
+
+
+    Honda:{
+
+        "City":[
+            "1.5 S CVT",
+            "1.5 V CVT"
+        ],
+
+        "City Hatchback":[
+            "1.5 S CVT",
+            "1.5 V CVT"
+        ],
+
+        "Civic":[
+            "1.5 V Turbo",
+            "1.5 RS Turbo"
+        ],
+
+        "BR-V":[
+            "1.5 S CVT",
+            "1.5 V CVT"
+        ],
+
+        "HR-V":[
             "1.5 S CVT",
             "1.5 V Turbo"
         ],
 
-        "CR-V": [
+        "CR-V":[
             "1.5 V Turbo",
-            "1.5 S Diesel"
+            "1.5 SX Turbo"
         ],
 
-        "Accord": [
-            "1.5 Turbo",
+        "Accord":[
+            "1.5 Turbo CVT",
             "2.0 Hybrid"
         ]
-
     },
 
 
-    Mitsubishi: {
+    Mitsubishi:{
 
-        "Mirage": [
+        "Mirage":[
             "1.2 GLX MT",
             "1.2 GLX CVT"
         ],
 
-        "Mirage G4": [
+        "Mirage G4":[
             "1.2 GLX MT",
             "1.2 GLX CVT"
         ],
 
-        "Xpander": [
+        "Xpander":[
             "1.5 GLX MT",
-            "1.5 GLS AT",
-            "1.5 GT AT"
+            "1.5 GLX Plus AT",
+            "1.5 Cross"
         ],
 
-        "Montero Sport": [
-            "2.4 GLX Diesel",
-            "2.4 GLS Diesel",
-            "2.4 GT Diesel"
+        "Montero Sport":[
+            "2.4 GLX",
+            "2.4 GT",
+            "2.4 Black Series"
         ],
 
-        "Triton": [
-            "2.4 GL MT",
-            "2.4 GLX AT",
+        "Triton":[
+            "2.4 GLX",
+            "2.4 GLS",
             "2.4 Athlete"
         ]
-
     },
 
 
-    Nissan: {
+    Nissan:{
 
-        "Almera": [
+        "Almera":[
+            "1.0 EL Turbo",
             "1.0 VE Turbo",
             "1.0 VL Turbo"
         ],
 
-        "Kicks": [
-            "1.2 e-Power",
-            "1.2 VE"
+        "Kicks":[
+            "e-Power VE",
+            "e-Power VL"
         ],
 
-        "Terra": [
-            "2.5 EL Diesel",
-            "2.5 VE Diesel",
-            "2.5 VL Diesel"
+        "Terra":[
+            "2.5 S 4x2",
+            "2.5 VE 4x2",
+            "2.5 VL 4x4"
         ],
 
-        "Navara": [
+        "Navara":[
             "2.5 EL MT",
             "2.5 VE AT",
             "2.5 PRO-4X"
         ]
-
     },
 
 
-    Ford: {
+    Ford:{
 
-        "Territory": [
-            "1.5 EcoBoost",
-            "1.5 Titanium"
+        "Territory":[
+            "1.5 Titanium",
+            "1.5 Titanium X"
         ],
 
-        "Everest": [
+        "Everest":[
             "2.0 Trend",
             "2.0 Sport",
-            "2.0 Titanium"
+            "2.0 Titanium+"
         ],
 
-        "Ranger": [
+        "Ranger":[
             "2.0 XLS",
             "2.0 XLT",
-            "2.0 Wildtrak"
+            "2.0 Wildtrak",
+            "3.0 Raptor"
         ]
-
     },
 
 
-    Hyundai: {
+    Hyundai:{
 
-        "Accent": [
+        "Accent":[
             "1.4 GL MT",
             "1.6 GL AT"
         ],
 
-        "Creta": [
+        "Creta":[
             "1.5 GL",
             "1.5 GLS"
         ],
 
-        "Tucson": [
+        "Tucson":[
+            "2.0 GL",
             "2.0 GLS",
-            "2.0 CRDi"
+            "1.6 Turbo"
         ],
 
-        "Santa Fe": [
+        "Santa Fe":[
             "2.2 CRDi",
             "2.5 GLS"
         ]
-
     },
 
 
-    Kia: {
+    Kia:{
 
-        "Picanto": [
+        "Picanto":[
             "1.0 LX MT",
             "1.0 EX MT",
             "1.2 GT-Line"
         ],
 
-        "Soluto": [
+        "Soluto":[
             "1.4 LX MT",
             "1.4 EX AT"
         ],
 
-        "Seltos": [
+        "Seltos":[
+            "1.5 LX",
             "1.5 EX",
-            "1.5 SX"
+            "1.4 Turbo"
         ],
 
-        "Sportage": [
+        "Sportage":[
             "2.0 EX",
             "2.0 SX"
         ]
-
     },
 
 
-    Suzuki: {
+    Suzuki:{
 
-        "Celerio": [
+        "Celerio":[
             "1.0 MT",
             "1.0 CVT"
         ],
 
-        "Dzire": [
+        "Dzire":[
             "1.2 GL MT",
             "1.2 GL AGS"
         ],
 
-        "Ertiga": [
+        "Ertiga":[
             "1.5 GA MT",
             "1.5 GL AT"
         ],
 
-        "XL7": [
-            "1.5 MT",
-            "1.5 AT"
+        "XL7":[
+            "1.5 GL AT",
+            "1.5 Hybrid"
         ],
 
-        "Jimny": [
+        "Jimny":[
             "1.5 MT",
             "1.5 AT"
         ]
-
     }
 
 };
 
 
-/* =========================================================
-   MODELS
-========================================================= */
+/* =====================================================
+   PROVIDERS
+===================================================== */
 
-function loadModels() {
+const providers = [
+
+    {
+        name:"FGen",
+        rate:.015,
+        aon:.0025
+    },
+
+    {
+        name:"FPG Mercantile",
+        rate:.0155,
+        aon:.0027
+    },
+
+    {
+        name:"AlliedBankers",
+        rate:.016,
+        aon:.0024
+    },
+
+    {
+        name:"PhilBritish",
+        rate:.0165,
+        aon:.0028
+    }
+
+];
+
+
+let currentQuotes = [];
+let selectedQuote = null;
+
+
+/* =====================================================
+   LOAD MODELS
+===================================================== */
+
+function loadModels(){
 
     const make =
         document.getElementById("vehicleMake").value;
@@ -2453,44 +2598,34 @@ function loadModels() {
     const variant =
         document.getElementById("vehicleVariant");
 
-
     model.innerHTML =
-        '<option value="">Select vehicle model</option>';
+        '<option value="">Select model</option>';
 
     variant.innerHTML =
-        '<option value="">Select model / variant</option>';
+        '<option value="">Select variant</option>';
 
-    variant.disabled = true;
+    if(!make) return;
 
+    Object.keys(vehicleData[make]).forEach(item=>{
 
-    if (!make) {
+        const option =
+            document.createElement("option");
 
-        model.disabled = true;
-        return;
+        option.value=item;
+        option.textContent=item;
 
-    }
+        model.appendChild(option);
 
-
-    model.disabled = false;
-
-
-    Object.keys(vehicleData[make])
-        .forEach(name => {
-
-            const option =
-                document.createElement("option");
-
-            option.value = name;
-            option.textContent = name;
-
-            model.appendChild(option);
-
-        });
+    });
 
 }
 
 
-function loadVariants() {
+/* =====================================================
+   LOAD VARIANTS
+===================================================== */
+
+function loadVariants(){
 
     const make =
         document.getElementById("vehicleMake").value;
@@ -2501,412 +2636,115 @@ function loadVariants() {
     const variant =
         document.getElementById("vehicleVariant");
 
-
     variant.innerHTML =
-        '<option value="">Select model / variant</option>';
+        '<option value="">Select variant</option>';
 
-
-    if (!make || !model) {
-
-        variant.disabled = true;
+    if(
+        !make ||
+        !model ||
+        !vehicleData[make] ||
+        !vehicleData[make][model]
+    ){
         return;
-
     }
 
+    vehicleData[make][model].forEach(item=>{
 
-    variant.disabled = false;
+        const option =
+            document.createElement("option");
 
+        option.value=item;
+        option.textContent=item;
 
-    vehicleData[make][model]
-        .forEach(name => {
+        variant.appendChild(option);
 
-            const option =
-                document.createElement("option");
-
-            option.value = name;
-            option.textContent = name;
-
-            variant.appendChild(option);
-
-        });
+    });
 
 }
 
 
-/* =========================================================
-   MODALS
-========================================================= */
+/* =====================================================
+   GET RADIO VALUE
+===================================================== */
 
-function openQuote() {
+function getRadio(name){
 
-    document.getElementById(
-        "quoteModal"
-    ).classList.add("active");
+    const selected =
+        document.querySelector(
+            `input[name="${name}"]:checked`
+        );
 
-    showStep(1);
-
-}
-
-
-function closeQuote() {
-
-    document.getElementById(
-        "quoteModal"
-    ).classList.remove("active");
+    return selected ? selected.value : "";
 
 }
 
 
-function openAbout() {
-
-    document.getElementById(
-        "aboutModal"
-    ).classList.add("active");
-
-}
-
-
-function closeAbout() {
-
-    document.getElementById(
-        "aboutModal"
-    ).classList.remove("active");
-
-}
-
-
-function openLoan() {
-
-    document.getElementById(
-        "loanModal"
-    ).classList.add("active");
-
-}
-
-
-function closeLoan() {
-
-    document.getElementById(
-        "loanModal"
-    ).classList.remove("active");
-
-}
-
-
-function openLogin() {
-
-    document.getElementById(
-        "loginModal"
-    ).classList.add("active");
-
-}
-
-
-function closeLogin() {
-
-    document.getElementById(
-        "loginModal"
-    ).classList.remove("active");
-
-}
-
-
-function closeInquiry() {
-
-    document.getElementById(
-        "inquiryModal"
-    ).classList.remove("active");
-
-}
-
-
-/* =========================================================
-   WIZARD
-========================================================= */
-
-const stepTitles = {
-
-    1: "1. Vehicle details",
-    2: "2. Driver & usage",
-    3: "3. Choose your coverage",
-    4: "4. Available quotes"
-
-};
-
-
-const stepDescriptions = {
-
-    1:
-        "Please provide your vehicle details to get an estimated insurance quote.",
-
-    2:
-        "Tell us a little more about the driver and how the vehicle is used.",
-
-    3:
-        "Choose the coverage options you want included in your quotation.",
-
-    4:
-        "Here are the available insurance options based on your information."
-
-};
-
-
-function showStep(number) {
-
-    document
-        .querySelectorAll(".step")
-        .forEach(step => {
-
-            step.classList.remove("active");
-
-        });
-
-
-    document
-        .getElementById("step" + number)
-        .classList.add("active");
-
-
-    document.getElementById(
-        "stepTitle"
-    ).textContent =
-        stepTitles[number];
-
-
-    document.getElementById(
-        "stepDescription"
-    ).textContent =
-        stepDescriptions[number];
-
-}
-
-
-function nextStep(current) {
-
-    if (current === 1) {
-
-        if (!document.getElementById(
-            "vehicleCategory"
-        ).value) {
-
-            alert(
-                "Please select your vehicle category."
-            );
-
-            return;
-
-        }
-
-
-        if (!document.getElementById(
-            "vehicleMake"
-        ).value) {
-
-            alert(
-                "Please select your vehicle make."
-            );
-
-            return;
-
-        }
-
-
-        if (!document.getElementById(
-            "vehicleModel"
-        ).value) {
-
-            alert(
-                "Please select your vehicle model."
-            );
-
-            return;
-
-        }
-
-
-        if (!document.getElementById(
-            "vehicleVariant"
-        ).value) {
-
-            alert(
-                "Please select your model / variant."
-            );
-
-            return;
-
-        }
-
-
-        if (!document.getElementById(
-            "modelYear"
-        ).value) {
-
-            alert(
-                "Please select the model year."
-            );
-
-            return;
-
-        }
-
-
-        if (!document.getElementById(
-            "declaredValue"
-        ).value) {
-
-            alert(
-                "Please enter the estimated vehicle value."
-            );
-
-            return;
-
-        }
-
-    }
-
-
-    if (current === 2) {
-
-        const age =
-            Number(
-                document.getElementById(
-                    "driverAge"
-                ).value
-            );
-
-
-        if (!age || age < 18) {
-
-            alert(
-                "Please enter a valid driver age."
-            );
-
-            return;
-
-        }
-
-
-        if (!document.getElementById(
-            "drivingExperience"
-        ).value) {
-
-            alert(
-                "Please select your driving experience."
-            );
-
-            return;
-
-        }
-
-
-        if (!document.getElementById(
-            "location"
-        ).value) {
-
-            alert(
-                "Please select your location."
-            );
-
-            return;
-
-        }
-
-    }
-
-
-    showStep(current + 1);
-
-}
-
-
-function previousStep(current) {
-
-    showStep(current - 1);
-
-}
-
-
-/* =========================================================
-   PROVIDERS
-========================================================= */
-
-const providers = [
-
-    {
-        name: "FGen Insurance",
-        rate: 0.025,
-        aon: 0.0018
-    },
-
-    {
-        name: "FPG Mercantile",
-        rate: 0.026,
-        aon: 0.0017
-    },
-
-    {
-        name: "AlliedBankers",
-        rate: 0.027,
-        aon: 0.0016
-    },
-
-    {
-        name: "PhilBritish",
-        rate: 0.028,
-        aon: 0.0015
-    }
-
-];
-
-
-let generatedQuotes = [];
-let selectedQuote = null;
-
-
-/* =========================================================
+/* =====================================================
    CALCULATE
-========================================================= */
+===================================================== */
 
-function calculateQuotes() {
+function calculateQuotes(){
 
     const category =
-        document.getElementById(
-            "vehicleCategory"
-        ).value;
+        document.getElementById("vehicleCategory").value;
 
     const make =
-        document.getElementById(
-            "vehicleMake"
-        ).value;
+        document.getElementById("vehicleMake").value;
 
     const model =
-        document.getElementById(
-            "vehicleModel"
-        ).value;
+        document.getElementById("vehicleModel").value;
 
     const variant =
-        document.getElementById(
-            "vehicleVariant"
-        ).value;
+        document.getElementById("vehicleVariant").value;
 
     const year =
-        document.getElementById(
-            "modelYear"
-        ).value;
+        document.getElementById("modelYear").value;
 
     const value =
         Number(
-            document.getElementById(
-                "declaredValue"
-            ).value
+            document.getElementById("declaredValue").value
         );
 
     const age =
         Number(
-            document.getElementById(
-                "driverAge"
-            ).value
+            document.getElementById("driverAge").value
         );
+
+    if(
+        !category ||
+        !make ||
+        !model ||
+        !variant ||
+        !year ||
+        !value ||
+        !age
+    ){
+
+        alert(
+            "Please complete all vehicle details before calculating."
+        );
+
+        return;
+    }
+
+
+    const comprehensive =
+        getRadio("comprehensive");
+
+    const aon =
+        getRadio("aon");
+
+    const roadside =
+        getRadio("roadside");
+
+    const ebi =
+        getRadio("ebi");
+
+    const vpd =
+        getRadio("vpd");
+
+    const ctpl =
+        getRadio("ctpl");
 
 
     const carUse =
@@ -2915,225 +2753,145 @@ function calculateQuotes() {
         ).value;
 
 
-    const comprehensive =
-        document.querySelector(
-            'input[name="comprehensive"]:checked'
-        ).value;
+    currentQuotes =
+        providers.map(provider=>{
+
+            let base =
+                value * provider.rate;
 
 
-    const aon =
-        document.querySelector(
-            'input[name="aon"]:checked'
-        ).value;
+            /* CATEGORY */
+
+            const categoryAdjustment = {
+
+                Sedan:1,
+                SUV:1.10,
+                Hatchback:1,
+                Pickup:1.12,
+                MPV:1.08,
+                Van:1.10,
+                Coupe:1.15
+
+            };
+
+            base *=
+                categoryAdjustment[category] || 1;
 
 
-    const roadside =
-        document.querySelector(
-            'input[name="roadside"]:checked'
-        ).value;
+            /* VEHICLE AGE */
 
+            const vehicleAge =
+                2026 - Number(year);
 
-    const ebi =
-        document.querySelector(
-            'input[name="ebi"]:checked'
-        ).value;
-
-
-    const vpd =
-        document.querySelector(
-            'input[name="vpd"]:checked'
-        ).value;
-
-
-    const ctpl =
-        document.querySelector(
-            'input[name="ctpl"]:checked'
-        ).value;
-
-
-    let comprehensiveRate = 0.025;
-
-
-    if (
-        comprehensive ===
-        "Theft Only"
-    ) {
-
-        comprehensiveRate = 0.015;
-
-    }
-
-
-    if (
-        comprehensive ===
-        "Third Party Only"
-    ) {
-
-        comprehensiveRate = 0.010;
-
-    }
-
-
-    let categoryAdjustment = {
-
-        Sedan: 1.00,
-        SUV: 1.10,
-        Hatchback: 1.00,
-        Pickup: 1.12,
-        MPV: 1.08,
-        Van: 1.10,
-        Coupe: 1.15,
-        Wagon: 1.05
-
-    }[category] || 1;
-
-
-    if (
-        Number(year) <
-        2021
-    ) {
-
-        categoryAdjustment *= 1.05;
-
-    }
-
-
-    if (age < 25) {
-
-        categoryAdjustment *= 1.08;
-
-    }
-
-
-    if (
-        carUse ===
-        "Grab / TNVS"
-    ) {
-
-        categoryAdjustment *= 1.12;
-
-    }
-
-
-    generatedQuotes =
-        providers.map(provider => {
-
-
-            const ownDamage =
-                value *
-                comprehensiveRate *
-                categoryAdjustment;
-
-
-            const aonPremium =
-                aon === "Include"
-                    ? value * provider.aon
-                    : 0;
-
-
-            let roadsidePremium = 0;
-
-
-            if (
-                roadside === "Basic"
-            ) {
-
-                roadsidePremium = 500;
-
-            }
-
-            if (
-                roadside === "Plus"
-            ) {
-
-                roadsidePremium = 1000;
-
+            if(vehicleAge > 5){
+                base *= 1.05;
             }
 
 
-            let ebiPremium = 0;
+            /* DRIVER AGE */
 
-
-            if (
-                ebi === "₱500,000"
-            ) {
-
-                ebiPremium = 500;
-
-            }
-
-            if (
-                ebi === "₱1,000,000"
-            ) {
-
-                ebiPremium = 900;
-
-            }
-
-            if (
-                ebi === "₱2,000,000"
-            ) {
-
-                ebiPremium = 1500;
-
+            if(age < 25){
+                base *= 1.08;
             }
 
 
-            let vpdPremium = 0;
+            /* TNVS */
 
-
-            if (
-                vpd === "₱500,000"
-            ) {
-
-                vpdPremium = 400;
-
-            }
-
-            if (
-                vpd === "₱1,000,000"
-            ) {
-
-                vpdPremium = 750;
-
-            }
-
-            if (
-                vpd === "₱2,000,000"
-            ) {
-
-                vpdPremium = 1200;
-
+            if(carUse === "Grab / TNVS"){
+                base *= 1.15;
             }
 
 
-            const ctplPremium =
-                ctpl === "Enhanced CTPL"
-                    ? 2000
-                    : 1500;
+            /* AON */
+
+            if(aon === "Include"){
+                base += value * provider.aon;
+            }
 
 
-            const subtotal =
-                ownDamage +
-                aonPremium +
-                roadsidePremium +
-                ebiPremium +
-                vpdPremium +
-                ctplPremium;
+            /* COMPREHENSIVE */
 
+            if(
+                comprehensive ===
+                "Theft Only"
+            ){
+                base *= .72;
+            }
+
+            if(
+                comprehensive ===
+                "Third Party Only"
+            ){
+                base *= .48;
+            }
+
+
+            /* ROADSIDE */
+
+            if(roadside === "Basic"){
+                base += 500;
+            }
+
+            if(roadside === "Plus"){
+                base += 1000;
+            }
+
+
+            /* EBI */
+
+            if(ebi === "₱500,000"){
+                base += 500;
+            }
+
+            if(ebi === "₱1,000,000"){
+                base += 900;
+            }
+
+            if(ebi === "₱2,000,000"){
+                base += 1500;
+            }
+
+
+            /* VPD */
+
+            if(vpd === "₱500,000"){
+                base += 400;
+            }
+
+            if(vpd === "₱1,000,000"){
+                base += 750;
+            }
+
+            if(vpd === "₱2,000,000"){
+                base += 1200;
+            }
+
+
+            /* CTPL */
+
+            if(ctpl === "Basic CTPL"){
+                base += 1500;
+            }
+
+            if(ctpl === "Enhanced CTPL"){
+                base += 2000;
+            }
+
+
+            /* TAXES */
 
             const dst =
-                subtotal * 0.125;
+                base * .125;
 
             const lgt =
-                subtotal * 0.002;
+                base * .002;
 
             const vat =
-                subtotal * 0.12;
+                base * .12;
 
 
             const total =
-                subtotal +
+                base +
                 dst +
                 lgt +
                 vat;
@@ -3141,286 +2899,329 @@ function calculateQuotes() {
 
             return {
 
-                provider:
-                    provider.name,
+                provider:provider.name,
 
-                premium:
-                    total,
+                premium:Math.round(total),
 
-                vehicle:
-                    make + " " +
-                    model + " " +
-                    variant,
+                base:Math.round(base),
 
-                year,
+                dst:Math.round(dst),
+
+                lgt:Math.round(lgt),
+
+                vat:Math.round(vat),
+
                 category,
-
+                make,
+                model,
+                variant,
+                year,
+                value,
+                age,
                 carUse,
-
                 comprehensive,
-
                 aon,
-
                 roadside,
-
                 ebi,
-
                 vpd,
-
-                ctpl,
-
-                ownDamage,
-
-                aonPremium,
-
-                roadsidePremium,
-
-                ebiPremium,
-
-                vpdPremium,
-
-                ctplPremium,
-
-                dst,
-
-                lgt,
-
-                vat
+                ctpl
 
             };
 
         });
 
 
-    generatedQuotes.sort(
-        (a,b) =>
-            a.premium - b.premium
+    currentQuotes.sort(
+        (a,b)=>a.premium-b.premium
     );
 
 
-    displayQuotes();
-
-    showStep(4);
+    displayResults();
 
 }
 
 
-/* =========================================================
-   DISPLAY QUOTES
-========================================================= */
+/* =====================================================
+   DISPLAY RESULTS
+===================================================== */
 
-function displayQuotes() {
+function displayResults(){
 
-    const container =
-        document.getElementById(
-            "resultsContainer"
-        );
+    const results =
+        document.getElementById("resultsSection");
 
+    const grid =
+        document.getElementById("providerGrid");
 
-    container.innerHTML = "";
+    const summary =
+        document.getElementById("quoteSummary");
 
 
-    generatedQuotes.forEach(
-        (quote, index) => {
+    results.style.display="block";
 
 
-            const card =
-                document.createElement(
-                    "div"
-                );
+    const first =
+        currentQuotes[0];
 
 
-            card.className =
-                "result-card" +
-                (
-                    index === 0
-                        ? " lowest"
-                        : ""
-                );
+    summary.innerHTML=`
 
+        <strong>
+            🚗 ${first.make} ${first.model}
+        </strong>
 
-            card.innerHTML = `
+        <br>
 
-                ${
-                    index === 0
-                    ?
-                    '<div class="result-badge">LOWEST AVAILABLE</div>'
-                    :
-                    ''
-                }
-
-
-                <div class="result-provider">
-                    ${quote.provider}
-                </div>
-
-
-                <div class="result-price">
-                    ₱${money(quote.premium)}
-                </div>
-
-
-                <div class="result-description">
-
-                    ${quote.vehicle}<br>
-
-                    ${quote.year} • ${quote.category}<br>
-
-                    Use: ${quote.carUse}<br><br>
-
-                    Comprehensive:
-                    ${quote.comprehensive}<br>
-
-                    Acts of Nature:
-                    ${quote.aon}<br>
-
-                    Roadside:
-                    ${quote.roadside}
-
-                </div>
-
-
-                <div class="result-buttons">
-
-                    <button
-                        class="small-btn small-secondary"
-                        type="button"
-                        onclick="viewQuote(${index})"
-                    >
-                        View Details
-                    </button>
-
-
-                    <button
-                        class="small-btn small-primary"
-                        type="button"
-                        onclick="requestQuote(${index})"
-                    >
-                        Request This Quote
-                    </button>
-
-                </div>
-
-            `;
-
-
-            container.appendChild(card);
-
-        });
-
-}
-
-
-/* =========================================================
-   VIEW QUOTE
-========================================================= */
-
-function viewQuote(index) {
-
-    const quote =
-        generatedQuotes[index];
-
-
-    selectedQuote =
-        quote;
-
-
-    alert(
-
-        "Provider: " +
-        quote.provider +
-
-        "\n\nVehicle: " +
-        quote.vehicle +
-
-        "\n\nEstimated Premium: ₱" +
-        money(quote.premium) +
-
-        "\n\nOwn Damage / Theft: ₱" +
-        money(quote.ownDamage) +
-
-        "\nActs of Nature: ₱" +
-        money(quote.aonPremium) +
-
-        "\nRoadside Assistance: ₱" +
-        money(quote.roadsidePremium) +
-
-        "\nEBI: ₱" +
-        money(quote.ebiPremium) +
-
-        "\nVPD: ₱" +
-        money(quote.vpdPremium) +
-
-        "\nCTPL: ₱" +
-        money(quote.ctplPremium) +
-
-        "\nDST: ₱" +
-        money(quote.dst) +
-
-        "\nLGT: ₱" +
-        money(quote.lgt) +
-
-        "\nVAT: ₱" +
-        money(quote.vat)
-
-    );
-
-}
-
-
-/* =========================================================
-   REQUEST QUOTE
-========================================================= */
-
-function requestQuote(index) {
-
-    selectedQuote =
-        generatedQuotes[index];
-
-
-    document.getElementById(
-        "selectedQuoteDetails"
-    ).innerHTML = `
-
-        <div class="record">
-
-            <strong>
-                ${selectedQuote.provider}
-            </strong>
-
-            <br><br>
-
-            Vehicle:
-            ${selectedQuote.vehicle}
-
-            <br>
-
-            Estimated Premium:
-            ₱${money(selectedQuote.premium)}
-
-        </div>
+        <span>
+            ${first.variant}
+            • ${first.year}
+            • ${first.category}
+        </span>
 
     `;
 
 
-    document.getElementById(
-        "inquiryModal"
-    ).classList.add("active");
+    grid.innerHTML="";
+
+
+    currentQuotes.forEach((quote,index)=>{
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "provider-card" +
+            (index===0 ? " lowest" : "");
+
+
+        card.innerHTML=`
+
+            <div class="provider-top">
+
+                <div>
+
+                    <div class="provider-name">
+                        ${quote.provider}
+                    </div>
+
+                    ${
+                        index===0
+                        ?
+                        `<div class="provider-badge">
+                            LOWEST AVAILABLE
+                        </div>`
+                        :
+                        ""
+                    }
+
+                </div>
+
+
+                <div class="premium">
+
+                    <small>
+                        Estimated annual premium
+                    </small>
+
+                    <strong>
+                        ₱${formatMoney(quote.premium)}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="provider-info">
+
+                <div class="info-pill">
+                    ${quote.comprehensive}
+                </div>
+
+                <div class="info-pill">
+                    AON: ${quote.aon}
+                </div>
+
+                <div class="info-pill">
+                    Roadside: ${quote.roadside}
+                </div>
+
+                <div class="info-pill">
+                    CTPL: ${quote.ctpl}
+                </div>
+
+            </div>
+
+
+            <div class="provider-actions">
+
+                <button
+                    class="small-btn details-btn"
+                    onclick='viewDetails(${JSON.stringify(quote)})'
+                >
+                    👁 View Details
+                </button>
+
+                <button
+                    class="small-btn request-btn"
+                    onclick='requestQuote(${JSON.stringify(quote)})'
+                >
+                    Request This Quote
+                </button>
+
+                <button
+                    class="small-btn compare-btn"
+                    onclick='compareQuote(${JSON.stringify(quote)})'
+                >
+                    ⚖ Compare
+                </button>
+
+            </div>
+
+        `;
+
+
+        grid.appendChild(card);
+
+    });
+
+
+    results.scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
 
-/* =========================================================
-   SUBMIT INSURANCE INQUIRY
-========================================================= */
+/* =====================================================
+   DETAILS
+===================================================== */
 
-async function submitInsuranceInquiry() {
+function viewDetails(quote){
 
-    if (!selectedQuote) {
+    selectedQuote=quote;
 
-        alert(
-            "Please select a quote first."
-        );
+    const content =
+        document.getElementById("detailsContent");
+
+
+    content.innerHTML=`
+
+        <div class="detail-box">
+
+            <strong>
+                ${quote.provider}
+            </strong>
+
+            <br>
+
+            ${quote.make}
+            ${quote.model}
+            <br>
+
+            ${quote.variant}
+            <br>
+
+            Year ${quote.year}
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <span>Base Premium</span>
+
+            <strong>
+                ₱${formatMoney(quote.base)}
+            </strong>
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <span>Documentary Stamp</span>
+
+            <strong>
+                ₱${formatMoney(quote.dst)}
+            </strong>
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <span>LGT</span>
+
+            <strong>
+                ₱${formatMoney(quote.lgt)}
+            </strong>
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <span>VAT</span>
+
+            <strong>
+                ₱${formatMoney(quote.vat)}
+            </strong>
+
+        </div>
+
+
+        <div class="detail-total">
+
+            <span>Total</span>
+
+            <span>
+                ₱${formatMoney(quote.premium)}
+            </span>
+
+        </div>
+
+
+        <br>
+
+
+        <button
+            class="modal-submit"
+            onclick='requestQuote(${JSON.stringify(quote)});closeModal("detailsModal");'
+        >
+            Request This Quote
+        </button>
+
+    `;
+
+
+    openModal("detailsModal");
+
+}
+
+
+/* =====================================================
+   REQUEST
+===================================================== */
+
+function requestQuote(quote){
+
+    selectedQuote=quote;
+
+    openModal("requestModal");
+
+}
+
+
+/* =====================================================
+   SUBMIT INQUIRY
+===================================================== */
+
+async function submitInquiry(){
+
+    if(!selectedQuote){
+
+        alert("Please select a quote first.");
 
         return;
 
@@ -3428,33 +3229,22 @@ async function submitInsuranceInquiry() {
 
 
     const name =
-        document.getElementById(
-            "customerName"
-        ).value.trim();
-
+        document.getElementById("customerName").value.trim();
 
     const mobile =
-        document.getElementById(
-            "customerMobile"
-        ).value.trim();
-
+        document.getElementById("customerMobile").value.trim();
 
     const email =
-        document.getElementById(
-            "customerEmail"
-        ).value.trim();
-
+        document.getElementById("customerEmail").value.trim();
 
     const message =
-        document.getElementById(
-            "customerMessage"
-        ).value.trim();
+        document.getElementById("customerMessage").value.trim();
 
 
-    if (!name || !mobile || !email) {
+    if(!name || !mobile || !email){
 
         alert(
-            "Please complete your name, mobile number, and email."
+            "Please enter your name, mobile number and email."
         );
 
         return;
@@ -3462,84 +3252,48 @@ async function submitInsuranceInquiry() {
     }
 
 
-    const make =
-        document.getElementById(
-            "vehicleMake"
-        ).value;
-
-
-    const model =
-        document.getElementById(
-            "vehicleModel"
-        ).value;
-
-
-    const variant =
-        document.getElementById(
-            "vehicleVariant"
-        ).value;
-
-
-    const year =
-        document.getElementById(
-            "modelYear"
-        ).value;
-
-
-    const category =
-        document.getElementById(
-            "vehicleCategory"
-        ).value;
-
-
-    const value =
-        document.getElementById(
-            "declaredValue"
-        ).value;
-
-
     const reference =
         "AOI-" +
         Math.floor(
             10000000 +
-            Math.random() * 90000000
+            Math.random()*90000000
         );
+
+
+    const scriptURL =
+        "https://script.google.com/macros/s/AKfycbx74ZnXI2JkLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
 
 
     const formData =
         new FormData();
 
 
-    formData.append(
-        "name",
-        name
-    );
+    formData.append("name",name);
 
-    formData.append(
-        "mobile",
-        mobile
-    );
+    formData.append("mobile",mobile);
 
-    formData.append(
-        "email",
-        email
-    );
+    formData.append("email",email);
 
     formData.append(
         "vehicle",
-        make + " " +
-        model + " " +
-        variant
+        selectedQuote.make +
+        " " +
+        selectedQuote.model
+    );
+
+    formData.append(
+        "variant",
+        selectedQuote.variant
     );
 
     formData.append(
         "modelYear",
-        year
+        selectedQuote.year
     );
 
     formData.append(
         "bodyType",
-        category
+        selectedQuote.category
     );
 
     formData.append(
@@ -3549,16 +3303,13 @@ async function submitInsuranceInquiry() {
 
     formData.append(
         "declaredValue",
-        value
+        selectedQuote.value
     );
 
     formData.append(
         "estimatedPremium",
-        selectedQuote.premium.toFixed(2)
+        selectedQuote.premium
     );
-
-
-    /* Additional information */
 
     formData.append(
         "provider",
@@ -3566,48 +3317,33 @@ async function submitInsuranceInquiry() {
     );
 
     formData.append(
-        "vehicleMake",
-        make
-    );
-
-    formData.append(
-        "vehicleModel",
-        model
-    );
-
-    formData.append(
-        "vehicleVariant",
-        variant
-    );
-
-    formData.append(
-        "carUse",
-        selectedQuote.carUse
-    );
-
-    formData.append(
-        "actsOfNature",
+        "aon",
         selectedQuote.aon
     );
 
     formData.append(
-        "roadsideAssistance",
+        "roadside",
         selectedQuote.roadside
     );
 
     formData.append(
-        "excessBodilyInjury",
+        "ebi",
         selectedQuote.ebi
     );
 
     formData.append(
-        "voluntaryPropertyDamage",
+        "vpd",
         selectedQuote.vpd
     );
 
     formData.append(
         "ctpl",
         selectedQuote.ctpl
+    );
+
+    formData.append(
+        "carUse",
+        selectedQuote.carUse
     );
 
     formData.append(
@@ -3621,84 +3357,41 @@ async function submitInsuranceInquiry() {
     );
 
 
-    try {
+    try{
 
         await fetch(
             scriptURL,
             {
-                method: "POST",
-                body: formData,
-                mode: "no-cors"
+                method:"POST",
+                body:formData,
+                mode:"no-cors"
             }
         );
 
 
-        closeInquiry();
+        closeModal("requestModal");
 
-
-        document.getElementById(
-            "inquiryRecord"
-        ).classList.remove("hidden");
-
-
-        document.getElementById(
-            "inquiryRecord"
-        ).innerHTML = `
-
-            <strong>
-                ✓ Inquiry Submitted
-            </strong>
-
-            <br><br>
-
-            Reference Number:
-            <strong>${reference}</strong>
-
-            <br>
-
-            Customer:
-            ${escapeHTML(name)}
-
-            <br>
-
-            Vehicle:
-            ${escapeHTML(
-                make + " " +
-                model + " " +
-                variant
-            )}
-
-            <br>
-
-            Provider:
-            ${escapeHTML(
-                selectedQuote.provider
-            )}
-
-            <br>
-
-            Estimated Premium:
-            ₱${money(
-                selectedQuote.premium
-            )}
-
-        `;
+        showInquiryRecord(
+            reference,
+            selectedQuote,
+            name,
+            mobile,
+            email
+        );
 
 
         alert(
-            "Inquiry submitted successfully.\n\nReference: " +
+            "Inquiry submitted successfully! Reference: " +
             reference
         );
 
 
-    }
-
-    catch(error) {
+    }catch(error){
 
         console.error(error);
 
         alert(
-            "There was a problem submitting the inquiry."
+            "Your inquiry could not be submitted. Please try again."
         );
 
     }
@@ -3706,186 +3399,171 @@ async function submitInsuranceInquiry() {
 }
 
 
-/* =========================================================
-   LOAN INQUIRY
-========================================================= */
+/* =====================================================
+   INQUIRY RECORD
+===================================================== */
 
-async function submitLoanInquiry() {
+function showInquiryRecord(
+    reference,
+    quote,
+    name,
+    mobile,
+    email
+){
 
-    const type =
-        document.querySelector(
-            'input[name="loanType"]:checked'
-        ).value;
+    const record =
+        document.getElementById("inquiryRecord");
 
+
+    record.style.display="block";
+
+
+    record.innerHTML=`
+
+        <h3>
+            ✅ Inquiry Submitted
+        </h3>
+
+        <div class="record-grid">
+
+            <div class="record-item">
+
+                <strong>REFERENCE NUMBER</strong>
+
+                ${reference}
+
+            </div>
+
+
+            <div class="record-item">
+
+                <strong>CUSTOMER</strong>
+
+                ${escapeHTML(name)}
+
+            </div>
+
+
+            <div class="record-item">
+
+                <strong>MOBILE</strong>
+
+                ${escapeHTML(mobile)}
+
+            </div>
+
+
+            <div class="record-item">
+
+                <strong>EMAIL</strong>
+
+                ${escapeHTML(email)}
+
+            </div>
+
+
+            <div class="record-item">
+
+                <strong>VEHICLE</strong>
+
+                ${quote.make}
+                ${quote.model}
+
+            </div>
+
+
+            <div class="record-item">
+
+                <strong>VARIANT</strong>
+
+                ${quote.variant}
+
+            </div>
+
+
+            <div class="record-item">
+
+                <strong>YEAR</strong>
+
+                ${quote.year}
+
+            </div>
+
+
+            <div class="record-item">
+
+                <strong>PROVIDER</strong>
+
+                ${quote.provider}
+
+            </div>
+
+
+            <div class="record-item">
+
+                <strong>ESTIMATED PREMIUM</strong>
+
+                ₱${formatMoney(quote.premium)}
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    record.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* =====================================================
+   COMPARE
+===================================================== */
+
+function compareQuote(quote){
+
+    const message =
+        `You selected ${quote.provider} for comparison.\n\n` +
+
+        `Vehicle: ${quote.make} ${quote.model}\n` +
+
+        `Variant: ${quote.variant}\n` +
+
+        `Estimated Premium: ₱${formatMoney(quote.premium)}`;
+
+
+    alert(message);
+
+}
+
+
+/* =====================================================
+   ACCOUNT
+===================================================== */
+
+function createAccount(){
 
     const name =
-        document.getElementById(
-            "loanName"
-        ).value.trim();
+        document.getElementById("accountName").value.trim();
 
+    const email =
+        document.getElementById("accountEmail").value.trim();
 
     const mobile =
-        document.getElementById(
-            "loanMobile"
-        ).value.trim();
-
-
-    const email =
-        document.getElementById(
-            "loanEmail"
-        ).value.trim();
-
-
-    const amount =
-        document.getElementById(
-            "loanAmount"
-        ).value;
-
-
-    if (!name || !mobile || !email) {
-
-        alert(
-            "Please complete the required information."
-        );
-
-        return;
-
-    }
-
-
-    const reference =
-        "LOAN-" +
-        Math.floor(
-            10000000 +
-            Math.random() * 90000000
-        );
-
-
-    const formData =
-        new FormData();
-
-
-    formData.append(
-        "inquiryType",
-        "Loan Inquiry"
-    );
-
-    formData.append(
-        "loanType",
-        type
-    );
-
-    formData.append(
-        "name",
-        name
-    );
-
-    formData.append(
-        "mobile",
-        mobile
-    );
-
-    formData.append(
-        "email",
-        email
-    );
-
-    formData.append(
-        "loanAmount",
-        amount
-    );
-
-    formData.append(
-        "referenceNumber",
-        reference
-    );
-
-
-    try {
-
-        await fetch(
-            scriptURL,
-            {
-                method: "POST",
-                body: formData,
-                mode: "no-cors"
-            }
-        );
-
-
-        document.getElementById(
-            "loanRecord"
-        ).classList.remove("hidden");
-
-
-        document.getElementById(
-            "loanRecord"
-        ).innerHTML = `
-
-            <strong>
-                ✓ Loan Inquiry Submitted
-            </strong>
-
-            <br><br>
-
-            Reference:
-            ${reference}
-
-            <br>
-
-            Type:
-            ${escapeHTML(type)}
-
-            <br>
-
-            Name:
-            ${escapeHTML(name)}
-
-        `;
-
-
-        alert(
-            "Loan inquiry submitted.\n\nReference: " +
-            reference
-        );
-
-    }
-
-    catch(error) {
-
-        console.error(error);
-
-        alert(
-            "Unable to submit loan inquiry."
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
-function demoLogin() {
-
-    const email =
-        document.getElementById(
-            "loginEmail"
-        ).value.trim();
-
+        document.getElementById("accountMobile").value.trim();
 
     const password =
-        document.getElementById(
-            "loginPassword"
-        ).value.trim();
+        document.getElementById("accountPassword").value;
 
 
-    if (!email || !password) {
+    if(!name || !email || !mobile || !password){
 
         alert(
-            "Please enter your email/mobile and password."
+            "Please complete all account fields."
         );
 
         return;
@@ -3893,82 +3571,279 @@ function demoLogin() {
     }
 
 
+    const account = {
+
+        name,
+        email,
+        mobile,
+        password
+
+    };
+
+
+    localStorage.setItem(
+        "annaOngAccount",
+        JSON.stringify(account)
+    );
+
+
+    closeModal("accountModal");
+
+
     alert(
-        "Login interface is ready.\n\nA real account system requires a secure authentication backend."
+        "Account created successfully!"
+    );
+
+
+    openLogin();
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function loginAccount(){
+
+    const email =
+        document.getElementById("loginEmail").value.trim();
+
+    const password =
+        document.getElementById("loginPassword").value;
+
+
+    const saved =
+        localStorage.getItem("annaOngAccount");
+
+
+    if(!saved){
+
+        alert(
+            "No account found yet. Please create an account first."
+        );
+
+        return;
+
+    }
+
+
+    const account =
+        JSON.parse(saved);
+
+
+    if(
+        email === account.email &&
+        password === account.password
+    ){
+
+        closeModal("loginModal");
+
+        alert(
+            "Welcome back, " +
+            account.name +
+            "!"
+        );
+
+    }else{
+
+        alert(
+            "Incorrect email or password."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAN
+===================================================== */
+
+function loanMessage(type){
+
+    alert(
+        type +
+        " selected.\n\n" +
+        "This section can be connected later to your actual loan inquiry form."
     );
 
 }
 
 
-function forgotPassword() {
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+function scrollToInsurance(){
+
+    document.getElementById("insurance")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+function goHome(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+function openAbout(){
+
+    openModal("aboutModal");
+
+}
+
+
+function openContact(){
 
     alert(
-        "Password recovery can be connected to your email/account system once authentication is added."
+        "For inquiries, please use the Request This Quote button after viewing your available insurance options."
     );
 
 }
 
 
-/* =========================================================
-   MONEY FORMAT
-========================================================= */
+/* =====================================================
+   MODALS
+===================================================== */
 
-function money(value) {
+function openModal(id){
 
-    return Number(value)
+    document
+        .getElementById(id)
+        .classList.add("show");
+
+}
+
+
+function closeModal(id){
+
+    document
+        .getElementById(id)
+        .classList.remove("show");
+
+}
+
+
+function outsideClose(event,id){
+
+    if(
+        event.target.id === id
+    ){
+
+        closeModal(id);
+
+    }
+
+}
+
+
+function openLogin(){
+
+    closeModal("accountModal");
+
+    openModal("loginModal");
+
+}
+
+
+function openCreateAccount(){
+
+    closeModal("loginModal");
+
+    openModal("accountModal");
+
+}
+
+
+function switchToCreate(){
+
+    closeModal("loginModal");
+
+    openCreateAccount();
+
+}
+
+
+function switchToLogin(){
+
+    closeModal("accountModal");
+
+    openLogin();
+
+}
+
+
+function openLoan(){
+
+    openModal("loanModal");
+
+}
+
+
+function openMobileMenu(){
+
+    alert(
+        "Use the navigation buttons above to access Car Insurance, Loan, Log In and Create Account."
+    );
+
+}
+
+
+/* =====================================================
+   UTILITIES
+===================================================== */
+
+function formatMoney(number){
+
+    return Number(number)
         .toLocaleString(
-            "en-PH",
-            {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }
+            "en-PH"
         );
 
 }
 
 
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
-
-function escapeHTML(value) {
+function escapeHTML(value){
 
     return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 
-/* =========================================================
-   CLOSE MODALS WHEN CLICKING BACKGROUND
-========================================================= */
+/* =====================================================
+   CLOSE MODAL WITH ESC
+===================================================== */
 
-document
-    .querySelectorAll(".modal")
-    .forEach(modal => {
+document.addEventListener(
+    "keydown",
+    function(event){
 
-        modal.addEventListener(
-            "click",
-            function(event) {
+        if(event.key === "Escape"){
 
-                if (
-                    event.target === modal
-                ) {
+            document
+                .querySelectorAll(".modal-overlay")
+                .forEach(modal=>{
+                    modal.classList.remove("show");
+                });
 
-                    modal.classList.remove(
-                        "active"
-                    );
+        }
 
-                }
-
-            }
-        );
-
-    });
+    }
+);
 
 </script>
 
