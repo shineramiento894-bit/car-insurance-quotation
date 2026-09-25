@@ -3,589 +3,4596 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NEO CARWORKS INSURANCE</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-:root{--red:#e10600;--black:#090909;--white:#fff;--soft:#f6f6f6;--line:#e6e6e6;--muted:#666;--shadow:0 18px 50px rgba(0,0,0,.08)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Plus Jakarta Sans",Arial,sans-serif;color:var(--black);background:#fff}button,input,select{font:inherit}button{cursor:pointer}
-.header{height:88px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 5%;justify-content:space-between;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);z-index:50}
-.brand{font-size:28px;font-weight:800;letter-spacing:-1.5px}.brand span{color:var(--red)}
-.nav{display:flex;gap:36px;align-items:center}.nav a{color:#111;text-decoration:none;font-weight:700;font-size:15px}.nav a:hover{color:var(--red)}
-.auth{display:flex;gap:14px;align-items:center}.login-btn{border:0;background:transparent;font-weight:800}.create-btn,.red-btn{border:0;background:var(--black);color:#fff;padding:16px 23px;border-radius:13px;font-weight:800}.red-btn{background:var(--red);box-shadow:0 12px 24px rgba(225,6,0,.18)}.create-btn:hover,.red-btn:hover{transform:translateY(-1px)}
-.hero{min-height:600px;padding:86px 5% 70px;display:flex;align-items:center;position:relative;overflow:hidden;background:#fff}
-.hero:after{content:"";position:absolute;right:-4%;top:30px;width:62%;height:560px;background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.88) 15%,rgba(255,255,255,.08) 55%,rgba(255,255,255,.03) 100%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23f1f1f1'/%3E%3Cellipse cx='570' cy='410' rx='350' ry='80' fill='%23d8d8d8'/%3E%3Cpath d='M290 390 C340 300 430 250 575 245 C700 242 790 285 835 380 L805 425 L315 425Z' fill='%23111111'/%3E%3Cpath d='M410 300 C480 245 615 245 690 275 L745 345 L365 345Z' fill='%236b6b6b'/%3E%3Cpath d='M430 305 L480 270 L510 340 L390 340Z' fill='%23eeeeee' opacity='.7'/%3E%3Cpath d='M530 270 L630 275 L690 340 L540 340Z' fill='%23eeeeee' opacity='.7'/%3E%3Ccircle cx='410' cy='420' r='54' fill='%23101010'/%3E%3Ccircle cx='410' cy='420' r='27' fill='%23cccccc'/%3E%3Ccircle cx='745' cy='420' r='54' fill='%23101010'/%3E%3Ccircle cx='745' cy='420' r='27' fill='%23cccccc'/%3E%3C/svg%3E") center/cover no-repeat;opacity:.7;z-index:0}
-.hero-content{max-width:850px;position:relative;z-index:1}.eyebrow{display:inline-block;background:#fff0ef;color:var(--red);padding:11px 17px;border-radius:30px;font-weight:800;font-size:13px;margin-bottom:25px}
-.hero h1{font-size:64px;line-height:1.05;letter-spacing:-3.5px;margin:0 0 24px;font-weight:800;max-width:900px}.hero h1 span{color:var(--red)}.hero p{font-size:20px;line-height:1.6;max-width:790px;color:#333;margin:0 0 34px}.hero .red-btn{font-size:17px;padding:18px 30px}
-.section{padding:70px 5%}.section-title{font-size:40px;letter-spacing:-1.8px;margin:0 0 12px;font-weight:800}.section-sub{color:#666;margin:0 0 35px}.quote-card{max-width:1120px;margin:-45px auto 0;position:relative;z-index:5;background:#fff;border:1px solid var(--line);border-radius:24px;padding:35px;box-shadow:var(--shadow)}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.field label{display:block;font-weight:800;font-size:13px;margin-bottom:8px}.field input,.field select{width:100%;padding:15px 16px;border:1px solid #dcdcdc;border-radius:12px;background:#fff;outline:none}.field input:focus,.field select:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(225,6,0,.08)}
-.use-row{display:flex;gap:10px;flex-wrap:wrap}.use-btn{border:1px solid #ddd;background:#fff;border-radius:11px;padding:13px 18px;font-weight:700}.use-btn.active{background:var(--black);color:#fff;border-color:var(--black)}
-.check-line{display:flex;gap:10px;align-items:center;font-weight:700;margin-top:18px}.check-line input{width:19px;height:19px;accent-color:var(--red)}
-.agreement{font-size:12px;color:#666;line-height:1.6;margin-top:18px}.agreement a{color:var(--black);font-weight:800}.agreement a:hover{color:var(--red)}
-.coverage{background:#f7f7f7}.coverage-box{max-width:1120px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:35px;box-shadow:0 12px 35px rgba(0,0,0,.05)}
-.coverage-row{margin:0 0 30px}.coverage-row h3{font-size:25px;margin:0 0 14px}.range{width:100%;accent-color:#0a0a0a}.range-value{font-size:20px;font-weight:800;margin-top:7px}.option-group{display:flex;gap:10px;flex-wrap:wrap}.option{border:1px solid #ddd;padding:13px 17px;border-radius:12px;background:#fff;font-weight:700}.option.active{border-color:var(--black);background:var(--black);color:#fff}
-.aon{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:800}.aon input{width:23px;height:23px;accent-color:var(--red)}
-.providers{padding:50px 5% 25px;background:#eaf9ff}.provider-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:18px;overflow:hidden}.provider-logo{height:108px;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;padding:15px;cursor:pointer;border:1px solid rgba(0,0,0,.04);transition:.2s}.provider-logo:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.08)}.provider-logo img{max-width:100%;max-height:70px}
-.results{background:#fff}.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.result-card{border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 8px 30px rgba(0,0,0,.05)}.result-top{display:flex;justify-content:space-between;gap:10px}.result-card h3{margin:0;font-size:21px}.premium{font-size:27px;font-weight:800;color:var(--red);margin:18px 0 10px}.small{font-size:12px;color:#777}.summary{line-height:1.8;font-size:14px;margin:15px 0}.result-actions{display:flex;gap:10px}.outline-btn{border:1px solid #111;background:#fff;padding:12px 14px;border-radius:11px;font-weight:800}.outline-btn:hover{background:#111;color:#fff}
-.why{background:#f7f7f7}.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.why-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;cursor:pointer;transition:.2s}.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#bbb}.why-icon{font-size:32px}.why-card h3{font-size:18px;margin:14px 0 8px}.why-card p{font-size:14px;color:#666;line-height:1.6;margin:0}
-.footer{background:#080808;color:#fff;padding:45px 5%;display:flex;justify-content:space-between;gap:30px}.footer .brand{color:#fff}.footer span{color:var(--red)}.footer-links{display:flex;gap:22px;flex-wrap:wrap}.footer a{color:#fff;text-decoration:none;font-size:13px}.footer a:hover{color:var(--red)}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.62);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}.modal.show{display:flex}.modal-box{background:#fff;width:min(680px,100%);max-height:90vh;overflow:auto;border-radius:24px;padding:30px;position:relative}.close{position:absolute;right:20px;top:17px;border:0;background:#f2f2f2;width:38px;height:38px;border-radius:50%;font-size:20px}.modal-box h2{margin:0 40px 20px 0}.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.google-btn{background:#fff;border:1px solid #ccc;padding:14px 18px;border-radius:12px;font-weight:800;width:100%}.email-btn{background:#111;color:#fff;border:0;padding:14px 18px;border-radius:12px;font-weight:800;width:100%}.divider{text-align:center;color:#888;margin:14px 0;font-size:12px}.provider-detail{background:#f7f7f7;padding:17px;border-radius:14px;line-height:1.7}.notice{padding:13px 15px;border-radius:12px;background:#fff4f3;border:1px solid #ffd4d1;color:#7d0000;font-size:13px;margin-top:15px}
-@media(max-width:1050px){.nav{gap:15px}.provider-strip{grid-template-columns:repeat(4,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.results-grid{grid-template-columns:1fr 1fr}.hero h1{font-size:52px}}
-@media(max-width:760px){.header{height:auto;padding:16px 5%;flex-wrap:wrap;gap:14px}.nav{order:3;width:100%;justify-content:center;overflow:auto}.auth{margin-left:auto}.create-btn{padding:12px 15px}.hero{padding-top:60px}.hero h1{font-size:40px;letter-spacing:-2px}.hero p{font-size:16px}.grid,.results-grid,.why-grid{grid-template-columns:1fr}.provider-strip{grid-template-columns:repeat(2,1fr)}.quote-card{margin:-20px 5% 0}.section{padding:55px 5%}.coverage-box,.quote-card{padding:24px}.footer{flex-direction:column}}
+
+:root{
+  --red:#e10600;
+  --black:#090909;
+  --white:#fff;
+  --soft:#f6f6f6;
+  --line:#e6e6e6;
+  --muted:#666;
+  --shadow:0 18px 50px rgba(0,0,0,.08);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Plus Jakarta Sans",Arial,sans-serif;
+  color:var(--black);
+  background:#fff;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+  height:88px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  padding:0 5%;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  z-index:50;
+}
+
+.brand{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:-1.5px;
+}
+
+.brand-link{
+  border:0;
+  background:transparent;
+  padding:0;
+  cursor:pointer;
+  text-align:left;
+}
+
+.brand-link:hover{
+  color:var(--red);
+}
+
+.brand span{
+  color:var(--red);
+}
+
+.nav{
+  display:flex;
+  gap:36px;
+  align-items:center;
+}
+
+.nav a{
+  color:#111;
+  text-decoration:none;
+  font-weight:700;
+  font-size:15px;
+}
+
+.nav a:hover{
+  color:var(--red);
+}
+
+.auth{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.login-btn{
+  border:0;
+  background:transparent;
+  font-weight:800;
+}
+
+.create-btn,
+.red-btn{
+  border:0;
+  background:var(--black);
+  color:#fff;
+  padding:16px 23px;
+  border-radius:13px;
+  font-weight:800;
+}
+
+.red-btn{
+  background:var(--red);
+  box-shadow:0 12px 24px rgba(225,6,0,.18);
+}
+
+.create-btn:hover,
+.red-btn:hover{
+  transform:translateY(-1px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:600px;
+  padding:86px 5% 70px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  right:-4%;
+  top:30px;
+  width:62%;
+  height:560px;
+  background:
+    linear-gradient(
+      90deg,
+      #fff 0%,
+      rgba(255,255,255,.94) 16%,
+      rgba(255,255,255,.42) 48%,
+      rgba(255,255,255,.08) 72%
+    ),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80")
+    center right/cover no-repeat;
+  opacity:.72;
+  z-index:0;
+}
+
+.hero-content{
+  max-width:850px;
+  position:relative;
+  z-index:1;
+}
+
+.eyebrow{
+  display:inline-block;
+  background:#fff0ef;
+  color:var(--red);
+  padding:11px 17px;
+  border-radius:30px;
+  font-weight:800;
+  font-size:13px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-size:64px;
+  line-height:1.05;
+  letter-spacing:-3.5px;
+  margin:0 0 24px;
+  font-weight:800;
+  max-width:900px;
+}
+
+.hero h1 span{
+  color:var(--red);
+}
+
+.hero p{
+  font-size:20px;
+  line-height:1.6;
+  max-width:790px;
+  color:#333;
+  margin:0 0 34px;
+}
+
+.hero .red-btn{
+  font-size:17px;
+  padding:18px 30px;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section{
+  padding:70px 5%;
+}
+
+.section-title{
+  font-size:40px;
+  letter-spacing:-1.8px;
+  margin:0 0 12px;
+  font-weight:800;
+}
+
+.section-sub{
+  color:#666;
+  margin:0 0 35px;
+}
+
+/* =========================
+   VEHICLE DETAILS
+========================= */
+
+.quote-card{
+  max-width:1120px;
+  margin:-45px auto 0;
+  position:relative;
+  z-index:5;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:35px;
+  box-shadow:var(--shadow);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.field label{
+  display:block;
+  font-weight:800;
+  font-size:13px;
+  margin-bottom:8px;
+}
+
+.field input,
+.field select{
+  width:100%;
+  padding:15px 16px;
+  border:1px solid #dcdcdc;
+  border-radius:12px;
+  background:#fff;
+  outline:none;
+}
+
+.field input:focus,
+.field select:focus{
+  border-color:var(--red);
+  box-shadow:0 0 0 3px rgba(225,6,0,.08);
+}
+
+.use-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.use-btn{
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:11px;
+  padding:13px 18px;
+  font-weight:700;
+}
+
+.use-btn.active{
+  background:var(--black);
+  color:#fff;
+  border-color:var(--black);
+}
+
+.check-line{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:700;
+  margin-top:18px;
+}
+
+.check-line input{
+  width:19px;
+  height:19px;
+  accent-color:var(--red);
+}
+
+.agreement{
+  font-size:12px;
+  color:#666;
+  line-height:1.6;
+  margin-top:18px;
+}
+
+.agreement a{
+  color:var(--black);
+  font-weight:800;
+}
+
+.agreement a:hover{
+  color:var(--red);
+}
+
+/* =========================
+   COVERAGE
+========================= */
+
+.coverage{
+  background:#f7f7f7;
+}
+
+.coverage-box{
+  max-width:1120px;
+  margin:auto;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:35px;
+  box-shadow:0 12px 35px rgba(0,0,0,.05);
+}
+
+.coverage-row{
+  margin:0 0 30px;
+}
+
+.coverage-row h3{
+  font-size:25px;
+  margin:0 0 14px;
+}
+
+.range{
+  width:100%;
+  accent-color:#0a0a0a;
+}
+
+.range-value{
+  font-size:20px;
+  font-weight:800;
+  margin-top:7px;
+}
+
+.option-group{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.option{
+  border:1px solid #ddd;
+  padding:13px 17px;
+  border-radius:12px;
+  background:#fff;
+  font-weight:700;
+}
+
+.option.active{
+  border-color:var(--black);
+  background:var(--black);
+  color:#fff;
+}
+
+.aon{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:20px;
+  font-weight:800;
+}
+
+.aon input{
+  width:23px;
+  height:23px;
+  accent-color:var(--red);
+}
+
+/* =========================
+   PROVIDERS
+========================= */
+
+.providers{
+  padding:50px 5% 25px;
+  background:#f5f5f5;
+}
+
+.provider-strip{
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:18px;
+  overflow:hidden;
+}
+
+.provider-logo{
+  height:108px;
+  border-radius:18px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  cursor:pointer;
+  border:1px solid rgba(0,0,0,.04);
+  transition:.2s;
+}
+
+.provider-logo:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.provider-logo img{
+  max-width:100%;
+  max-height:70px;
+}
+
+/* =========================
+   RESULTS
+========================= */
+
+.results{
+  background:#fff;
+}
+
+.results-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.result-card{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 8px 30px rgba(0,0,0,.05);
+  transition:.2s;
+}
+
+.result-card:hover{
+  transform:translateY(-3px);
+}
+
+.result-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.result-card h3{
+  margin:0;
+  font-size:21px;
+}
+
+.premium{
+  font-size:27px;
+  font-weight:800;
+  color:var(--red);
+  margin:18px 0 10px;
+}
+
+.small{
+  font-size:12px;
+  color:#777;
+}
+
+.summary{
+  line-height:1.8;
+  font-size:14px;
+  margin:15px 0;
+}
+
+.result-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.outline-btn{
+  border:1px solid #111;
+  background:#fff;
+  padding:12px 14px;
+  border-radius:11px;
+  font-weight:800;
+}
+
+.outline-btn:hover{
+  background:#111;
+  color:#fff;
+}
+
+/* =========================
+   WHY NEO
+========================= */
+
+.why{
+  background:#f7f7f7;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.why-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.why-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+  border-color:#bbb;
+}
+
+.why-icon{
+  font-size:32px;
+}
+
+.why-card h3{
+  font-size:18px;
+  margin:14px 0 8px;
+}
+
+.why-card p{
+  font-size:14px;
+  color:#666;
+  line-height:1.6;
+  margin:0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  background:#080808;
+  color:#fff;
+  padding:45px 5%;
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.footer .brand{
+  color:#fff;
+}
+
+.footer span{
+  color:var(--red);
+}
+
+.footer-links{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.footer a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.footer a:hover{
+  color:var(--red);
+}
+
+/* =========================
+   MODALS
+========================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.62);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+  padding:20px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  background:#fff;
+  width:min(680px,100%);
+  max-height:90vh;
+  overflow:auto;
+  border-radius:24px;
+  padding:30px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:20px;
+  top:17px;
+  border:0;
+  background:#f2f2f2;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:20px;
+}
+
+.modal-box h2{
+  margin:0 40px 20px 0;
+}
+
+.modal-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.google-btn{
+  background:#fff;
+  border:1px solid #ccc;
+  padding:14px 18px;
+  border-radius:12px;
+  font-weight:800;
+  width:100%;
+}
+
+.email-btn{
+  background:#111;
+  color:#fff;
+  border:0;
+  padding:14px 18px;
+  border-radius:12px;
+  font-weight:800;
+  width:100%;
+}
+
+.divider{
+  text-align:center;
+  color:#888;
+  margin:14px 0;
+  font-size:12px;
+}
+
+.provider-detail{
+  background:#f7f7f7;
+  padding:17px;
+  border-radius:14px;
+  line-height:1.7;
+}
+
+.notice{
+  padding:13px 15px;
+  border-radius:12px;
+  background:#fff4f3;
+  border:1px solid #ffd4d1;
+  color:#7d0000;
+  font-size:13px;
+  margin-top:15px;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.modal-form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.modal-form .full{
+  grid-column:1/-1;
+}
+
+.modal-form label{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+.modal-form input{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:11px;
+  outline:none;
+}
+
+.modal-form input:focus{
+  border-color:var(--red);
+}
+
+.form-check{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:12px;
+  color:#666;
+  line-height:1.5;
+  margin-top:15px;
+}
+
+.form-check input{
+  width:18px;
+  height:18px;
+  accent-color:var(--red);
+}
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+.top-btn{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:60;
+  border:0;
+  background:var(--red);
+  color:#fff;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  font-size:22px;
+  font-weight:800;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
+
+  .nav{
+    gap:15px;
+  }
+
+  .provider-strip{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .why-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .results-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+}
+
+@media(max-width:760px){
+
+  .header{
+    height:auto;
+    padding:16px 5%;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .nav{
+    order:3;
+    width:100%;
+    justify-content:center;
+    overflow:auto;
+  }
+
+  .auth{
+    margin-left:auto;
+  }
+
+  .create-btn{
+    padding:12px 15px;
+  }
+
+  .hero{
+    padding-top:60px;
+  }
+
+  .hero h1{
+    font-size:40px;
+    letter-spacing:-2px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .grid,
+  .results-grid,
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .provider-strip{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .quote-card{
+    margin:-20px 5% 0;
+  }
+
+  .section{
+    padding:55px 5%;
+  }
+
+  .coverage-box,
+  .quote-card{
+    padding:24px;
+  }
+
+  .footer{
+    flex-direction:column;
+  }
+
+  .modal-form{
+    grid-template-columns:1fr;
+  }
+
+  .modal-form .full{
+    grid-column:auto;
+  }
+}
 </style>
 </head>
+
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="header">
-  <div class="brand">NEO <span>CARWORKS</span></div>
+
+  <button
+    class="brand brand-link"
+    onclick="goHome()"
+    aria-label="Go to NEO CARWORKS home"
+  >
+    NEO <span>CARWORKS</span>
+  </button>
+
   <nav class="nav">
-    <a href="#quote">Car Insurance</a>
-    <a href="#loans" onclick="openInfo('loans')">Loans</a>
-    <a href="#articles" onclick="openInfo('articles')">Articles</a>
-    <a href="#credit" onclick="openInfo('credit')">Credit Cards</a>
+
+    <a
+      href="#quote"
+      onclick="scrollToQuote();return false"
+    >
+      Car Insurance
+    </a>
+
+    <a
+      href="#"
+      onclick="openInfo('loans');return false"
+    >
+      Loans
+    </a>
+
+    <a
+      href="#"
+      onclick="openInfo('articles');return false"
+    >
+      Articles
+    </a>
+
+    <a
+      href="#"
+      onclick="openInfo('credit');return false"
+    >
+      Credit Cards
+    </a>
+
   </nav>
+
   <div class="auth">
-    <button class="login-btn" onclick="openModal('loginModal')">Log In</button>
-    <button class="create-btn" onclick="openModal('accountModal')">Create Account</button>
+
+    <button
+      class="login-btn"
+      onclick="openModal('loginModal')"
+    >
+      Log In
+    </button>
+
+    <button
+      class="create-btn"
+      onclick="openModal('accountModal')"
+    >
+      Create Account
+    </button>
+
   </div>
+
 </header>
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
+
   <div class="hero-content">
-    <div class="eyebrow">NEO CARWORKS INSURANCE</div>
-    <h1>Find Car Insurance That <span>Fits Your Needs.</span></h1>
-    <p>Enter your vehicle details, choose your preferred coverage, and request an insurance quote from NEO CARWORKS.</p>
-    <button class="red-btn" onclick="scrollToQuote()">Start Your Quote</button>
+
+    <div class="eyebrow">
+      NEO CARWORKS INSURANCE
+    </div>
+
+    <h1>
+      Find Car Insurance That
+      <span>Fits Your Needs.</span>
+    </h1>
+
+    <p>
+      Enter your vehicle details, choose your preferred coverage,
+      and request an insurance quote from NEO CARWORKS.
+    </p>
+
+    <button
+      class="red-btn"
+      onclick="scrollToQuote()"
+    >
+      Start Your Quote
+    </button>
+
   </div>
+
 </section>
+
+
+<!-- =========================
+     VEHICLE DETAILS
+========================= -->
 
 <section id="quote" class="section">
+
   <div class="quote-card">
-    <h2 class="section-title">Vehicle Details</h2>
-    <p class="section-sub">Tell us about your vehicle to start your quotation.</p>
+
+    <h2 class="section-title">
+      Vehicle Details
+    </h2>
+
+    <p class="section-sub">
+      Tell us about your vehicle to start your quotation.
+    </p>
+
     <div class="grid">
-      <div class="field"><label>Vehicle Make</label>
-        <select id="make" onchange="loadModels()">
-          <option value="">Select make</option>
-          <option>Toyota</option><option>Honda</option><option>Mitsubishi</option><option>Nissan</option>
-          <option>Ford</option><option>Hyundai</option><option>Kia</option><option>Suzuki</option>
+
+      <div class="field">
+
+        <label>
+          Vehicle Make
+        </label>
+
+        <select
+          id="make"
+          onchange="loadModels()"
+        >
+
+          <option value="">
+            Select make
+          </option>
+
+          <option>Toyota</option>
+          <option>Honda</option>
+          <option>Mitsubishi</option>
+          <option>Nissan</option>
+          <option>Ford</option>
+          <option>Hyundai</option>
+          <option>Kia</option>
+          <option>Suzuki</option>
+
         </select>
+
       </div>
-      <div class="field"><label>Vehicle Model</label>
-        <select id="model" onchange="loadVariants()"><option value="">Select model</option></select>
+
+
+      <div class="field">
+
+        <label>
+          Vehicle Model
+        </label>
+
+        <select
+          id="model"
+          onchange="loadVariants()"
+        >
+
+          <option value="">
+            Select model
+          </option>
+
+        </select>
+
       </div>
-      <div class="field"><label>Select Variant</label>
-        <select id="variant"><option value="">Select variant</option></select>
+
+
+      <div class="field">
+
+        <label>
+          Select Variant
+        </label>
+
+        <select id="variant">
+
+          <option value="">
+            Select variant
+          </option>
+
+        </select>
+
       </div>
-      <div class="field"><label>Year of Manufacture</label>
+
+
+      <div class="field">
+
+        <label>
+          Year of Manufacture
+        </label>
+
         <select id="year"></select>
+
       </div>
-      <div class="field"><label>Estimated Vehicle Value / Sum Insured (₱)</label>
-        <input id="sumInsured" type="number" min="50000" step="1000" value="400000" placeholder="Example: 400000">
+
+
+      <div class="field">
+
+        <label>
+          Estimated Vehicle Value / Sum Insured (₱)
+        </label>
+
+        <input
+          id="sumInsured"
+          type="number"
+          min="50000"
+          step="1000"
+          value="400000"
+          placeholder="Example: 400000"
+        >
+
       </div>
-      <div class="field"><label>Vehicle Type</label>
-        <select id="vehicleType" onchange="updateVehicleTypeNote()">
-          <option value="Private Car">Private Car (PC)</option>
-          <option value="Hybrid PC">Hybrid PC</option>
-          <option value="Full EV PC">Full EV PC</option>
-          <option value="SUV">Sports Utility Vehicle (SUV)</option>
-          <option value="Commercial Vehicle">Commercial Vehicle (CV)</option>
+
+
+      <div class="field">
+
+        <label>
+          Vehicle Type
+        </label>
+
+        <select
+          id="vehicleType"
+          onchange="updateVehicleTypeNote()"
+        >
+
+          <option value="Private Car">
+            Private Car (PC)
+          </option>
+
+          <option value="Hybrid PC">
+            Hybrid PC
+          </option>
+
+          <option value="Full EV PC">
+            Full EV PC
+          </option>
+
+          <option value="SUV">
+            Sports Utility Vehicle (SUV)
+          </option>
+
+          <option value="Commercial Vehicle">
+            Commercial Vehicle (CV)
+          </option>
+
         </select>
-        <div id="vehicleTypeNote" class="small" style="margin-top:7px">PC rate schedules are loaded for Private Car.</div>
-      </div>
-      <div class="field"><label>Primary Use</label>
-        <div class="use-row">
-          <button class="use-btn active" data-use="Private" onclick="setUse(this)">Private</button>
-          <button class="use-btn" data-use="Grab / TNVS" onclick="setUse(this)">Grab / TNVS</button>
-          <button class="use-btn" data-use="Commercial" onclick="setUse(this)">Commercial</button>
-          <button class="use-btn" data-use="Other" onclick="setUse(this)">Other</button>
+
+        <div
+          id="vehicleTypeNote"
+          class="small"
+          style="margin-top:7px"
+        >
+          PC rate schedules are loaded for Private Car.
         </div>
+
       </div>
+
+
+      <div class="field">
+
+        <label>
+          Primary Use
+        </label>
+
+        <div class="use-row">
+
+          <button
+            class="use-btn active"
+            data-use="Private"
+            onclick="setUse(this)"
+          >
+            Private
+          </button>
+
+          <button
+            class="use-btn"
+            data-use="Grab / TNVS"
+            onclick="setUse(this)"
+          >
+            Grab / TNVS
+          </button>
+
+          <button
+            class="use-btn"
+            data-use="Commercial"
+            onclick="setUse(this)"
+          >
+            Commercial
+          </button>
+
+          <button
+            class="use-btn"
+            data-use="Other"
+            onclick="setUse(this)"
+          >
+            Other
+          </button>
+
+        </div>
+
+      </div>
+
     </div>
-    <div class="check-line"><input type="checkbox" id="ctpl" checked><label for="ctpl">Include CTPL</label></div>
+
+
+    <div class="check-line">
+
+      <input
+        type="checkbox"
+        id="ctpl"
+        checked
+      >
+
+      <label for="ctpl">
+        Include CTPL
+      </label>
+
+    </div>
+
+
     <div class="agreement">
+
       By continuing, you agree to the
-      <a href="#" onclick="openModal('termsModal');return false">NEO CARWORKS INSURANCE Terms and Conditions</a>
+
+      <a
+        href="#"
+        onclick="openModal('termsModal');return false"
+      >
+        NEO CARWORKS INSURANCE Terms and Conditions
+      </a>
+
       and
-      <a href="#" onclick="openModal('privacyModal');return false">Privacy Policy</a>.
+
+      <a
+        href="#"
+        onclick="openModal('privacyModal');return false"
+      >
+        Privacy Policy
+      </a>.
+
     </div>
-    <button class="red-btn" style="margin-top:22px" onclick="goToCoverage()">Continue</button>
+
+
+    <button
+      class="red-btn"
+      style="margin-top:22px"
+      onclick="goToCoverage()"
+    >
+      Continue
+    </button>
+
   </div>
+
 </section>
 
-<section class="section coverage" id="coverage">
+
+<!-- =========================
+     COVERAGE
+========================= -->
+
+<section
+  class="section coverage"
+  id="coverage"
+>
+
   <div class="coverage-box">
-    <h2 class="section-title">Customize Your Coverage</h2>
-    <p class="section-sub">Adjust the coverage according to your needs.</p>
+
+    <h2 class="section-title">
+      Customize Your Coverage
+    </h2>
+
+    <p class="section-sub">
+      Adjust the coverage according to your needs.
+    </p>
+
 
     <div class="coverage-row">
-      <h3>Bodily injury &amp; property damage coverage</h3>
-      <input class="range" id="biPdRange" type="range" min="0" max="10" step="1" value="5" oninput="updateCoverageValues()">
-      <div class="range-value" id="biPdValue">₱250,000</div>
-    </div>
 
-    <div class="coverage-row">
-      <h3>Personal Accident</h3>
-      <input class="range" id="paRange" type="range" min="0" max="10" step="1" value="5" oninput="updateCoverageValues()">
-      <div class="range-value" id="paValue">₱250,000</div>
-    </div>
+      <h3>
+        Bodily Injury &amp; Property Damage Coverage
+      </h3>
 
-    <div class="coverage-row">
-      <label class="aon"><input type="checkbox" id="aon" checked> Acts of Nature</label>
-    </div>
+      <input
+        class="range"
+        id="biPdRange"
+        type="range"
+        min="0"
+        max="10"
+        step="1"
+        value="5"
+        oninput="updateCoverageValues()"
+      >
 
-    <div class="coverage-row">
-      <h3>Comprehensive Coverage</h3>
-      <div class="option-group">
-        <button class="option active" data-comp="Own Damage + Theft" onclick="chooseOption(this,'comp')">Own Damage + Theft</button>
-        <button class="option" data-comp="Theft Only" onclick="chooseOption(this,'comp')">Theft Only</button>
-        <button class="option" data-comp="Third Party Only" onclick="chooseOption(this,'comp')">Third Party Only</button>
+      <div
+        class="range-value"
+        id="biPdValue"
+      >
+        ₱250,000
       </div>
+
     </div>
+
 
     <div class="coverage-row">
-      <h3>Roadside Assistance</h3>
-      <div class="option-group">
-        <button class="option active" data-road="Basic" onclick="chooseOption(this,'road')">Basic</button>
-        <button class="option" data-road="Plus" onclick="chooseOption(this,'road')">Plus</button>
-        <button class="option" data-road="Exclude" onclick="chooseOption(this,'road')">Exclude</button>
+
+      <h3>
+        Personal Accident
+      </h3>
+
+      <input
+        class="range"
+        id="paRange"
+        type="range"
+        min="0"
+        max="10"
+        step="1"
+        value="5"
+        oninput="updateCoverageValues()"
+      >
+
+      <div
+        class="range-value"
+        id="paValue"
+      >
+        ₱250,000
       </div>
+
     </div>
+
 
     <div class="coverage-row">
-      <h3>CTPL</h3>
-      <div class="option-group">
-        <button class="option active" data-ctpl="Basic" onclick="chooseOption(this,'ctplLevel')">Basic</button>
-        <button class="option" data-ctpl="Enhanced" onclick="chooseOption(this,'ctplLevel')">Enhanced</button>
-      </div>
+
+      <label class="aon">
+
+        <input
+          type="checkbox"
+          id="aon"
+          checked
+        >
+
+        Acts of Nature
+
+      </label>
+
     </div>
 
-    <button class="red-btn" onclick="calculateQuotes()">Calculate Insurance Quote</button>
+
+    <div class="coverage-row">
+
+      <h3>
+        Comprehensive Coverage
+      </h3>
+
+      <div class="option-group">
+
+        <button
+          class="option active"
+          data-comp="Own Damage + Theft"
+          onclick="chooseOption(this,'comp')"
+        >
+          Own Damage + Theft
+        </button>
+
+        <button
+          class="option"
+          data-comp="Theft Only"
+          onclick="chooseOption(this,'comp')"
+        >
+          Theft Only
+        </button>
+
+        <button
+          class="option"
+          data-comp="Third Party Only"
+          onclick="chooseOption(this,'comp')"
+        >
+          Third Party Only
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="coverage-row">
+
+      <h3>
+        Roadside Assistance
+      </h3>
+
+      <div class="option-group">
+
+        <button
+          class="option active"
+          data-road="Basic"
+          onclick="chooseOption(this,'road')"
+        >
+          Basic
+        </button>
+
+        <button
+          class="option"
+          data-road="Plus"
+          onclick="chooseOption(this,'road')"
+        >
+          Plus
+        </button>
+
+        <button
+          class="option"
+          data-road="Exclude"
+          onclick="chooseOption(this,'road')"
+        >
+          Exclude
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="coverage-row">
+
+      <h3>
+        CTPL
+      </h3>
+
+      <div class="option-group">
+
+        <button
+          class="option active"
+          data-ctpl="Basic"
+          onclick="chooseOption(this,'ctplLevel')"
+        >
+          Basic
+        </button>
+
+        <button
+          class="option"
+          data-ctpl="Enhanced"
+          onclick="chooseOption(this,'ctplLevel')"
+        >
+          Enhanced
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="modal-actions">
+
+      <button
+        class="red-btn"
+        onclick="calculateQuotes()"
+      >
+        Calculate Insurance Quote
+      </button>
+
+      <button
+        class="outline-btn"
+        onclick="openModal('editModal')"
+      >
+        Edit Contact Details
+      </button>
+
+    </div>
+
   </div>
+
 </section>
+
+
+<!-- =========================
+     PROVIDER STRIP
+========================= -->
 
 <section class="providers">
+
   <div class="provider-strip">
-    <div class="provider-logo" onclick="openProvider('Cocogen')"><img alt="Cocogen Insurance" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='90'%3E%3Crect width='240' height='90' rx='12' fill='white'/%3E%3Ccircle cx='35' cy='42' r='18' fill='%236aa84f'/%3E%3Cpath d='M35 23v38M17 42h36' stroke='white' stroke-width='3'/%3E%3Ctext x='65' y='43' font-family='Arial' font-size='22' font-weight='700' fill='%23333333'%3ECOCOGEN%3C/text%3E%3Ctext x='66' y='61' font-family='Arial' font-size='9' letter-spacing='3' fill='%23666666'%3EINSURANCE%3C/text%3E%3C/svg%3E"></div>
-    <div class="provider-logo" onclick="openProvider('Oona')"><img alt="Oona Insurance" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='90'%3E%3Crect width='240' height='90' rx='12' fill='white'/%3E%3Ctext x='38' y='47' font-family='Arial' font-size='36' font-weight='700' fill='%234f318c'%3Eoona%3C/text%3E%3Ctext x='83' y='67' font-family='Arial' font-size='12' fill='%234f318c'%3Einsurance%3C/text%3E%3C/svg%3E"></div>
-    <div class="provider-logo" onclick="openProvider('FPG Mercantile')"><img alt="FPG Mercantile" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='90'%3E%3Crect width='240' height='90' rx='12' fill='white'/%3E%3Cpath d='M25 52l12-28 12 28H25zm35 0l12-28 12 28H60z' fill='%23f28c18'/%3E%3Ctext x='95' y='49' font-family='Arial' font-size='20' font-weight='700' fill='%23555555'%3EFPG MERCANTILE%3C/text%3E%3C/svg%3E"></div>
-    <div class="provider-logo" onclick="openProvider('Prudential Guarantee')"><img alt="Prudential Guarantee" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='90'%3E%3Crect width='240' height='90' rx='12' fill='white'/%3E%3Ccircle cx='42' cy='43' r='23' fill='%230b8f72'/%3E%3Cpath d='M25 53c12-21 25-21 34-7' stroke='white' stroke-width='5' fill='none'/%3E%3Ctext x='76' y='41' font-family='Arial' font-size='17' font-weight='700' fill='%23444444'%3EPrudential%3C/text%3E%3Ctext x='76' y='59' font-family='Arial' font-size='17' font-weight='700' fill='%23444444'%3EGuarantee%3C/text%3E%3C/svg%3E"></div>
-    <div class="provider-logo" onclick="openProvider('Malayan Insurance')"><img alt="Malayan Insurance" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='90'%3E%3Crect width='240' height='90' rx='12' fill='white'/%3E%3Cpath d='M25 58V27l17 13 17-13v31' fill='none' stroke='%232d4e9e' stroke-width='7'/%3E%3Ctext x='72' y='45' font-family='Arial' font-size='20' font-weight='700' fill='%23222222'%3EMALAYAN%3C/text%3E%3Ctext x='73' y='62' font-family='Arial' font-size='10' fill='%23555555'%3EINSURANCE%3C/text%3E%3C/svg%3E"></div>
-    <div class="provider-logo" onclick="openProvider('Standard Insurance')"><img alt="Standard Insurance" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='90'%3E%3Crect width='240' height='90' rx='12' fill='white'/%3E%3Crect x='22' y='25' width='35' height='35' rx='3' fill='%23e8aa2f'/%3E%3Ctext x='72' y='46' font-family='Arial' font-size='20' font-weight='700' fill='%23222222'%3ESTANDARD%3C/text%3E%3Ctext x='73' y='63' font-family='Arial' font-size='11' fill='%23555555'%3EINSURANCE%3C/text%3E%3C/svg%3E"></div>
-    <div class="provider-logo" onclick="openProvider('Phil British Assurance')"><div style="font-weight:800;font-size:18px;text-align:center;line-height:1.2">PHILIPPINE<br><span style="color:#e10600">BRITISH</span><br><small style="font-size:10px;color:#666">TNVS PC</small></div></div>
-    <div class="provider-logo" onclick="openProvider('PhilFirst')"><img alt="PhilFirst" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='90'%3E%3Crect width='240' height='90' rx='12' fill='white'/%3E%3Ccircle cx='32' cy='43' r='15' fill='%231b36b1'/%3E%3Cpath d='M23 44l8-13 8 13-8 13z' fill='%2366a83b'/%3E%3Ctext x='57' y='48' font-family='Arial' font-size='22' font-weight='700' fill='%231d36a8'%3EPhilFirst%3C/text%3E%3C/svg%3E"></div>
+
+    <div
+      class="provider-logo"
+      onclick="openProvider('Cocogen')"
+    >
+      <strong>COCOGEN</strong>
+    </div>
+
+    <div
+      class="provider-logo"
+      onclick="openProvider('Oona')"
+    >
+      <strong>oona</strong>
+    </div>
+
+    <div
+      class="provider-logo"
+      onclick="openProvider('FPG Mercantile')"
+    >
+      <strong>FPG MERCANTILE</strong>
+    </div>
+
+    <div
+      class="provider-logo"
+      onclick="openProvider('Prudential Guarantee')"
+    >
+      <strong>PRUDENTIAL<br>GUARANTEE</strong>
+    </div>
+
+    <div
+      class="provider-logo"
+      onclick="openProvider('Malayan Insurance')"
+    >
+      <strong>MALAYAN</strong>
+    </div>
+
+    <div
+      class="provider-logo"
+      onclick="openProvider('Standard Insurance')"
+    >
+      <strong>STANDARD</strong>
+    </div>
+
+    <div
+      class="provider-logo"
+      onclick="openProvider('Philippine British Assurance')"
+    >
+      <strong>PHILIPPINE<br>BRITISH</strong>
+    </div>
+
+    <div
+      class="provider-logo"
+      onclick="openProvider('PhilFirst')"
+    >
+      <strong>PHILFIRST</strong>
+    </div>
+
   </div>
+
 </section>
 
-<section class="section results" id="results">
-  <h2 class="section-title">Available Insurance Quotes</h2>
-  <p class="section-sub">Indicative premium calculations based on the uploaded PC rate sheets and your selected coverage. If Primary Use is <b>Grab / TNVS</b>, the Philippine British TNVS (PC) schedule is used.</p>
-  <div id="resultsGrid" class="results-grid">
-    <div class="result-card"><h3>Ready for a quote?</h3><p class="summary">Complete your vehicle details and coverage selections, then click Calculate Insurance Quote.</p></div>
+
+<!-- =========================
+     RESULTS
+========================= -->
+
+<section
+  class="section results"
+  id="results"
+>
+
+  <h2 class="section-title">
+    Your Insurance Quotes
+  </h2>
+
+  <p class="section-sub">
+    Compare the available indicative premiums based on your selected vehicle and coverage.
+  </p>
+
+  <div
+    class="results-grid"
+    id="resultsGrid"
+  >
+
+    <div class="notice">
+      Complete your vehicle details and coverage, then click
+      <b>Calculate Insurance Quote</b>.
+    </div>
+
   </div>
+
 </section>
 
-<section class="section why" id="why">
-  <h2 class="section-title">Why use NEO CARWORKS?</h2>
-  <p class="section-sub">A simple way to prepare your vehicle insurance inquiry.</p>
+
+<!-- =========================
+     WHY NEO
+========================= -->
+
+<section class="section why">
+
+  <h2 class="section-title">
+    Why Use NEO CARWORKS?
+  </h2>
+
+  <p class="section-sub">
+    Simple tools to help you prepare your car insurance inquiry.
+  </p>
+
   <div class="why-grid">
-    <div class="why-card" onclick="openWhy('vehicle')"><div class="why-icon">🚗</div><h3>Vehicle-Based Quote</h3><p>Enter your car's make, model and variant.</p></div>
-    <div class="why-card" onclick="openWhy('coverage')"><div class="why-icon">🛡️</div><h3>Flexible Coverage</h3><p>Adjust your coverage according to your needs.</p></div>
-    <div class="why-card" onclick="openWhy('request')"><div class="why-icon">📋</div><h3>Request a Quote</h3><p>Send your inquiry directly to NEO CARWORKS.</p></div>
-    <div class="why-card" onclick="openWhy('advisor')"><div class="why-icon">☎️</div><h3>Advisor Assistance</h3><p>Your inquiry can be reviewed by an advisor.</p></div>
+
+    <div
+      class="why-card"
+      onclick="openWhy('vehicle')"
+    >
+
+      <div class="why-icon">
+        🚗
+      </div>
+
+      <h3>
+        Vehicle-Based Quote
+      </h3>
+
+      <p>
+        Enter your car's make, model and variant.
+      </p>
+
+    </div>
+
+
+    <div
+      class="why-card"
+      onclick="openWhy('coverage')"
+    >
+
+      <div class="why-icon">
+        🛡️
+      </div>
+
+      <h3>
+        Flexible Coverage
+      </h3>
+
+      <p>
+        Adjust your coverage according to your needs.
+      </p>
+
+    </div>
+
+
+    <div
+      class="why-card"
+      onclick="openWhy('request')"
+    >
+
+      <div class="why-icon">
+        📋
+      </div>
+
+      <h3>
+        Request a Quote
+      </h3>
+
+      <p>
+        Send your inquiry directly to NEO CARWORKS.
+      </p>
+
+    </div>
+
+
+    <div
+      class="why-card"
+      onclick="openWhy('advisor')"
+    >
+
+      <div class="why-icon">
+        ☎️
+      </div>
+
+      <h3>
+        Advisor Assistance
+      </h3>
+
+      <p>
+        Your inquiry can be reviewed by an advisor.
+      </p>
+
+    </div>
+
   </div>
+
 </section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer class="footer">
-  <div><div class="brand">NEO <span>CARWORKS</span></div><p style="color:#aaa;font-size:13px">NEO CARWORKS INSURANCE</p></div>
-  <div class="footer-links">
-    <a href="#" onclick="openModal('termsModal');return false">Terms and Conditions</a>
-    <a href="#" onclick="openModal('privacyModal');return false">Privacy Policy</a>
-    <a href="#" onclick="openModal('accountModal');return false">Create Account</a>
+
+  <div>
+
+    <div class="brand">
+      NEO <span>CARWORKS</span>
+    </div>
+
+    <p style="font-size:13px;color:#aaa">
+      Car insurance inquiry and quotation prototype.
+    </p>
+
   </div>
+
+
+  <div class="footer-links">
+
+    <a
+      href="#"
+      onclick="openModal('termsModal');return false"
+    >
+      Terms & Conditions
+    </a>
+
+    <a
+      href="#"
+      onclick="openModal('privacyModal');return false"
+    >
+      Privacy Policy
+    </a>
+
+  </div>
+
 </footer>
 
-<!-- Vehicle edit modal -->
-<div class="modal" id="editModal"><div class="modal-box"><button class="close" onclick="closeModal('editModal')">×</button><h2>Edit Quote Details</h2>
-  <div class="grid">
-    <div class="field"><label>First Name</label><input id="firstName" placeholder="First name"></div>
-    <div class="field"><label>Last Name</label><input id="lastName" placeholder="Last name"></div>
-    <div class="field"><label>Email</label><input id="email" type="email" placeholder="you@email.com"></div>
-    <div class="field"><label>Phone Number</label><input id="phone" placeholder="09XXXXXXXXX"></div>
-  </div>
-  <div class="agreement">Your contact details will be used for the insurance inquiry you submit to NEO CARWORKS.</div>
-  <button class="red-btn" onclick="closeModal('editModal')">Update Quote</button>
-</div></div>
 
-<!-- Login -->
-<div class="modal" id="loginModal"><div class="modal-box"><button class="close" onclick="closeModal('loginModal')">×</button><h2>Log In</h2>
-  <button class="google-btn" onclick="continueGoogle()">🌐 Continue with Google</button>
-  <div class="divider">OR</div>
-  <button class="email-btn" onclick="showEmailLogin()">Continue with Email</button>
-  <div id="emailLoginForm" style="display:none;margin-top:18px">
-    <div class="field"><label>Email</label><input id="loginEmail" type="email"></div>
-    <div class="field" style="margin-top:14px"><label>Password</label><input id="loginPassword" type="password"></div>
-    <button class="red-btn" style="margin-top:15px" onclick="loginLocal()">Log In</button>
-    <button class="outline-btn" style="margin-top:10px;width:100%" onclick="openModal('forgotModal');closeModal('loginModal')">Forgot Password?</button>
-  </div>
-</div></div>
+<!-- =========================
+     TOP BUTTON
+========================= -->
 
-<!-- Account -->
-<div class="modal" id="accountModal"><div class="modal-box"><button class="close" onclick="closeModal('accountModal')">×</button><h2>Create Account</h2>
-  <button class="google-btn" onclick="continueGoogle()">🌐 Continue with Google</button>
-  <div class="divider">OR</div>
-  <button class="email-btn" onclick="showAccountEmail()">Continue with Email</button>
-  <div id="accountEmailForm" style="display:none;margin-top:18px">
-    <div class="grid">
-      <div class="field"><label>First Name</label><input id="accFirst"></div>
-      <div class="field"><label>Last Name</label><input id="accLast"></div>
-      <div class="field"><label>Email</label><input id="accEmail" type="email"></div>
-      <div class="field"><label>Mobile</label><input id="accMobile"></div>
-      <div class="field"><label>Password</label><input id="accPass" type="password"></div>
-      <div class="field"><label>Confirm Password</label><input id="accConfirm" type="password"></div>
+<button
+  class="top-btn"
+  onclick="goHome()"
+  title="Back to top"
+>
+  ↑
+</button>
+
+
+<!-- =========================
+     EDIT QUOTE MODAL
+========================= -->
+
+<div
+  class="modal"
+  id="editModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('editModal')"
+    >
+      ×
+    </button>
+
+    <h2>
+      Edit Quote Details
+    </h2>
+
+    <div class="modal-form">
+
+      <div>
+
+        <label>
+          First Name
+        </label>
+
+        <input
+          id="firstName"
+          type="text"
+          placeholder="First name"
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Last Name
+        </label>
+
+        <input
+          id="lastName"
+          type="text"
+          placeholder="Last name"
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Email address"
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          Phone
+        </label>
+
+        <input
+          id="phone"
+          type="tel"
+          placeholder="Mobile number"
+        >
+
+      </div>
+
     </div>
-    <div class="check-line"><input type="checkbox" id="accAgree"><label for="accAgree">I agree to the NEO CARWORKS INSURANCE Terms and Conditions and Privacy Policy.</label></div>
-    <button class="red-btn" style="margin-top:18px" onclick="createAccount()">Create Account</button>
+
+
+    <div class="modal-actions">
+
+      <button
+        class="red-btn"
+        onclick="updateQuoteDetails()"
+      >
+        Update Quote
+      </button>
+
+      <button
+        class="outline-btn"
+        onclick="submitInquiry()"
+      >
+        Submit Inquiry
+      </button>
+
+    </div>
+
   </div>
-</div></div>
 
-<!-- Forgot password -->
-<div class="modal" id="forgotModal"><div class="modal-box"><button class="close" onclick="closeModal('forgotModal')">×</button><h2>Forgot Password</h2>
-  <p class="section-sub">Enter your email address to request a password reset.</p>
-  <div class="field"><label>Email</label><input id="forgotEmail" type="email"></div>
-  <button class="red-btn" style="margin-top:18px" onclick="requestReset()">Request Reset</button>
-</div></div>
+</div>
 
-<!-- Terms -->
-<div class="modal" id="termsModal"><div class="modal-box"><button class="close" onclick="closeModal('termsModal')">×</button><h2>NEO CARWORKS INSURANCE Terms and Conditions</h2>
-<p>NEO CARWORKS provides a quotation and inquiry interface. A quotation shown by this website is an indicative calculation and is not itself an insurance policy or a confirmation of coverage.</p>
-<p>Actual premiums, coverage, underwriting approval, deductibles, exclusions and policy conditions are subject to the applicable insurer's final assessment and policy wording.</p>
-<p>By submitting an inquiry, you authorize NEO CARWORKS to use the information you provide to process the inquiry and communicate with you regarding the requested insurance quotation.</p>
-<p>Please review the final insurer quotation and policy documents before purchasing coverage.</p>
-</div></div>
 
-<!-- Privacy -->
-<div class="modal" id="privacyModal"><div class="modal-box"><button class="close" onclick="closeModal('privacyModal')">×</button><h2>NEO CARWORKS INSURANCE Privacy Policy</h2>
-<p>NEO CARWORKS may collect the information you enter, including your name, contact details, vehicle information, selected coverage and quotation inquiry details.</p>
-<p>The information is used to calculate an indicative quote, process your inquiry, contact you about your request and support advisor review.</p>
-<p>We aim to keep submitted information reasonably protected and only use it for legitimate business and inquiry-related purposes. Do not submit passwords, payment card numbers or other highly sensitive information through the quotation form.</p>
-<p>Submitting an inquiry does not guarantee insurance approval or policy issuance.</p>
-</div></div>
+<!-- =========================
+     PROVIDER MODAL
+========================= -->
 
-<!-- Generic info -->
-<div class="modal" id="infoModal"><div class="modal-box"><button class="close" onclick="closeModal('infoModal')">×</button><h2 id="infoTitle"></h2><div id="infoBody"></div></div></div>
-<div class="modal" id="providerModal"><div class="modal-box"><button class="close" onclick="closeModal('providerModal')">×</button><h2 id="providerTitle"></h2><div id="providerBody"></div></div></div>
-<div class="modal" id="whyModal"><div class="modal-box"><button class="close" onclick="closeModal('whyModal')">×</button><h2 id="whyTitle"></h2><div id="whyBody"></div></div></div>
+<div
+  class="modal"
+  id="providerModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('providerModal')"
+    >
+      ×
+    </button>
+
+    <h2 id="providerTitle">
+      Provider Details
+    </h2>
+
+    <div id="providerBody"></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     LOGIN MODAL
+========================= -->
+
+<div
+  class="modal"
+  id="loginModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('loginModal')"
+    >
+      ×
+    </button>
+
+    <h2>
+      Log In
+    </h2>
+
+    <button
+      class="google-btn"
+      onclick="continueGoogle()"
+    >
+      Continue with Google
+    </button>
+
+    <div class="divider">
+      OR
+    </div>
+
+    <div id="emailLoginForm">
+
+      <div class="field">
+
+        <label>
+          Email
+        </label>
+
+        <input
+          id="loginEmail"
+          type="email"
+          placeholder="Email address"
+        >
+
+      </div>
+
+      <br>
+
+      <div class="field">
+
+        <label>
+          Password
+        </label>
+
+        <input
+          id="loginPassword"
+          type="password"
+          placeholder="Password"
+        >
+
+      </div>
+
+      <button
+        class="email-btn"
+        style="margin-top:15px"
+        onclick="loginLocal()"
+      >
+        Continue with Email
+      </button>
+
+      <button
+        style="border:0;background:transparent;margin-top:15px;font-weight:700"
+        onclick="openModal('forgotModal')"
+      >
+        Forgot Password?
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     CREATE ACCOUNT
+========================= -->
+
+<div
+  class="modal"
+  id="accountModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('accountModal')"
+    >
+      ×
+    </button>
+
+    <h2>
+      Create Account
+    </h2>
+
+    <button
+      class="google-btn"
+      onclick="continueGoogle()"
+    >
+      Continue with Google
+    </button>
+
+    <div class="divider">
+      OR
+    </div>
+
+
+    <div id="accountEmailForm">
+
+      <div class="modal-form">
+
+        <div>
+
+          <label>
+            First Name
+          </label>
+
+          <input
+            id="accFirst"
+            type="text"
+            placeholder="First name"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Last Name
+          </label>
+
+          <input
+            id="accLast"
+            type="text"
+            placeholder="Last name"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Email
+          </label>
+
+          <input
+            id="accEmail"
+            type="email"
+            placeholder="Email"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Mobile
+          </label>
+
+          <input
+            id="accMobile"
+            type="tel"
+            placeholder="Mobile number"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Password
+          </label>
+
+          <input
+            id="accPass"
+            type="password"
+            placeholder="Password"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Confirm Password
+          </label>
+
+          <input
+            id="accConfirm"
+            type="password"
+            placeholder="Confirm password"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-check">
+
+        <input
+          id="accAgree"
+          type="checkbox"
+        >
+
+        <span>
+          I agree to the
+          <a
+            href="#"
+            onclick="openModal('termsModal');return false"
+          >
+            Terms and Conditions
+          </a>
+          and
+          <a
+            href="#"
+            onclick="openModal('privacyModal');return false"
+          >
+            Privacy Policy
+          </a>.
+        </span>
+
+      </div>
+
+
+      <button
+        class="email-btn"
+        style="margin-top:18px"
+        onclick="createAccount()"
+      >
+        Create Account
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     FORGOT PASSWORD
+========================= -->
+
+<div
+  class="modal"
+  id="forgotModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('forgotModal')"
+    >
+      ×
+    </button>
+
+    <h2>
+      Forgot Password
+    </h2>
+
+    <p>
+      Enter your email address to request a password reset.
+    </p>
+
+    <input
+      id="forgotEmail"
+      type="email"
+      placeholder="Email address"
+      style="width:100%;padding:14px;border:1px solid #ddd;border-radius:11px"
+    >
+
+    <button
+      class="red-btn"
+      style="margin-top:15px"
+      onclick="requestReset()"
+    >
+      Request Reset
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     TERMS
+========================= -->
+
+<div
+  class="modal"
+  id="termsModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('termsModal')"
+    >
+      ×
+    </button>
+
+    <h2>
+      NEO CARWORKS Insurance Terms & Conditions
+    </h2>
+
+    <div class="provider-detail">
+
+      <p>
+        The quotation displayed on this website is for
+        inquiry and estimation purposes only.
+      </p>
+
+      <p>
+        A quote does not automatically constitute an
+        insurance policy or confirmation of coverage.
+      </p>
+
+      <p>
+        Final premiums, coverage, eligibility, approval,
+        exclusions, deductibles and policy conditions are
+        subject to the participating insurer's underwriting
+        rules and actual policy wording.
+      </p>
+
+      <p>
+        Vehicle information and contact details submitted
+        through the inquiry form may be used to process the
+        request and communicate with the customer regarding
+        the quotation.
+      </p>
+
+      <p>
+        NEO CARWORKS does not guarantee insurance approval
+        or issuance of a policy.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     PRIVACY
+========================= -->
+
+<div
+  class="modal"
+  id="privacyModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('privacyModal')"
+    >
+      ×
+    </button>
+
+    <h2>
+      NEO CARWORKS Privacy Policy
+    </h2>
+
+    <div class="provider-detail">
+
+      <p>
+        NEO CARWORKS may collect information such as your
+        name, email address, mobile number and vehicle
+        information when you request a quotation.
+      </p>
+
+      <p>
+        Information may be used to process your inquiry,
+        prepare quotation information and communicate
+        regarding your request.
+      </p>
+
+      <p>
+        Submitted information should be kept secure and
+        should only be shared through the intended quotation
+        and inquiry process.
+      </p>
+
+      <p>
+        By submitting information, you acknowledge that
+        actual insurance providers may have their own
+        privacy policies and data handling practices.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     WHY MODAL
+========================= -->
+
+<div
+  class="modal"
+  id="whyModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('whyModal')"
+    >
+      ×
+    </button>
+
+    <h2 id="whyTitle">
+      NEO CARWORKS
+    </h2>
+
+    <div
+      id="whyBody"
+      class="provider-detail"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     INFO MODAL
+========================= -->
+
+<div
+  class="modal"
+  id="infoModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal('infoModal')"
+    >
+      ×
+    </button>
+
+    <h2 id="infoTitle">
+      NEO CARWORKS
+    </h2>
+
+    <div
+      id="infoBody"
+      class="provider-detail"
+    ></div>
+
+  </div>
+
+</div>
+
 
 <script>
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbx74ZnXI2J2kLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
 
-const vehicleData={
- Toyota:{
-  "Vios":["1.3 Base MT","1.3 XLE CVT","1.5 G CVT"],
-  "Wigo":["1.0 J MT","1.0 E CVT","1.0 G CVT"],
-  "Raize":["1.2 E MT","1.0 Turbo CVT","1.0 Turbo CVT Premium"],
-  "Yaris Cross":["1.5 V CVT","1.5 S HEV CVT"],
-  "Corolla Altis":["1.6 J CVT","1.6 V CVT","1.8 GR Sport CVT"],
-  "Innova":["2.0 J MT","2.8 XE Diesel AT","2.8 V Diesel AT"],
-  "Fortuner":["2.4 G Diesel MT","2.4 V Diesel AT","2.8 LTD Diesel AT"],
-  "Hilux":["2.4 J Diesel MT","2.4 E Diesel MT","2.8 G Diesel AT"]
- },
- Honda:{
-  "City":["1.5 S CVT","1.5 V CVT","1.5 RS CVT"],
-  "City Hatchback":["1.5 S CVT","1.5 V CVT","1.5 RS CVT"],
-  "Civic":["1.5 V Turbo CVT","1.5 RS Turbo CVT"],
-  "BR-V":["1.5 S CVT","1.5 V CVT"],
-  "HR-V":["1.5 V Turbo CVT","1.5 S CVT"],
-  "CR-V":["1.5 V Turbo CVT","1.5 VX Turbo CVT"],
-  "Accord":["1.5 Turbo CVT"]
- },
- Mitsubishi:{
-  "Mirage":["1.2 GLX MT","1.2 GLX CVT"],
-  "Mirage G4":["1.2 GLX MT","1.2 GLX CVT"],
-  "Xpander":["1.5 GLX MT","1.5 GLS AT","1.5 GT AT"],
-  "Montero Sport":["2.4 GLX Diesel MT","2.4 GLS Diesel AT","2.4 GT Diesel AT"],
-  "Triton":["2.4 GLX MT","2.4 GLS AT","2.4 Athlete AT"]
- },
- Nissan:{
-  "Almera":["1.0 EL Turbo CVT","1.0 VE Turbo CVT","1.0 VL Turbo CVT"],
-  "Kicks":["1.2 VE e-POWER","1.2 VL e-POWER"],
-  "Terra":["2.5 EL Diesel MT","2.5 VE Diesel AT","2.5 VL Diesel AT"],
-  "Navara":["2.5 EL Diesel MT","2.5 VE Diesel AT","2.5 PRO-4X AT"]
- },
- Ford:{
-  "Territory":["1.5 Trend EcoBoost","1.5 Titanium EcoBoost"],
-  "Everest":["2.0 Trend Diesel AT","2.0 Titanium Diesel AT","2.0 Sport Diesel AT"],
-  "Ranger":["2.0 XLS Diesel MT","2.0 XLT Diesel AT","2.0 Wildtrak Diesel AT"]
- },
- Hyundai:{
-  "Accent":["1.4 GL MT","1.4 GL AT"],
-  "Creta":["1.5 GL IVT","1.5 GLS IVT"],
-  "Tucson":["2.0 GL AT","2.0 GLS AT"],
-  "Santa Fe":["2.2 CRDi AT","2.5 GLS AT"]
- },
- Kia:{
-  "Picanto":["1.0 LX MT","1.0 EX MT"],
-  "Soluto":["1.4 LX MT","1.4 EX AT"],
-  "Seltos":["1.5 LX IVT","1.5 EX IVT"],
-  "Sportage":["2.0 LX Diesel AT","2.0 EX Diesel AT"]
- },
- Suzuki:{
-  "Celerio":["1.0 MT","1.0 CVT"],
-  "Dzire":["1.2 GL MT","1.2 GL AGS"],
-  "Ertiga":["1.5 GA MT","1.5 GL AT"],
-  "XL7":["1.5 GL MT","1.5 GL AT"],
-  "Jimny":["1.5 MT","1.5 AT"]
- }
+/* =========================================
+   GOOGLE APPS SCRIPT CONNECTION
+========================================= */
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbx74ZnXI2J2kLdTS5RstRdj6ErmZP9uwvfjUn1tj3JMTxim55ivf46zy_muaFDFU7NTL/exec";
+
+
+/* =========================================
+   VEHICLE DATA
+========================================= */
+
+const vehicleData = {
+
+  Toyota:{
+    Vios:[
+      "1.3 Base MT",
+      "1.3 J MT",
+      "1.3 XE CVT",
+      "1.3 XLE CVT",
+      "1.5 G CVT"
+    ],
+
+    Wigo:[
+      "1.0 J MT",
+      "1.0 E MT",
+      "1.0 G CVT"
+    ],
+
+    Raize:[
+      "1.2 E MT",
+      "1.2 E CVT",
+      "1.0 Turbo CVT"
+    ],
+
+    "Yaris Cross":[
+      "1.5 V CVT",
+      "1.5 S HEV"
+    ],
+
+    "Corolla Altis":[
+      "1.6 V CVT",
+      "1.8 GR-S CVT"
+    ],
+
+    Innova:[
+      "2.0 J MT",
+      "2.0 E CVT",
+      "2.8 V Diesel AT"
+    ],
+
+    Fortuner:[
+      "2.4 G Diesel AT",
+      "2.4 V Diesel AT",
+      "2.8 LTD Diesel AT"
+    ],
+
+    Hilux:[
+      "2.4 J Diesel MT",
+      "2.4 E Diesel MT",
+      "2.8 G Diesel AT"
+    ]
+  },
+
+
+  Honda:{
+
+    City:[
+      "1.5 S CVT",
+      "1.5 V CVT"
+    ],
+
+    "City Hatchback":[
+      "1.5 S CVT",
+      "1.5 V CVT"
+    ],
+
+    Civic:[
+      "1.5 V Turbo CVT",
+      "1.5 RS Turbo CVT"
+    ],
+
+    "BR-V":[
+      "1.5 S CVT",
+      "1.5 V CVT"
+    ],
+
+    HR-V:[
+      "1.5 S CVT",
+      "1.5 V Turbo CVT"
+    ],
+
+    "CR-V":[
+      "1.5 V Turbo CVT",
+      "1.5 RS Turbo CVT"
+    ],
+
+    Accord:[
+      "1.5 V Turbo CVT"
+    ]
+
+  },
+
+
+  Mitsubishi:{
+
+    Mirage:[
+      "1.2 GLX MT",
+      "1.2 GLX CVT"
+    ],
+
+    "Mirage G4":[
+      "1.2 GLX MT",
+      "1.2 GLS CVT"
+    ],
+
+    Xpander:[
+      "1.5 GLX MT",
+      "1.5 GLS AT"
+    ],
+
+    "Montero Sport":[
+      "2.4 GLX Diesel AT",
+      "2.4 GT Diesel AT"
+    ],
+
+    Triton:[
+      "2.4 GLX Diesel MT",
+      "2.4 GLS Diesel AT"
+    ]
+
+  },
+
+
+  Nissan:{
+
+    Almera:[
+      "1.0 EL Turbo CVT",
+      "1.0 VE Turbo CVT",
+      "1.0 VL Turbo CVT"
+    ],
+
+    Kicks:[
+      "1.2 VE e-Power",
+      "1.2 VL e-Power"
+    ],
+
+    Terra:[
+      "2.5 EL Diesel AT",
+      "2.5 VE Diesel AT",
+      "2.5 VL Diesel AT"
+    ],
+
+    Navara:[
+      "2.5 EL Diesel MT",
+      "2.5 VE Diesel AT",
+      "2.5 VL Diesel AT"
+    ]
+
+  },
+
+
+  Ford:{
+
+    Territory:[
+      "1.5 Titanium EcoBoost",
+      "1.5 Titanium X EcoBoost"
+    ],
+
+    Everest:[
+      "2.0 Trend Diesel AT",
+      "2.0 Sport Diesel AT",
+      "2.0 Titanium+ Diesel AT"
+    ],
+
+    Ranger:[
+      "2.0 XLS Diesel MT",
+      "2.0 XLT Diesel AT",
+      "2.0 Wildtrak Diesel AT"
+    ]
+
+  },
+
+
+  Hyundai:{
+
+    Accent:[
+      "1.6 GL MT",
+      "1.6 GL AT"
+    ],
+
+    Creta:[
+      "1.5 GL IVT",
+      "1.5 GLS IVT"
+    ],
+
+    Tucson:[
+      "2.0 GLS AT",
+      "2.0 CRDi AT"
+    ],
+
+    "Santa Fe":[
+      "2.2 CRDi AT",
+      "2.5 GLS AT"
+    ]
+
+  },
+
+
+  Kia:{
+
+    Picanto:[
+      "1.0 LX MT",
+      "1.0 EX MT",
+      "1.2 GT-Line AT"
+    ],
+
+    Soluto:[
+      "1.4 LX MT",
+      "1.4 EX AT"
+    ],
+
+    Seltos:[
+      "1.4 Turbo EX",
+      "1.6 EX AT"
+    ],
+
+    Sportage:[
+      "2.0 LX AT",
+      "2.0 EX AT"
+    ]
+
+  },
+
+
+  Suzuki:{
+
+    Celerio:[
+      "1.0 MT",
+      "1.0 AGS"
+    ],
+
+    Dzire:[
+      "1.2 GL MT",
+      "1.2 GL AGS"
+    ],
+
+    Ertiga:[
+      "1.5 GL MT",
+      "1.5 GL AT"
+    ],
+
+    XL7:[
+      "1.5 GLX MT",
+      "1.5 GLX AT"
+    ],
+
+    Jimny:[
+      "1.5 MT",
+      "1.5 AT"
+    ]
+
+  }
+
 };
 
-const biPdTable=[
- [50000,195,975],[75000,225,1035],[100000,270,1095],[150000,345,1170],
- [200000,420,1245],[250000,510,1320],[300000,585,1395],[400000,675,1515],
- [500000,780,1635],[750000,915,1920],[1000000,1050,2235]
-];
-const paLimits=[50000,75000,100000,150000,200000,250000,300000,400000,500000,750000,1000000];
 
-const privateProviders=[
- {name:"Fortune General",ld:.01,aog:.003,pa:.00255,lgt:.0075,source:"FORTUNE GEN (PC)"},
- {name:"Mercantile",ld:.0095,aog:.003,pa:.00255,lgt:.0083,source:"NEW MERC RATES PC (version 1)"},
- {name:"Allied Bankers",ld:.01,aog:.003,pa:.001275,lgt:.0083,source:"Allied Bankers - PC"}
-];
+/* =========================================
+   BI / PD TABLE
+========================================= */
 
-// Philippine British Assurance — TNVS (PC) schedule from "Phil Brit TNVS.xlsx"
-// Source PROP CAL: L/D = Sum Insured × 1.4%; AOG = Sum Insured × 0.3%;
-// BI/PD use the same supplied premium tables; PA column has no premium formula;
-// DST = Premium × 12.5%; E-VAT = Premium × 12%; LGT = Premium × 0.83%.
-const tnvsProviders=[
- {name:"Philippine British Assurance",shortName:"Phil Brit",ld:.014,aog:.003,pa:0,lgt:.0083,dst:.125,vat:.12,source:"Phil Brit TNVS.xlsx",passengerLiabilityLimit:250000}
-];
+const biPdTable = [
 
-// Allied Bankers Insurance Corporation — PC Hybrid schedule from "Allied Bankers - Hybrid.xlsx"
-// Source PROP CAL: L/D = Sum Insured × 1.25%; AOG = Sum Insured × 0.50%;
-// BI/PD use the supplied premium tables; PA = Sum Insured × 0.1275%;
-// DST = Premium × 12.5%; E-VAT = Premium × 12%; LGT = Premium × 0.83%.
-// Ibero is marked optional in the source sheet but has no premium formula/rate, so it is not added.
-const hybridProviders=[
- {name:"Allied Bankers Insurance Corporation",shortName:"Allied Bankers Hybrid",ld:.0125,aog:.005,pa:.001275,lgt:.0083,dst:.125,vat:.12,source:"Allied Bankers - Hybrid.xlsx",hybrid:true}
+  [50000,195,975],
+  [75000,225,1035],
+  [100000,270,1095],
+  [150000,345,1170],
+  [200000,420,1245],
+  [250000,510,1320],
+  [300000,585,1395],
+  [400000,675,1515],
+  [500000,780,1635],
+  [750000,915,1920],
+  [1000000,1050,2235]
+
 ];
 
-// Allied Bankers Insurance Corporation — PC Full EV schedule from "Allied Bankers - Full EV.xlsx"
-// Source PROP CAL: L/D = Sum Insured × 1.50%; AOG = Sum Insured × 0.50%;
-// BI/PD use the supplied premium tables; PA = Sum Insured × 0.1275%;
-// DST = Premium × 12.5%; E-VAT = Premium × 12%; LGT = Premium × 0.83%.
-// Ibero is marked optional in the source sheet but no premium formula/rate is supplied.
-const fullEvProviders=[
- {name:"Allied Bankers Insurance Corporation",shortName:"Allied Bankers Full EV",ld:.015,aog:.005,pa:.001275,lgt:.0083,dst:.125,vat:.12,source:"Allied Bankers - Full EV.xlsx",fullEV:true}
+
+const paLimits = [
+
+  50000,
+  75000,
+  100000,
+  150000,
+  200000,
+  250000,
+  300000,
+  400000,
+  500000,
+  750000,
+  1000000
+
 ];
 
-// Allied Bankers Insurance Corporation — PC Full EV schedule from "Allied Bankers - Full EV.xlsx"
-// Source PROP CAL: L/D = Sum Insured × 1.50%; AOG = Sum Insured × 0.50%;
-// BI/PD use the supplied premium tables; PA = Sum Insured × 0.1275%;
-// DST = Premium × 12.5%; E-VAT = Premium × 12%; LGT = Premium × 0.83%.
-// Ibero is marked optional in the source sheet but no premium formula/rate is supplied.
-const fullEvProviders=[
- {name:"Allied Bankers Insurance Corporation",shortName:"Allied Bankers Full EV",ld:.015,aog:.005,pa:.001275,lgt:.0083,dst:.125,vat:.12,source:"Allied Bankers - Full EV.xlsx",fullEV:true}
+
+/* =========================================
+   PRIVATE PROVIDERS
+========================================= */
+
+const privateProviders = [
+
+  {
+    name:"Fortune General",
+    ld:.01,
+    aog:.003,
+    pa:.00255,
+    lgt:.0075,
+    dst:.125,
+    vat:.12,
+    source:"FORTUNE GEN (PC)"
+  },
+
+  {
+    name:"Mercantile",
+    ld:.0095,
+    aog:.003,
+    pa:.00255,
+    lgt:.0083,
+    dst:.125,
+    vat:.12,
+    source:"NEW MERC RATES PC (version 1)"
+  },
+
+  {
+    name:"Allied Bankers",
+    ld:.01,
+    aog:.003,
+    pa:.001275,
+    lgt:.0083,
+    dst:.125,
+    vat:.12,
+    source:"Allied Bankers - PC"
+  }
+
 ];
 
-let primaryUse="Private";
-let comp="Own Damage + Theft";
-let road="Basic";
-let ctplLevel="Basic";
-let lastQuotes=[];
 
-function money(n){return "₱"+Number(n||0).toLocaleString("en-PH",{minimumFractionDigits:2,maximumFractionDigits:2})}
-function scrollToQuote(){document.getElementById("quote").scrollIntoView({behavior:"smooth"})}
-function goToCoverage(){if(!document.getElementById("make").value||!document.getElementById("model").value||!document.getElementById("variant").value){alert("Please select your vehicle make, model, and variant first.");return}document.getElementById("coverage").scrollIntoView({behavior:"smooth"})}
-function loadYears(){const y=document.getElementById("year");for(let i=new Date().getFullYear();i>=2005;i--){const o=document.createElement("option");o.value=i;o.textContent=i;y.appendChild(o)}}
-function loadModels(){const make=document.getElementById("make").value;const model=document.getElementById("model");const variant=document.getElementById("variant");model.innerHTML='<option value="">Select model</option>';variant.innerHTML='<option value="">Select variant</option>';if(vehicleData[make])Object.keys(vehicleData[make]).forEach(m=>{let o=document.createElement("option");o.value=m;o.textContent=m;model.appendChild(o)})}
-function loadVariants(){const make=document.getElementById("make").value,model=document.getElementById("model").value,v=document.getElementById("variant");v.innerHTML='<option value="">Select variant</option>';((vehicleData[make]||{})[model]||[]).forEach(x=>{let o=document.createElement("option");o.value=x;o.textContent=x;v.appendChild(o)})}
-function setUse(btn){document.querySelectorAll(".use-btn").forEach(x=>x.classList.remove("active"));btn.classList.add("active");primaryUse=btn.dataset.use}
-function chooseOption(btn,type){document.querySelectorAll('[data-'+type+']').forEach(x=>x.classList.remove("active"));btn.classList.add("active");if(type==="comp")comp=btn.dataset.comp;if(type==="road")road=btn.dataset.road;if(type==="ctplLevel")ctplLevel=btn.dataset.ctpl}
-function updateCoverageValues(){const b=biPdTable[+document.getElementById("biPdRange").value];document.getElementById("biPdValue").textContent=money(b[0]);document.getElementById("paValue").textContent=money(paLimits[+document.getElementById("paRange").value])}
+/* =========================================
+   TNVS
+========================================= */
+
+const tnvsProviders = [
+
+  {
+    name:"Philippine British Assurance",
+    shortName:"Phil Brit",
+    ld:.014,
+    aog:.003,
+    pa:0,
+    lgt:.0083,
+    dst:.125,
+    vat:.12,
+    source:"Phil Brit TNVS.xlsx",
+    passengerLiabilityLimit:250000
+  }
+
+];
+
+
+/* =========================================
+   HYBRID
+========================================= */
+
+const hybridProviders = [
+
+  {
+    name:"Allied Bankers Insurance Corporation",
+    shortName:"Allied Bankers Hybrid",
+    ld:.0125,
+    aog:.005,
+    pa:.001275,
+    lgt:.0083,
+    dst:.125,
+    vat:.12,
+    source:"Allied Bankers - Hybrid.xlsx",
+    hybrid:true
+  }
+
+];
+
+
+/* =========================================
+   FULL EV
+========================================= */
+
+const fullEvProviders = [
+
+  {
+    name:"Allied Bankers Insurance Corporation",
+    shortName:"Allied Bankers Full EV",
+    ld:.015,
+    aog:.005,
+    pa:.001275,
+    lgt:.0083,
+    dst:.125,
+    vat:.12,
+    source:"Allied Bankers - Full EV.xlsx",
+    fullEV:true
+  }
+
+];
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+let primaryUse = "Private";
+
+let comp = "Own Damage + Theft";
+
+let road = "Basic";
+
+let ctplLevel = "Basic";
+
+let lastQuotes = [];
+
+window.pendingQuote = null;
+
+window.quoteContact = {};
+
+
+/* =========================================
+   MONEY FORMAT
+========================================= */
+
+function money(n){
+
+  return "₱" +
+    Number(n || 0).toLocaleString(
+      "en-PH",
+      {
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      }
+    );
+
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+function goHome(){
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+function scrollToQuote(){
+
+  document
+    .getElementById("quote")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+function goToCoverage(){
+
+  const make =
+    document.getElementById("make").value;
+
+  const model =
+    document.getElementById("model").value;
+
+  const variant =
+    document.getElementById("variant").value;
+
+  if(!make || !model || !variant){
+
+    alert(
+      "Please select your vehicle make, model, and variant first."
+    );
+
+    return;
+
+  }
+
+  document
+    .getElementById("coverage")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================
+   YEARS
+========================================= */
+
+function loadYears(){
+
+  const y =
+    document.getElementById("year");
+
+  for(
+    let i = new Date().getFullYear();
+    i >= 2005;
+    i--
+  ){
+
+    const o =
+      document.createElement("option");
+
+    o.value = i;
+    o.textContent = i;
+
+    y.appendChild(o);
+
+  }
+
+}
+
+
+/* =========================================
+   MODELS
+========================================= */
+
+function loadModels(){
+
+  const make =
+    document.getElementById("make").value;
+
+  const model =
+    document.getElementById("model");
+
+  const variant =
+    document.getElementById("variant");
+
+  model.innerHTML =
+    '<option value="">Select model</option>';
+
+  variant.innerHTML =
+    '<option value="">Select variant</option>';
+
+  if(vehicleData[make]){
+
+    Object.keys(vehicleData[make])
+      .forEach(function(m){
+
+        const o =
+          document.createElement("option");
+
+        o.value = m;
+        o.textContent = m;
+
+        model.appendChild(o);
+
+      });
+
+  }
+
+}
+
+
+/* =========================================
+   VARIANTS
+========================================= */
+
+function loadVariants(){
+
+  const make =
+    document.getElementById("make").value;
+
+  const model =
+    document.getElementById("model").value;
+
+  const v =
+    document.getElementById("variant");
+
+  v.innerHTML =
+    '<option value="">Select variant</option>';
+
+  (
+    (vehicleData[make] || {})[model] || []
+  ).forEach(function(x){
+
+    const o =
+      document.createElement("option");
+
+    o.value = x;
+    o.textContent = x;
+
+    v.appendChild(o);
+
+  });
+
+}
+
+
+/* =========================================
+   PRIMARY USE
+========================================= */
+
+function setUse(btn){
+
+  document
+    .querySelectorAll(".use-btn")
+    .forEach(function(x){
+
+      x.classList.remove("active");
+
+    });
+
+  btn.classList.add("active");
+
+  primaryUse =
+    btn.dataset.use;
+
+}
+
+
+/* =========================================
+   COVERAGE OPTIONS
+========================================= */
+
+function chooseOption(btn,type){
+
+  document
+    .querySelectorAll(
+      "[data-" + type + "]"
+    )
+    .forEach(function(x){
+
+      x.classList.remove("active");
+
+    });
+
+  btn.classList.add("active");
+
+  if(type === "comp")
+    comp = btn.dataset.comp;
+
+  if(type === "road")
+    road = btn.dataset.road;
+
+  if(type === "ctplLevel")
+    ctplLevel = btn.dataset.ctpl;
+
+}
+
+
+/* =========================================
+   COVERAGE SLIDERS
+========================================= */
+
+function updateCoverageValues(){
+
+  const b =
+    biPdTable[
+      Number(
+        document.getElementById("biPdRange").value
+      )
+    ];
+
+  document.getElementById("biPdValue")
+    .textContent =
+      money(b[0]);
+
+  document.getElementById("paValue")
+    .textContent =
+      money(
+        paLimits[
+          Number(
+            document.getElementById("paRange").value
+          )
+        ]
+      );
+
+}
+
+
+/* =========================================
+   GET FORM DATA
+========================================= */
+
 function getSelectedData(){
- const b=biPdTable[+document.getElementById("biPdRange").value];
- return {
-  make:document.getElementById("make").value,model:document.getElementById("model").value,
-  variant:document.getElementById("variant").value,year:document.getElementById("year").value,
-  vehicleType:document.getElementById("vehicleType").value,
-  sumInsured:Math.max(0,Number(document.getElementById("sumInsured").value)||0),
-  bi:b[0],biCharge:b[1],pdCharge:b[2],paLimit:paLimits[+document.getElementById("paRange").value],
-  aon:document.getElementById("aon").checked,ctpl:document.getElementById("ctpl").checked
- }
-}
-function calcProvider(p,d){
- let ld=d.sumInsured*p.ld;
- let aog=d.aon?d.sumInsured*p.aog:0;
- // The Phil Brit TNVS sheet has a blank PA premium formula.
- // Its Php250,000 passenger-liability limit is shown in the proposal,
- // but no separate premium is added for it.
- let pa;
- if(p.hybrid || p.fullEV){
-   // Hybrid and Full EV source PROP CAL explicitly use A5*0.1275%, with A5 = Sum Insured.
-   pa=d.sumInsured*p.pa;
- }else if(p.name==="Philippine British Assurance"){
-   pa=0;
- }else{
-   pa=d.paLimit*p.pa;
- }
- let basic=ld+aog+d.biCharge+d.pdCharge+pa;
- let dst=basic*(p.dst ?? .125);
- let vat=basic*(p.vat ?? .12);
- let lgt=basic*p.lgt;
- // No separate CTPL or roadside rate is present in the uploaded schedules.
- let ctplCharge=0;
- let roadsideCharge=0;
- let comprehensiveAdjustment=0;
- let total=basic+dst+vat+lgt;
- return {
-   ld,aog,pa,basic,dst,vat,lgt,ctplCharge,
-   comprehensiveAdjustment,roadsideCharge,total,
-   passengerLiabilityLimit:p.passengerLiabilityLimit||null,
-   coverageNote:p.name==="Philippine British Assurance"
-     ?"Phil Brit TNVS source: passenger liability limit is shown at Php250,000, but the sheet does not provide a separate premium formula for it."
-     :p.hybrid
-       ?"Allied Bankers Hybrid source: PA is calculated from Sum Insured × 0.1275%. Ibero is optional in the source sheet but no premium formula/rate is supplied."
-       :"CTPL, roadside and separate theft-only rates are not separately priced in the uploaded schedule."
- };
-}
-function updateVehicleTypeNote(){
- const el=document.getElementById("vehicleTypeNote");
- if(!el) return;
- const type=document.getElementById("vehicleType").value;
- if(type==="Hybrid PC"){
-   el.innerHTML="<b>Hybrid PC rate loaded:</b> Allied Bankers Hybrid schedule (L/D 1.25%, AOG 0.50%, PA 0.1275%).";
- }else if(type==="Full EV PC"){
-   el.innerHTML="<b>Full EV PC rate loaded:</b> Allied Bankers Full EV schedule (L/D 1.50%, AOG 0.50%, PA 0.1275%).";
- }else if(type==="SUV"||type==="Commercial Vehicle"){
-   el.innerHTML="No dedicated SUV/CV rate schedule has been supplied yet. The quote engine will not label these as Hybrid.";
- }else{
-   el.textContent="PC rate schedules are loaded for Private Car.";
- }
-}
-function calculateQuotes(){
- const d=getSelectedData();
- if(!d.make||!d.model||!d.variant){alert("Please complete the vehicle details.");scrollToQuote();return}
- if(d.sumInsured<=0){alert("Please enter a valid vehicle value / sum insured.");return}
- let selectedProviders;
- if(primaryUse==="Grab / TNVS"){
-   selectedProviders=tnvsProviders;
- }else if(d.vehicleType==="Full EV PC"){
-   selectedProviders=fullEvProviders;
- }else if(d.vehicleType==="Hybrid PC"){
-   selectedProviders=hybridProviders;
- }else{
-   selectedProviders=privateProviders;
- }
- lastQuotes=selectedProviders.map(p=>({p,d,c:calcProvider(p,d)}));
- renderResults(d);
- document.getElementById("results").scrollIntoView({behavior:"smooth"});
-}
-function renderResults(d){
- const g=document.getElementById("resultsGrid");g.innerHTML="";
- lastQuotes.forEach((q,i)=>{
-  const x=document.createElement("div");x.className="result-card";
-  x.innerHTML=`<div class="result-top"><h3>${q.p.name}</h3><span class="small">${q.p.source}</span></div>
-  <div class="premium">${money(q.c.total)}</div>
-  <div class="small">Indicative annual premium</div>
-  <div class="summary">
-  Sum Insured: <b>${money(d.sumInsured)}</b><br>
-  BI/PD: <b>${money(d.bi)}</b><br>
-  PA Coverage Setting: <b>${money(d.paLimit)}</b><br>
-  ${q.c.passengerLiabilityLimit?`Passenger Liability: <b>${money(q.c.passengerLiabilityLimit)}</b><br>`:""}
-  Acts of Nature: <b>${d.aon?"Included":"Excluded"}</b><br>
-  Comprehensive: <b>${comp}</b><br>
-  Roadside: <b>${road}</b><br>
-  Primary Use: <b>${primaryUse}</b><br>
-  Vehicle Type: <b>${d.vehicleType}</b>
-  </div>
-  <div class="result-actions">
-    <button class="outline-btn" onclick="viewDetails(${i})">View Details</button>
-    <button class="red-btn" onclick="requestQuote(${i})">Request This Quote</button>
-  </div>
-  <div class="small" style="margin-top:14px;line-height:1.6">${q.c.coverageNote}</div>`;
-  g.appendChild(x);
- })
-}
-function viewDetails(i){
- const q=lastQuotes[i];openModal("providerModal");
- document.getElementById("providerTitle").textContent=q.p.name+" Quote Details";
- document.getElementById("providerBody").innerHTML=`<div class="provider-detail">
- <b>Calculation basis:</b> ${q.p.source}<br><br>
- L/D: ${money(q.c.ld)}<br>
- Acts of Nature: ${money(q.c.aog)}<br>
- Bodily Injury: ${money(q.d.biCharge)}<br>
- Property Damage: ${money(q.d.pdCharge)}<br>
- Personal Accident: ${money(q.c.pa)}<br>
- Basic Premium: ${money(q.c.basic)}<br>
- Documentary Stamp Tax (12.5%): ${money(q.c.dst)}<br>
- E-VAT (12%): ${money(q.c.vat)}<br>
- Local Government Tax: ${money(q.c.lgt)}<br>
- CTPL / Roadside Assistance: <b>No separate premium in source schedule</b><br>
- Vehicle Type: <b>${q.d.vehicleType}</b><br>
- ${q.c.passengerLiabilityLimit?`Passenger Liability Limit: ${money(q.c.passengerLiabilityLimit)}<br>`:""}
- ${q.p.hybrid?`Hybrid PA formula: <b>Sum Insured × 0.1275%</b><br>Ibero (Optional): <b>Not priced — no source rate/formula supplied</b><br>`:""}
- Coverage selections shown in the form are not separately priced unless a source rate is available.<br><br>
- <strong>Total Indicative Premium: ${money(q.c.total)}</strong>
- </div>
- <div class="notice">This is an indicative computation based on the uploaded PC rate sheets. Final insurer terms and approval may differ.</div>`;
-}
-function requestQuote(i){
- window.pendingQuote=lastQuotes[i];
- openModal("editModal");
-}
-async function submitInquiry(){
- const q=window.pendingQuote;if(!q){alert("Please select a quote first.");return}
- const first=document.getElementById("firstName").value.trim(),last=document.getElementById("lastName").value.trim(),email=document.getElementById("email").value.trim(),phone=document.getElementById("phone").value.trim();
- if(!first||!last||!email||!phone){alert("Please complete your contact details.");return}
- const ref="NEO-"+Date.now().toString().slice(-8);
- const fd=new FormData();
- fd.append("name",first+" "+last);fd.append("firstName",first);fd.append("lastName",last);fd.append("mobile",phone);fd.append("email",email);
- fd.append("vehicle",q.d.make+" "+q.d.model);fd.append("modelYear",q.d.year);fd.append("variant",q.d.variant);fd.append("vehicleType",q.d.vehicleType);fd.append("primaryUse",primaryUse);
- fd.append("coverage",comp);fd.append("declaredValue",q.d.sumInsured);fd.append("estimatedPremium",q.c.total);fd.append("provider",q.p.name);fd.append("referenceNumber",ref);
- fd.append("biPd",q.d.bi);fd.append("personalAccident",q.d.paLimit);fd.append("aon",q.d.aon?"Included":"Excluded");fd.append("roadside",road);fd.append("ctpl",q.d.ctpl?ctplLevel:"Excluded");
- try{await fetch(SCRIPT_URL,{method:"POST",body:fd,mode:"no-cors"})}catch(e){}
- closeModal("editModal");
- document.getElementById("providerBody").innerHTML=`<div class="provider-detail">
- <h3 style="margin-top:0">Inquiry Ready</h3>
- Reference Number: <b>${ref}</b><br><br>
- Customer: <b>${first} ${last}</b><br>
- Vehicle: <b>${q.d.make} ${q.d.model} ${q.d.variant}</b><br>
- Provider: <b>${q.p.name}</b><br>
- Indicative Premium: <b>${money(q.c.total)}</b>
- </div><div class="notice">Your inquiry has been submitted on a best-effort basis. The connected Google Apps Script endpoint may process the request after submission.</div>`;
- openModal("providerModal");
-}
-document.querySelector("#editModal .red-btn").onclick=submitInquiry;
 
-function openModal(id){document.getElementById(id).classList.add("show")}
-function closeModal(id){document.getElementById(id).classList.remove("show")}
-document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("show")}))
-function showEmailLogin(){document.getElementById("emailLoginForm").style.display="block"}
-function showAccountEmail(){document.getElementById("accountEmailForm").style.display="block"}
+  const b =
+    biPdTable[
+      Number(
+        document.getElementById("biPdRange").value
+      )
+    ];
+
+  return {
+
+    make:
+      document.getElementById("make").value,
+
+    model:
+      document.getElementById("model").value,
+
+    variant:
+      document.getElementById("variant").value,
+
+    year:
+      document.getElementById("year").value,
+
+    vehicleType:
+      document.getElementById("vehicleType").value,
+
+    sumInsured:
+      Math.max(
+        0,
+        Number(
+          document.getElementById("sumInsured").value
+        ) || 0
+      ),
+
+    bi:
+      b[0],
+
+    biCharge:
+      b[1],
+
+    pdCharge:
+      b[2],
+
+    paLimit:
+      paLimits[
+        Number(
+          document.getElementById("paRange").value
+        )
+      ],
+
+    aon:
+      document.getElementById("aon").checked,
+
+    ctpl:
+      document.getElementById("ctpl").checked
+
+  };
+
+}
+
+
+/* =========================================
+   PROVIDER CALCULATION
+========================================= */
+
+function calcProvider(p,d){
+
+  const ld =
+    d.sumInsured * p.ld;
+
+  const aog =
+    d.aon
+      ? d.sumInsured * p.aog
+      : 0;
+
+  let pa;
+
+  if(
+    p.hybrid ||
+    p.fullEV
+  ){
+
+    pa =
+      d.paLimit * p.pa;
+
+  }
+  else if(
+    p.name ===
+    "Philippine British Assurance"
+  ){
+
+    pa = 0;
+
+  }
+  else{
+
+    pa =
+      d.paLimit * p.pa;
+
+  }
+
+
+  const basic =
+    ld +
+    aog +
+    d.biCharge +
+    d.pdCharge +
+    pa;
+
+
+  const dst =
+    basic * (p.dst ?? .125);
+
+  const vat =
+    basic * (p.vat ?? .12);
+
+  const lgt =
+    basic * p.lgt;
+
+
+  const ctplCharge = 0;
+
+  const roadsideCharge = 0;
+
+  const comprehensiveAdjustment = 0;
+
+  const total =
+    basic +
+    dst +
+    vat +
+    lgt;
+
+
+  return {
+
+    ld,
+    aog,
+    pa,
+    basic,
+    dst,
+    vat,
+    lgt,
+    ctplCharge,
+    comprehensiveAdjustment,
+    roadsideCharge,
+    total,
+
+    passengerLiabilityLimit:
+      p.passengerLiabilityLimit || null,
+
+    coverageNote:
+
+      p.name ===
+      "Philippine British Assurance"
+
+      ?
+
+      "Phil Brit TNVS source: passenger liability limit is shown at Php250,000, but the sheet does not provide a separate premium formula for it."
+
+      :
+
+      p.hybrid
+
+      ?
+
+      "Allied Bankers Hybrid source: PA is calculated from the selected PA limit × 0.1275%. Ibero is optional in the source sheet but no premium formula/rate is supplied."
+
+      :
+
+      p.fullEV
+
+      ?
+
+      "Allied Bankers Full EV source: PA is calculated from the selected PA limit × 0.1275%. Ibero is optional in the source sheet but no premium formula/rate is supplied."
+
+      :
+
+      "CTPL, roadside and separate theft-only rates are not separately priced in the uploaded schedule."
+
+  };
+
+}
+
+
+/* =========================================
+   VEHICLE TYPE NOTE
+========================================= */
+
+function updateVehicleTypeNote(){
+
+  const el =
+    document.getElementById(
+      "vehicleTypeNote"
+    );
+
+  if(!el)
+    return;
+
+
+  const type =
+    document.getElementById(
+      "vehicleType"
+    ).value;
+
+
+  if(type === "Hybrid PC"){
+
+    el.innerHTML =
+      "<b>Hybrid PC rate loaded:</b> Allied Bankers Hybrid schedule (L/D 1.25%, AOG 0.50%, PA 0.1275%).";
+
+  }
+
+  else if(type === "Full EV PC"){
+
+    el.innerHTML =
+      "<b>Full EV PC rate loaded:</b> Allied Bankers Full EV schedule (L/D 1.50%, AOG 0.50%, PA 0.1275%).";
+
+  }
+
+  else if(
+    type === "SUV" ||
+    type === "Commercial Vehicle"
+  ){
+
+    el.innerHTML =
+      "No dedicated SUV/CV rate schedule has been supplied yet. The quote engine will not label these as Hybrid.";
+
+  }
+
+  else{
+
+    el.textContent =
+      "PC rate schedules are loaded for Private Car.";
+
+  }
+
+}
+
+
+/* =========================================
+   CALCULATE QUOTES
+========================================= */
+
+function calculateQuotes(){
+
+  const d =
+    getSelectedData();
+
+
+  if(
+    !d.make ||
+    !d.model ||
+    !d.variant
+  ){
+
+    alert(
+      "Please complete the vehicle details."
+    );
+
+    scrollToQuote();
+
+    return;
+
+  }
+
+
+  if(d.sumInsured <= 0){
+
+    alert(
+      "Please enter a valid vehicle value / sum insured."
+    );
+
+    return;
+
+  }
+
+
+  let selectedProviders;
+
+
+  if(primaryUse === "Grab / TNVS"){
+
+    selectedProviders =
+      tnvsProviders;
+
+  }
+
+  else if(
+    d.vehicleType === "Full EV PC"
+  ){
+
+    selectedProviders =
+      fullEvProviders;
+
+  }
+
+  else if(
+    d.vehicleType === "Hybrid PC"
+  ){
+
+    selectedProviders =
+      hybridProviders;
+
+  }
+
+  else{
+
+    selectedProviders =
+      privateProviders;
+
+  }
+
+
+  lastQuotes =
+    selectedProviders.map(function(p){
+
+      return {
+
+        p:p,
+        d:d,
+        c:calcProvider(p,d)
+
+      };
+
+    });
+
+
+  renderResults(d);
+
+
+  document
+    .getElementById("results")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================
+   RENDER RESULTS
+========================================= */
+
+function renderResults(d){
+
+  const g =
+    document.getElementById(
+      "resultsGrid"
+    );
+
+  g.innerHTML = "";
+
+
+  lastQuotes.forEach(
+    function(q,i){
+
+      const x =
+        document.createElement("div");
+
+      x.className =
+        "result-card";
+
+      x.setAttribute(
+        "role",
+        "button"
+      );
+
+      x.tabIndex = 0;
+
+
+      x.innerHTML = `
+
+        <div class="result-top">
+
+          <h3>
+            ${q.p.name}
+          </h3>
+
+          <span class="small">
+            ${q.p.source}
+          </span>
+
+        </div>
+
+
+        <div class="premium">
+          ${money(q.c.total)}
+        </div>
+
+        <div class="small">
+          Indicative annual premium
+        </div>
+
+
+        <div class="summary">
+
+          Sum Insured:
+          <b>${money(d.sumInsured)}</b>
+          <br>
+
+          BI/PD:
+          <b>${money(d.bi)}</b>
+          <br>
+
+          PA Coverage Setting:
+          <b>${money(d.paLimit)}</b>
+          <br>
+
+          ${
+            q.c.passengerLiabilityLimit
+            ?
+            `
+              Passenger Liability:
+              <b>
+                ${money(
+                  q.c.passengerLiabilityLimit
+                )}
+              </b>
+              <br>
+            `
+            :
+            ""
+          }
+
+          Acts of Nature:
+          <b>
+            ${d.aon ? "Included" : "Excluded"}
+          </b>
+          <br>
+
+          Comprehensive:
+          <b>${comp}</b>
+          <br>
+
+          Roadside:
+          <b>${road}</b>
+          <br>
+
+          Primary Use:
+          <b>${primaryUse}</b>
+          <br>
+
+          Vehicle Type:
+          <b>${d.vehicleType}</b>
+
+        </div>
+
+
+        <div class="result-actions">
+
+          <button
+            class="outline-btn"
+            onclick="viewDetails(${i})"
+          >
+            View Details
+          </button>
+
+          <button
+            class="red-btn"
+            onclick="requestQuote(${i})"
+          >
+            Request This Quote
+          </button>
+
+        </div>
+
+
+        <div
+          class="small"
+          style="margin-top:14px;line-height:1.6"
+        >
+          ${q.c.coverageNote}
+        </div>
+
+      `;
+
+
+      x.addEventListener(
+        "click",
+        function(e){
+
+          if(
+            e.target.closest("button")
+          )
+            return;
+
+          viewDetails(i);
+
+        }
+      );
+
+
+      x.addEventListener(
+        "keydown",
+        function(e){
+
+          if(
+            e.key === "Enter" ||
+            e.key === " "
+          ){
+
+            e.preventDefault();
+
+            viewDetails(i);
+
+          }
+
+        }
+      );
+
+
+      g.appendChild(x);
+
+    }
+  );
+
+}
+
+
+/* =========================================
+   VIEW PROVIDER DETAILS
+========================================= */
+
+function viewDetails(i){
+
+  const q =
+    lastQuotes[i];
+
+
+  openModal(
+    "providerModal"
+  );
+
+
+  document.getElementById(
+    "providerTitle"
+  ).textContent =
+    q.p.name +
+    " Quote Details";
+
+
+  document.getElementById(
+    "providerBody"
+  ).innerHTML = `
+
+    <div class="provider-detail">
+
+      <b>
+        Calculation basis:
+      </b>
+
+      ${q.p.source}
+
+      <br><br>
+
+      L/D:
+      ${money(q.c.ld)}
+
+      <br>
+
+      Acts of Nature:
+      ${money(q.c.aog)}
+
+      <br>
+
+      Bodily Injury:
+      ${money(q.d.biCharge)}
+
+      <br>
+
+      Property Damage:
+      ${money(q.d.pdCharge)}
+
+      <br>
+
+      Personal Accident:
+      ${money(q.c.pa)}
+
+      <br>
+
+      Basic Premium:
+      ${money(q.c.basic)}
+
+      <br>
+
+      Documentary Stamp Tax (12.5%):
+      ${money(q.c.dst)}
+
+      <br>
+
+      E-VAT (12%):
+      ${money(q.c.vat)}
+
+      <br>
+
+      Local Government Tax:
+      ${money(q.c.lgt)}
+
+      <br>
+
+      CTPL / Roadside Assistance:
+      <b>
+        No separate premium in source schedule
+      </b>
+
+      <br>
+
+      Vehicle Type:
+      <b>
+        ${q.d.vehicleType}
+      </b>
+
+      <br>
+
+      ${
+        q.c.passengerLiabilityLimit
+        ?
+        `
+          Passenger Liability Limit:
+          ${money(
+            q.c.passengerLiabilityLimit
+          )}
+          <br>
+        `
+        :
+        ""
+      }
+
+      ${
+        q.p.hybrid
+        ?
+        `
+          Hybrid PA formula:
+          <b>
+            Selected PA Limit × 0.1275%
+          </b>
+          <br>
+
+          Ibero:
+          <b>
+            Not priced — no source rate/formula supplied
+          </b>
+          <br>
+        `
+        :
+        ""
+      }
+
+      ${
+        q.p.fullEV
+        ?
+        `
+          Full EV PA formula:
+          <b>
+            Selected PA Limit × 0.1275%
+          </b>
+          <br>
+
+          Ibero:
+          <b>
+            Not priced — no source rate/formula supplied
+          </b>
+          <br>
+        `
+        :
+        ""
+      }
+
+      <br>
+
+      Coverage selections shown in the form
+      are not separately priced unless a source
+      rate is available.
+
+      <br><br>
+
+      <strong>
+        Total Indicative Premium:
+        ${money(q.c.total)}
+      </strong>
+
+    </div>
+
+
+    <div class="notice">
+
+      This is an indicative computation based
+      on the uploaded PC rate sheets.
+      Final insurer terms and approval may differ.
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================
+   REQUEST QUOTE
+========================================= */
+
+function requestQuote(i){
+
+  window.pendingQuote =
+    lastQuotes[i];
+
+  openModal(
+    "editModal"
+  );
+
+}
+
+
+/* =========================================
+   UPDATE QUOTE DETAILS
+========================================= */
+
+function updateQuoteDetails(){
+
+  const first =
+    document
+      .getElementById("firstName")
+      .value
+      .trim();
+
+  const last =
+    document
+      .getElementById("lastName")
+      .value
+      .trim();
+
+  const email =
+    document
+      .getElementById("email")
+      .value
+      .trim();
+
+  const phone =
+    document
+      .getElementById("phone")
+      .value
+      .trim();
+
+
+  if(
+    !first ||
+    !last ||
+    !email ||
+    !phone
+  ){
+
+    alert(
+      "Please complete your contact details."
+    );
+
+    return;
+
+  }
+
+
+  window.quoteContact = {
+
+    first:first,
+    last:last,
+    email:email,
+    phone:phone
+
+  };
+
+
+  closeModal(
+    "editModal"
+  );
+
+
+  const oldToast =
+    document.getElementById(
+      "quoteUpdateToast"
+    );
+
+  if(oldToast)
+    oldToast.remove();
+
+
+  const toast =
+    document.createElement("div");
+
+  toast.id =
+    "quoteUpdateToast";
+
+  toast.textContent =
+    "Quote details updated successfully.";
+
+  toast.style.cssText =
+    "position:fixed;" +
+    "right:24px;" +
+    "bottom:24px;" +
+    "z-index:9999;" +
+    "background:#111;" +
+    "color:#fff;" +
+    "padding:14px 18px;" +
+    "border-radius:12px;" +
+    "font-weight:700;" +
+    "box-shadow:0 10px 30px rgba(0,0,0,.18);";
+
+
+  document.body.appendChild(
+    toast
+  );
+
+
+  setTimeout(
+    function(){
+      toast.remove();
+    },
+    2800
+  );
+
+}
+
+
+/* =========================================
+   SUBMIT INQUIRY
+========================================= */
+
+async function submitInquiry(){
+
+  const q =
+    window.pendingQuote;
+
+
+  if(!q){
+
+    alert(
+      "Please select a quote first."
+    );
+
+    return;
+
+  }
+
+
+  const contact =
+    window.quoteContact || {};
+
+
+  const first =
+    contact.first ||
+    document
+      .getElementById("firstName")
+      .value
+      .trim();
+
+
+  const last =
+    contact.last ||
+    document
+      .getElementById("lastName")
+      .value
+      .trim();
+
+
+  const email =
+    contact.email ||
+    document
+      .getElementById("email")
+      .value
+      .trim();
+
+
+  const phone =
+    contact.phone ||
+    document
+      .getElementById("phone")
+      .value
+      .trim();
+
+
+  if(
+    !first ||
+    !last ||
+    !email ||
+    !phone
+  ){
+
+    alert(
+      "Please complete your contact details."
+    );
+
+    return;
+
+  }
+
+
+  const ref =
+    "NEO-" +
+    Date.now()
+      .toString()
+      .slice(-8);
+
+
+  const fd =
+    new FormData();
+
+
+  fd.append(
+    "name",
+    first + " " + last
+  );
+
+  fd.append(
+    "firstName",
+    first
+  );
+
+  fd.append(
+    "lastName",
+    last
+  );
+
+  fd.append(
+    "mobile",
+    phone
+  );
+
+  fd.append(
+    "email",
+    email
+  );
+
+  fd.append(
+    "vehicle",
+    q.d.make +
+    " " +
+    q.d.model
+  );
+
+  fd.append(
+    "modelYear",
+    q.d.year
+  );
+
+  fd.append(
+    "variant",
+    q.d.variant
+  );
+
+  fd.append(
+    "vehicleType",
+    q.d.vehicleType
+  );
+
+  fd.append(
+    "primaryUse",
+    primaryUse
+  );
+
+  fd.append(
+    "coverage",
+    comp
+  );
+
+  fd.append(
+    "declaredValue",
+    q.d.sumInsured
+  );
+
+  fd.append(
+    "estimatedPremium",
+    q.c.total
+  );
+
+  fd.append(
+    "provider",
+    q.p.name
+  );
+
+  fd.append(
+    "referenceNumber",
+    ref
+  );
+
+  fd.append(
+    "biPd",
+    q.d.bi
+  );
+
+  fd.append(
+    "personalAccident",
+    q.d.paLimit
+  );
+
+  fd.append(
+    "aon",
+    q.d.aon
+      ? "Included"
+      : "Excluded"
+  );
+
+  fd.append(
+    "roadside",
+    road
+  );
+
+  fd.append(
+    "ctpl",
+    q.d.ctpl
+      ? ctplLevel
+      : "Excluded"
+  );
+
+
+  try{
+
+    await fetch(
+      SCRIPT_URL,
+      {
+        method:"POST",
+        body:fd,
+        mode:"no-cors"
+      }
+    );
+
+  }
+  catch(e){
+
+    console.log(
+      "Apps Script submission error:",
+      e
+    );
+
+  }
+
+
+  closeModal(
+    "editModal"
+  );
+
+
+  document.getElementById(
+    "providerBody"
+  ).innerHTML = `
+
+    <div class="provider-detail">
+
+      <h3 style="margin-top:0">
+        Inquiry Ready
+      </h3>
+
+      Reference Number:
+      <b>${ref}</b>
+
+      <br><br>
+
+      Customer:
+      <b>
+        ${first} ${last}
+      </b>
+
+      <br>
+
+      Vehicle:
+      <b>
+        ${q.d.make}
+        ${q.d.model}
+        ${q.d.variant}
+      </b>
+
+      <br>
+
+      Provider:
+      <b>
+        ${q.p.name}
+      </b>
+
+      <br>
+
+      Indicative Premium:
+      <b>
+        ${money(q.c.total)}
+      </b>
+
+    </div>
+
+
+    <div class="notice">
+
+      Your inquiry has been submitted
+      on a best-effort basis.
+      The connected Google Apps Script
+      endpoint may process the request
+      after submission.
+
+    </div>
+
+  `;
+
+
+  openModal(
+    "providerModal"
+  );
+
+}
+
+
+/* =========================================
+   MODALS
+========================================= */
+
+function openModal(id){
+
+  const modal =
+    document.getElementById(id);
+
+  if(modal)
+    modal.classList.add("show");
+
+}
+
+
+function closeModal(id){
+
+  const modal =
+    document.getElementById(id);
+
+  if(modal)
+    modal.classList.remove("show");
+
+}
+
+
+document
+  .querySelectorAll(".modal")
+  .forEach(function(m){
+
+    m.addEventListener(
+      "click",
+      function(e){
+
+        if(e.target === m)
+          m.classList.remove("show");
+
+      }
+    );
+
+  });
+
+
+/* =========================================
+   GOOGLE
+========================================= */
+
 function continueGoogle(){
- window.open("https://accounts.google.com/","_blank","noopener,noreferrer");
- alert('Google opened. A real "Choose an account" Google sign-in flow requires Google Identity Services/OAuth configuration for the NEO CARWORKS website.');
+
+  window.open(
+    "https://accounts.google.com/",
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+
+  alert(
+    'Google opened. A real "Choose an account" Google sign-in flow requires Google Identity Services/OAuth configuration for the NEO CARWORKS website.'
+  );
+
 }
+
+
+/* =========================================
+   CREATE ACCOUNT
+========================================= */
+
 function createAccount(){
- const a={first:accFirst.value,last:accLast.value,email:accEmail.value,mobile:accMobile.value,password:accPass.value};
- if(!a.first||!a.last||!a.email||!a.mobile||!a.password||a.password!==accConfirm.value||!accAgree.checked){alert("Please complete the account fields, make sure passwords match, and agree to the Terms and Privacy Policy.");return}
- localStorage.setItem("neoAccount",JSON.stringify(a));alert("Account created for this browser. You may now log in with your email and password.");closeModal("accountModal")
+
+  const a = {
+
+    first:
+      document
+        .getElementById("accFirst")
+        .value
+        .trim(),
+
+    last:
+      document
+        .getElementById("accLast")
+        .value
+        .trim(),
+
+    email:
+      document
+        .getElementById("accEmail")
+        .value
+        .trim(),
+
+    mobile:
+      document
+        .getElementById("accMobile")
+        .value
+        .trim(),
+
+    password:
+      document
+        .getElementById("accPass")
+        .value
+
+  };
+
+
+  const confirm =
+    document
+      .getElementById("accConfirm")
+      .value;
+
+  const agree =
+    document
+      .getElementById("accAgree")
+      .checked;
+
+
+  if(
+    !a.first ||
+    !a.last ||
+    !a.email ||
+    !a.mobile ||
+    !a.password ||
+    a.password !== confirm ||
+    !agree
+  ){
+
+    alert(
+      "Please complete the account fields, make sure passwords match, and agree to the Terms and Privacy Policy."
+    );
+
+    return;
+
+  }
+
+
+  localStorage.setItem(
+    "neoAccount",
+    JSON.stringify(a)
+  );
+
+
+  alert(
+    "Account created for this browser. You may now log in with your email and password."
+  );
+
+
+  closeModal(
+    "accountModal"
+  );
+
 }
-function loginLocal(){const a=JSON.parse(localStorage.getItem("neoAccount")||"null");if(!a){alert("No local account found. Please create an account first.");return}if(loginEmail.value===a.email&&loginPassword.value===a.password){alert("Welcome to NEO CARWORKS, "+a.first+"!");closeModal("loginModal")}else alert("Email or password does not match the local prototype account.")}
-function requestReset(){if(!forgotEmail.value){alert("Please enter your email.");return}alert("Password reset request recorded for "+forgotEmail.value+". This prototype does not send real email yet.");closeModal("forgotModal")}
-function openProvider(name){openModal("providerModal");document.getElementById("providerTitle").textContent=name;document.getElementById("providerBody").innerHTML="<div class='provider-detail'><b>"+name+"</b><br>Provider card selected. Use Calculate Insurance Quote to see the indicative calculation available in this NEO CARWORKS prototype.</div>"}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+async function loginLocal(){
+
+  const a =
+    JSON.parse(
+      localStorage.getItem(
+        "neoAccount"
+      ) || "null"
+    );
+
+
+  const enteredEmail =
+    document
+      .getElementById("loginEmail")
+      .value
+      .trim();
+
+
+  const enteredPassword =
+    document
+      .getElementById("loginPassword")
+      .value;
+
+
+  if(!a){
+
+    alert(
+      "No local account found. Please create an account first."
+    );
+
+    return;
+
+  }
+
+
+  if(
+    enteredEmail === a.email &&
+    enteredPassword === a.password
+  ){
+
+    const fd =
+      new FormData();
+
+
+    fd.append(
+      "event",
+      "login"
+    );
+
+    fd.append(
+      "name",
+      a.first + " " + a.last
+    );
+
+    fd.append(
+      "email",
+      a.email
+    );
+
+    fd.append(
+      "mobile",
+      a.mobile || ""
+    );
+
+    fd.append(
+      "loginTime",
+      new Date().toLocaleString()
+    );
+
+
+    try{
+
+      await fetch(
+        SCRIPT_URL,
+        {
+          method:"POST",
+          body:fd,
+          mode:"no-cors"
+        }
+      );
+
+    }
+    catch(e){
+
+      console.log(e);
+
+    }
+
+
+    alert(
+      "Welcome to NEO CARWORKS, " +
+      a.first +
+      "!"
+    );
+
+
+    closeModal(
+      "loginModal"
+    );
+
+  }
+
+  else{
+
+    alert(
+      "Email or password does not match the local prototype account."
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   PASSWORD RESET
+========================================= */
+
+function requestReset(){
+
+  const email =
+    document
+      .getElementById("forgotEmail")
+      .value
+      .trim();
+
+
+  if(!email){
+
+    alert(
+      "Please enter your email."
+    );
+
+    return;
+
+  }
+
+
+  alert(
+    "Password reset request recorded for " +
+    email +
+    ". This prototype does not send real email yet."
+  );
+
+
+  closeModal(
+    "forgotModal"
+  );
+
+}
+
+
+/* =========================================
+   PROVIDER CARD
+========================================= */
+
+function openProvider(name){
+
+  openModal(
+    "providerModal"
+  );
+
+
+  document.getElementById(
+    "providerTitle"
+  ).textContent =
+    name;
+
+
+  document.getElementById(
+    "providerBody"
+  ).innerHTML = `
+
+    <div class="provider-detail">
+
+      <b>
+        ${name}
+      </b>
+
+      <br><br>
+
+      Provider card selected.
+
+      <br><br>
+
+      Use
+      <b>
+        Calculate Insurance Quote
+      </b>
+      to see the indicative calculation
+      available in this NEO CARWORKS prototype.
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================
+   WHY CARDS
+========================================= */
+
 function openWhy(type){
- const data={vehicle:["Vehicle-Based Quote","Start with your vehicle make, model, variant, year and estimated sum insured."],coverage:["Flexible Coverage","Choose BI/PD, Personal Accident, Acts of Nature, comprehensive coverage, roadside assistance and CTPL options."],request:["Request a Quote","Select a provider quote, enter your contact details and submit the inquiry through the connected form endpoint."],advisor:["Advisor Assistance","Your submitted inquiry can be reviewed by an advisor for the next steps and final quotation."]}[type];
- openModal("whyModal");document.getElementById("whyTitle").textContent=data[0];document.getElementById("whyBody").innerHTML="<p>"+data[1]+"</p>"
+
+  const data = {
+
+    vehicle:[
+      "Vehicle-Based Quote",
+      "Start with your vehicle make, model, variant, year and estimated sum insured."
+    ],
+
+    coverage:[
+      "Flexible Coverage",
+      "Choose BI/PD, Personal Accident, Acts of Nature, comprehensive coverage, roadside assistance and CTPL options."
+    ],
+
+    request:[
+      "Request a Quote",
+      "Select a provider quote, enter your contact details and submit the inquiry through the connected form endpoint."
+    ],
+
+    advisor:[
+      "Advisor Assistance",
+      "Your submitted inquiry can be reviewed by an advisor for the next steps and final quotation."
+    ]
+
+  }[type];
+
+
+  openModal(
+    "whyModal"
+  );
+
+
+  document.getElementById(
+    "whyTitle"
+  ).textContent =
+    data[0];
+
+
+  document.getElementById(
+    "whyBody"
+  ).innerHTML =
+    "<p>" +
+    data[1] +
+    "</p>";
+
 }
+
+
+/* =========================================
+   NAV INFO
+========================================= */
+
 function openInfo(type){
- const data={
- loans:["Car Financing & Insurance Guide","This section provides educational information about budgeting for insurance when financing a vehicle, documents commonly requested for financed cars, and why keeping insurance active may matter when a vehicle is under financing. NEO CARWORKS does not represent that it issues loans through this page."],
- articles:["NEO CARWORKS Articles","How to Prepare Before Requesting a Car Insurance Quote<br><br>What to Check Before Choosing Coverage<br><br>What to Do After a Road Accident<br><br>CTPL vs Comprehensive Car Insurance<br><br>Understanding Sum Insured and Deductibles"],
- credit:["Payment & Credit Card Guide","Learn about managing insurance payments, setting reminders for premiums, checking payment details before submitting online information, and keeping payment records. NEO CARWORKS is not presenting a credit card product through this section."]
- }[type];
- openModal("infoModal");document.getElementById("infoTitle").textContent=data[0];document.getElementById("infoBody").innerHTML="<p>"+data[1]+"</p>"
+
+  const data = {
+
+    loans:[
+
+      "Car Financing & Insurance Guide",
+
+      "This section provides educational information about budgeting for insurance when financing a vehicle, documents commonly requested for financed cars, and why keeping insurance active may matter when a vehicle is under financing. NEO CARWORKS does not represent that it issues loans through this page."
+
+    ],
+
+
+    articles:[
+
+      "NEO CARWORKS Articles",
+
+      "How to Prepare Before Requesting a Car Insurance Quote<br><br>" +
+
+      "What to Check Before Choosing Coverage<br><br>" +
+
+      "What to Do After a Road Accident<br><br>" +
+
+      "CTPL vs Comprehensive Car Insurance<br><br>" +
+
+      "Understanding Sum Insured and Deductibles"
+
+    ],
+
+
+    credit:[
+
+      "Payment & Credit Card Guide",
+
+      "Learn about managing insurance payments, setting reminders for premiums, checking payment details before submitting online information, and keeping payment records. NEO CARWORKS is not presenting a credit card product through this section."
+
+    ]
+
+  }[type];
+
+
+  openModal(
+    "infoModal"
+  );
+
+
+  document.getElementById(
+    "infoTitle"
+  ).textContent =
+    data[0];
+
+
+  document.getElementById(
+    "infoBody"
+  ).innerHTML =
+    "<p>" +
+    data[1] +
+    "</p>";
+
 }
-loadYears();updateCoverageValues();updateVehicleTypeNote();
+
+
+/* =========================================
+   INITIALIZE
+========================================= */
+
+loadYears();
+
+updateCoverageValues();
+
+updateVehicleTypeNote();
+
 </script>
+
 </body>
 </html>
